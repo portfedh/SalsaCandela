@@ -41,7 +41,7 @@ NOTE: This is Footer style file. All footer related style included in this file.
   margin-bottom: 0px;
 }
 .twitt-content a {
-  color: #5fc7ae;
+  color: #f69139;
   font-size: 14px;
   font-family: "Lato", sans-serif;
   margin-bottom: 15px;
@@ -78,25 +78,25 @@ NOTE: This is Footer style file. All footer related style included in this file.
 }
 .single-footer-widget button,
 .contact-form button {
-  background: #5fc7ae none repeat scroll 0 0;
+  background: #f69139 none repeat scroll 0 0;
   color: #fff;
   text-transform: capitalize;
   font-weight: 600;
   font-size: 14px;
   font-family: "Montserrat", sans-serif;
   padding: 10px 70px;
-  border: 1px solid #5fc7ae;
+  border: 1px solid #f69139;
   -webkit-transition: all 0.5s ease 0s;
   -o-transition: all 0.5s ease 0s;
   transition: all 0.5s ease 0s;
 }
 .single-footer-widget button:hover,
 .contact-form button:hover {
-  color: #5fc7ae;
+  color: #f69139;
   background: transparent;
 }
 .single-footer-widget input:focus {
-  border: 1px solid #5fc7ae;
+  border: 1px solid #f69139;
 }
 .mailchimp-alerts {
   color: #ffffff;
@@ -122,5 +122,5 @@ NOTE: This is Footer style file. All footer related style included in this file.
   border-bottom: 1px solid #fff;
 }
 .footer-text-area {
-  background: #5fc7ae none repeat scroll 0 0;
+  background: #e04a25 none repeat scroll 0 0;
 }

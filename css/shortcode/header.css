@@ -26,7 +26,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   font-weight: 600;
   text-transform: uppercase;
   font-family: "Montserrat", sans-serif;
-  border: 1px solid #5fc7ae;
+  border: 1px solid #f69139;
   border-radius: 25px;
   color: #666666;
   margin-top: 13px;
@@ -45,7 +45,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   transition: all 0.4s ease 0s;
 }
 .main-menu > nav > ul > li:hover > a {
-  color: #5fc7ae;
+  color: #f69139;
 }
 .main-menu ul li ul {
   background: #ffffff none repeat scroll 0 0;
@@ -116,8 +116,8 @@ NOTE: This is Header style file. All Header related style included in this file.
   padding: 0;
 }
 .mean-container a.meanmenu-reveal {
-  border: 1px solid #5fc7ae;
-  color: #5fc7ae;
+  border: 1px solid #f69139;
+  color: #f69139;
   margin-top: -50px;
   padding: 4px 5px;
   position: absolute;
@@ -126,7 +126,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   margin-top: -59px;
 }
 .mean-container a.meanmenu-reveal span {
-  background-color: #5fc7ae;
+  background-color: #f69139;
 }
 .mean-container .mean-nav {
   margin-top: 0;
