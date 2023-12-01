@@ -142,8 +142,8 @@ NOTE: This is Slider style file. All Slider related style included in this file.
   animation-delay: 1500ms;
 }
 .owl-nav div {
-  background: rgba(95, 199, 174, 0.4);
-  color: #f69139;
+  background: rgba(246, 145, 57, 0.4);
+  color: #e04a25;
   font-size: 30px;
   border-radius: 3px;
   height: 40px;
@@ -170,7 +170,7 @@ NOTE: This is Slider style file. All Slider related style included in this file.
   right: 0;
 }
 .owl-nav div:hover {
-  background: rgba(95, 199, 174, 0.2);
+  background: rgba(246, 145, 57, 0.2);
   color: #fff;
 }
 .single-slide {
