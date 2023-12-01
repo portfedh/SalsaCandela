@@ -528,7 +528,7 @@ td.pink {
 .single-table:hover .table-head h2,
 .single-table:hover .table-body,
 .single-table:hover .table-body a {
-  background: #5fc7ae;
+  background: rgba(224, 74, 37, 0.8);
 }
 .single-table:hover .table-head h2,
 .single-table:hover .table-body ul li,
@@ -536,13 +536,13 @@ td.pink {
   color: #fff;
 }
 .single-table:hover .table-body ul li {
-  border-bottom: 1px solid #5dc0a8;
+  border-bottom: 1px rgba(246, 145, 57, 0.7);
 }
 .single-table:hover .table-body ul li:last-child {
   border-bottom: none;
 }
 .single-table:hover .table-body a {
-  box-shadow: 0 0 4px 4px #59bba3;
+  box-shadow: 0 0 4px 4px #e04a25;
 }
 .table-head h2 {
   font-size: 20px;
