@@ -1,54 +1,408 @@
 <!DOCTYPE html>
-
-<html lang="es">
+<html class="no-js" lang="es">
   <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salsa Candela</title>
-    <script
-      src="https://kit.fontawesome.com/1450436a40.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="css/style_index.css" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>
+      Salsa Candela México | Academia de Baile CDMX | Salsa y Bachata
+    </title>
+    <meta
+      name="description"
+      content="Academia de baile de enseñanza de salsa cubana, estilo LA y bachata. "
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico" />
+    <!-- All css here -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/shortcode/shortcodes.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <style>
+      /* Move to CSS file soon */
+      .video-container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      }
+      video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+      }
+      .text-content-wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        text-align: center;
+        padding-left: 5%;
+      }
+      </style>
+    <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   </head>
-
   <body>
-    <header>
-      <div class="navbar">
-        <div class="logo">
-          <a href="/">
-            <img
-              class="logoImg"
-              src="/img/salsaCandelaTransparent.webp"
-              alt="LogoSalsaCandela"
-            />
-          </a>
+    <!-- Header Area Start -->
+    <header class="top">
+      <div class="header-area ptb-18 header-sticky">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2">
+              <div class="logo">
+                <a href="#"
+                  ><img src="img/logo/logo.png" alt="Salsa Candela"
+                /></a>
+              </div>
+            </div>
+            <div class="col-lg-8">
+              <div class="content-wrapper">
+                <!-- Main Menu Start -->
+                <div class="main-menu text-center">
+                  <nav>
+                    <ul>
+                      <li><a href="#">Inicio</a></li>
+                      <li><a href="#">Classes</a></li>
+                      <li><a href="#">Sucursales</a></li>
+                      <li><a href="#">Fiesta</a></li>
+                      <li><a href="#">Preguntas Frecuentes</a></li>
+                      <li><a href="#">Contacto</a></li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="mobile-menu d-block d-lg-none"></div>
+                <!-- Main Menu End -->
+              </div>
+            </div>
+            <div class="col-lg-2 d-none d-lg-block">
+              <div class="header-contact text-end">
+                <a class="banner-btn" data-text="Inscribirme" href="#"
+                  ><span>Inscribirme</span></a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <ul class="links">
-          <li><a href="party">Registro fiesta</a></li>
-          <li><a href="search">Busqueda</a></li>
-          <li><a href="report">Reporte</a></li>
-        </ul>
-        <a href="login" class="action_btn">Iniciar sesion</a>
-        <div class="toggle_btn">
-          <i class="fa-solid fa-bars"></i>
-        </div>
-      </div>
-      <div class="dropdown_menu">
-        <li><a href="party">Registro fiesta</a></li>
-        <li><a href="search">Busqueda</a></li>
-        <li><a href="report">Reporte</a></li>
-        <li><a href="login" class="action_btn">Iniciar sesion</a></li>
       </div>
     </header>
+    <!-- Header Area End -->
 
-    <main>
-      <section id="hero">
-        <h1>Bienvenido</h1>
-      </section>
-    </main>
+    <!-- Background Area Start -->
+    <div class="slider-area">
+      <div class="slider-wrapper">
+        <div class="single-slide">
+            <video autoplay loop muted playsinline>
+                <source src="img/slider/file.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+          <div class="slider-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="text-content-wrapper">
+                    <div class="text-content text-start">
+                      <h5>Bienvenid@ a Salsa Candela</h5>
+                      <h1>Aprende a bailar <span>desde cero</span></h1>
+                      <p>
+                        ¡Aprende a bailar en solamente 5 semanas! No es necesario llevar pareja.
+                      </p>
+                      <a
+                        class="banner-btn"
+                        href="#"
+                        data-text="Inscribirme"
+                        ><span>Inscribirme</span></a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background Area End -->
 
-    <script type="text/javascript" src="js/intro.js"></script>
+    <!-- Classes Start -->
+    <section class="class-area fix bg-gray pb-100 pt-95">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>Nuestras classes</h2>
+              <p>
+              <br>¿Tienes dos pies izquierdos? Aprende a bailar en sólo 5 semanas, ¡garantizado! 
+              <br>
+              <br>¿Ya sabes bailar y quieres aprender más vueltas y figuras en pareja? Tambien tenemos opciónes para ti.
+              <br>
+              <br>Estamos abiertos todo el año y tenemos todos los niveles: Desde principianrtes hasta avanzados.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <!-- Clase 1 -->
+            <div class="single-class">
+              <div class="single-img">
+                <a href="#"
+                  ><img src="img/class/salsa1.png" alt="class"
+                /></a>
+                <div class="gallery-icon">
+                  <a class="image-popup" href="img/class/salsa1.png">
+                    <i class="zmdi zmdi-zoom-in"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="single-content">
+                <h3><a href="#">Clases de Salsa</a></h3>
+              </div>
+            </div>
+          </div>
+          <!-- Clase 2 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-class">
+              <div class="single-img">
+                <a href="#"
+                  ><img src="img/class/bachata2.png" alt="class"
+                /></a>
+                <div class="gallery-icon">
+                  <a class="image-popup" href="img/class/bachata2.png">
+                    <i class="zmdi zmdi-zoom-in"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="single-content">
+                <h3><a href="#">Clases de Bachata</a></h3>
+
+              </div>
+            </div>
+          </div>
+          <!-- Clase 3 -->
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="single-class">
+              <div class="single-img">
+                <a href="#"
+                  ><img src="img/class/salsa3.png" alt="class"
+                /></a>
+                <div class="gallery-icon">
+                  <a class="image-popup" href="img/class/salsa3.png">
+                    <i class="zmdi zmdi-zoom-in"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="single-content">
+                <h3><a href="#">Clases particulares y eventos</a></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 text-center">
+            <a
+              class="banner-btn mt-55"
+              href="#"
+              data-text="Ver nuestras sucursales"
+              ><span>Ver nuestras sucursales</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Class Area End -->
+
+    <!-- Event Area Strat -->
+    <section class="event-area pt-95 pb-100 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>fiesta mensual</h2>
+              <p>
+                Acompáñanos en nuestro evento mensual: Una noche llena de baile y convivencia. 
+                <br>Toda la comunidad Candela estará presente ese día
+              </p>
+            </div>
+            <div class="event-wrapper">
+              <div class="event-content text-center">
+                <h3>Noche Sensual</h3>
+                <p>
+                  Salsa - Timba - Bachata
+                </p>
+                <p>
+                  $100 pesos preventa, 
+                  $150 pesos en taquilla.
+                </p>
+                <h4>Viernes 24 de Noviembre 2023</h4>
+                <h5>9PM - 3AM</h5>
+                <br>
+                <img src="img/party/noche_sensual_nov_23.webp" alt="Party Invitation">
+              </div>
+              <div class="col-12 text-center">
+                <a
+                  class="banner-btn mt-55"
+                  href="#"
+                  data-text="Compra tus boletos"
+                  ><span>Compra tus boletos</span></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Pricing Area Start -->
+    <div class="pricing-area pt-95 pb-120 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>Precios</h2>
+              <p>
+                Paga en línea dando click en los siguientes botones
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Individual</h2>
+                <h1>$650<span>pesos</span></h1>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Taller de cinco semanas</li>
+                  <li>Salsa, Bachata o Estilo</li>
+                  <li></li>
+                </ul>
+                <a href="#">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Pareja</h2>
+                <h1>$1,000<span>pesos</span></h1>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Taller de cinco semanas</li>
+                  <li>Salsa, Bachata o Estilo</li>
+                  <li></li>
+                </ul>
+                <a href="#">Comprar</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Clases Particulares</h2>
+                <h1>$2,500<span>pesos</span></h1>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Horarios flexibles</li>
+                  <li>Atencion personalizada</li>
+                  <li>5 clases de 60 minutos</li>
+                  <li>En tu domicilio o en estudio</li>
+                </ul>
+                <a href="#">Mas Informacion</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pricing Area End -->
+
+
+
+    <!-- Start of Map Area -->
+    <div class="map-area">
+      <!-- google-map-area start -->
+      <div class="google-map-area">
+        <!--  Map Section -->
+        <div id="contacts" class="map-area">
+          <iframe 
+          class="contact-map-size"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15054.031530561573!2d-99.16139312409982!3d19.39044996929411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20Mexico!5e0!3m2!1sen!2sbd!4v1701319854445!5m2!1sen!2sbd" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <!-- End of Map Area -->
+
+    <!-- Footer Area Start -->
+    <footer class="footer-area bg-gray">
+      <div class="footer-widget-area bg-3 pt-98 pb-90 fix">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 col-md-6">
+              <div class="single-footer-widget">
+                <a href="#"
+                  ><img src="img/logo/logo.png" alt="handstand"
+                /></a>
+                <ul>
+                  <li>
+                    <i class="zmdi zmdi-email"></i> info@salsa-candela.mx
+                  </li>
+                  <li><i class="zmdi zmdi-phone"></i> 55 41 44 37 45</li>
+                  <li>
+                    <i class="zmdi zmdi-home"></i> Estafetas 99, Col
+                    Postal, Benito Juárez, CDMX
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-text-area fix bg-coffee ptb-18">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="footer-text text-center">
+                <span> &copy; 2023. Salsa Candela.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer Area End -->
+
+    <!-- JS Files -->
+    <script src="js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="js/vendor/jquery-migrate-3.3.2.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.meanmenu.js"></script>
+    <script src="js/ajax-mail.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/jquery.magnific-popup.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
