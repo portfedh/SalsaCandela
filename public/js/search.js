@@ -1,3 +1,4 @@
+// MyCode
 console.log("Search Client Js Script running");
 
 const form = document.getElementById("search-form");

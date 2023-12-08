@@ -1,3 +1,5 @@
+// MyCode
+
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Function to convert a table to CSV format
