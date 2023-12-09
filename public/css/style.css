@@ -28,6 +28,13 @@
     12. Newsletter Area
 
 -----------------------------------------------------------------------------------*/
+/* Mycode, sort later */
+.header-contact {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* This keeps the content at the right */
+  height: 100%; /* Make sure the parent container has a height set */
+}
 
 /*----------------------------------------*/
 /*  1. About Area
@@ -594,7 +601,7 @@ td.pink {
   border-bottom: none;
 }
 .table-body a,
-.table-body button {
+.table-body form {
   background: #f1f1f1 none repeat scroll 0 0;
   border-radius: 25px;
   box-shadow: 0 0 4px 4px #e2e2e2;

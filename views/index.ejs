@@ -83,9 +83,9 @@
             </div>
             <div class="col-lg-2 d-none d-lg-block">
               <div class="header-contact text-end">
-                <a class="banner-btn" data-text="Inscribirme" href="#"
-                  ><span>Inscribirme</span></a
-                >
+                <form action="/checkout" method="post">
+                  <button class="banner-btn" type="submit">Inscribirme</button>
+                </form>
               </div>
             </div>
           </div>
@@ -287,9 +287,8 @@
                   <li></li>
                 </ul>
                 <form action="/checkout" method="post">
-                  <button type="submit">Stripe</button>
+                  <button type="submit">Comprar</button>
                 </form>
-                <a href="/checkout">Comprar</a>
               </div>
             </div>
           </div>
@@ -305,7 +304,9 @@
                   <li>Salsa, Bachata o Estilo</li>
                   <li></li>
                 </ul>
-                <a href="#">Comprar</a>
+                <form action="/checkout" method="post">
+                  <button type="submit">Comprar</button>
+                </form>
               </div>
             </div>
           </div>
