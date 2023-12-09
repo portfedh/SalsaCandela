@@ -11,10 +11,16 @@ const upload = require("../middleware/multer");
 // Controllers
 const homeCtrl = require("../controllers/home");
 const authCtrl = require("../controllers/auth");
+const stripeCtrl = require("../controllers/stripe");
 
-// Routes
-// ******
+// Client Routes
+// *************
+// Stripe Checkout
+router.post("/checkout", stripeCtrl.createTestCheckout);
+router.post("/webhook", stripeCtrl.stripeWebhook);
 
+// Admin Routes
+// *************
 // Home
 router.get("/", homeCtrl.getIndex);
 // Party routes

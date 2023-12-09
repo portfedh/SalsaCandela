@@ -7,6 +7,10 @@ const result = require("dotenv").config({ path: "./config/.env" });
 const connectDB = require("./config/database");
 connectDB();
 
+// Stripe
+// ======
+const stripe = require("stripe")(process.env.STRIPE_TEST_KEY);
+
 // Express
 // =======
 // Imports
@@ -37,7 +41,6 @@ const flash = require("express-flash");
 const logger = require("morgan");
 // Import Passport configuration
 require("./config/passport")(passport);
-
 // Use dev format in logger, for debugging and monitoring
 app.use(logger("dev"));
 // // Used to store session data in MongoDb
