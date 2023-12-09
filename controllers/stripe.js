@@ -10,10 +10,12 @@ const stripe = require("stripe")(process.env.STRIPE_TEST_KEY);
 module.exports = {
   // Create test checkout
   createTestCheckout: async (req, res) => {
+    console.log("STARTING STRIPE CHECKOUT:");
+    const YOUR_DOMAIN = "http://localhost:3000"; // Update to env variable after testing
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          price: "price_1OIZ1iEurgv9fqbvuGr9oeA7",
+          price: "price_1OIZ1iEurgv9fqbvuGr9oeA7", // Update to env variable after testing
           quantity: 1,
         },
       ],
@@ -46,7 +48,7 @@ module.exports = {
         const name = session.customer_details.name;
         const email = session.customer_details.phone;
         const phone = session.customer_details.email;
-
+        console.log(`WEBHOOK EVENT DETAILS BELOW:`);
         console.log(`Payment ID: ${paymentId}`);
         console.log(`Live Mode: ${livemode}`);
         console.log(`Client name: ${name}`);
