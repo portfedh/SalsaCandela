@@ -15,11 +15,11 @@ module.exports = {
   // Create test checkout
   createTestCheckout: async (req, res) => {
     console.log("STARTING STRIPE CHECKOUT:");
-    const YOUR_DOMAIN = "http://localhost:3000"; // Update to env variable after testing
+    const YOUR_DOMAIN = "http://localhost:3000"; // Make env variable after testing
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
-          price: "price_1OIZ1iEurgv9fqbvuGr9oeA7", // Update to env variable after testing
+          price: "price_1OIZ1iEurgv9fqbvuGr9oeA7", // Make env variable after testing
           quantity: 1,
         },
       ],
@@ -27,19 +27,34 @@ module.exports = {
         enabled: true,
       },
       mode: "payment",
-      success_url: `${YOUR_DOMAIN}/success`,
+      success_url: `${YOUR_DOMAIN}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${YOUR_DOMAIN}/cancel`,
     });
     res.redirect(303, session.url);
   },
 
   stripeSuccess: (req, res) => {
-    console.log("Redirecting to success page:");
-    res.render("index2.ejs");
+    // Retrieve the ID from the query parameters
+    res.render("success.ejs");
   },
 
   stripeCancel: (req, res) => {
     res.render("index2.ejs");
+  },
+
+  getOrderInfo: async (req, res) => {
+    try {
+      const session = await stripe.checkout.sessions.retrieve(
+        req.query.session_id
+      );
+      console.log("session variable:");
+      console.log(session);
+      res.json({
+        session: session,
+      });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
   },
 
   // Webhook endpoint to handle events
