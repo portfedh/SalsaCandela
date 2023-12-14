@@ -1,13 +1,11 @@
 /* -----------------------------------------------------------------------------------
-    Original:
-    rgba(95, 199, 174, 0.7);
-    #5fc7ae
+    Salsa Candela Branding Colors
 
-    Naranja Claro:
+    Bright orange:
     rgb(246, 145, 57, 0.7)
     #f69139
 
-    Naranja Oscuro:
+    Dark orange:
     rgb(224, 74, 37, 0.7)
     #e04a25
 
@@ -28,12 +26,49 @@
     12. Newsletter Area
 
 -----------------------------------------------------------------------------------*/
-/* Mycode, sort later */
+/* Salsa Candela Mods */
+
+/* Div donde va video */
+.single-slide {
+  background-color: lightslategray;
+}
+
 .header-contact {
   display: flex;
   align-items: center;
   justify-content: flex-end; /* This keeps the content at the right */
   height: 100%; /* Make sure the parent container has a height set */
+}
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+.text-content-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  text-align: center;
+  padding-left: 5%;
+}
+
+.blurry {
+  background: rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: fit-content;
 }
 
 /*----------------------------------------*/

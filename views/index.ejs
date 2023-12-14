@@ -20,33 +20,6 @@
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
-    <style>
-      /* Move to CSS file soon */
-      .video-container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        overflow: hidden;
-      }
-      video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        opacity: 0.7;
-      }
-      .text-content-wrapper {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 2;
-        text-align: center;
-        padding-left: 5%;
-      }
-    </style>
     <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   </head>
   <body>
@@ -97,7 +70,7 @@
     <!-- Background Area Start -->
     <div class="slider-area">
       <div class="slider-wrapper">
-        <div class="single-slide" style="background-color: lightslategray">
+        <div class="single-slide"">
           <video autoplay loop muted playsinline>
             <source src="img/slider/file.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -108,15 +81,7 @@
                 <div class="col-lg-7">
                   <div class="text-content-wrapper">
                     <div class="text-content text-start">
-                      <div
-                        class="blurry"
-                        style="
-                          background: rgba(255, 255, 255, 0.75);
-                          border-radius: 8px;
-                          padding: 20px;
-                          max-width: fit-content;
-                        "
-                      >
+                      <div class="blurry">
                         <h5>Bienvenid@ a Salsa Candela</h5>
                         <h1>Aprende a bailar <span>desde cero</span></h1>
                         <p>
@@ -124,8 +89,8 @@
                           necesario llevar pareja.
                         </p>
                         <a class="banner-btn" href="#" data-text="Inscribirme"
-                          ><span>Inscribirme</span></a
-                        >
+                          ><span>Inscribirme</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -139,7 +104,7 @@
     <!-- Background Area End -->
 
     <!-- Classes Start -->
-    <section class="class-area fix bg-gray pb-20 pt-50">
+    <section class="class-area fix bg-gray pb-20 pt-60">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
@@ -160,7 +125,7 @@
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-6">
-            <!-- Clase 1 -->
+            <!-- Salsa Class -->
             <div class="single-class">
               <a href="#">
                 <div class="single-img">
@@ -172,7 +137,7 @@
               </a>
             </div>
           </div>
-          <!-- Clase 2 -->
+          <!-- Bachata Class -->
           <div class="col-lg-4 col-md-6">
             <div class="single-class">
               <a href="#">
@@ -185,7 +150,7 @@
               </a>
             </div>
           </div>
-          <!-- Clase 3 -->
+          <!-- Personal Classes -->
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="single-class">
               <a href="#">
@@ -213,16 +178,15 @@
     </section>
     <!-- Class Area End -->
 
-    <!-- Event Area Strat -->
-    <section class="event-area pt-20 pb-100 bg-gray">
+    <!-- Event Area Start -->
+    <section class="event-area pt-50 pb-30 bg-gray">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 offset-xl-2 offset-lg-2">
             <div class="section-title text-center">
               <h2>fiesta mensual</h2>
               <p>
-                Acompáñanos en nuestro evento mensual: Una noche llena de baile
-                y convivencia.
+                Acompáñanos en nuestro evento mensual: Una noche llena de baile y convivencia.
                 <br />Toda la comunidad Candela estará presente ese día
               </p>
             </div>
@@ -234,18 +198,15 @@
                 <h4>Viernes 24 de Noviembre 2023</h4>
                 <h5>9PM - 3AM</h5>
                 <br />
-                <img
-                  src="img/party/noche_sensual_nov_23.webp"
-                  alt="Party Invitation"
-                />
+                <img src="img/party/noche_sensual_nov_23.webp" alt="Party Invitation"/>
               </div>
               <div class="col-12 text-center">
                 <a
                   class="banner-btn mt-55"
                   href="#"
                   data-text="Compra tus boletos"
-                  ><span>Compra tus boletos</span></a
-                >
+                  ><span>Compra tus boletos</span>
+                </a>
               </div>
             </div>
           </div>
@@ -277,6 +238,7 @@
                   <li>Taller de cinco semanas</li>
                   <li>Salsa, Bachata o Estilo</li>
                   <li>Cualquier sucursal</li>
+                  <li></li>
                 </ul>
                 <form action="/checkout" method="post">
                   <button type="submit">Comprar</button>
@@ -343,22 +305,6 @@
       </div>
     </div>
     <!-- End of Map Area -->
-
-    <!-- Newsletter Area Start -->
-    <section class="newsletter-area bg-gray">
-      <div class="container">
-        <div class="row">
-          <div class="newsletter-wrapper fix">
-            <div class="col-lg-10 offset-lg-1">
-              <div class="newsletter-content section-title text-center">
-                <h2>Ve Nuestras Surcursales</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Newsletter Area End -->
 
     <!-- Footer Area Start -->
     <footer class="footer-area bg-gray">
