@@ -36,8 +36,8 @@
 .header-contact {
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* This keeps the content at the right */
-  height: 100%; /* Make sure the parent container has a height set */
+  justify-content: flex-end;
+  height: 100%; /* Needs parent container to have a set height*/
 }
 .video-container {
   position: relative;
@@ -76,6 +76,10 @@ video {
   padding: 20px;
   max-width: fit-content;
   margin: 0 auto;
+}
+
+.horarios-fiesta li {
+  margin-bottom: 10px;
 }
 
 /*----------------------------------------*/
