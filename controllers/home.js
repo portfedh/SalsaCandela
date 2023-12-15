@@ -23,6 +23,10 @@ module.exports = {
     res.render("store_contact.ejs");
   },
 
+  getStoreParty: (req, res) => {
+    res.render("store_party.ejs");
+  },
+
   // Serve party registration
   getParty: (req, res) => {
     res.render("party_signup.ejs");

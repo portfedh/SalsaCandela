@@ -28,6 +28,8 @@ router.get("/order-info", stripeCtrl.getOrderInfo);
 router.get("/", homeCtrl.getStoreIndex);
 // Contact
 router.get("/contacto", homeCtrl.getStoreContact);
+// Party
+router.get("/fiesta", homeCtrl.getStoreParty);
 
 // Admin Routes
 // *************
