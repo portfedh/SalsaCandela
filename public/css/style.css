@@ -71,6 +71,13 @@ video {
   max-width: fit-content;
 }
 
+.contact-div {
+  text-align: left;
+  padding: 20px;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
 /*----------------------------------------*/
 /*  1. About Area
 /*----------------------------------------*/

@@ -15,8 +15,12 @@ const Id = require("../models/createId");
 // *******
 module.exports = {
   // Serve index
-  getIndex: (req, res) => {
-    res.render("index.ejs");
+  getStoreIndex: (req, res) => {
+    res.render("store_index.ejs");
+  },
+
+  getStoreContact: (req, res) => {
+    res.render("store_contact.ejs");
   },
 
   // Serve party registration

@@ -13,8 +13,8 @@ const homeCtrl = require("../controllers/home");
 const authCtrl = require("../controllers/auth");
 const stripeCtrl = require("../controllers/stripe");
 
-// Client Routes
-// *************
+// Routes
+// ******
 // Stripe Checkout
 router.post("/checkout", stripeCtrl.createTestCheckout);
 router.post("/webhook", stripeCtrl.stripeWebhook);
@@ -22,10 +22,15 @@ router.get("/success", stripeCtrl.stripeSuccess);
 router.get("/cancel", stripeCtrl.stripeCancel);
 router.get("/order-info", stripeCtrl.getOrderInfo);
 
+// Store Routes
+// ************
+// Home
+router.get("/", homeCtrl.getStoreIndex);
+// Contact
+router.get("/contacto", homeCtrl.getStoreContact);
+
 // Admin Routes
 // *************
-// Home
-router.get("/", homeCtrl.getIndex);
 // Party routes
 router.get("/party", homeCtrl.getParty);
 router.post("/partySignup", upload.single("file"), homeCtrl.createPartyRecord);
