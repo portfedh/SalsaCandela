@@ -19,12 +19,16 @@ module.exports = {
     res.render("store_index.ejs");
   },
 
-  getStoreContact: (req, res) => {
-    res.render("store_contact.ejs");
-  },
-
   getStoreParty: (req, res) => {
     res.render("store_party.ejs");
+  },
+
+  getStoreFAQ: (req, res) => {
+    res.render("store_faq.ejs");
+  },
+
+  getStoreContact: (req, res) => {
+    res.render("store_contact.ejs");
   },
 
   // Serve party registration

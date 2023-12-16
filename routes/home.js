@@ -26,10 +26,9 @@ router.get("/order-info", stripeCtrl.getOrderInfo);
 // ************
 // Home
 router.get("/", homeCtrl.getStoreIndex);
-// Contact
-router.get("/contacto", homeCtrl.getStoreContact);
-// Party
 router.get("/fiesta", homeCtrl.getStoreParty);
+router.get("/faq", homeCtrl.getStoreFAQ);
+router.get("/contacto", homeCtrl.getStoreContact);
 
 // Admin Routes
 // *************
