@@ -4,10 +4,20 @@
     Bright orange:
     rgb(246, 145, 57, 0.7)
     #f69139
+    %23f69139
 
     Dark orange:
     rgb(224, 74, 37, 0.7)
     #e04a25
+    %23e04a25
+    
+    Dark Grey:
+    rgb(127 127 127)
+    #7f7f7f
+
+    Light Gray
+    rgb(222 222 222)
+    #dedede
 
     CSS INDEX
     ===================
@@ -85,32 +95,33 @@ video {
   margin-bottom: 10px;
 }
 
-/* Preguntas Frecuentes */
-
-/* Header */
+/* FAQ Section*/
+/* ********** */
+/* Header: Closed */
 .accordion-button {
   /* Background color heading */
-  background-color: orange;
+  background-color: #f69139; /* #c6c6c6; */
   /* Text color */
-  color: red;
+  color: white;
 }
+/* Header: Open */
 .accordion-button:not(.collapsed) {
   /* Background color heading */
-  background-color: green;
+  background-color: #e04a25; /* #a4a4a4; */
   /* Text color */
-  color: purple;
+  color: white;
 }
-
+/* Text body */
+.accordion-body {
+  background-color: rgba(241, 241, 241, 0.4);
+  color: #7f7f7f;
+}
+/* Arrow icon */
 .accordion-button::after {
   /* Arrow icon color collapsed: fill='%23ff0000' is red. */
-  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff0000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f1f1f1' %3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   /* Arrow icon color expanded: fill='%23ff0000' is red. */
-  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ff0000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-}
-
-/* Body */
-.accordion-body {
-  background-color: red;
+  --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f1f1f1' %3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
 
 /*----------------------------------------*/
