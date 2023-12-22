@@ -19,6 +19,10 @@ module.exports = {
     res.render("store_index.ejs");
   },
 
+  getStoreClasses: (req, res) => {
+    res.render("store_classes.ejs");
+  },
+
   getStoreParty: (req, res) => {
     res.render("store_party.ejs");
   },
