@@ -39,11 +39,8 @@
 /* Salsa Candela */
 
 div {
+  /* For development only */
   /* border: 1px solid orangered; */
-}
-
-.single-slide {
-  /* background-color: lightslategray; */
 }
 
 .header-contact {
@@ -58,7 +55,32 @@ div {
   height: 100vh;
   overflow: hidden;
 }
-video {
+/* Video of Salsa Clases */
+.salsa-video-div,
+.bachata-video-div,
+.clases-personales-video-div {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio (9 / 16 * 100%) */
+  height: 0;
+  overflow: hidden;
+  border: 5px solid lightgray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.salsa-video,
+.bachata-video,
+.clases-personales-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Video at index */
+.hero-video {
   position: absolute;
   top: 0;
   left: 0;
