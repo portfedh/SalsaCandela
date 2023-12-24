@@ -1,24 +1,24 @@
-# Dance Academy Online Store & Admin System
+# Online Store & Admin System
 
 ## What it does
 
-The project was to build an online store and a web application to manage a dance academy that sells Salsa and Bachata courses and has five branches.
+The project is an online store and web application to manage a dance academy named Salsa Candela. It sells Salsa and Bachata courses and has five branches.
 
 ## The online store
 
-The online store is meant to provide information about the classes, times, locations and prices, and to provide the user the ability to enroll and pay online.
+The online store shows information about the academy, its classes, times, locations and prices. Visitors can enroll and pay online.
 
-Once a user buys a course, they get are sent to a confirmation page with a QR code. A copy of the code is also sent by email to the user.
+After buying a course, the user is sent to a confirmation page and given a QR confirmation code. A copy of the code is also sent by email.
 
 ## The management application
 
-In the Dance Academy, the management web application will provide several functions:
+In the Dance Academy, the management web application provides several functions:
 
-- An access control system to make sure users taking the class are enrolled.
 - An enrollment form for people paying in cash.
-- A report page with displaying the users, class, payment method and the amounts payed.
+- An access control system to make sure people with QR codes are enrolled.
+- A report page with displaying the enrolled users and all payment and course data.
 
-This will allow the dance studio to improve its admin controls and assist with the mangment of the business.
+This allows the dance studio to have better administrative controls and assist with the management of the business.
 
 ## Live view
 
@@ -30,7 +30,7 @@ GIF OF THE WEBSITE GOES HERE
 
 ## How its made
 
-To make the website I used:
+The technologies used for the web application are:
 
 - HTML
 - CSS
@@ -43,11 +43,11 @@ To make the website I used:
 
 ## How to Use
 
-The online store is:
+The site is still under development, but you can find it at:
 
 [https://salsa-candela.cyclic.app/](https://salsa-candela.cyclic.app/ "Website under development")
 
-ADD DEMO VERSIONS OF:
+TODO: ADD DEMO VERSIONS OF THE FOLLOWING:
 
 - Access control system
 - Cash payment enrollment
@@ -63,7 +63,7 @@ Some of the things learnt in this project were:
 
 Some things I would do to improve the website, given more time, would be:
 
-- Use ReactJs
+- Add ReactJs to make the site look better
 - TODO
 
 ## Licence
