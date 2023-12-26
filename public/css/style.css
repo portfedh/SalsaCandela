@@ -38,6 +38,15 @@
 -----------------------------------------------------------------------------------*/
 /* Salsa Candela */
 
+/* Sucursales div */
+.sucursales-div {
+  text-align: left;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f8f8f8;
+}
+
 div {
   /* For development only */
   /* border: 1px solid orangered; */
