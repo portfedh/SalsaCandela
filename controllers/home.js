@@ -14,13 +14,17 @@ const Id = require("../models/createId");
 // Exports
 // *******
 module.exports = {
-  // Serve index
+  // Store
   getStoreIndex: (req, res) => {
     res.render("store_index.ejs");
   },
 
   getStoreClasses: (req, res) => {
     res.render("store_classes.ejs");
+  },
+
+  getStoreStudios: (req, res) => {
+    res.render("store_studios.ejs");
   },
 
   getStoreParty: (req, res) => {
