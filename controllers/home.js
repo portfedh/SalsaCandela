@@ -19,12 +19,12 @@ module.exports = {
     res.render("store_index.ejs");
   },
 
-  getStoreClasses: (req, res) => {
-    res.render("store_classes.ejs");
+  getStoreSalsa: (req, res) => {
+    res.render("store_salsa.ejs");
   },
 
-  getStoreStudios: (req, res) => {
-    res.render("store_studios.ejs");
+  getStoreBachata: (req, res) => {
+    res.render("store_bachata.ejs");
   },
 
   getStoreParty: (req, res) => {
