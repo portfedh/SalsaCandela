@@ -38,6 +38,12 @@
 -----------------------------------------------------------------------------------*/
 /* Salsa Candela */
 
+/* Logo: Header & Footer */
+.logo {
+  width: auto;
+  max-height: 65px;
+}
+
 /* Sucursales div */
 .sucursales-div {
   text-align: left;
