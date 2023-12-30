@@ -38,7 +38,12 @@
 -----------------------------------------------------------------------------------*/
 /* Salsa Candela */
 
-/* Table Formatting */
+div {
+  /* For development only */
+  /* border: 1px solid orangered; */
+}
+
+/* Table Formatting  Start*/
 .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -69,8 +74,9 @@
   font-weight: bold;
   color: #e04a25;
 }
+/* Table Formatting  End*/
 
-/* Logo: Header & Footer */
+/* Logo Header & Footer */
 .logo {
   width: auto;
   max-height: 65px;
@@ -83,11 +89,6 @@
   margin: 0 auto;
   padding: 30px;
   background-color: #f8f8f8;
-}
-
-div {
-  /* For development only */
-  /* border: 1px solid orangered; */
 }
 
 .header-contact {
@@ -164,8 +165,20 @@ div {
   margin-bottom: 10px;
 }
 
-/* FAQ Section*/
-/* ********** */
+/* Images in index  Start*/
+.single-content {
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.servicios {
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
+}
+/* Images in index  End*/
+
+/* FAQ Section Start*/
+/* ================= */
+
 /* Header: Closed */
 .accordion-button {
   /* Background color heading */
@@ -192,6 +205,9 @@ div {
   /* Arrow icon color expanded: fill='%23f1f1f1' is the color. */
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23f1f1f1' %3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
 }
+
+/* FAQ Section End*/
+/* =============== */
 
 /*----------------------------------------*/
 /*  1. About Area
