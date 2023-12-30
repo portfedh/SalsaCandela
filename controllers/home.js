@@ -23,6 +23,10 @@ module.exports = {
     res.render("store_salsa.ejs");
   },
 
+  getStoreIndividual: (req, res) => {
+    res.render("store_individual.ejs");
+  },
+
   getStoreBachata: (req, res) => {
     res.render("store_bachata.ejs");
   },
