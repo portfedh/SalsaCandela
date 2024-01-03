@@ -22,6 +22,14 @@
   }
 }
 
+/* Medium desktop :992px. */
+@media (max-width: 1250px) {
+  .main-menu ul li a {
+    font-size: 14px;
+    padding: 0 10px;
+  }
+}
+
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1169px) {
   .container {
@@ -205,5 +213,15 @@
   }
   .single-testimonial i {
     display: none;
+  }
+
+  /* Salsa & Bachata tables */
+  .salsa-table-main,
+  .bachata-table-main {
+    display: none;
+  }
+  .salsa-table-mobile,
+  .bachata-table-mobile {
+    display: block;
   }
 }

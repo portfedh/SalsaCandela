@@ -48,7 +48,7 @@ div {
   border-collapse: collapse;
   margin: 25px 0;
   font-size: 0.9em;
-  min-width: 400px;
+  width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -74,6 +74,16 @@ div {
   font-weight: bold;
   color: #e04a25;
 }
+
+.salsa-table-main,
+.bachata-table-main {
+  display: block;
+}
+.salsa-table-mobile,
+.bachata-table-mobile {
+  display: none;
+}
+
 /* Table Formatting  End*/
 
 /* Logo Header & Footer */

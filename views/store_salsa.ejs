@@ -35,17 +35,29 @@
           <!-- Salsa Section Start -->
           <!-- ------------------- -->
           <section style="display: flex; flex-direction: column">
-            <div id="Clases-Salsa" style="height: 120px"></div>
             <h2>Clases de Salsa</h2>
+
+            <!-- Video de Salsa -->
+            <div class="salsa-video-div">
+              <iframe
+                class="salsa-video"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
             <!-- Description Start -->
             <div>
               <div style="text-align: left; margin-top: 50px">
                 <span>
                   Aprende a bailar en nuestros talleres de Salsa.
-                  <br /><br />
-                  Duran cinco semanas y puedes escoger entre varios horarios:
-                  <br /><br />
+                  <br /><br />Duran cinco semanas y puedes escoger entre varios
+                  horarios: <br /><br />
                 </span>
                 <br /><b>
                   Nuestro proximo taller inicia el
@@ -56,78 +68,12 @@
             <!-- Description End -->
 
             <!-- Table Start -->
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th>Taller</th>
-                  <th>L</th>
-                  <th>M</th>
-                  <th>S</th>
-                  <th>D</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Dia de la semana:</td>
-                  <td>Lunes y Miércoles</td>
-                  <td>Martes y Jueves</td>
-                  <td>Sábados</td>
-                  <td>Domingos</td>
-                </tr>
-                <tr>
-                  <td>Duración de clase:</td>
-                  <td>1 h 30 min</td>
-                  <td>1 h 30 min</td>
-                  <td>2 h</td>
-                  <td>2 h</td>
-                </tr>
-                <tr>
-                  <td>Duración del programa:</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                </tr>
-
-                <tr>
-                  <td>Sucursal:</td>
-                  <td>
-                    Xola<br /><br />
-                    Valle<br /><br />
-                    Satelite
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Valle<br /><br />
-                    Claveria<br /><br />
-                    Coapa
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Valle
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Valle<br /><br />
-                    Satelite
-                  </td>
-                </tr>
-                <tr>
-                  <td>Precio Individual:</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                </tr>
-                <tr>
-                  <td>Precio Pareja:</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="salsa-table-main">
+              <%- include('partials/store_salsa_table_full') -%>
+            </div>
+            <div class="salsa-table-mobile">
+              <%- include('partials/store_salsa_table_mobile') -%>
+            </div>
             <!-- Table End -->
 
             <!-- Horarios Salsa Start -->
@@ -322,93 +268,13 @@
               </div>
             </div>
             <!-- Horarios Clases Salsa End -->
-
-            <!-- Video de Salsa -->
-            <div class="salsa-video-div">
-              <iframe
-                class="salsa-video"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
           </section>
           <!-- Salsa Section End -->
-
-          <!-- Clases Particulares Section Start-->
-          <!-- -------------------------------- -->
-          <section>
-            <div id="Clases-Particulares" style="height: 120px"></div>
-            <h2>Clases Particulares</h2>
-            <div style="text-align: center; margin-top: 50px">
-              <span>
-                Las clases personales son la forma más rápida de aprender y el
-                mejor complemento para tus clases grupales:
-              </span>
-            </div>
-            <div
-              style="
-                text-align: left;
-                max-width: fit-content;
-                margin: 0 auto;
-                margin-bottom: 20px;
-              "
-            >
-              <ul class="horarios-fiesta" style="list-style-type: disc">
-                <br /><br />
-                <li>Atención 100% personalizada.</li>
-                <li>Horarios a beneficio de tu agenda.<br /></li>
-                <li>A domicilio o en nuestro estudio.</li>
-              </ul>
-            </div>
-            <div style="text-align: center; margin-bottom: 50px">
-              <span>
-                Aprende a tu propio ritmo a la mano de uno de nuestros
-                instructores.
-                <br />
-                <br />
-                Tenemos paquetes de 5 clases de 60 minutos por $2,500 pesos.
-                <br /><br />
-                <b>Mas Información:</b>
-                <a href="https://wa.me/5215541443745"
-                  ><i class="zmdi zmdi-whatsapp"></i> 55 41 44 37 45</a
-                >
-              </span>
-              <div class="row">
-                <div class="col-12 text-center">
-                  <a
-                    class="banner-btn mt-20"
-                    href="#"
-                    data-text="Compar Paquete"
-                    ><span>Compar Paquete</span></a
-                  >
-                </div>
-              </div>
-              <div class="clases-personales-video-div">
-                <iframe
-                  class="clases-personales-video"
-                  width="560"
-                  height="315"
-                  src="https://www.youtube.com/embed/ywrJ5sg6y6c?si=w7Iu0TTt0CLwgkEc"
-                  title="YouTube video player"
-                  frameborder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </section>
-          <!-- Clases Particulares Section End-->
         </div>
       </div>
     </div>
   </div>
 </section>
 <!-- Event Area End -->
-
 <!-- Include Footer -->
 <%- include('partials/store_footer') -%>

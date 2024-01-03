@@ -35,8 +35,21 @@
           <!-- Bachata Section Start -->
           <!-- ------------------- -->
           <section style="display: flex; flex-direction: column">
-            <div id="Clases-Salsa" style="height: 120px"></div>
             <h2>Clases de Bachata</h2>
+
+            <!-- Video Bachata -->
+            <div class="bachata-video-div">
+              <iframe
+                class="bachata-video"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/_bzxrMsW28w?si=dibkdGZJeVYoTXxI&amp;controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
 
             <!-- Description Start -->
             <div>
@@ -56,76 +69,12 @@
             <!-- Description End -->
 
             <!-- Table Start -->
-            <table class="styled-table">
-              <thead>
-                <tr>
-                  <th>Taller</th>
-                  <th>L</th>
-                  <th>M</th>
-                  <th>S</th>
-                  <th>D</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>Dia de la semana:</td>
-                  <td>Lunes y Miércoles</td>
-                  <td>Martes y Jueves</td>
-                  <td>Sábados</td>
-                  <td>Domingos</td>
-                </tr>
-                <tr>
-                  <td>Duración de clase:</td>
-                  <td>1 h 30 min</td>
-                  <td>1 h 30 min</td>
-                  <td>2 h</td>
-                  <td>2 h</td>
-                </tr>
-                <tr>
-                  <td>Duración del programa:</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                  <td>5 <br />semanas</td>
-                </tr>
-                <tr>
-                  <td>Sucursal:</td>
-                  <td>
-                    Xola<br /><br />
-                    Valle<br /><br />
-                    Satelite
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Claveria<br /><br />
-                    Coapa
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Valle
-                  </td>
-                  <td>
-                    Xola<br /><br />
-                    Valle<br /><br />
-                    Satelite
-                  </td>
-                </tr>
-                <tr>
-                  <td>Precio Individual:</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                  <td>$ 1,300</td>
-                </tr>
-                <tr>
-                  <td>Precio Pareja:</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                  <td>$ 2,000</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="bachata-table-main">
+              <%- include('partials/store_salsa_table_full') -%>
+            </div>
+            <div class="bachata-table-mobile">
+              <%- include('partials/store_salsa_table_mobile') -%>
+            </div>
             <!-- Table End -->
 
             <!-- Horarios Start -->
@@ -322,19 +271,6 @@
               </div>
             </div>
             <!-- Horarios Sucursales End -->
-            <!-- Video Bachata -->
-            <div class="bachata-video-div">
-              <iframe
-                class="bachata-video"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/_bzxrMsW28w?si=dibkdGZJeVYoTXxI&amp;controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
           </section>
           <!-- Bachata Section End -->
         </div>
