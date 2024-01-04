@@ -43,6 +43,37 @@ div {
   /* border: 1px solid orangered; */
 }
 
+.original-price {
+  background-color: white;
+  padding-bottom: 2rem;
+}
+
+.original-price span {
+  font-size: 0.9rem;
+}
+
+.new-price {
+  font-size: 3rem;
+}
+.new-price-text {
+  font-size: 1rem;
+}
+
+.discount-percent {
+  font-size: 2rem;
+  font-family: sans-serif;
+  font-weight: lighter;
+  color: red;
+}
+
+.black-text {
+  color: black;
+}
+.white-background {
+  background-color: white;
+  padding: 1rem;
+}
+
 /* Table Formatting  Start*/
 .styled-table {
   border-collapse: collapse;

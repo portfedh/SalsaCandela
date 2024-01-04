@@ -137,7 +137,15 @@
         <div class="single-table text-center">
           <div class="table-head">
             <h2>Individual</h2>
-            <h1>$650<span>pesos</span></h1>
+            <div class="white-background">
+              <span class="discount-percent">-50%</span><br /><br />
+              <span class="black-text new-price"> $650</span
+              ><span class="black-text new-price-text">pesos</span> <br /><br />
+
+              <h6 class="original-price">
+                <span>Precio anterior: </span><s>$1,300 pesos</s>
+              </h6>
+            </div>
           </div>
           <div class="table-body">
             <ul>
@@ -156,7 +164,15 @@
         <div class="single-table text-center">
           <div class="table-head">
             <h2>Pareja</h2>
-            <h1>$1,000<span>pesos</span></h1>
+            <div class="white-background">
+              <span class="discount-percent">-50%</span><br /><br />
+              <span class="black-text new-price"> $1,000</span
+              ><span class="black-text new-price-text">pesos</span> <br /><br />
+
+              <h6 class="original-price">
+                <span>Precio anterior: </span><s>$2,000 pesos</s>
+              </h6>
+            </div>
           </div>
           <div class="table-body">
             <ul>
@@ -175,7 +191,7 @@
         <div class="single-table text-center">
           <div class="table-head">
             <h2>Clases Particulares</h2>
-            <h1>$2,500<span>pesos</span></h1>
+            <h1 class="black-text">$2,500<span>pesos</span></h1>
           </div>
           <div class="table-body">
             <ul>
@@ -234,13 +250,13 @@
 </section>
 <!-- Event Area End -->
 <!-- Temp function to log the screen width -->
-<script>
+<!-- <script>
   function logScreenWidth() {
     var screenWidth = window.innerWidth;
     console.log("Screen Width: " + screenWidth + " pixels");
   }
   setInterval(logScreenWidth, 1000);
-</script>
+</script> -->
 <!-- Temp function to log the screen width -->
 <!-- Include Footer -->
 <%- include('partials/store_footer') -%>
