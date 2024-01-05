@@ -53,27 +53,26 @@ div {
   font-size: 0.9rem;
 }
 
-.new-price {
+.current-price {
   font-size: 3rem;
+  color: black;
 }
-.new-price-text {
+.current-price-text {
   font-size: 1rem;
+  color: black;
 }
 
 .discount-percent {
   font-size: 2rem;
-  font-family: sans-serif;
+  font-family: "Lato", sans-serif;
   font-weight: lighter;
   color: red;
 }
 
-#discount-percent-text {
+.discount-percent span {
   font-size: 1rem;
 }
 
-.black-text {
-  color: black;
-}
 .white-background {
   background-color: white;
   padding: 1rem;
