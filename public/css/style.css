@@ -43,6 +43,7 @@ div {
   /* border: 1px solid orangered; */
 }
 
+/* Price info Start*/
 .original-price {
   background-color: white;
   padding-bottom: 2rem;
@@ -73,6 +74,59 @@ div {
   background-color: white;
   padding: 1rem;
 }
+/* Price info End*/
+
+/* Countdown timer start */
+.countdown {
+  background-color: white; /* rgb(224, 74, 37, 0.8); */
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+  border-radius: 7px;
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#headline {
+  font-weight: normal;
+  color: #666666;
+  font-size: 2rem;
+  letter-spacing: 0.125rem;
+  text-transform: uppercase;
+}
+
+#countdown ul li {
+  display: inline-block;
+  font-size: 1rem;
+  list-style-type: none;
+  padding: 1rem;
+  text-transform: uppercase;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+  color: #f69139;
+}
+
+#countdown ul li span {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+
+.emoji span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+/* Countdown timer end */
 
 /* Table Formatting  Start*/
 .styled-table {
