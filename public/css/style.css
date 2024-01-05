@@ -67,6 +67,10 @@ div {
   color: red;
 }
 
+#discount-percent-text {
+  font-size: 1rem;
+}
+
 .black-text {
   color: black;
 }
