@@ -185,6 +185,10 @@
 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  #index-countdown-headline {
+    font-size: 1.6rem;
+  }
+
   .container {
     width: 450px;
   }
@@ -223,5 +227,9 @@
   .salsa-table-mobile,
   .bachata-table-mobile {
     display: block;
+  }
+
+  #index-countdown-headline {
+    font-size: 1.6rem;
   }
 }

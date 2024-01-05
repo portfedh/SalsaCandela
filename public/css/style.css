@@ -88,7 +88,7 @@ div {
   margin-bottom: 2rem;
 }
 
-#headline {
+#index-countdown-headline {
   font-weight: normal;
   color: #666666;
   font-size: 2rem;
@@ -116,13 +116,14 @@ div {
   font-size: 1.5rem;
 }
 
+/* TODO UPDATE THIS PART */
 .emoji {
   display: none;
   padding: 1rem;
 }
 
 .emoji span {
-  font-size: 4rem;
+  font-size: 1rem;
   padding: 0 0.5rem;
 }
 
