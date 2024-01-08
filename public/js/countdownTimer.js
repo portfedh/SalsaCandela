@@ -1,5 +1,5 @@
 (function () {
-  let nextCourseDate = "01/06/2024";
+  let nextCourseDate = "01/10/2024";
 
   const second = 1000;
   const minute = second * 60;
