@@ -116,7 +116,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   padding: 0;
 }
 .mean-container a.meanmenu-reveal {
-  border: 1px solid #f69139;
+  /* border: 1px solid #f69139; */
   color: #f69139;
   margin-top: -50px;
   padding: 4px 5px;

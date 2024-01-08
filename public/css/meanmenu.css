@@ -60,7 +60,10 @@ a.meanmenu-reveal {
   width: 100%;
 }
 .mean-container .mean-nav ul li a {
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  /* Aqui es el edit */
+  /* border-top: 1px solid rgba(0, 0, 0, 0.5); */
+  text-align: center;
+
   color: #000000;
   display: block;
   float: left;
