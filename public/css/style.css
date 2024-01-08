@@ -43,6 +43,35 @@ div {
   /* border: 1px solid orangered; */
 }
 
+/* CSS Button animation start*/
+.animation-float {
+  transition-duration: 0.3s;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+}
+.animation-float:hover {
+  transform: translateY(-2rem);
+}
+/* CSS Button animation end*/
+
+/* CSS fadeInDown animation start*/
+.fadeInDown {
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out; /* Specifies the timing function */
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* CSS fadeInDown animation end*/
+
 /* Price info Start*/
 .original-price {
   background-color: white;
