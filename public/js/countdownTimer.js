@@ -1,92 +1,44 @@
+// Self-invoking function
 (function () {
-  let nextCourseDate = "01/10/2024";
+  // Next course date
+  let inicioDeCurso = "01/15/2024";
 
+  // Time units
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
   const day = hour * 24;
 
-  const countDown = new Date(nextCourseDate).getTime(),
-    x = setInterval(function () {
-      const now = new Date().getTime(),
-        distance = countDown - now;
+  // Get countdown time
+  const countDown = new Date(inicioDeCurso).getTime();
 
-      (document.getElementById("days").innerText = Math.floor(distance / day)),
-        (document.getElementById("hours").innerText = Math.floor(
-          (distance % day) / hour
-        )),
-        (document.getElementById("minutes").innerText = Math.floor(
-          (distance % hour) / minute
-        )),
-        (document.getElementById("seconds").innerText = Math.floor(
-          (distance % minute) / second
-        ));
+  // Update the countdown every second
+  const intervalId = setInterval(function () {
+    // Get time in milliseconds
+    const now = new Date().getTime();
 
-      // Action when date is reached. Eliminate discount.
-      if (distance < 0) {
-        document.getElementById("countdown-div").style.display = "none";
+    // Calculate the remaining time
+    const distance = countDown - now;
 
-        document.getElementById(
-          "descuento-niv-1-individual-porcentaje"
-        ).style.display = "none";
+    // Update the HTML
+    document.getElementById("days").innerText = Math.floor(distance / day);
+    document.getElementById("hours").innerText = Math.floor(
+      (distance % day) / hour
+    );
+    document.getElementById("minutes").innerText = Math.floor(
+      (distance % hour) / minute
+    );
+    document.getElementById("seconds").innerText = Math.floor(
+      (distance % minute) / second
+    );
 
-        document.getElementById(
-          "descuento-niv-1-pareja-porcentaje"
-        ).style.display = "none";
+    // Action when countdown reaches zero
+    if (distance < 0) {
+      // Hide the countdown display
+      document.getElementById("countdown-div").style.display = "none";
 
-        document.getElementById(
-          "precio-original-niv-1-individual"
-        ).style.display = "none";
-
-        document.getElementById("precio-original-niv-1-pareja").style.display =
-          "none";
-
-        document.getElementById("precio-niv-1-individual").innerText =
-          "$ 1,300";
-
-        document.getElementById("precio-niv-1-pareja").innerText = "$ 2,000";
-
-        clearInterval(x);
-      }
-      // Seconds
-    }, 0);
+      // Stop the interval to avoid unnecessary updates
+      clearInterval(intervalId);
+    }
+  }, 1000); // The interval is set to 1000 milliseconds (1 second)
 })();
-
-// Original code before big changes:
-
-// (function () {
-//   const second = 1000;
-//   const minute = second * 60;
-//   const hour = minute * 60;
-//   const day = hour * 24;
-
-//   let nextCourse = "01/02/2024";
-//   let endMessage = "Nuestra Preventa Termino.";
-
-//   const countDown = new Date(nextCourse).getTime(),
-//     x = setInterval(function () {
-//       const now = new Date().getTime(),
-//         distance = countDown - now;
-
-//       (document.getElementById("days").innerText = Math.floor(distance / day)),
-//         (document.getElementById("hours").innerText = Math.floor(
-//           (distance % day) / hour
-//         )),
-//         (document.getElementById("minutes").innerText = Math.floor(
-//           (distance % hour) / minute
-//         )),
-//         (document.getElementById("seconds").innerText = Math.floor(
-//           (distance % minute) / second
-//         ));
-
-//       // Action when date is reached
-//       if (distance < 0) {
-//         document.getElementById("index-countdown-headline").innerText =
-//           endMessage;
-//         document.getElementById("countdown").style.display = "none";
-//         document.getElementById("content").style.display = "block";
-//         clearInterval(x);
-//       }
-//       // Seconds
-//     }, 0);
-// })();
