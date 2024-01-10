@@ -95,7 +95,7 @@
   }
 }
 
-/* small mobile :320px. */
+/* Big mobile: 767px. */
 @media (max-width: 767px) {
   .container {
     width: 300px;

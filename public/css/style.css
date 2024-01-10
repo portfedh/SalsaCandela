@@ -72,14 +72,34 @@ div {
 }
 /* CSS fadeInDown animation end*/
 
-/* Price info Start*/
-.original-price {
+/* Price area start*/
+/* *************** */
+
+/* Areas */
+.price-area {
   background-color: white;
-  padding-bottom: 2rem;
+  padding: 1rem;
+}
+.discount-percent-area {
+  padding: 0.5rem;
+}
+.current-price-area {
+  padding: 0.5rem;
+}
+.list-price-area {
+  padding: 0.5rem;
 }
 
-.original-price span {
-  font-size: 0.9rem;
+/* Text Edits */
+.discount-percent {
+  font-size: 2rem;
+  font-family: "Lato", sans-serif;
+  font-weight: lighter;
+  color: red;
+}
+.discount-percent-text {
+  font-size: 1rem;
+  color: red;
 }
 
 .current-price {
@@ -91,20 +111,13 @@ div {
   color: black;
 }
 
-.discount-percent {
-  font-size: 2rem;
-  font-family: "Lato", sans-serif;
-  font-weight: lighter;
-  color: red;
+.list-price {
+  font-weight: 900;
+  text-decoration: line-through;
 }
 
-.discount-percent span {
-  font-size: 1rem;
-}
-
-.white-background {
-  background-color: white;
-  padding: 1rem;
+.list-price-text {
+  font-weight: 900;
 }
 /* Price info End*/
 
