@@ -17,7 +17,7 @@ const stripeCtrl = require("../controllers/stripe");
 // ******
 // Stripe Checkout
 router.post("/checkout", stripeCtrl.createTestCheckout);
-router.post("/webhook", stripeCtrl.stripeWebhook);
+// router.post("/webhook", stripeCtrl.stripeWebhook);
 router.get("/success", stripeCtrl.stripeSuccess);
 router.get("/cancel", stripeCtrl.stripeCancel);
 router.get("/order-info", stripeCtrl.getOrderInfo);
