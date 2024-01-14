@@ -13,7 +13,7 @@ let porcentaje_descuento_nivel_1_pareja = "-50%";
 // ***********************************
 // Individual
 let precio_lista_nivel_2_individual = "$1,300";
-let precio_descuento_nivel_2_individual = "$650";
+let precio_descuento_nivel_2_individual = "$8050";
 let porcentaje_descuento_nivel_2_individual = "-50%";
 // Pareja
 let precio_lista_nivel_2_pareja = "$2,000";

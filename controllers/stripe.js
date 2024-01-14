@@ -25,7 +25,7 @@ module.exports = {
       ],
       discounts: [
         {
-          coupon: "ZI6lmVqj", // Replace with your actual coupon code
+          coupon: "VHkf6Yig", // Replace with your actual coupon code
         },
       ],
       // coupon: "ZI6lmVqj", // CouponID

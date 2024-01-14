@@ -4,13 +4,33 @@ Cita 28 Dic 2023
 
         Fotos y Video:
 
+            Formato:
+
+                Rectángulo horizontal y cuadrado
+
             De cada sucursal
+
+                Foto de la entrada desde la calle
+
+                Foto de una clase dentro de la sucursal
 
             De una clase Particular
 
             De una clase de salsa
 
             De una clase de bachata
+
+            Para Stripe
+
+                Fiesta mensual (que no cambie)
+
+                Clase Grupal: Individual
+
+                Clase Grupal: Pareja
+
+                Clase Personalizada
+
+                1024 pixels on short side min
 
         YouTube:
 
@@ -20,6 +40,12 @@ Cita 28 Dic 2023
 
                 Links a la pagina web, Facebook e Instagram
 
+        Facebook
+
+            Tratar de cambiar https://www.facebook.com/Salsaycandela
+
+            Por: salsa_candela (como en Instagram)
+
     To Dos Pablo:
 
         [x] Update logotipos high resolution
@@ -28,15 +54,15 @@ Cita 28 Dic 2023
 
         Finish Page
 
-            Sección Salsa
+            [x] Sección Salsa
 
-            Sección Bachata
+            [x] Sección Bachata
 
-            Responsive tables
+            [x] Responsive tables
 
             Better mobile menu
 
-            Facebook, Instagram, YouTube en contacto
+            [x] Facebook, Instagram, YouTube en contacto
 
             Revisar cookie warnings
 
@@ -44,4 +70,8 @@ Cita 28 Dic 2023
 
         Pricing
 
-            Timer discount clock
+            [x] Timer discount clock
+
+            [x] Discount percent function (first level)
+
+            [x] Discount percent function (Multi level)
