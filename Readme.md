@@ -2,71 +2,58 @@
 
 ## What it does
 
-The project is an online store and web application to manage a dance academy named Salsa Candela. It sells Salsa and Bachata courses and has five branches.
+Welcome to Salsa Candela, an online platform and management system tailored for a dance academy. 
+
+As the central hub for the Salsa and Bachata courses across its five branches, this project aims to provide a seamless and engaging experience for both students and administrators.
 
 ## The online store
 
-The online store shows information about the academy, its classes, times, locations and prices. Visitors can enroll and pay online.
-
-After buying a course, the user is sent to a confirmation page and given a QR confirmation code. A copy of the code is also sent by email.
+Explore detailed information about the academy, class schedules, locations, and pricing. Visitors can easily enroll and make secure online payments. Upon purchase, users receive a QR confirmation code for seamless entry into the world of dance. Additionally, a confirmation email is sent, ensuring a hassle-free registration process.
 
 ## The management application
 
-In the Dance Academy, the management web application provides several functions:
+The management side of the web application offers a range of features:
 
-- An enrollment form for people paying in cash.
-- An access control system to make sure people with QR codes are enrolled.
-- A report page with displaying the enrolled users and all payment and course data.
-
-This allows the dance studio to have better administrative controls and assist with the management of the business.
+- **Enrollment Form:** Facilitates cash payments for those preferring offline transactions.
+  
+- **Access Control System:** Ensures that only users with valid QR codes gain entry, enhancing security and organization.
+  
+- **Comprehensive Reporting:** A dedicated page showcasing enrolled users and detailed payment and course data. This invaluable tool aids in efficient business management.
 
 ## Live view
 
-The web application is still in development, but you can see it here:
-
-[https://salsa-candela.cyclic.app/](https://salsa-candela.cyclic.app/ "Website under development")
+While the web application is still in development, you can get a sneak peek [here](https://salsa-candela.cyclic.app/). Watch out for exciting updates!
 
 GIF OF THE WEBSITE GOES HERE
 
-## How its made
+## Technology Stack
 
-The technologies used for the web application are:
+Salsa Candela is crafted using a robust technology stack, including:
 
 - HTML
 - CSS
 - Bootstrap
-- JS
-- NodeJs
-- PassportJs
+- JavaScript
+- Node.js
+- Passport.js
 - Express
 - EJS
 
-## How to Use
 
-The site is still under development, but you can find it at:
+## Lessons learned
 
-[https://salsa-candela.cyclic.app/](https://salsa-candela.cyclic.app/ "Website under development")
-
-TODO: ADD DEMO VERSIONS OF THE FOLLOWING:
-
-- Access control system
-- Cash payment enrollment
-- Report example
-
-## Lessons learnt
-
-Some of the things learnt in this project were:
+Embarking on this project has been a journey of discovery. Some key takeaways include:
 
 - TO DO
 
-## Improvements
+## Future Enhancements
 
-Some things I would do to improve the website, given more time, would be:
+Given more time, we plan to enhance the website further:
 
-- Add ReactJs to make the site look better
-- TODO
+- Integrate React.js for a more polished and dynamic user interface.
+- *TO DO*
 
 ## Licence
 
 All images, videos and content is property of the client.
-All code is licensed under the Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/3.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+All images, videos, and content are the sole property of the client. The code is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/). For more details, visit the provided link or contact Creative Commons directly.
