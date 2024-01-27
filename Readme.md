@@ -44,16 +44,19 @@ Salsa Candela is crafted using a robust technology stack, including:
 
 Embarking on this project has been a journey of discovery. Some key takeaways include:
 
-- TO DO
+- Scope Creep:
+- One report turned into three.
+- New features: Things that were not in the original plan were added later.
+- People using the platform needed changes not in the original plan.
+- The stakeholder takes time to approve the process. 
 
 ## Future Enhancements
 
 Given more time, we plan to enhance the website further:
 
 - Integrate React.js for a more polished and dynamic user interface.
-- *TO DO*
+
 
 ## Licence
 
-All images, videos and content is property of the client.
 All images, videos, and content are the sole property of the client. The code is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/). For more details, visit the provided link or contact Creative Commons directly.
