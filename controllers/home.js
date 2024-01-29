@@ -18,6 +18,10 @@ module.exports = {
   getStoreIndex: (req, res) => {
     res.render("store_index.ejs");
   },
+  // Temp
+  getStoreIndex2: (req, res) => {
+    res.render("store_index2.ejs");
+  },
 
   getStoreSalsa: (req, res) => {
     res.render("store_salsa.ejs");

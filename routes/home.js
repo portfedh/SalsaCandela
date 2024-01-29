@@ -26,6 +26,7 @@ router.get("/order-info", stripeCtrl.getOrderInfo);
 // ************
 // Home
 router.get("/", homeCtrl.getStoreIndex);
+router.get("/index2", homeCtrl.getStoreIndex2);
 router.get("/salsa", homeCtrl.getStoreSalsa);
 router.get("/bachata", homeCtrl.getStoreBachata);
 router.get("/particulares", homeCtrl.getStoreIndividual);
