@@ -1,14 +1,10 @@
 // Home Controllers
 // ****************
 
-// Exports
-// *******
 module.exports = {
-  // Store
   getStoreIndex: (req, res) => {
     res.render("store_index.ejs");
   },
-  // Temp
   getStoreIndex2: (req, res) => {
     res.render("store_index2.ejs");
   },
@@ -17,12 +13,12 @@ module.exports = {
     res.render("store_salsa.ejs");
   },
 
-  getStoreIndividual: (req, res) => {
-    res.render("store_individual.ejs");
-  },
-
   getStoreBachata: (req, res) => {
     res.render("store_bachata.ejs");
+  },
+
+  getStoreIndividualClasses: (req, res) => {
+    res.render("store_individual_classes.ejs");
   },
 
   getStoreParty: (req, res) => {
@@ -35,10 +31,5 @@ module.exports = {
 
   getStoreContact: (req, res) => {
     res.render("store_contact.ejs");
-  },
-
-  // Serve party registration
-  getParty: (req, res) => {
-    res.render("party_signup.ejs");
   },
 };
