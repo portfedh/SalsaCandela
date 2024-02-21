@@ -34,8 +34,8 @@ function updateElementById(id, value) {
   }
 }
 
-// Updates
-// *******
+// Updates Nivel 1: HomePage
+// *************************
 // Nivel 1: Individual
 updateElementById("pl-n1-ind", precio_lista_nivel_1_individual);
 updateElementById("pd-n1-ind", precio_descuento_nivel_1_individual);
@@ -44,6 +44,8 @@ updateElementById("por-n1-ind", porcentaje_descuento_nivel_1_individual);
 updateElementById("pl-n1-par", precio_lista_nivel_1_pareja);
 updateElementById("pd-n1-par", precio_descuento_nivel_1_pareja);
 updateElementById("por-n1-par", porcentaje_descuento_nivel_1_pareja);
+// Updates Nivel 2+: Salsa / Bachata
+// *********************************
 // Nivel 2+: Individual
 updateElementById("pl-n2-ind", precio_lista_nivel_2_individual);
 updateElementById("pd-n2-ind", precio_descuento_nivel_2_individual);
