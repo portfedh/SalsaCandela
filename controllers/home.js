@@ -32,4 +32,7 @@ module.exports = {
   getStoreContact: (req, res) => {
     res.render("store_contact.ejs");
   },
+  postStoreCheckout: (req, res) => {
+    res.redirect("https://noche-sensual.cyclic.app/classstripeform");
+  },
 };
