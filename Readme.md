@@ -61,7 +61,3 @@ Given more time, we plan to enhance the website further:
 - store_bachata.ejs Nuestro proximo taller inicia el xxxx de xxxx.
 - store_index.ejs Noche Sensual: Viernes xxxx de xxxx.
 - store_index.ejs Noche Sensual: noche_sensual.jpg.
-
-## Licence
-
-All images, videos, and content are the sole property of the client. The code is licensed under the [Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License](http://creativecommons.org/licenses/by-nc-nd/3.0/). For more details, visit the provided link or contact Creative Commons directly.
