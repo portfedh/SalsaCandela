@@ -21,6 +21,7 @@ router.get("/fiesta", homeCtrl.getStoreParty);
 router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/checkout", homeCtrl.postStoreCheckout);
+router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 
 // Exports
 // *******
