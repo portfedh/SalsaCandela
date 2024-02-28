@@ -1,38 +1,31 @@
 // Home Controllers
 // ****************
 
+function renderView(viewName) {
+  return (req, res) => {
+    res.render(`store_${viewName}.ejs`);
+  };
+}
+
 module.exports = {
-  getStoreIndex: (req, res) => {
-    res.render("store_index.ejs");
-  },
-  getStoreIndex2: (req, res) => {
-    res.render("store_index2.ejs");
-  },
 
-  getStoreSalsa: (req, res) => {
-    res.render("store_salsa.ejs");
-  },
+  getStoreIndex: renderView('index'),
 
-  getStoreBachata: (req, res) => {
-    res.render("store_bachata.ejs");
-  },
+  getStoreIndex2: renderView('index2'),
 
-  getStoreIndividualClasses: (req, res) => {
-    res.render("store_individual_classes.ejs");
-  },
+  getStoreSalsa: renderView('salsa'),
 
-  getStoreParty: (req, res) => {
-    res.render("store_party.ejs");
-  },
+  getStoreBachata: renderView('bachata'),
 
-  getStoreFAQ: (req, res) => {
-    res.render("store_faq.ejs");
-  },
+  getStoreIndividualClasses: renderView('individual_classes'),
 
-  getStoreContact: (req, res) => {
-    res.render("store_contact.ejs");
-  },
+  getStoreParty: renderView('party'),
+
+  getStoreFAQ: renderView('faq'),
+
+  getStoreContact: renderView('contact'),
+
   postStoreCheckout: (req, res) => {
-    res.redirect("https://noche-sensual.cyclic.app/classstripeform");
+    res.redirect("https://salsa-candela-admin.cyclic.app/boletos-stripe");
   },
 };

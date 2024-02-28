@@ -23,6 +23,12 @@ router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/checkout", homeCtrl.postStoreCheckout);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 
+// Error handling middleware
+router.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something broke!');
+  });
+
 // Exports
 // *******
 module.exports = router;

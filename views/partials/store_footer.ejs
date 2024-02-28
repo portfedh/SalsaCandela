@@ -7,7 +7,6 @@
           <iframe
             class="contact-map-size"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15054.031530561573!2d-99.16139312409982!3d19.39044996929411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20Mexico!5e0!3m2!1sen!2sbd!4v1701319854445!5m2!1sen!2sbd"
-            allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           >
@@ -22,9 +21,9 @@
       <div class="footer-widget-area bg-3 pt-98 pb-90 fix">
         <div class="container">
           <div class="row">
-            <div class="col-lg-4 col-md-6" style="margin: 0 auto">
-              <div class="single-footer-widget">
-                <a href="#"><img src="img/logo/logo.png" alt="handstand" class="logo"/></a>
+            <div class="col-lg-4 col-md-6 centered-element">
+              <address class="single-footer-widget">
+                <img src="img/logo/logo.png" alt="Salsa Candela Logo" class="logo"/>
                 <ul>
                   <li><i class="zmdi zmdi-phone"></i> 55 4144 3745</li>
                   <li><a href="https://www.facebook.com/Salsaycandela"
@@ -39,7 +38,7 @@
                     CDMX
                   </li>
                 </ul>
-              </div>
+              </address>
             </div>
           </div>
         </div>
@@ -49,7 +48,10 @@
           <div class="row">
             <div class="col-12">
               <div class="footer-text text-center">
-                <span> &copy; 2024 Salsa Candela.</span>
+                <span> &copy; <span id="copyright-year"></span> Salsa Candela.</span>
+                <script>
+                  document.getElementById('copyright-year').textContent = new Date().getFullYear();
+                </script>
               </div>
             </div>
           </div>

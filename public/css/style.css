@@ -43,6 +43,10 @@ div {
   /* border: 1px solid orangered; */
 }
 
+.centered-element{
+  margin: 0 auto
+}
+
 /* CSS Button animation start*/
 .animation-float {
   transition-duration: 0.3s;
