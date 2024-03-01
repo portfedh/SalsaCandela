@@ -8,24 +8,23 @@ function renderView(viewName) {
 }
 
 module.exports = {
+  getStoreIndex: renderView("index"),
 
-  getStoreIndex: renderView('index'),
+  getStoreIndex2: renderView("index2"),
 
-  getStoreIndex2: renderView('index2'),
+  getStoreSalsa: renderView("salsa"),
 
-  getStoreSalsa: renderView('salsa'),
+  getStoreBachata: renderView("bachata"),
 
-  getStoreBachata: renderView('bachata'),
+  getStoreIndividualClasses: renderView("individual_classes"),
 
-  getStoreIndividualClasses: renderView('individual_classes'),
+  getStoreParty: renderView("party"),
 
-  getStoreParty: renderView('party'),
+  getStoreFAQ: renderView("faq"),
 
-  getStoreFAQ: renderView('faq'),
-
-  getStoreContact: renderView('contact'),
+  getStoreContact: renderView("contact"),
 
   postStoreCheckout: (req, res) => {
-    res.redirect("https://salsa-candela-admin.cyclic.app/boletos-stripe");
+    res.redirect("https://salsa-candela-admin.cyclic.app/classstripeform");
   },
 };
