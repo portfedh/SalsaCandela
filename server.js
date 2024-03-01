@@ -1,9 +1,6 @@
 // Environment variables
 // =====================
 const result = require("dotenv").config({ path: "./config/.env" });
-if (result.error) {
-  throw result.error;
-}
 
 // Express
 // =======
@@ -28,12 +25,6 @@ const homeRoutes = require("./routes/home");
 
 // Listening routes
 app.use("/", homeRoutes);
-
-// Error handling middleware
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
-});
 
 // Server Port
 // ===========
