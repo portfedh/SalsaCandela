@@ -27,4 +27,8 @@ module.exports = {
   postStoreCheckout: (req, res) => {
     res.redirect("https://salsa-candela-admin.cyclic.app/classstripeform");
   },
+
+  StripePartyRedirect: (req, res) => {
+    res.redirect("https://admin.salsa-candela.com/boletos-stripe");
+  },
 };

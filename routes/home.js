@@ -22,12 +22,14 @@ router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/checkout", homeCtrl.postStoreCheckout);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
+router.get("/boletos-stripe", homeCtrl.StripePartyRedirect);
+router.get("/boletos-fiesta", homeCtrl.StripePartyRedirect);
 
 // Error handling middleware
 router.use((err, req, res, next) => {
-    console.error(err.stack);
-    res.status(500).send('Something broke!');
-  });
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
+});
 
 // Exports
 // *******
