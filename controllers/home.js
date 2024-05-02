@@ -10,8 +10,6 @@ function renderView(viewName) {
 module.exports = {
   getStoreIndex: renderView("index"),
 
-  getStoreIndex2: renderView("index2"),
-
   getStoreSalsa: renderView("salsa"),
 
   getStoreBachata: renderView("bachata"),
