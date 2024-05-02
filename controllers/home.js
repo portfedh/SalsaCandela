@@ -30,4 +30,8 @@ module.exports = {
   StripeClassRedirect: (req, res) => {
     res.redirect("https://admin.salsa-candela.com/classstripeform");
   },
+
+  infoParticulares: (req, res) => {
+    res.redirect("https://wa.me/5215541443745");
+  },
 };

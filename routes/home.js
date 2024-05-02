@@ -22,9 +22,10 @@ router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/checkout", homeCtrl.StripeClassRedirect);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 // Redirects
-router.get("/boletos-stripe", homeCtrl.StripePartyRedirect);
+router.get("/boletos-stripe", homeCtrl.StripePartyRedirect); // Temp
 router.get("/boletos-fiesta", homeCtrl.StripePartyRedirect);
 router.get("/inscripcion-clases", homeCtrl.StripeClassRedirect);
+router.post("/info-particulares", homeCtrl.infoParticulares);
 
 // Error handling middleware
 router.use((err, req, res, next) => {
