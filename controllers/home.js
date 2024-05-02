@@ -24,11 +24,12 @@ module.exports = {
 
   getStoreContact: renderView("contact"),
 
-  postStoreCheckout: (req, res) => {
-    res.redirect("https://salsa-candela-admin.cyclic.app/classstripeform");
-  },
-
+  // Redirects
   StripePartyRedirect: (req, res) => {
     res.redirect("https://admin.salsa-candela.com/boletos-stripe");
+  },
+
+  StripeClassRedirect: (req, res) => {
+    res.redirect("https://admin.salsa-candela.com/classstripeform");
   },
 };

@@ -20,10 +20,12 @@ router.get("/particulares", homeCtrl.getStoreIndividualClasses);
 router.get("/fiesta", homeCtrl.getStoreParty);
 router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
-router.post("/checkout", homeCtrl.postStoreCheckout);
+router.post("/checkout", homeCtrl.StripeClassRedirect);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
+// Redirects
 router.get("/boletos-stripe", homeCtrl.StripePartyRedirect);
 router.get("/boletos-fiesta", homeCtrl.StripePartyRedirect);
+router.get("/inscripcion-clases", homeCtrl.StripeClassRedirect);
 
 // Error handling middleware
 router.use((err, req, res, next) => {
