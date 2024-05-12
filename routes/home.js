@@ -19,12 +19,32 @@ router.get("/particulares", homeCtrl.getStoreIndividualClasses);
 router.get("/fiesta", homeCtrl.getStoreParty);
 router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
-router.post("/checkout", homeCtrl.StripeClassRedirect);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
+
 // Redirects
-router.get("/boletos-stripe", homeCtrl.StripePartyRedirect); // Temp
-router.get("/boletos-fiesta", homeCtrl.StripePartyRedirect);
-router.get("/inscripcion-clases", homeCtrl.StripeClassRedirect);
+// *********
+
+// Fiesta
+router.get("/boletos-stripe", homeCtrl.PartyRedirect); // Temp
+router.get("/boletos-fiesta", homeCtrl.PartyRedirect);
+// Clases Grl
+router.post("/checkout", homeCtrl.ClassRedirect);
+// Clases Salsa
+router.post("/checkout-salsa", homeCtrl.ClassSalsaRedirect);
+router.get("/checkout-salsa-xola", homeCtrl.ClassSalsaXolaRedirect);
+router.get("/checkout-salsa-claveria", homeCtrl.ClassSalsaClaveriaRedirect);
+router.get("/checkout-salsa-valle", homeCtrl.ClassSalsaValleRedirect);
+router.get("/checkout-salsa-coapa", homeCtrl.ClassSalsaCoapaRedirect);
+router.get("/checkout-salsa-satelite", homeCtrl.ClassSalsaSateliteRedirect);
+// Clases bachata
+router.post("/checkout-bachata", homeCtrl.ClassBachataRedirect);
+router.get("/checkout-bachata-xola", homeCtrl.ClassBachataXolaRedirect);
+router.get("/checkout-bachata-claveria", homeCtrl.ClassBachataClaveriaRedirect);
+router.get("/checkout-bachata-valle", homeCtrl.ClassBachataValleRedirect);
+router.get("/checkout-bachata-coapa", homeCtrl.ClassBachataCoapaRedirect);
+router.get("/checkout-bachata-satelite", homeCtrl.ClassBachataSateliteRedirect);
+
+router.get("/inscripcion-clases", homeCtrl.ClassRedirect);
 router.post("/info-particulares", homeCtrl.infoParticulares);
 
 // Error handling middleware
