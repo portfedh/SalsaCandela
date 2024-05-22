@@ -55,6 +55,8 @@ Given more time, we plan to enhance the website further:
 
 ## Customization
 
+This are the areas that need to be updated to keep the page up to date.
+
 - public/js/countdownTimer.js Sets the timer until the next course.
 - public/js/updatePrices.js Sets the prices and discount of each course.
 - store_salsa.ejs Nuestro proximo taller inicia el xxxx de xxxx.
