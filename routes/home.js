@@ -3,9 +3,9 @@
 
 // Imports
 // *******
-// Import express
+// Express
 const express = require("express");
-// Create a router object
+// Create router object
 const router = express.Router();
 // Controllers
 const homeCtrl = require("../controllers/home");
@@ -23,7 +23,6 @@ router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 
 // Redirects
 // *********
-
 // Fiesta
 router.get("/boletos-stripe", homeCtrl.PartyRedirect); // Temp
 router.get("/boletos-fiesta", homeCtrl.PartyRedirect);

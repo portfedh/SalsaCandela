@@ -20,7 +20,6 @@ app.use(express.static("public"));
 
 // Routes:
 // =======
-// Route imports
 const homeRoutes = require("./routes/home");
 
 // Listening routes
