@@ -1,7 +1,7 @@
 // Self-invoking function
 (function () {
   // Next course date (mm/dd/yyyy)
-  let inicioDeCurso = "06/15/2024";
+  let inicioDeCurso = "06/29/2024";
 
   // Time units
   const second = 1000;
