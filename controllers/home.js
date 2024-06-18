@@ -3,7 +3,7 @@
 
 function renderView(viewName) {
   return (req, res) => {
-    res.render(`store_${viewName}.ejs`);
+    res.render(`${viewName}.ejs`);
   };
 }
 
