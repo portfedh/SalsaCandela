@@ -1,13 +1,23 @@
 // Self-invoking function
 (function () {
-  // Next course date (mm/dd/yyyy)
-  let inicioDeCurso = "08/03/2024";
+  // Get today's date
+  const today = new Date();
+
+  // Add one day to get tomorrow's date
+  const tomorrow = new Date(today);
+  tomorrow.setDate(today.getDate() + 1);
+
+  // Format tomorrow's date as "mm/dd/yyyy"
+  const month = String(tomorrow.getMonth() + 1).padStart(2, "0");
+  const day = String(tomorrow.getDate()).padStart(2, "0");
+  const year = tomorrow.getFullYear();
+  const inicioDeCurso = `${month}/${day}/${year}`;
 
   // Time units
   const second = 1000;
   const minute = second * 60;
   const hour = minute * 60;
-  const day = hour * 24;
+  const dayUnit = hour * 24;
 
   // Get countdown time
   const countDown = new Date(inicioDeCurso).getTime();
@@ -21,9 +31,9 @@
     const distance = countDown - now;
 
     // Update the HTML
-    document.getElementById("days").innerText = Math.floor(distance / day);
+    document.getElementById("days").innerText = Math.floor(distance / dayUnit);
     document.getElementById("hours").innerText = Math.floor(
-      (distance % day) / hour
+      (distance % dayUnit) / hour
     );
     document.getElementById("minutes").innerText = Math.floor(
       (distance % hour) / minute
