@@ -8,6 +8,14 @@ function renderView(viewName) {
 }
 
 module.exports = {
+  renderApplePay: (req, res) => {
+    const certPath = path.join(
+      __dirname,
+      "../public/.well-known/apple-developer-merchantid-domain-association"
+    );
+    res.sendFile(certPath);
+  },
+
   getStoreIndex: renderView("index"),
 
   getStoreSalsa: renderView("salsa"),

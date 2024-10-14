@@ -52,6 +52,12 @@ router.use((err, req, res, next) => {
   res.status(500).send("Something broke!");
 });
 
+// Apple Pay
+router.get(
+  "/.well-known/apple-developer-merchantid-domain-association",
+  homeCtrl.renderApplePay
+);
+
 // Exports
 // *******
 module.exports = router;
