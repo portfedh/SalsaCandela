@@ -58,6 +58,11 @@ router.get(
   homeCtrl.renderApplePay
 );
 
+// Sitemap route
+router.get("/sitemap.xml", (req, res) => {
+  res.sendFile(path.join(__dirname, "../sitemap.xml"));
+});
+
 // Exports
 // *******
 module.exports = router;
