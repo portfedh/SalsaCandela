@@ -1,5 +1,5 @@
 {
-  "name": "SalsaCandela",
+  "name": "salsa-candela",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -14,7 +14,7 @@
     "body-parser": "^1.20.2",
     "dotenv": "^16.3.1",
     "ejs": "^3.1.9",
-    "express": "^4.21.1"
+    "express": "^4.21.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"

@@ -1,0 +1,25 @@
+User-agent: *
+Disallow: /config/
+Disallow: /controllers/
+Disallow: /routes/
+Disallow: /views/
+Disallow: /todos
+Disallow: /node_modules/
+Disallow: /public/.DS_Store
+Disallow: /public/.well-known/
+Disallow: /public/css/
+Disallow: /public/fonts/
+Disallow: /public/img/
+Disallow: /public/js/
+Disallow: /public/css/shortcode/
+Disallow: /public/css/style_index.css
+Disallow: /public/css/responsive.css
+Disallow: /public/css/bootstrap.min.css
+Disallow: /public/css/font-awesome.min.css
+Disallow: /public/css/material-design-iconic-font.css
+Disallow: /public/css/material-design-iconic-font.min.css
+Disallow: /public/css/animate.min.css
+Disallow: /public/css/owl.carousel.css
+Disallow: /public/css/slick.css
+
+Sitemap: https://salsa-candela.com/sitemap.xml
