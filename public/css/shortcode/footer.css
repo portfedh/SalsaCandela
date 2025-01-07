@@ -48,7 +48,7 @@ NOTE: This is Footer style file. All footer related style included in this file.
   line-height: 22px;
 }
 .single-footer-widget ul {
-  margin: 0;
+  margin: 1rem 0 0 0;
   padding: 0;
   list-style: none;
 }
