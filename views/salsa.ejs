@@ -1,419 +1,450 @@
-<!-- Include header -->
-<%- include('partials/store_header') -%>
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
 
-<!-- Banner Area Start -->
-<section class="banner-area text-start">
-  <div class="container">
-    <div class="row">
-      <div class="col-12">
-        <div class="banner-content-wrapper">
-          <div class="banner-content">
-            <h2>Clases de Salsa</h2>
-            <div class="banner-breadcrumb">
-              <ul>
-                <li>
-                  <a href="/">Inicio </a>
-                  <i class="zmdi zmdi-chevron-right"></i>
-                </li>
-                <li>Clases de Salsa</li>
-              </ul>
+  <body>
+    <!-- Include header -->
+    <%- include('partials/store_header') -%>
+
+    <!-- Banner Area Start -->
+    <section class="banner-area text-start">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="banner-content-wrapper">
+              <div class="banner-content">
+                <h2>Clases de Salsa</h2>
+                <div class="banner-breadcrumb">
+                  <ul>
+                    <li>
+                      <a href="/">Inicio </a>
+                      <i class="zmdi zmdi-chevron-right"></i>
+                    </li>
+                    <li>Clases de Salsa</li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Banner Area End -->
+    </section>
+    <!-- Banner Area End -->
 
-<!-- Event Area Start -->
-<section class="event-area pt-50 pb-10 bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-xl-2 offset-lg-2">
-        <div class="section-title text-center">
-          <!-- Salsa Section Start -->
-          <!-- ------------------- -->
-          <section style="display: flex; flex-direction: column">
-            <h2>Clases de Salsa</h2>
+    <!-- Event Area Start -->
+    <section class="event-area pt-50 pb-10 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <!-- Salsa Section Start -->
+              <!-- ------------------- -->
+              <section style="display: flex; flex-direction: column">
+                <h2>Clases de Salsa</h2>
 
-            <!-- Video de Salsa -->
-            <div class="salsa-video-div">
-              <iframe
-                class="salsa-video"
-                width="560"
-                height="315"
-                src="https://www.youtube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
-              ></iframe>
-            </div>
+                <!-- Video de Salsa -->
+                <div class="salsa-video-div">
+                  <iframe
+                    class="salsa-video"
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
 
-            <!-- Description Start -->
-            <div>
-              <div style="text-align: left; margin-top: 50px">
-                <span>
-                  Aprende a bailar en nuestros talleres de Salsa.
-                  <br /><br />Duran cinco semanas y puedes escoger entre varios
-                  horarios: <br /><br />
-                </span>
-                <br /><b>
-                  Nuestro proximo taller inicia el
-                  <span style="color: #f69139">4 de Enero 2025.</span></b
-                >
-              </div>
-            </div>
-            <!-- Description End -->
-
-            <!-- Table Start -->
-            <div class="salsa-table-main">
-              <%- include('partials/store_salsa_table_full') -%>
-            </div>
-            <div class="salsa-table-mobile">
-              <%- include('partials/store_salsa_table_mobile') -%>
-            </div>
-            <!-- Table End -->
-
-            <!-- Pricing Area Start -->
-            <div>
-              <div class="row">
-                <div class="col-lg-8 offset-xl-2 offset-lg-2">
-                  <div class="section-title text-center">
-                    <h2>Precios</h2>
-                    <p>Paga en línea dando click en los siguientes botones</p>
+                <!-- Description Start -->
+                <div>
+                  <div style="text-align: left; margin-top: 50px">
+                    <span>
+                      Aprende a bailar en nuestros talleres de Salsa.
+                      <br /><br />Duran cinco semanas y puedes escoger entre
+                      varios horarios: <br /><br />
+                    </span>
+                    <br /><b>
+                      Nuestro proximo taller inicia el
+                      <span style="color: #f69139">4 de Enero 2025.</span></b
+                    >
                   </div>
                 </div>
-              </div>
-              <!-- Countdown timer Start-->
-              <div id="countdown-div" class="countdown">
-                <h1 id="index-countdown-headline">Preventa vence en:</h1>
-                <div id="countdown">
-                  <ul>
-                    <li><span id="days"></span>Dias</li>
-                    <li><span id="hours"></span>Horas</li>
-                    <li><span id="minutes"></span>Minutos</li>
-                    <li><span id="seconds"></span>Segundos</li>
-                  </ul>
+                <!-- Description End -->
+
+                <!-- Table Start -->
+                <div class="salsa-table-main">
+                  <%- include('partials/store_salsa_table_full') -%>
                 </div>
-              </div>
-              <!-- Countdown timer end -->
+                <div class="salsa-table-mobile">
+                  <%- include('partials/store_salsa_table_mobile') -%>
+                </div>
+                <!-- Table End -->
 
-              <div class="row">
-                <!-- Price 1 Start -->
-                <div class="col-lg-6 col-md-6">
-                  <div class="single-table text-center">
-                    <div class="table-head">
-                      <h2>Nivel 2 + <br />Individual</h2>
-                      <!-- Price area -->
-                      <div class="price-area">
-                        <!-- Discount percent area start-->
-                        <div class="discount-percent-area">
-                          <span id="por-n2-ind" class="discount-percent"></span>
-                          <span class="discount-percent-text"
-                            ><b>Preventa</b></span
-                          >
-                        </div>
-                        <!-- Discount percent area end-->
-
-                        <!-- Current price area start-->
-                        <div class="current-price-area">
-                          <span id="pd-n2-ind" class="current-price"></span>
-                          <span class="current-price-text">pesos</span>
-                        </div>
-                        <!-- Current price area end-->
-
-                        <!-- List price area start-->
-                        <div class="list-price-area">
-                          <span class="list-price-text">Precio de lista: </span>
-                          <span id="pl-n2-ind" class="list-price"></span
-                          ><span> pesos</span>
-                        </div>
-                        <!-- List price area end-->
+                <!-- Pricing Area Start -->
+                <div>
+                  <div class="row">
+                    <div class="col-lg-8 offset-xl-2 offset-lg-2">
+                      <div class="section-title text-center">
+                        <h2>Precios</h2>
+                        <p>
+                          Paga en línea dando click en los siguientes botones
+                        </p>
                       </div>
                     </div>
-                    <div class="table-body">
+                  </div>
+                  <!-- Countdown timer Start-->
+                  <div id="countdown-div" class="countdown">
+                    <h1 id="index-countdown-headline">Preventa vence en:</h1>
+                    <div id="countdown">
                       <ul>
-                        <li>Taller de cinco semanas</li>
-                        <li>Salsa, Bachata</li>
-                        <li>Cualquier sucursal y nivel</li>
-                        <li>Precio por persona</li>
+                        <li><span id="days"></span>Dias</li>
+                        <li><span id="hours"></span>Horas</li>
+                        <li><span id="minutes"></span>Minutos</li>
+                        <li><span id="seconds"></span>Segundos</li>
                       </ul>
-                      <form action="/checkout" method="post">
-                        <button type="submit">Comprar</button>
-                      </form>
                     </div>
                   </div>
-                  <!-- Price 1 End -->
-                </div>
-                <!-- Price 2 Start -->
-                <div class="col-lg-6 col-md-6">
-                  <div class="single-table text-center">
-                    <div class="table-head">
-                      <h2>
-                        Nivel 2 + <br />
-                        Pareja
-                      </h2>
-                      <!-- Price area -->
-                      <div class="price-area">
-                        <!-- Discount percent area start-->
-                        <div class="discount-percent-area">
-                          <span id="por-n2-par" class="discount-percent"></span>
-                          <span class="discount-percent-text"
-                            ><b>Preventa</b></span
-                          >
-                        </div>
-                        <!-- Discount percent area end-->
+                  <!-- Countdown timer end -->
 
-                        <!-- Current price area start-->
-                        <div class="current-price-area">
-                          <span id="pd-n2-par" class="current-price"></span>
-                          <span class="current-price-text"> pesos</span>
-                        </div>
-                        <!-- Current price area end-->
+                  <div class="row">
+                    <!-- Price 1 Start -->
+                    <div class="col-lg-6 col-md-6">
+                      <div class="single-table text-center">
+                        <div class="table-head">
+                          <h2>Nivel 2 + <br />Individual</h2>
+                          <!-- Price area -->
+                          <div class="price-area">
+                            <!-- Discount percent area start-->
+                            <div class="discount-percent-area">
+                              <span
+                                id="por-n2-ind"
+                                class="discount-percent"
+                              ></span>
+                              <span class="discount-percent-text"
+                                ><b>Preventa</b></span
+                              >
+                            </div>
+                            <!-- Discount percent area end-->
 
-                        <!-- List price area start-->
-                        <div class="list-price-area">
-                          <span class="list-price-text">Precio de lista: </span>
-                          <span id="pl-n2-par" class="list-price"></span
-                          ><span> pesos</span>
+                            <!-- Current price area start-->
+                            <div class="current-price-area">
+                              <span id="pd-n2-ind" class="current-price"></span>
+                              <span class="current-price-text">pesos</span>
+                            </div>
+                            <!-- Current price area end-->
+
+                            <!-- List price area start-->
+                            <div class="list-price-area">
+                              <span class="list-price-text"
+                                >Precio de lista:
+                              </span>
+                              <span id="pl-n2-ind" class="list-price"></span
+                              ><span> pesos</span>
+                            </div>
+                            <!-- List price area end-->
+                          </div>
                         </div>
-                        <!-- List price area end-->
+                        <div class="table-body">
+                          <ul>
+                            <li>Taller de cinco semanas</li>
+                            <li>Salsa, Bachata</li>
+                            <li>Cualquier sucursal y nivel</li>
+                            <li>Precio por persona</li>
+                          </ul>
+                          <form action="/checkout" method="post">
+                            <button type="submit">Comprar</button>
+                          </form>
+                        </div>
+                      </div>
+                      <!-- Price 1 End -->
+                    </div>
+                    <!-- Price 2 Start -->
+                    <div class="col-lg-6 col-md-6">
+                      <div class="single-table text-center">
+                        <div class="table-head">
+                          <h2>
+                            Nivel 2 + <br />
+                            Pareja
+                          </h2>
+                          <!-- Price area -->
+                          <div class="price-area">
+                            <!-- Discount percent area start-->
+                            <div class="discount-percent-area">
+                              <span
+                                id="por-n2-par"
+                                class="discount-percent"
+                              ></span>
+                              <span class="discount-percent-text"
+                                ><b>Preventa</b></span
+                              >
+                            </div>
+                            <!-- Discount percent area end-->
+
+                            <!-- Current price area start-->
+                            <div class="current-price-area">
+                              <span id="pd-n2-par" class="current-price"></span>
+                              <span class="current-price-text"> pesos</span>
+                            </div>
+                            <!-- Current price area end-->
+
+                            <!-- List price area start-->
+                            <div class="list-price-area">
+                              <span class="list-price-text"
+                                >Precio de lista:
+                              </span>
+                              <span id="pl-n2-par" class="list-price"></span
+                              ><span> pesos</span>
+                            </div>
+                            <!-- List price area end-->
+                          </div>
+                        </div>
+                        <div class="table-body">
+                          <ul>
+                            <li>Taller de cinco semanas</li>
+                            <li>Salsa o Bachata</li>
+                            <li>Cualquier sucursal y nivel</li>
+                            <li>Precio por pareja</li>
+                          </ul>
+                          <form action="/checkout" method="post">
+                            <button type="submit">Comprar</button>
+                          </form>
+                        </div>
                       </div>
                     </div>
-                    <div class="table-body">
-                      <ul>
-                        <li>Taller de cinco semanas</li>
-                        <li>Salsa o Bachata</li>
-                        <li>Cualquier sucursal y nivel</li>
-                        <li>Precio por pareja</li>
-                      </ul>
-                      <form action="/checkout" method="post">
-                        <button type="submit">Comprar</button>
-                      </form>
+                    <!-- Price 2 End -->
+                  </div>
+                </div>
+                <!-- Pricing Area End -->
+
+                <!-- Horarios Salsa Start -->
+                <div style="text-align: left; margin-bottom: 20px">
+                  <br /><br /><br />
+                  <h6>Horarios por sucursal:</h6>
+                  <br /><br />
+                  <!-- Salsa Xola -->
+                  <div class="sucursales-div">
+                    <b><H6 style="color: #e04a25">Sucursal Xola:</H6></b>
+                    <br /><br />
+                    <a href="https://maps.app.goo.gl/ECFAU2rAJXDWHjSs8"
+                      ><span>Estafetas 99, Postal, Benito Juárez, CDMX</span>
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Clases de Salsa:</b>
+                      <br /><br />
+                      <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
+                      <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
+                      <li><b>Sábados:</b> 10:00am - 12:00pm</li>
+                      <li><b>Domingos:</b> 4:00pm - 6:00pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/checkout-salsa-xola"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5078611231734!2d-99.14293909999999!3d19.390450899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724175073!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Salsa Valle -->
+                  <div class="sucursales-div">
+                    <b><span style="color: #e04a25">Sucursal Valle:</span></b>
+                    <br /><br />
+                    <a href="https://maps.app.goo.gl/rceaexAcpfkiMEhu9"
+                      ><span
+                        >Félix Cuevas 407, Col del Valle, Benito Juárez,
+                        CDMX.</span
+                      >
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Clases de Salsa:</b>
+                      <br /><br />
+                      <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
+                      <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
+                      <li><b>Sábados:</b> 11:30am - 1:30pm</li>
+                      <li><b>Domingos:</b> 11:30pm - 1:30pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/checkout-salsa-valle"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.9273605566686!2d-99.1738906!3d19.3722977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9a07ea6d93%3A0x984de2ae6b224902!2sF%C3%A9lix%20Cuevas%20407%2C%20Col%20del%20Valle%20Sur%2C%20Benito%20Ju%C3%A1rez%2C%2003104%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724558230!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Salsa Satélite -->
+                  <div class="sucursales-div">
+                    <b
+                      ><span style="color: #e04a25">Sucursal Satélite:</span></b
+                    >
+                    <br /><br />
+                    <a href="https://maps.app.goo.gl/qxQ1sBSzoWijhRam7"
+                      ><span>
+                        Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex.
+                      </span>
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Clases de Salsa:</b>
+                      <br /><br />
+                      <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
+                      <li><b>Domingos:</b> 11:30pm - 1:30pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/checkout-salsa-satelite"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.1765622070075!2d-99.2441764!3d19.4910381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031a6b736345%3A0xbce4ed058e944674!2sBlvd.%20de%20la%20Sta.%20Cruz%20142%2C%20Altavista%2C%2003910%20Acatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1703724745453!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Salsa Claveria -->
+                  <div class="sucursales-div">
+                    <b
+                      ><span style="color: #e04a25">Sucursal Claveria:</span></b
+                    >
+                    <br /><br />
+                    <a href="https://maps.app.goo.gl/d8MddrjfQVpQEa1KA"
+                      ><span>Palestina 10, Claveria, Azcapotzalco, CDMX. </span>
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Clases de Salsa:</b>
+                      <br /><br />
+                      <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/checkout-salsa-claveria"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.813823212397!2d-99.1824858!3d19.4635922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b091bdcd5%3A0xfcafed2927bdd9a7!2sPalestina%2010%2C%20Claveria%2C%20Azcapotzalco%2C%2002080%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724856034!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Salsa Coapa -->
+                  <div class="sucursales-div">
+                    <b><span style="color: #e04a25">Sucursal Coapa:</span></b>
+                    <br /><br />
+                    <a href="https://maps.app.goo.gl/9Jr8G1LsYNnq3iEL9"
+                      ><span>Calz. Acoxpa 885, Coapa, Tlalpan, CDMX.</span>
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Clases de Salsa:</b>
+                      <br /><br />
+                      <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/checkout-salsa-coapa"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.822058144884!2d-99.119535!3d19.2901029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0175b6627251%3A0x72c03df48ec6f443!2sCalz%20Acoxpa%20885%2C%20Coapa%2C%20Coapa%20Super%204%2C%20Tlalpan%2C%2014390%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724927960!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                      ></iframe>
                     </div>
                   </div>
                 </div>
-                <!-- Price 2 End -->
-              </div>
+                <!-- Horarios Clases Salsa End -->
+              </section>
+              <!-- Salsa Section End -->
             </div>
-            <!-- Pricing Area End -->
-
-            <!-- Horarios Salsa Start -->
-            <div style="text-align: left; margin-bottom: 20px">
-              <br /><br /><br />
-              <h6>Horarios por sucursal:</h6>
-              <br /><br />
-              <!-- Salsa Xola -->
-              <div class="sucursales-div">
-                <b><H6 style="color: #e04a25">Sucursal Xola:</H6></b>
-                <br /><br />
-                <a href="https://maps.app.goo.gl/ECFAU2rAJXDWHjSs8"
-                  ><span>Estafetas 99, Postal, Benito Juárez, CDMX</span>
-                </a>
-                <br /><br />
-                <ul class="horarios-fiesta">
-                  <b>Clases de Salsa:</b>
-                  <br /><br />
-                  <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
-                  <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
-                  <li><b>Sábados:</b> 10:00am - 12:00pm</li>
-                  <li><b>Domingos:</b> 4:00pm - 6:00pm</li>
-                </ul>
-                <br />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <a
-                      class="banner-btn"
-                      href="/checkout-salsa-xola"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span></a
-                    >
-                  </div>
-                </div>
-                <br /><br />
-                <div class="row">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5078611231734!2d-99.14293909999999!3d19.390450899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724175073!5m2!1ses-419!2smx"
-                    max-width="600"
-                    max-height="450"
-                    style="border: 0; border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-              <br /><br />
-              <!-- Salsa Valle -->
-              <div class="sucursales-div">
-                <b><span style="color: #e04a25">Sucursal Valle:</span></b>
-                <br /><br />
-                <a href="https://maps.app.goo.gl/rceaexAcpfkiMEhu9"
-                  ><span
-                    >Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX.</span
-                  >
-                </a>
-                <br /><br />
-                <ul class="horarios-fiesta">
-                  <b>Clases de Salsa:</b>
-                  <br /><br />
-                  <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
-                  <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
-                  <li><b>Sábados:</b> 11:30am - 1:30pm</li>
-                  <li><b>Domingos:</b> 11:30pm - 1:30pm</li>
-                </ul>
-                <br />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <a
-                      class="banner-btn"
-                      href="/checkout-salsa-valle"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span></a
-                    >
-                  </div>
-                </div>
-                <br /><br />
-                <div class="row">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.9273605566686!2d-99.1738906!3d19.3722977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9a07ea6d93%3A0x984de2ae6b224902!2sF%C3%A9lix%20Cuevas%20407%2C%20Col%20del%20Valle%20Sur%2C%20Benito%20Ju%C3%A1rez%2C%2003104%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724558230!5m2!1ses-419!2smx"
-                    max-width="600"
-                    max-height="450"
-                    style="border: 0; border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-              <br /><br />
-              <!-- Salsa Satelite -->
-              <div class="sucursales-div">
-                <b><span style="color: #e04a25">Sucursal Satelite:</span></b>
-                <br /><br />
-                <a href="https://maps.app.goo.gl/qxQ1sBSzoWijhRam7"
-                  ><span>
-                    Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex.
-                  </span>
-                </a>
-                <br /><br />
-                <ul class="horarios-fiesta">
-                  <b>Clases de Salsa:</b>
-                  <br /><br />
-                  <li><b>Lunes y Miércoles:</b> 8:00pm - 9:30pm</li>
-                  <li><b>Domingos:</b> 11:30pm - 1:30pm</li>
-                </ul>
-                <br />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <a
-                      class="banner-btn"
-                      href="/checkout-salsa-satelite"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span></a
-                    >
-                  </div>
-                </div>
-                <br /><br />
-                <div class="row">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.1765622070075!2d-99.2441764!3d19.4910381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031a6b736345%3A0xbce4ed058e944674!2sBlvd.%20de%20la%20Sta.%20Cruz%20142%2C%20Altavista%2C%2003910%20Acatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1703724745453!5m2!1ses-419!2smx"
-                    max-width="600"
-                    max-height="450"
-                    style="border: 0; border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-              <br /><br />
-              <!-- Salsa Claveria -->
-              <div class="sucursales-div">
-                <b><span style="color: #e04a25">Sucursal Claveria:</span></b>
-                <br /><br />
-                <a href="https://maps.app.goo.gl/d8MddrjfQVpQEa1KA"
-                  ><span>Palestina 10, Claveria, Azcapotzalco, CDMX. </span>
-                </a>
-                <br /><br />
-                <ul class="horarios-fiesta">
-                  <b>Clases de Salsa:</b>
-                  <br /><br />
-                  <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
-                </ul>
-                <br />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <a
-                      class="banner-btn"
-                      href="/checkout-salsa-claveria"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span></a
-                    >
-                  </div>
-                </div>
-                <br /><br />
-                <div class="row">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.813823212397!2d-99.1824858!3d19.4635922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b091bdcd5%3A0xfcafed2927bdd9a7!2sPalestina%2010%2C%20Claveria%2C%20Azcapotzalco%2C%2002080%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724856034!5m2!1ses-419!2smx"
-                    max-width="600"
-                    max-height="450"
-                    style="border: 0; border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-              <br /><br />
-              <!-- Salsa Coapa -->
-              <div class="sucursales-div">
-                <b><span style="color: #e04a25">Sucursal Coapa:</span></b>
-                <br /><br />
-                <a href="https://maps.app.goo.gl/9Jr8G1LsYNnq3iEL9"
-                  ><span>Calz Acoxpa 885, Coapa, Tlalpan, CDMX.</span>
-                </a>
-                <br /><br />
-                <ul class="horarios-fiesta">
-                  <b>Clases de Salsa:</b>
-                  <br /><br />
-                  <li><b>Martes y Jueves:</b> 8:00pm - 9:30pm</li>
-                </ul>
-                <br />
-                <div class="row">
-                  <div class="col-12 text-center">
-                    <a
-                      class="banner-btn"
-                      href="/checkout-salsa-coapa"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span></a
-                    >
-                  </div>
-                </div>
-                <br /><br />
-                <div class="row">
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.822058144884!2d-99.119535!3d19.2901029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0175b6627251%3A0x72c03df48ec6f443!2sCalz%20Acoxpa%20885%2C%20Coapa%2C%20Coapa%20Super%204%2C%20Tlalpan%2C%2014390%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724927960!5m2!1ses-419!2smx"
-                    max-width="600"
-                    max-height="450"
-                    style="border: 0; border-radius: 20px"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                  ></iframe>
-                </div>
-              </div>
-            </div>
-            <!-- Horarios Clases Salsa End -->
-          </section>
-          <!-- Salsa Section End -->
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- Event Area End -->
-<!-- Include Footer -->
-<%- include('partials/store_footer') -%>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Body & html close -->
+  </body>
+</html>

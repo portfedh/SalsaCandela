@@ -1,52 +1,58 @@
-    <%- include('store_map') -%>
-
-    <!-- Footer Area Start -->
-    <footer class="footer-area bg-gray">
-      <div class="footer-widget-area bg-3 pt-98 pb-90 fix">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 centered-element">
-              <address class="single-footer-widget">
-                <img src="img/logo/logo.png" alt="Salsa Candela Logo" class="logo"/>
-                <br>
-                <ul>
-                  <li><i class="zmdi zmdi-phone"></i> 55 4144 3745</li>
-                  <li><a href="https://www.facebook.com/Salsaycandela"
-                    ><i class="zmdi zmdi-facebook"></i> salsaycandela</a
-                  ></li>
-                  <li><a href="https://www.instagram.com/salsa_candela/"
-                    ><i class="zmdi zmdi-instagram"></i>salsa_candela</a
-                  ></li>
-                  <li><a href="mailto:clasescandela@gmail.com"><i class="zmdi zmdi-email"></i> clasescandela@gmail.com</a></li>
-                  <li>
-                    <i class="zmdi zmdi-home"></i> Estafetas 99, Col Postal,
-                    CDMX
-                  </li>
-                </ul>
-              </address>
-            </div>
+<!-- Footer Area Start -->
+<footer class="footer-area bg-gray">
+  <div class="footer-widget-area bg-3 pt-98 pb-90 fix">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 centered-element">
+          <address class="single-footer-widget">
+            <img
+              src="img/logo/logo.png"
+              alt="Salsa Candela Logo"
+              class="logo"
+            />
+            <br />
+            <ul>
+              <li><i class="zmdi zmdi-phone"></i> 55 4144 3745</li>
+              <li>
+                <a href="https://www.facebook.com/Salsaycandela"
+                  ><i class="zmdi zmdi-facebook"></i> salsaycandela</a
+                >
+              </li>
+              <li>
+                <a href="https://www.instagram.com/salsa_candela/"
+                  ><i class="zmdi zmdi-instagram"></i>salsa_candela</a
+                >
+              </li>
+              <li>
+                <a href="mailto:clasescandela@gmail.com"
+                  ><i class="zmdi zmdi-email"></i> clasescandela@gmail.com</a
+                >
+              </li>
+              <li>
+                <i class="zmdi zmdi-home"></i> Estafetas 99, Col Postal, CDMX
+              </li>
+            </ul>
+          </address>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-text-area fix bg-coffee ptb-18">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="footer-text text-center">
+            <span>
+              &copy; <span id="copyright-year"></span> Salsa Candela.</span
+            >
+            <script>
+              document.getElementById("copyright-year").textContent =
+                new Date().getFullYear();
+            </script>
           </div>
         </div>
       </div>
-      <div class="footer-text-area fix bg-coffee ptb-18">
-        <div class="container">
-          <div class="row">
-            <div class="col-12">
-              <div class="footer-text text-center">
-                <span> &copy; <span id="copyright-year"></span> Salsa Candela.</span>
-                <script>
-                  document.getElementById('copyright-year').textContent = new Date().getFullYear();
-                </script>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Footer Area End -->
-
-    <%- include('store_js_scripts') -%>
-
-  <!-- Body & html close -->
-  </body>
-</html>
+    </div>
+  </div>
+</footer>
+<!-- Footer Area End -->

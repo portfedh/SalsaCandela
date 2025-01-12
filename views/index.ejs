@@ -1,37 +1,45 @@
-<!-- Include header -->
-<%- include('partials/store_header') -%>
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
 
-<!-- Background Area Start -->
-<div class="slider-area">
-  <div class="slider-wrapper">
-    <div class="single-slide">
-      <!-- <video class="hero-video" autoplay loop muted alt="Introductory video">
+  <body>
+    <!-- Include header -->
+    <%- include('partials/store_header') -%>
+
+    <!-- Background Area Start -->
+    <div class="slider-area">
+      <div class="slider-wrapper">
+        <div class="single-slide">
+          <!-- <video class="hero-video" autoplay loop muted alt="Introductory video">
         <source src="/img/intro.mp4" type="video/mp4" playsinline />
       </video> -->
-      <img
-        class="hero-video"
-        src="img/ardian-lumi-6Woj_wozqmA-unsplash.jpg"
-        alt="Background Image"
-      />
-      <div class="slider-content">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-7">
-              <div class="text-content-wrapper">
-                <div class="text-content text-start">
-                  <div class="blurry">
-                    <h5>Bienvenid@ a Salsa Candela</h5>
-                    <h1>Aprende a bailar <span>desde cero</span></h1>
-                    <p>
-                      ¡Aprende a bailar en solamente 5 semanas! No es necesario
-                      llevar pareja.
-                    </p>
-                    <a
-                      class="banner-btn"
-                      href="/inscripcion-clases"
-                      data-text="Inscribirme"
-                      ><span>Inscribirme</span>
-                    </a>
+          <img
+            class="hero-video"
+            src="img/ardian-lumi-6Woj_wozqmA-unsplash.jpg"
+            alt="Background Image"
+          />
+          <div class="slider-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="text-content-wrapper">
+                    <div class="text-content text-start">
+                      <div class="blurry">
+                        <h5>Bienvenid@ a Salsa Candela</h5>
+                        <h1>Aprende a bailar <span>desde cero</span></h1>
+                        <p>
+                          ¡Aprende a bailar en solamente 5 semanas! No es
+                          necesario llevar pareja.
+                        </p>
+                        <a
+                          class="banner-btn"
+                          href="/inscripcion-clases"
+                          data-text="Inscribirme"
+                          ><span>Inscribirme</span>
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -40,286 +48,296 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
-<!-- Background Area End -->
+    <!-- Background Area End -->
 
-<!-- Classes Start -->
-<section class="class-area fix bg-gray pb-20 pt-60">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-lg-2">
-        <div class="section-title text-center fadeInDow">
-          <h2>Nuestras classes</h2>
-          <p>
-            <br />¿Tienes dos pies izquierdos? Aprende a bailar en sólo 5
-            semanas, ¡garantizado!
-            <br />
-            <br />¿Ya sabes bailar y quieres aprender más vueltas y figuras en
-            pareja? También tenemos opciones para ti.
-            <br />
-            <br />Estamos abiertos todo el año y tenemos todos los niveles:
-            Desde principiantes hasta avanzados.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-4 col-md-6">
-        <!-- Salsa Class -->
-        <div class="single-class animation-float">
-          <a href="/salsa">
-            <div class="single-img">
-              <img
-                class="servicios"
-                src="img/class/salsa1.png"
-                alt="Salsa Classes"
-              />
-            </div>
-            <div class="single-content">
-              <h3><a href="/salsa">Clases de Salsa</a></h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- Bachata Class -->
-      <div class="col-lg-4 col-md-6">
-        <div class="single-class animation-float">
-          <a href="/bachata">
-            <div class="single-img">
-              <img
-                class="servicios"
-                src="img/class/bachata2.png"
-                alt="Bachata Classes"
-              />
-            </div>
-            <div class="single-content">
-              <h3><a href="/bachata">Clases de Bachata</a></h3>
-            </div>
-          </a>
-        </div>
-      </div>
-      <!-- Personal Classes -->
-      <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
-        <div class="single-class animation-float">
-          <a href="/particulares">
-            <div class="single-img">
-              <img
-                class="servicios"
-                src="img/class/salsa3.png"
-                alt="Individual Classes"
-              />
-            </div>
-            <div class="single-content">
-              <h3>
-                <a href="/particulares">Clases particulares y eventos</a>
-              </h3>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Class Area End -->
-
-<!-- Pricing Area Start -->
-<div class="pricing-area pt-95 pb-120 bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-xl-2 offset-lg-2">
-        <div class="section-title text-center">
-          <h2>Precios</h2>
-          <p>Paga en línea dando click en los siguientes botones</p>
-        </div>
-      </div>
-    </div>
-    <!-- Countdown timer Start-->
-    <div id="countdown-div" class="countdown">
-      <h1 id="index-countdown-headline">Preventa vence en:</h1>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>Dias</li>
-          <li><span id="hours"></span>Horas</li>
-          <li><span id="minutes"></span>Minutos</li>
-          <li><span id="seconds"></span>Segundos</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Countdown timer end -->
-
-    <div class="row">
-      <!-- Price 1 Start -->
-      <div class="col-lg-4 col-md-6">
-        <div class="single-table text-center">
-          <div class="table-head">
-            <h2>Nivel 1 <br />Individual</h2>
-            <!-- Price area -->
-            <div class="price-area">
-              <!-- Discount percent area start-->
-              <div class="discount-percent-area">
-                <span id="por-n1-ind" class="discount-percent"></span>
-                <span class="discount-percent-text"><b>Preventa</b></span>
-              </div>
-              <!-- Discount percent area end-->
-
-              <!-- Current price area start-->
-              <div class="current-price-area">
-                <span id="pd-n1-ind" class="current-price"></span>
-                <span class="current-price-text">pesos</span>
-              </div>
-              <!-- Current price area end-->
-
-              <!-- List price area start-->
-              <div class="list-price-area">
-                <span class="list-price-text">Precio de lista: </span>
-                <span id="pl-n1-ind" class="list-price"></span>
-                <span> pesos</span>
-              </div>
-              <!-- List price area end-->
+    <!-- Classes Start -->
+    <section class="class-area fix bg-gray pb-20 pt-60">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="section-title text-center fadeInDow">
+              <h2>Nuestras classes</h2>
+              <p>
+                <br />¿Tienes dos pies izquierdos? Aprende a bailar en sólo 5
+                semanas, ¡garantizado!
+                <br />
+                <br />¿Ya sabes bailar y quieres aprender más vueltas y figuras
+                en pareja? También tenemos opciones para ti.
+                <br />
+                <br />Estamos abiertos todo el año y tenemos todos los niveles:
+                Desde principiantes hasta avanzados.
+              </p>
             </div>
           </div>
-          <div class="table-body">
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <!-- Salsa Class -->
+            <div class="single-class animation-float">
+              <a href="/salsa">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="img/class/salsa1.png"
+                    alt="Salsa Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3><a href="/salsa">Clases de Salsa</a></h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Bachata Class -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-class animation-float">
+              <a href="/bachata">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="img/class/bachata2.png"
+                    alt="Bachata Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3><a href="/bachata">Clases de Bachata</a></h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Personal Classes -->
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="single-class animation-float">
+              <a href="/particulares">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="img/class/salsa3.png"
+                    alt="Individual Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3>
+                    <a href="/particulares">Clases particulares y eventos</a>
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Class Area End -->
+
+    <!-- Pricing Area Start -->
+    <div class="pricing-area pt-95 pb-120 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>Precios</h2>
+              <p>Paga en línea dando click en los siguientes botones</p>
+            </div>
+          </div>
+        </div>
+        <!-- Countdown timer Start-->
+        <div id="countdown-div" class="countdown">
+          <h1 id="index-countdown-headline">Preventa vence en:</h1>
+          <div id="countdown">
             <ul>
-              <li>Taller de cinco semanas</li>
-              <li>Salsa, Bachata</li>
-              <li>Cualquier sucursal y nivel</li>
-              <li>Precio por persona</li>
+              <li><span id="days"></span>Dias</li>
+              <li><span id="hours"></span>Horas</li>
+              <li><span id="minutes"></span>Minutos</li>
+              <li><span id="seconds"></span>Segundos</li>
             </ul>
-            <form action="/checkout" method="post">
-              <button type="submit">Comprar</button>
-            </form>
           </div>
         </div>
-      </div>
-      <!-- Price 1 End -->
+        <!-- Countdown timer end -->
 
-      <!-- Price 2 Start -->
-      <div class="col-lg-4 col-md-6">
-        <div class="single-table text-center">
-          <div class="table-head">
-            <h2>
-              Nivel 1 <br />
-              Pareja
-            </h2>
-            <!-- Price area -->
-            <div class="price-area">
-              <!-- Discount percent area start-->
-              <div class="discount-percent-area">
-                <span id="por-n1-par" class="discount-percent"></span>
-                <span class="discount-percent-text"><b>Preventa</b></span>
-              </div>
-              <!-- Discount percent area end-->
+        <div class="row">
+          <!-- Price 1 Start -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Nivel 1 <br />Individual</h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Discount percent area start-->
+                  <div class="discount-percent-area">
+                    <span id="por-n1-ind" class="discount-percent"></span>
+                    <span class="discount-percent-text"><b>Preventa</b></span>
+                  </div>
+                  <!-- Discount percent area end-->
 
-              <!-- Current price area start-->
-              <div class="current-price-area">
-                <span id="pd-n1-par" class="current-price"></span>
-                <span class="current-price-text">pesos</span>
-              </div>
-              <!-- Current price area end-->
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <span id="pd-n1-ind" class="current-price"></span>
+                    <span class="current-price-text">pesos</span>
+                  </div>
+                  <!-- Current price area end-->
 
-              <!-- List price area start-->
-              <div class="list-price-area">
-                <span class="list-price-text">Precio de lista: </span>
-                <span id="pl-n1-par" class="list-price"></span>
-                <span> pesos</span>
+                  <!-- List price area start-->
+                  <div class="list-price-area">
+                    <span class="list-price-text">Precio de lista: </span>
+                    <span id="pl-n1-ind" class="list-price"></span>
+                    <span> pesos</span>
+                  </div>
+                  <!-- List price area end-->
+                </div>
               </div>
-              <!-- List price area end-->
+              <div class="table-body">
+                <ul>
+                  <li>Taller de cinco semanas</li>
+                  <li>Salsa, Bachata</li>
+                  <li>Cualquier sucursal y nivel</li>
+                  <li>Precio por persona</li>
+                </ul>
+                <form action="/checkout" method="post">
+                  <button type="submit">Comprar</button>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="table-body">
-            <ul>
-              <li>Taller de cinco semanas</li>
-              <li>Salsa o Bachata</li>
-              <li>Cualquier sucursal y nivel</li>
-              <li>Precio por pareja</li>
-            </ul>
-            <form action="/checkout" method="post">
-              <button type="submit">Comprar</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Price 2 End -->
+          <!-- Price 1 End -->
 
-      <!-- Price 3 Start -->
-      <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
-        <div class="single-table text-center">
-          <div class="table-head">
-            <h2>Clases <br />Particulares</h2>
-            <!-- Price area -->
-            <div class="price-area">
-              <!-- Current price area start-->
-              <div class="current-price-area">
-                <br /><br />
-                <span class="current-price"> $2,500</span>
-                <span class="current-price-text">pesos</span>
-                <br /><br />
-                <br /><br />
+          <!-- Price 2 Start -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>
+                  Nivel 1 <br />
+                  Pareja
+                </h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Discount percent area start-->
+                  <div class="discount-percent-area">
+                    <span id="por-n1-par" class="discount-percent"></span>
+                    <span class="discount-percent-text"><b>Preventa</b></span>
+                  </div>
+                  <!-- Discount percent area end-->
+
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <span id="pd-n1-par" class="current-price"></span>
+                    <span class="current-price-text">pesos</span>
+                  </div>
+                  <!-- Current price area end-->
+
+                  <!-- List price area start-->
+                  <div class="list-price-area">
+                    <span class="list-price-text">Precio de lista: </span>
+                    <span id="pl-n1-par" class="list-price"></span>
+                    <span> pesos</span>
+                  </div>
+                  <!-- List price area end-->
+                </div>
               </div>
-              <!-- Current price area end-->
+              <div class="table-body">
+                <ul>
+                  <li>Taller de cinco semanas</li>
+                  <li>Salsa o Bachata</li>
+                  <li>Cualquier sucursal y nivel</li>
+                  <li>Precio por pareja</li>
+                </ul>
+                <form action="/checkout" method="post">
+                  <button type="submit">Comprar</button>
+                </form>
+              </div>
             </div>
           </div>
-          <div class="table-body">
-            <ul>
-              <li>Horarios flexibles</li>
-              <li>Atención personalizada</li>
-              <li>5 clases de 75 minutos</li>
-              <li>En tu domicilio o en estudio</li>
-            </ul>
-            <form action="/particulares" method="post">
-              <button type="submit">Mas Informacion</button>
-            </form>
-          </div>
-        </div>
-      </div>
-      <!-- Price 3 End -->
-    </div>
-  </div>
-</div>
-<!-- Pricing Area End -->
+          <!-- Price 2 End -->
 
-<!-- Event Area Start -->
-<section class="event-area pt-50 pb-30 bg-gray">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 offset-xl-2 offset-lg-2">
-        <div class="section-title text-center">
-          <h2>fiesta mensual</h2>
-          <p>
-            Acompáñanos en nuestro evento mensual: Una noche llena de baile y
-            convivencia.
-            <br />Toda la comunidad Candela estará presente ese día
-          </p>
-        </div>
-        <div class="event-wrapper">
-          <div class="event-content text-center">
-            <h3>Noche Sensual</h3>
-            <p>Salsa - Timba - Bachata</p>
-            <p>$100 pesos preventa, $150 pesos en taquilla.</p>
-            <h4>Viernes 31 de enero 2025</h4>
-            <h5>9PM - 3AM</h5>
-            <br />
-            <img
-              src="img/party/fiesta_mensual_2025_01_31.jpeg"
-              alt="Monthly Party Invitation"
-            />
-            <a href="/fiesta"><h4 class="pt-30">Mas Información Aquí</h4></a>
+          <!-- Price 3 Start -->
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Clases <br />Particulares</h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <br /><br />
+                    <span class="current-price"> $2,500</span>
+                    <span class="current-price-text">pesos</span>
+                    <br /><br />
+                    <br /><br />
+                  </div>
+                  <!-- Current price area end-->
+                </div>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Horarios flexibles</li>
+                  <li>Atención personalizada</li>
+                  <li>5 clases de 75 minutos</li>
+                  <li>En tu domicilio o en estudio</li>
+                </ul>
+                <form action="/particulares" method="post">
+                  <button type="submit">Mas Información</button>
+                </form>
+              </div>
+            </div>
           </div>
-          <div class="col-12 text-center">
-            <a
-              class="banner-btn mt-20"
-              href="/boletos-fiesta"
-              data-text="Boletos"
-              ><span>Boletos</span>
-            </a>
-          </div>
+          <!-- Price 3 End -->
         </div>
       </div>
     </div>
-  </div>
-</section>
-<!-- Event Area End -->
+    <!-- Pricing Area End -->
 
-<!-- Include Footer -->
-<%- include('partials/store_footer') -%>
+    <!-- Event Area Start -->
+    <section class="event-area pt-50 pb-30 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>fiesta mensual</h2>
+              <p>
+                Acompáñanos en nuestro evento mensual: Una noche llena de baile
+                y convivencia.
+                <br />Toda la comunidad Candela estará presente ese día
+              </p>
+            </div>
+            <div class="event-wrapper">
+              <div class="event-content text-center">
+                <h3>Noche Sensual</h3>
+                <p>Salsa - Timba - Bachata</p>
+                <p>$100 pesos preventa, $150 pesos en taquilla.</p>
+                <h4>Viernes 31 de enero 2025</h4>
+                <h5>9PM - 3AM</h5>
+                <br />
+                <img
+                  src="img/party/fiesta_mensual_2025_01_31.jpeg"
+                  alt="Monthly Party Invitation"
+                />
+                <a href="/fiesta"
+                  ><h4 class="pt-30">Mas Información Aquí</h4></a
+                >
+              </div>
+              <div class="col-12 text-center">
+                <a
+                  class="banner-btn mt-20"
+                  href="/boletos-fiesta"
+                  data-text="Boletos"
+                  ><span>Boletos</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Include Map -->
+    <%- include('partials/store_map') -%>
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Body & html close -->
+  </body>
+</html>
