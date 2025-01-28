@@ -110,6 +110,8 @@ module.exports = {
   },
 
   infoParticulares: (req, res) => {
-    res.redirect("https://wa.me/5215541443745");
+    res.redirect(
+      "https://admin.salsa-candela.com/clases-particulares/inscripcion"
+    );
   },
 };
