@@ -32,7 +32,7 @@ module.exports = {
 
   // Redirects
   PartyRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/boletos-stripe");
+    res.redirect("https://admin.salsa-candela.com/fiesta/boletos");
   },
 
   ClassRedirect: (req, res) => {
