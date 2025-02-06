@@ -111,7 +111,7 @@ module.exports = {
 
   infoParticulares: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/clases-particulares/inscripcion"
+      "https://admin.salsa-candela.com/clases-particulares/inscripcion-stripe"
     );
   },
 };
