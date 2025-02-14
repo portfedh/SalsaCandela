@@ -24,7 +24,7 @@ router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 // Redirects
 // *********
 // Fiesta
-router.get("/boletos", homeCtrl.PartyRedirect);
+router.get("/boletos/:referralCode?", homeCtrl.PartyRedirect);
 // Clases Grl
 router.post("/checkout", homeCtrl.ClassRedirect);
 // Clases Salsa

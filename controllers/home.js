@@ -32,7 +32,10 @@ module.exports = {
 
   // Redirects
   PartyRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/fiesta/boletos");
+    const referralCode = req.params.referralCode;
+    const baseUrl = "https://admin.salsa-candela.com/fiesta/boletos";
+    const redirectUrl = referralCode ? `${baseUrl}/${referralCode}` : baseUrl;
+    res.redirect(redirectUrl);
   },
 
   ClassRedirect: (req, res) => {
