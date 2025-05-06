@@ -206,11 +206,18 @@
   //   meanMenuContainer: ".mobile-menu",
   // });
 
-  $(".main-menu").meanmenu({
+  // $(".main-menu").meanmenu({
+  //   meanScreenWidth: "991",
+  //   meanMenuContainer: ".mobile-menu",
+  //   meanMenuOpen: '<i class="fa fa-bars"></i>',   // Font Awesome hamburger <i class="fa-solid fa-bars"></i>
+  //   meanMenuClose: '<i class="fa fa-times"></i>', // Font Awesome close (X)
+  // });
+
+    $(".main-menu").meanmenu({
     meanScreenWidth: "991",
     meanMenuContainer: ".mobile-menu",
-    meanMenuOpen: '<i class="fa fa-bars"></i>',   // Font Awesome hamburger
-    meanMenuClose: '<i class="fa fa-times"></i>', // Font Awesome close (X)
+    meanMenuOpen: '<i class="fa-solid fa-bars fa-2x"></i>',   // Font Awesome hamburger <i class="fa-solid fa-bars"></i>
+    meanMenuClose: '<i class="fa-solid fa-xmark fa-2x"></i>', // Font Awesome close (X)
   });
 
   /*----------------------------------------
