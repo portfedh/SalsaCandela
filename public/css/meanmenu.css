@@ -155,3 +155,8 @@ a.meanmenu-reveal {
 .mean-nav span {
   display: none;
 }
+
+ /* Hamburger Menu Size */
+.mean-container a.meanmenu-reveal i.fa {
+  font-size: 1.7rem;
+}

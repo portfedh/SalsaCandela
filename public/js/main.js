@@ -196,9 +196,21 @@
   /*-------------------------------------------
     03. jQuery MeanMenu
 --------------------------------------------- */
-  $(".main-menu nav").meanmenu({
+  // $(".main-menu nav").meanmenu({
+  //   meanScreenWidth: "991",
+  //   meanMenuContainer: ".mobile-menu",
+  // });
+
+  // $(".main-menu").meanmenu({
+  //   meanScreenWidth: "991",
+  //   meanMenuContainer: ".mobile-menu",
+  // });
+
+  $(".main-menu").meanmenu({
     meanScreenWidth: "991",
     meanMenuContainer: ".mobile-menu",
+    meanMenuOpen: '<i class="fa fa-bars"></i>',   // Font Awesome hamburger
+    meanMenuClose: '<i class="fa fa-times"></i>', // Font Awesome close (X)
   });
 
   /*----------------------------------------
