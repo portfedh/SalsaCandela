@@ -164,7 +164,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
   background: rgba(255, 255, 255, 0.95);
   left: 0;
-  padding: 0;
+  padding: .4rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -177,7 +177,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   margin-top: 25px;
 }
 .sticky .logo {
-  padding: 11px 0;
+  padding: .3rem;
 }
 .header-area .sticky {
   background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
