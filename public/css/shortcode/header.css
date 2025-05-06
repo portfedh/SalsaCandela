@@ -123,7 +123,8 @@ NOTE: This is Header style file. All Header related style included in this file.
   position: absolute;
 }
 .sticky .mean-container a.meanmenu-reveal {
-  margin-top: -59px;
+  margin-top: -48px;
+
 }
 .mean-container a.meanmenu-reveal span {
   background-color: #f69139;
