@@ -39,46 +39,46 @@ module.exports = {
   },
 
   ClassRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/classstripeform");
+    res.redirect("https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3");
   },
 
   ClassSalsaRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/classstripeform?curso=salsa");
+    res.redirect("https://admin.salsa-candela.com/classstripeform?curso=salsa&regKey=zG9xKmF3");
   },
 
   ClassSalsaXolaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=xola"
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=xola&regKey=zG9xKmF3"
     );
   },
 
   ClassSalsaClaveriaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=claveria"
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=claveria&regKey=zG9xKmF3"
     );
   },
 
   ClassSalsaValleRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=valle"
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=valle&regKey=zG9xKmF3"
     );
   },
 
   ClassSalsaCoapaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=coapa"
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=coapa&regKey=zG9xKmF3"
     );
   },
 
   ClassSalsaSateliteRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=satelite"
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&sucursal=satelite&regKey=zG9xKmF3"
     );
   },
   // Bachata
   ClassBachataRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&regKey=zG9xKmF3"
     );
   },
 
@@ -90,25 +90,25 @@ module.exports = {
 
   ClassBachataClaveriaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=claveria"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=claveria&regKey=zG9xKmF3"
     );
   },
 
   ClassBachataValleRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=valle"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=valle&regKey=zG9xKmF3"
     );
   },
 
   ClassBachataCoapaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=coapa"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=coapa&regKey=zG9xKmF3"
     );
   },
 
   ClassBachataSateliteRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=satelite"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=satelite&regKey=zG9xKmF3"
     );
   },
 
