@@ -1,65 +1,92 @@
-# Online Store & Admin System
+# Salsa Candela
 
-## What it does
+Salsa Candela is a Node.js/Express web application for the Salsa Candela dance academy in CDMX. It provides information about salsa and bachata classes, parties, registration, and more.
 
-Welcome to Salsa Candela, an online platform and management system tailored for a dance academy.
+## Features
+- Informational pages for salsa, bachata, private classes, parties, FAQ, and contact
+- Registration and redirect routes for classes and events
+- EJS templating for dynamic views
+- Static asset serving (CSS, JS, images)
+- Apple Pay support for payments
 
-As the central hub for the Salsa and Bachata courses across its five branches, this project aims to provide a seamless and engaging experience for both students and administrators.
-
-## The online store
-
-Explore detailed information about the academy, class schedules, locations, and pricing. Visitors can easily enroll and make secure online payments. Upon purchase, users receive a QR confirmation code for seamless entry into the world of dance. Additionally, a confirmation email is sent, ensuring a hassle-free registration process.
-
-## The management application
-
-The management side of the web application offers a range of features:
-
-- **Enrollment Form:** Facilitates cash payments for those preferring offline transactions.
-- **Access Control System:** Ensures that only users with valid QR codes gain entry, enhancing security and organization.
-- **Comprehensive Reporting:** A dedicated page showcasing enrolled users and detailed payment and course data. This invaluable tool aids in efficient business management.
-
-## Live view
-
-While the web application is still in development, you can get a sneak peek [here](https://salsa-candela.cyclic.app/). Watch out for exciting updates!
-
-GIF OF THE WEBSITE GOES HERE
-
-## Technology Stack
-
-Salsa Candela is crafted using a robust technology stack, including:
-
-- HTML
-- CSS
-- Bootstrap
-- JavaScript
+## Technologies Used
 - Node.js
-- Passport.js
 - Express
 - EJS
+- dotenv
+- body-parser
 
-## Lessons learned
+## Getting Started
 
-Embarking on this project has been a journey of discovery. Some key takeaways include:
+### Prerequisites
+- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [npm](https://www.npmjs.com/)
 
-- Scope Creep:
-- One report turned into three.
-- New features: Things that were not in the original plan were added later.
-- People using the platform needed changes not in the original plan.
-- The stakeholder takes time to approve the process.
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd salsaCandela
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the `config` directory with the following variables:
+   ```env
+   PORT=3000
+   # Add other environment variables as needed
+   ```
 
-## Future Enhancements
+### Running the Application
+- For development (with auto-reload):
+  ```bash
+  npm run dev
+  ```
+- For production:
+  ```bash
+  npm start
+  ```
 
-Given more time, we plan to enhance the website further:
+The server will run on the port specified in your `.env` file (default: 3000).
 
-- Integrate React.js for a more polished and dynamic user interface.
+## Project Structure
+```
+├── controllers/        # Route controllers
+├── routes/             # Express route definitions
+├── views/              # EJS templates
+├── public/             # Static assets (CSS, JS, images)
+├── config/             # Environment configuration
+├── server.js           # Main server file
+├── package.json        # Project metadata and scripts
+├── faq.md              # Frequently Asked Questions
+```
 
-## Customization
+## Main Routes
+- `/` — Home page
+- `/salsa` — Salsa classes info
+- `/bachata` — Bachata classes info
+- `/particulares` — Private classes info
+- `/fiesta` — Party info
+- `/faq` — Frequently Asked Questions
+- `/contacto` — Contact page
+- `/confirmacion` — Confirmation page
+- `/boletos/:referralCode?` — Party ticket redirect
+- `/checkout*` — Class registration redirects
 
-This are the areas that need to be updated to keep the page up to date.
+## Static Assets
+All static files (CSS, JS, images) are served from the `public` directory.
 
-- public/js/countdownTimer.js Sets the timer until the next course.
-- public/js/updatePrices.js Sets the prices and discount of each course.
-- store_salsa.ejs Nuestro proximo taller inicia el xxxx de xxxx.
-- store_bachata.ejs Nuestro proximo taller inicia el xxxx de xxxx.
-- store_index.ejs Noche Sensual: Viernes xxxx de xxxx.
-- store_index.ejs Noche Sensual: noche_sensual.jpg.
+## FAQ
+See [faq.md](faq.md) for detailed information about the academy, classes, parties, and more.
+
+## Contact
+- Email: clasescandela@gmail.com
+- Website: [https://www.salsacandela.net/](https://www.salsacandela.net/)
+- Instagram: [@salsa_candela](https://www.instagram.com/salsa_candela/)
+- Facebook: [Salsaycandela](https://www.facebook.com/Salsaycandela)
+- YouTube: [SalsayCandela](https://www.youtube.com/@SalsayCandela)
+- Phone: 55-4144-3745
+
+## License
+Proprietary. All rights reserved. 

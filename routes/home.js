@@ -20,6 +20,7 @@ router.get("/fiesta", homeCtrl.getStoreParty);
 router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
+router.get("/confirmacion", homeCtrl.getConfirmation);
 
 // Redirects
 // *********

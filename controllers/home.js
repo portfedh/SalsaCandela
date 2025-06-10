@@ -30,6 +30,8 @@ module.exports = {
 
   getStoreContact: renderView("contact"),
 
+  getConfirmation: renderView("confirmation"),
+
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;
