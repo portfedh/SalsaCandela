@@ -1,0 +1,15 @@
+/* Salsa Page Specific Styles */
+
+/* Fix for sticky navbar covering anchor link targets */
+.sucursales-div {
+  scroll-margin-top: 100px; /* Adjust this value based on your navbar height */
+}
+
+/* Alternative approach using pseudo-element for older browsers */
+.sucursales-div::before {
+  content: "";
+  display: block;
+  height: 100px; /* Same as scroll-margin-top */
+  margin-top: -100px;
+  visibility: hidden;
+}
