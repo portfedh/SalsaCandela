@@ -10,13 +10,12 @@
 [  Table of contents  ]
 ================================================
 	01. Sticky Menu
-	02. Owl Carousel
-	03. jQuery MeanMenu
-	04. Mail Chimp
-	05. ScrollUp
-	06. Wow js
-	07. Portfolio Isotope
-    08. Magnific Popup
+	02. jQuery MeanMenu
+	03. Mail Chimp
+	04. ScrollUp
+	05. Wow js
+	06. Portfolio Isotope
+    07. Magnific Popup
  
 ======================================
 [ End table content ]
@@ -37,116 +36,6 @@
     } else {
       stick.addClass("sticky");
     }
-  });
-
-  /*----------------------------------------
-    02. Owl Carousel
----------------------------------------- */
-  /*----------------------------------------
-    Slider Carousel
----------------------------------------- */
-  $(".slider-wrapper").owlCarousel({
-    loop: true,
-    animateOut: "fadeOut",
-    animateIn: "fadeIn",
-    smartSpeed: 2500,
-    autoplay: false,
-    items: 1,
-    nav: true,
-    navText: [
-      "<i class='zmdi zmdi-chevron-left'></i>",
-      "<i class='zmdi zmdi-chevron-right'></i>",
-    ],
-    dots: true,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      },
-    },
-  });
-  /*--------------------------------------
-    Testimonial Carousel
---------------------------------------- */
-  $(".testimonial-owl").owlCarousel({
-    loop: true,
-    margin: 0,
-    dots: true,
-    nav: false,
-    animateOut: "slideOutDown",
-    animateIn: "slideInDown",
-    autoplay: false,
-    smartSpeed: 3000,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      600: {
-        items: 1,
-      },
-      1000: {
-        items: 1,
-      },
-    },
-  });
-
-  /*-------------------------------------
-    Blog Carousel
--------------------------------------- */
-  $(".blog-carousel").owlCarousel({
-    loop: true,
-    items: 3,
-    dots: false,
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      480: {
-        items: 1,
-      },
-      768: {
-        items: 2,
-      },
-      992: {
-        items: 2,
-      },
-      1200: {
-        items: 3,
-      },
-    },
-  });
-
-  /*-------------------------------------
-    Event Carousel
--------------------------------------- */
-  $(".event-owl").owlCarousel({
-    loop: true,
-    items: 1,
-    dots: true,
-    nav: false,
-    responsive: {
-      0: {
-        items: 1,
-      },
-      480: {
-        items: 1,
-      },
-      768: {
-        items: 1,
-      },
-      992: {
-        items: 1,
-      },
-      1200: {
-        items: 1,
-      },
-    },
   });
 
   /*--------------------------------

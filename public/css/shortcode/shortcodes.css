@@ -10,13 +10,13 @@ Note: This is Short code style file. All Short code related style included in th
 
 */
 
+@import url("slider.css");
 @import url("default.css");
-@import url("../meanmenu.css");
+@import url("animate.css");
+@import url("magnific-popup.css");
+@import url("meanmenu.css");
+@import url("responsive.css");
 @import url("../material-design-iconic-font.css");
 @import url("../material-design-iconic-font.min.css");
-@import url("../animate.min.css");
-@import url("../owl.carousel.css");
-@import url("../magnific-popup.css");
 @import url("header.css");
-@import url("slider.css");
 @import url("footer.css");
