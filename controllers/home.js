@@ -32,6 +32,8 @@ module.exports = {
 
   getConfirmation: renderView("confirmation"),
 
+  getAvisoPrivacidad: renderView("aviso-privacidad"),
+
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;

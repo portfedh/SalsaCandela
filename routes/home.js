@@ -21,6 +21,7 @@ router.get("/faq", homeCtrl.getStoreFAQ);
 router.get("/contacto", homeCtrl.getStoreContact);
 router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 router.get("/confirmacion", homeCtrl.getConfirmation);
+router.get("/aviso-privacidad", homeCtrl.getAvisoPrivacidad);
 
 // Redirects
 // *********
