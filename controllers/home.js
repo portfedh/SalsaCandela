@@ -1,6 +1,8 @@
 // Home Controllers
 // ****************
 
+const path = require("path");
+
 function renderView(viewName) {
   return (req, res) => {
     res.render(`${viewName}.ejs`);
