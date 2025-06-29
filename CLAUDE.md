@@ -9,18 +9,22 @@ Salsa Candela is a Node.js/Express web application for a dance academy in CDMX. 
 ## Development Commands
 
 ### Running the Application
+
 - **Development with auto-reload**: `npm run dev` (uses nodemon)
 - **Production**: `npm start`
 - **Test**: No tests configured - shows error message
 
 ### Environment Configuration
+
 - Environment variables are loaded from `./config/.env`
 - Required variables: `PORT` (defaults to 3000 if not set)
 
 ## Architecture
 
 ### Core Structure
+
 This is a traditional Express.js MVC application with the following pattern:
+
 - **server.js**: Main application entry point, Express setup
 - **routes/**: Express route definitions (currently only `home.js`)
 - **controllers/**: Route handlers (currently only `home.js`)
@@ -28,19 +32,24 @@ This is a traditional Express.js MVC application with the following pattern:
 - **public/**: Static assets (CSS, JS, images)
 
 ### Route Architecture
+
 The application follows two main patterns:
+
 1. **View Routes**: Render EJS templates for informational pages
 2. **Redirect Routes**: Handle form submissions and redirect to external admin system
 
 Key redirect destinations:
+
 - Class registrations → `https://admin.salsa-candela.com/classstripeform`
 - Party tickets → `https://admin.salsa-candela.com/fiesta/boletos`
 - Private classes → `https://admin.salsa-candela.com/clases-particulares/inscripcion-stripe`
 
 ### Controller Pattern
+
 Controllers use a `renderView()` helper function to reduce boilerplate for simple template rendering. All redirect handlers include specific query parameters and registration keys.
 
 ### View Structure
+
 - **Main views**: Located in `/views/` (index, salsa, bachata, party, etc.)
 - **Partials**: Located in `/views/partials/` for reusable components
   - Headers, footers, navigation
@@ -48,6 +57,7 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
   - Script includes and maps
 
 ### Static Assets Organization
+
 - **CSS**: Multiple stylesheets for different pages (`style_*.css`)
 - **Images**: Organized by type (logo, class, party, banners)
 - **JavaScript**: Mix of vendor libraries and custom scripts
@@ -55,20 +65,29 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 ## Key Files
 
 ### Configuration
+
 - `server.js`: Main server configuration and Express setup
 - `config/.env`: Environment variables (not tracked in git)
 
 ### Routes & Controllers
+
 - `routes/home.js`: All application routes and redirects
 - `controllers/home.js`: Route handlers with consistent pattern
 
 ### Important Features
+
 - **Apple Pay Support**: Serves domain association file for Apple Pay merchant verification
 - **SEO**: Includes sitemap.xml serving
 - **Error Handling**: Basic middleware for 500 errors
 
 ### External Dependencies
+
 The application heavily relies on an external admin system (`admin.salsa-candela.com`) for payment processing and registration handling.
 
 ### No Testing Framework
+
 Currently has no test suite configured - the test script just shows an error message.
+
+### Coding guidelines
+
+- Don't use !important in CSS
