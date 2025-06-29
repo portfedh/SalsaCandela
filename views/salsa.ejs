@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="css/style_salsa.css" />
 
   <body>
-    <!-- Include header -->
-    <%- include('partials/store_header') -%>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_header_with_custom_mobile') -%>
+    
+    <!-- Include custom mobile nav styles -->
+    <%- include('partials/custom_mobile_nav_styles') -%>
 
     <!-- Banner Area Start -->
     <section class="banner-area text-start">
@@ -484,6 +487,9 @@
 
     <!-- Include Java Script -->
     <%- include('partials/store_js_scripts') -%>
+    
+    <!-- Include custom mobile nav script -->
+    <%- include('partials/custom_mobile_nav_script') -%>
 
     <!-- Body & html close -->
   </body>
