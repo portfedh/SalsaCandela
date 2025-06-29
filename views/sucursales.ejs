@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <%- include('partials/store_head') -%>
+
+  <body>
+    <%- include('partials/store_header') -%>
+
+    <!-- Page Header Start -->
+    <div class="page-header-area">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="page-header-wrapper">
+              <div class="page-header-content">
+                <h1>Nuestras Sucursales</h1>
+                <p>Encuentra la sucursal más cercana a ti</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Branches Section Start -->
+    <div class="sucursales-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Find Nearest Branch Button -->
+            <div class="find-nearest-section text-center mb-5">
+              <h3>¿Cuál sucursal te queda más cerca?</h3>
+              <button 
+                id="findNearestBtn" 
+                class="btn btn-primary btn-lg mt-3"
+                onclick="findNearestBranch()"
+              >
+                <i class="fas fa-location-arrow me-2"></i>
+                Buscar sucursal más cercana
+              </button>
+              <div id="locationStatus" class="mt-3"></div>
+            </div>
+
+            <!-- Branches Container -->
+            <div class="branches-container">
+              <div class="row" id="branchesRow">
+                <!-- Xola Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="xola" data-lat="19.391" data-lng="-99.155">
+                    <div class="branch-header" onclick="toggleBranch('xola')">
+                      <h4>Sucursal Xola</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-xola" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-xola"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-xola">
+                      <div class="branch-details">
+                        <p><strong>Dirección:</strong> Estafetas 99, Col Postal Benito Juarez, 0100, CDMX</p>
+                        <div class="branch-map">
+                          <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5078611231734!2d-99.14293909999999!3d19.390450899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724175073!5m2!1ses-419!2smx"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/fAZm3CfnKvEzDinFA" 
+                             target="_blank" 
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Abrir en Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Valle Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="valle" data-lat="19.3675" data-lng="-99.1581">
+                    <div class="branch-header" onclick="toggleBranch('valle')">
+                      <h4>Sucursal Valle</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-valle" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-valle"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-valle">
+                      <div class="branch-details">
+                        <p><strong>Dirección:</strong> Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX</p>
+                        <div class="branch-map">
+                          <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.9273605566686!2d-99.1738906!3d19.3722977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9a07ea6d93%3A0x984de2ae6b224902!2sF%C3%A9lix%20Cuevas%20407%2C%20Col%20del%20Valle%20Sur%2C%20Benito%20Ju%C3%A1rez%2C%2003104%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724558230!5m2!1ses-419!2smx"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/2J2DWTJArTgAUVZH9" 
+                             target="_blank" 
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Abrir en Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Satelite Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="satelite" data-lat="19.5087" data-lng="-99.2395">
+                    <div class="branch-header" onclick="toggleBranch('satelite')">
+                      <h4>Sucursal Satelite</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-satelite" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-satelite"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-satelite">
+                      <div class="branch-details">
+                        <p><strong>Dirección:</strong> Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex</p>
+                        <div class="branch-map">
+                          <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.1765622070075!2d-99.2441764!3d19.4910381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031a6b736345%3A0xbce4ed058e944674!2sBlvd.%20de%20la%20Sta.%20Cruz%20142%2C%20Altavista%2C%2003910%20Acatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1703724745453!5m2!1ses-419!2smx"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/dMdciVVjrQxDUvrT9" 
+                             target="_blank" 
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Abrir en Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Claveria Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="claveria" data-lat="19.4515" data-lng="-99.1896">
+                    <div class="branch-header" onclick="toggleBranch('claveria')">
+                      <h4>Sucursal Claveria</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-claveria" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-claveria"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-claveria">
+                      <div class="branch-details">
+                        <p><strong>Dirección:</strong> Palestina 10, Claveria, Azcapotzalco, CDMX</p>
+                        <div class="branch-map">
+                          <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.813823212397!2d-99.1824858!3d19.4635922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b091bdcd5%3A0xfcafed2927bdd9a7!2sPalestina%2010%2C%20Claveria%2C%20Azcapotzalco%2C%2002080%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724856034!5m2!1ses-419!2smx"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/V2TdhxTJCvMEk1s56" 
+                             target="_blank" 
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Abrir en Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coapa Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="coapa" data-lat="19.2998" data-lng="-99.1386">
+                    <div class="branch-header" onclick="toggleBranch('coapa')">
+                      <h4>Sucursal Coapa</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-coapa" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-coapa"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-coapa">
+                      <div class="branch-details">
+                        <p><strong>Dirección:</strong> Calz. Acoxpa 885, Coapa, Tlalpan, CDMX</p>
+                        <div class="branch-map">
+                          <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.822058144884!2d-99.119535!3d19.2901029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0175b6627251%3A0x72c03df48ec6f443!2sCalz%20Acoxpa%20885%2C%20Coapa%2C%20Coapa%20Super%204%2C%20Tlalpan%2C%2014390%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724927960!5m2!1ses-419!2smx"
+                            width="100%" 
+                            height="200" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/KMpUjs6kUTNAE8ca6" 
+                             target="_blank" 
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Abrir en Google Maps
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Branches Section End -->
+
+    <%- include('partials/store_footer') -%>
+
+    <style>
+      .sucursales-area {
+        padding: 80px 0;
+        background-color: #f8f9fa;
+      }
+
+      .page-header-area {
+        padding: 100px 0 80px;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .find-nearest-section {
+        background: white;
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        margin-bottom: 50px;
+      }
+
+      .find-nearest-section h3 {
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 600;
+      }
+
+      .branch-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        margin-bottom: 20px;
+      }
+
+      .branch-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      }
+
+      .branch-card.nearest {
+        border: 3px solid #ff6b35;
+        transform: translateY(-5px);
+      }
+
+      .branch-header {
+        padding: 25px 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease;
+      }
+
+      .branch-header:hover {
+        background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+      }
+
+      .branch-card.nearest .branch-header {
+        background: linear-gradient(135deg, #fff5f3 0%, #ffe8e1 100%);
+      }
+
+      .branch-header h4 {
+        margin: 0;
+        color: #333;
+        font-weight: 600;
+        font-size: 1.4rem;
+      }
+
+      .branch-card.nearest .branch-header h4 {
+        color: #ff6b35;
+      }
+
+      .branch-meta {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .distance-badge {
+        background: #ff6b35;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      .toggle-icon {
+        color: #666;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      .branch-card.nearest .toggle-icon {
+        color: #ff6b35;
+      }
+
+      .toggle-icon.rotated {
+        transform: rotate(180deg);
+      }
+
+      .branch-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+      }
+
+      .branch-content.expanded {
+        max-height: 500px;
+      }
+
+      .branch-details {
+        padding: 30px;
+      }
+
+      .branch-details p {
+        margin-bottom: 20px;
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .branch-map {
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      }
+
+      .btn-outline-primary {
+        border: 2px solid #ff6b35;
+        color: #ff6b35;
+        padding: 12px 25px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-outline-primary:hover {
+        background: #ff6b35;
+        color: white;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        border: none;
+        padding: 15px 30px;
+        font-weight: 600;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+      }
+
+      #locationStatus {
+        min-height: 20px;
+      }
+
+      .alert {
+        padding: 12px 20px;
+        border-radius: 8px;
+        margin: 10px 0;
+      }
+
+      .alert-info {
+        background-color: #d1ecf1;
+        border: 1px solid #bee5eb;
+        color: #0c5460;
+      }
+
+      .alert-success {
+        background-color: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: #155724;
+      }
+
+      .alert-danger {
+        background-color: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: #721c24;
+      }
+
+      @media (max-width: 768px) {
+        .branch-header {
+          padding: 20px;
+        }
+        
+        .branch-details {
+          padding: 20px;
+        }
+        
+        .find-nearest-section {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+
+    <script>
+      const branches = [
+        {
+          id: 'xola',
+          name: 'Xola',
+          lat: 19.391,
+          lng: -99.155,
+          address: 'Estafetas 99, Col Postal Benito Juarez, 0100, CDMX'
+        },
+        {
+          id: 'valle',
+          name: 'Valle',
+          lat: 19.3675,
+          lng: -99.1581,
+          address: 'Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX'
+        },
+        {
+          id: 'satelite',
+          name: 'Satelite',
+          lat: 19.5087,
+          lng: -99.2395,
+          address: 'Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex'
+        },
+        {
+          id: 'claveria',
+          name: 'Claveria',
+          lat: 19.4515,
+          lng: -99.1896,
+          address: 'Palestina 10, Claveria, Azcapotzalco, CDMX'
+        },
+        {
+          id: 'coapa',
+          name: 'Coapa',
+          lat: 19.2998,
+          lng: -99.1386,
+          address: 'Calz. Acoxpa 885, Coapa, Tlalpan, CDMX'
+        }
+      ];
+
+      function toggleBranch(branchId) {
+        const content = document.getElementById('content-' + branchId);
+        const icon = document.getElementById('icon-' + branchId);
+        
+        if (content.classList.contains('expanded')) {
+          content.classList.remove('expanded');
+          icon.classList.remove('rotated');
+        } else {
+          content.classList.add('expanded');
+          icon.classList.add('rotated');
+        }
+      }
+
+      function calculateDistance(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const dLat = deg2rad(lat2 - lat1);
+        const dLon = deg2rad(lon2 - lon1);
+        const a = 
+          Math.sin(dLat/2) * Math.sin(dLat/2) +
+          Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+          Math.sin(dLon/2) * Math.sin(dLon/2);
+        const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        const d = R * c;
+        return d;
+      }
+
+      function deg2rad(deg) {
+        return deg * (Math.PI/180);
+      }
+
+      function findNearestBranch() {
+        const statusDiv = document.getElementById('locationStatus');
+        const button = document.getElementById('findNearestBtn');
+        
+        if (!navigator.geolocation) {
+          statusDiv.innerHTML = '<div class="alert alert-danger">Tu navegador no soporta geolocalización.</div>';
+          return;
+        }
+
+        button.disabled = true;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Obteniendo ubicación...';
+        statusDiv.innerHTML = '<div class="alert alert-info">Obteniendo tu ubicación...</div>';
+
+        navigator.geolocation.getCurrentPosition(
+          function(position) {
+            const userLat = position.coords.latitude;
+            const userLng = position.coords.longitude;
+            
+            let nearestBranch = null;
+            let nearestDistance = Infinity;
+            
+            branches.forEach(function(branch) {
+              const distance = calculateDistance(userLat, userLng, branch.lat, branch.lng);
+              
+              const distanceBadge = document.getElementById('distance-' + branch.id);
+              distanceBadge.textContent = distance.toFixed(1) + ' km';
+              distanceBadge.style.display = 'inline-block';
+              
+              if (distance < nearestDistance) {
+                nearestDistance = distance;
+                nearestBranch = branch;
+              }
+            });
+            
+            document.querySelectorAll('.branch-card').forEach(function(card) {
+              card.classList.remove('nearest');
+            });
+            
+            if (nearestBranch) {
+              const nearestCard = document.querySelector('[data-branch="' + nearestBranch.id + '"]');
+              nearestCard.classList.add('nearest');
+              
+              const nearestContent = document.getElementById('content-' + nearestBranch.id);
+              const nearestIcon = document.getElementById('icon-' + nearestBranch.id);
+              nearestContent.classList.add('expanded');
+              nearestIcon.classList.add('rotated');
+              
+              nearestCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              
+              statusDiv.innerHTML = 
+                '<div class="alert alert-success">' +
+                '<strong>¡Encontrado!</strong> Tu sucursal más cercana es <strong>' + nearestBranch.name + '</strong> ' +
+                'a ' + nearestDistance.toFixed(1) + ' km de distancia.' +
+                '</div>';
+            }
+            
+            button.disabled = false;
+            button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>Buscar sucursal más cercana';
+          },
+          function(error) {
+            let errorMessage = 'No se pudo obtener tu ubicación.';
+            
+            switch(error.code) {
+              case error.PERMISSION_DENIED:
+                errorMessage = 'Permiso de ubicación denegado. Por favor, permite el acceso a tu ubicación.';
+                break;
+              case error.POSITION_UNAVAILABLE:
+                errorMessage = 'Información de ubicación no disponible.';
+                break;
+              case error.TIMEOUT:
+                errorMessage = 'Tiempo de espera agotado al obtener ubicación.';
+                break;
+            }
+            
+            statusDiv.innerHTML = '<div class="alert alert-danger">' + errorMessage + '</div>';
+            button.disabled = false;
+            button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>Buscar sucursal más cercana';
+          },
+          {
+            enableHighAccuracy: true,
+            timeout: 10000,
+            maximumAge: 300000
+          }
+        );
+      }
+    </script>
+  </body>
+</html>
