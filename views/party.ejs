@@ -78,7 +78,7 @@
             <!-- Buy button -->
             <div class="col-12 text-center pb-30">
               <a
-                class="banner-btn mt-40 pb-30"
+                class="banner-btn compact-btn mt-40 pb-30"
                 href="/boletos/salsa-candela"
                 data-text="Compra tus boletos"
                 ><span>Compra tus boletos</span>
@@ -107,7 +107,7 @@
               </div>
               <div class="col-12 text-center">
                 <a
-                  class="banner-btn mt-20"
+                  class="banner-btn compact-btn mt-20"
                   href="/boletos/salsa-candela"
                   data-text="Boletos"
                   ><span>Boletos</span>
@@ -129,6 +129,13 @@
 
     <!-- Include Footer -->
     <%- include('partials/store_footer') -%>
+
+    <style>
+      .banner-btn.compact-btn {
+        line-height: 28px;
+        padding: 8px 30px;
+      }
+    </style>
 
     <!-- Include Java Script -->
     <%- include('partials/store_js_scripts') -%>

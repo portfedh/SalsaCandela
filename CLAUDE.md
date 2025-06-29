@@ -88,6 +88,11 @@ The application heavily relies on an external admin system (`admin.salsa-candela
 
 Currently has no test suite configured - the test script just shows an error message.
 
-### Coding guidelines
+### Coding Guidelines
 
-- Don't use !important in CSS
+#### CSS Best Practices
+
+- **Never use `!important` in CSS** - Instead, use more specific selectors or additional classes to override styles
+  - Example: Use `.banner-btn.compact-btn` instead of `.banner-btn` with `!important`
+  - This maintains clean, maintainable CSS and follows specificity rules
+- Follow existing CSS patterns and class naming conventions
