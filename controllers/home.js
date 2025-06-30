@@ -38,6 +38,8 @@ module.exports = {
 
   getSucursales: renderView("sucursales"),
 
+  getEmailConfirmation: renderView("email-confirmation"),
+
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;

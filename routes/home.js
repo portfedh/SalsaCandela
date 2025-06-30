@@ -23,6 +23,7 @@ router.post("/particulares", homeCtrl.getStoreIndividualClasses);
 router.get("/confirmacion", homeCtrl.getConfirmation);
 router.get("/aviso-privacidad", homeCtrl.getAvisoPrivacidad);
 router.get("/sucursales", homeCtrl.getSucursales);
+router.get("/confirmacion-email", homeCtrl.getEmailConfirmation);
 
 // Redirects
 // *********
