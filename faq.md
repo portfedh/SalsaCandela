@@ -253,3 +253,21 @@ Sí, trabajamos contigo para diseñar un programa que se adapte a las necesidade
 
 **¿Ofrecen shows de baile para eventos?**
 Sí, podemos organizar shows de baile y demostraciones para eventos especiales como bodas, cumpleaños, y eventos corporativos.
+
+## Nuevas
+
+Hola. He pagado este nivel, pero se me dificulta asistir, ¿puedo incorporarme el siguientes nivel con el pago que he hecho? Por favor
+
+Pero me surgió una duda, el precio de preventa en pareja, aplica solo si es mi pareja una mujer es decir, hombre-mujer, o podemos ser dos hombres ?
+
+Yo me inscribí en septiembre para iniciar en octubre 2024, pero avisé que iba a estar fuera de la ciudad.
+Ya me encuentro aquí en la Cdmx y quisiera iniciar el curso , incluso con una persona más.
+?cual es procedimiento y cuando inician nuevo curso?
+
+Les comento que estoy inscrita en el nivel 5 de bachata, curso que comenzó el 4 de enero. Por cuestiones de salud solo pude asistir a la primera clase y a ninguna después de esa.
+
+Tengo intención de retomar el curso y no dejarlo perder. Es posible que me hagan válido este nivel 5 cuando comience el siguiente ciclo?
+
+Hola nonse porque me asigno al nivel 1 y yo voy al 4 hay forma de que se corrija esto por favor.
+
+Hola buen día, no me llega aún mi pase para el curso de baile que inicia mañana x la noche, a ver si me lo puede reenviar x aquí por favor x que no se si mi correo está mal 😊
