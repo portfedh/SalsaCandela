@@ -2,10 +2,54 @@
 // ****************
 
 const path = require("path");
+const courseData = require("../config/courseData");
+
+function getNextSaturdayDate() {
+  const now = new Date();
+  const saturdayDates = [];
+  
+  // Extract all Saturday dates from courseData
+  Object.values(courseData).forEach(course => {
+    if (course.startDates && course.startDates.saturday) {
+      saturdayDates.push(new Date(course.startDates.saturday));
+    }
+  });
+  
+  // Filter dates that are after current date and sort them
+  const futureSaturdays = saturdayDates
+    .filter(date => date > now)
+    .sort((a, b) => a - b);
+  
+  if (futureSaturdays.length === 0) {
+    return "TBA"; // To Be Announced if no future dates
+  }
+  
+  // Get the first (earliest) future Saturday
+  const nextSaturday = futureSaturdays[0];
+  
+  // Format date to Spanish format: "27 de Junio 2025"
+  const months = [
+    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
+    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+  ];
+  
+  const day = nextSaturday.getDate();
+  const month = months[nextSaturday.getMonth()];
+  const year = nextSaturday.getFullYear();
+  
+  return `${day} de ${month} ${year}`;
+}
 
 function renderView(viewName) {
   return (req, res) => {
     res.render(`${viewName}.ejs`);
+  };
+}
+
+function renderViewWithDate(viewName) {
+  return (req, res) => {
+    const nextDate = getNextSaturdayDate();
+    res.render(`${viewName}.ejs`, { nextSaturdayDate: nextDate });
   };
 }
 
@@ -20,9 +64,9 @@ module.exports = {
 
   getStoreIndex: renderView("index"),
 
-  getStoreSalsa: renderView("salsa"),
+  getStoreSalsa: renderViewWithDate("salsa"),
 
-  getStoreBachata: renderView("bachata"),
+  getStoreBachata: renderViewWithDate("bachata"),
 
   getStoreIndividualClasses: renderView("individual_classes"),
 
