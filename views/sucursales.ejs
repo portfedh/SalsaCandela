@@ -16,7 +16,7 @@
           <div class="col-lg-12">
             <div class="page-header-wrapper">
               <div class="page-header-content">
-                <h1>Nuestras Sucursales</h1>
+                <h1 class="sucursales-title">Nuestras Sucursales</h1>
                 <p>Encuentra la sucursal más cercana a ti</p>
               </div>
             </div>
@@ -356,7 +356,7 @@
         color: white;
         padding: 5px 12px;
         border-radius: 20px;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         font-weight: 600;
       }
 
@@ -485,6 +485,18 @@
         .branch-content.expanded {
           max-height: 600px;
         }
+
+        .distance-badge {
+          font-size: 0.7rem;
+        }
+        .sucursales-area .col-lg-12 {
+          padding-left: 2px;
+          padding-right: 2px;
+        }
+
+        .sucursales-title {
+          padding-top: 3rem;
+        }
       }
     </style>
 
@@ -606,8 +618,8 @@
               
               const nearestContent = document.getElementById('content-' + nearestBranch.id);
               const nearestIcon = document.getElementById('icon-' + nearestBranch.id);
-              nearestContent.classList.add('expanded');
-              nearestIcon.classList.add('rotated');
+              // nearestContent.classList.add('expanded');
+              // nearestIcon.classList.add('rotated');
               
               nearestCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
               
