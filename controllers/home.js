@@ -7,36 +7,46 @@ const courseData = require("../config/courseData");
 function getNextSaturdayDate() {
   const now = new Date();
   const saturdayDates = [];
-  
+
   // Extract all Saturday dates from courseData
-  Object.values(courseData).forEach(course => {
+  Object.values(courseData).forEach((course) => {
     if (course.startDates && course.startDates.saturday) {
       saturdayDates.push(new Date(course.startDates.saturday));
     }
   });
-  
+
   // Filter dates that are after current date and sort them
   const futureSaturdays = saturdayDates
-    .filter(date => date > now)
+    .filter((date) => date > now)
     .sort((a, b) => a - b);
-  
+
   if (futureSaturdays.length === 0) {
     return "TBA"; // To Be Announced if no future dates
   }
-  
+
   // Get the first (earliest) future Saturday
   const nextSaturday = futureSaturdays[0];
-  
+
   // Format date to Spanish format: "27 de Junio 2025"
   const months = [
-    "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-    "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
   ];
-  
+
   const day = nextSaturday.getDate();
   const month = months[nextSaturday.getMonth()];
   const year = nextSaturday.getFullYear();
-  
+
   return `${day} de ${month} ${year}`;
 }
 
@@ -84,6 +94,8 @@ module.exports = {
 
   getEmailConfirmation: renderView("email-confirmation"),
 
+  getPasswordReset: renderView("cambiar-contrasena"),
+
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;
@@ -93,11 +105,15 @@ module.exports = {
   },
 
   ClassRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3");
+    res.redirect(
+      "https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3"
+    );
   },
 
   ClassSalsaRedirect: (req, res) => {
-    res.redirect("https://admin.salsa-candela.com/classstripeform?curso=salsa&regKey=zG9xKmF3");
+    res.redirect(
+      "https://admin.salsa-candela.com/classstripeform?curso=salsa&regKey=zG9xKmF3"
+    );
   },
 
   ClassSalsaXolaRedirect: (req, res) => {

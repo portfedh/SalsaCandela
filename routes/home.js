@@ -7,6 +7,7 @@
 const express = require("express");
 // Create router object
 const router = express.Router();
+const path = require("path");
 // Controllers
 const homeCtrl = require("../controllers/home");
 
@@ -24,6 +25,7 @@ router.get("/confirmacion", homeCtrl.getConfirmation);
 router.get("/aviso-privacidad", homeCtrl.getAvisoPrivacidad);
 router.get("/sucursales", homeCtrl.getSucursales);
 router.get("/confirmacion-email", homeCtrl.getEmailConfirmation);
+router.get("/cambiar-contrasena", homeCtrl.getPasswordReset);
 
 // Redirects
 // *********

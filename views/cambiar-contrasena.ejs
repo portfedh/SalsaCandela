@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <%- include('partials/store_head') -%>
+  <body>
+    <%- include('partials/store_header_with_custom_mobile') -%> <%-
+    include('partials/custom_mobile_nav_styles') -%>
+
+    <section class="class-area fix bg-gray pb-60 pt-60">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2">
+            <div class="single-table text-center" style="padding: 30px">
+              <h2>Cambiar contraseña</h2>
+              <p id="status" style="margin-top: 10px; color: #666">
+                Validando enlace…
+              </p>
+
+              <form
+                id="reset-form"
+                style="display: none; margin-top: 20px; text-align: left"
+              >
+                <div class="form-group" style="margin-bottom: 15px">
+                  <label for="password">Nueva contraseña</label>
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    placeholder="••••••••"
+                    required
+                  />
+                </div>
+                <div class="form-group" style="margin-bottom: 20px">
+                  <label for="confirm">Confirmar contraseña</label>
+                  <input
+                    type="password"
+                    id="confirm"
+                    class="form-control"
+                    placeholder="••••••••"
+                    required
+                  />
+                </div>
+                <button id="submit" type="submit" class="banner-btn">
+                  <span>Guardar</span>
+                </button>
+              </form>
+
+              <div id="success" style="display: none; margin-top: 20px">
+                <h3>¡Listo!</h3>
+                <p>Tu contraseña fue actualizada correctamente.</p>
+                <a href="/" class="banner-btn" data-text="Inicio"
+                  ><span>Inicio</span></a
+                >
+              </div>
+
+              <div
+                id="error"
+                style="display: none; margin-top: 20px; color: #b00020"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <%- include('partials/store_footer') -%>
+
+    <!-- Minimal inline script to handle Supabase recovery token and password update -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+      (async () => {
+        const qs = new URLSearchParams(window.location.search);
+        const isMock = qs.get("mock") === "1";
+        const autoSubmit = qs.get("autosubmit") === "1";
+        const mockPw = qs.get("pw") || "";
+        const sessionErrorFlag = qs.get("sessionError") === "1";
+        const statusEl = document.getElementById("status");
+        const formEl = document.getElementById("reset-form");
+        const errorEl = document.getElementById("error");
+        const successEl = document.getElementById("success");
+        const submitBtn = document.getElementById("submit");
+
+        // You must set these envs on the server and expose them here if needed
+        // For safety, the anon key is public; the URL is also public
+        const SUPABASE_URL = '<%= process.env.SUPABASE_URL || "" %>';
+        const SUPABASE_ANON_KEY = '<%= process.env.SUPABASE_ANON_KEY || "" %>';
+
+        if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+          if (isMock) {
+            // allow missing envs if mocking
+          } else {
+            statusEl.textContent =
+              "Configuración de Supabase faltante. Contacta al administrador.";
+            return;
+          }
+        }
+
+        // Simple mock for testing without calling Supabase
+        if (isMock) {
+          window.supabase = {
+            createClient: () => ({
+              auth: {
+                setSession: async ({ access_token, refresh_token }) => {
+                  // Simulate token validation
+                  if (!access_token || !refresh_token) {
+                    return {
+                      data: null,
+                      error: { message: "Mock: tokens faltantes" },
+                    };
+                  }
+                  if (sessionErrorFlag) {
+                    return {
+                      data: null,
+                      error: { message: "Mock: sesión inválida/expirada" },
+                    };
+                  }
+                  await new Promise((r) => setTimeout(r, 200));
+                  return {
+                    data: { session: { user: { id: "mock-user" } } },
+                    error: null,
+                  };
+                },
+                updateUser: async ({ password }) => {
+                  await new Promise((r) => setTimeout(r, 300));
+                  if (password === "fail") {
+                    return {
+                      data: null,
+                      error: { message: "Mock: error al actualizar" },
+                    };
+                  }
+                  return { data: { user: { id: "mock-user" } }, error: null };
+                },
+              },
+            }),
+          };
+        }
+
+        const supabase = window.supabase.createClient(
+          SUPABASE_URL || "mock",
+          SUPABASE_ANON_KEY || "mock"
+        );
+
+        // Supabase sends the recovery session in the URL hash (after #)
+        // Use setSession to exchange tokens from the URL for a session
+        try {
+          const hash = window.location.hash.substring(1); // remove '#'
+          const params = new URLSearchParams(hash);
+          let access_token = params.get("access_token");
+          let refresh_token = params.get("refresh_token");
+
+          if (!access_token || !refresh_token) {
+            if (isMock) {
+              // Synthesize tokens in mock mode to drive the flow
+              access_token = "mock_access";
+              refresh_token = "mock_refresh";
+            } else {
+              statusEl.textContent =
+                "Enlace inválido o expirado. Solicita otro correo de recuperación.";
+              return;
+            }
+          }
+
+          const { data: sessionData, error: sessionError } =
+            await supabase.auth.setSession({
+              access_token,
+              refresh_token,
+            });
+
+          if (sessionError) {
+            statusEl.textContent =
+              "No se pudo validar el enlace. Solicita otro correo de recuperación.";
+            errorEl.style.display = "block";
+            errorEl.textContent = sessionError.message;
+            return;
+          }
+
+          // Clean URL hash to avoid tokens remaining in browser history
+          if (window.history && window.history.replaceState) {
+            window.history.replaceState(
+              null,
+              document.title,
+              window.location.pathname + window.location.search
+            );
+          }
+
+          statusEl.textContent = "Ingresa tu nueva contraseña.";
+          formEl.style.display = "block";
+
+          formEl.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            errorEl.style.display = "none";
+
+            const pw = document.getElementById("password").value;
+            const confirm = document.getElementById("confirm").value;
+
+            if (!pw || pw.length < 8) {
+              errorEl.style.display = "block";
+              errorEl.textContent =
+                "La contraseña debe tener al menos 8 caracteres.";
+              return;
+            }
+            if (pw !== confirm) {
+              errorEl.style.display = "block";
+              errorEl.textContent = "Las contraseñas no coinciden.";
+              return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.classList.add("disabled");
+
+            const { error: updateError } = await supabase.auth.updateUser({
+              password: pw,
+            });
+
+            submitBtn.disabled = false;
+            submitBtn.classList.remove("disabled");
+
+            if (updateError) {
+              errorEl.style.display = "block";
+              errorEl.textContent =
+                updateError.message || "No se pudo actualizar la contraseña.";
+              return;
+            }
+
+            formEl.style.display = "none";
+            statusEl.style.display = "none";
+            successEl.style.display = "block";
+          });
+
+          // In mock mode, allow auto-fill and auto-submit via query params
+          if (isMock && autoSubmit) {
+            const pwInput = document.getElementById("password");
+            const cfInput = document.getElementById("confirm");
+            // If pw is not provided, use a valid default; to simulate update error use pw=fail
+            const value = mockPw || "testing123";
+            pwInput.value = value;
+            cfInput.value = value;
+            setTimeout(() => {
+              formEl.dispatchEvent(
+                new Event("submit", { bubbles: true, cancelable: true })
+              );
+            }, 100);
+          }
+        } catch (err) {
+          statusEl.textContent = "Ocurrió un error. Intenta nuevamente.";
+          errorEl.style.display = "block";
+          errorEl.textContent = err.message || String(err);
+        }
+      })();
+    </script>
+
+    <%- include('partials/custom_mobile_nav_script') -%>
+  </body>
+</html>
