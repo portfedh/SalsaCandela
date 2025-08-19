@@ -9,7 +9,7 @@
   <body>
     <!-- Include header with custom mobile nav -->
     <%- include('partials/store_header_with_custom_mobile') -%>
-    
+
     <!-- Include custom mobile nav styles -->
     <%- include('partials/custom_mobile_nav_styles') -%>
 
@@ -52,9 +52,50 @@
                 <!-- Video de Salsa -->
                 <div class="video-container">
                   <div class="video-wrapper">
+                    <video 
+                      controls 
+                      autoplay 
+                      muted 
+                      playsinline 
+                      style="width: 100%; height: 100%; border-radius: 12px;"
+                      src="https://video.wixstatic.com/video/87831e_6ffe8eb8b1ec4333a6834ebbeab10f9d/1080p/mp4/file.mp4">
+                      Tu navegador no soporta el elemento de video.
+                    </video>
+                  </div>
+                </div>
+
+                <style>
+                  .video-container {
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 1rem auto;
+                    height: auto;
+                  }
+                  .video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                    overflow: hidden;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 0;
+                  }
+                  .video-wrapper video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    display: block;
+                  }
+                </style>
+
+                <!-- <div class="video-container">
+                  <div class="video-wrapper">
                     <iframe
                       loading="lazy"
-                      src="https://www.youtube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
+                      src="https://www.youatube.com/embed/w0ObOhmZPow?si=lool3vuOINa2WzNj&amp;controls=0"
                       title="Clases de Salsa en Salsa Candela"
                       frameborder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -88,7 +129,7 @@
                     border: none;
                     display: block;
                   }
-                </style>
+                </style> -->
 
                 <!-- Description Start -->
                 <div>
@@ -100,7 +141,9 @@
                     </span>
                     <br /><b>
                       Nuestro proximo taller inicia el
-                      <span style="color: #f69139"><%= nextSaturdayDate %>.</span></b
+                      <span style="color: #f69139"
+                        ><%= nextSaturdayDate %>.</span
+                      ></b
                     >
                   </div>
                 </div>
@@ -486,7 +529,7 @@
 
     <!-- Include Java Script -->
     <%- include('partials/store_js_scripts') -%>
-    
+
     <!-- Include custom mobile nav script -->
     <%- include('partials/custom_mobile_nav_script') -%>
 
