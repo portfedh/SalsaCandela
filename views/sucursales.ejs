@@ -808,15 +808,8 @@
             if (nearestBranch) {
               const nearestCard = document.querySelector('[data-branch="' + nearestBranch.id + '"]');
               nearestCard.classList.add('nearest');
-              
-              const nearestContent = document.getElementById('content-' + nearestBranch.id);
-              const nearestIcon = document.getElementById('icon-' + nearestBranch.id);
-              // nearestContent.classList.add('expanded');
-              // nearestIcon.classList.add('rotated');
-              
-              nearestCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-              
-              statusDiv.innerHTML = 
+
+              statusDiv.innerHTML =
                 '<div class="alert alert-success">' +
                 '<strong>¡Encontrado!</strong> Tu sucursal más cercana es <strong>' + nearestBranch.name + '</strong> ' +
                 'a ' + nearestDistance.toFixed(1) + ' km de distancia.' +
