@@ -3,6 +3,7 @@
 
 const path = require("path");
 const courseData = require("../config/courseData");
+const classSchedules = require("../config/classSchedules");
 
 function getNextSaturdayDate() {
   const now = new Date();
@@ -90,7 +91,9 @@ module.exports = {
 
   getAvisoPrivacidad: renderView("aviso-privacidad"),
 
-  getSucursales: renderView("sucursales"),
+  getSucursales: (req, res) => {
+    res.render("sucursales.ejs", { branches: classSchedules });
+  },
 
   getEmailConfirmation: renderView("email-confirmation"),
 
