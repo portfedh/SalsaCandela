@@ -79,6 +79,10 @@ module.exports = {
 
   getStoreBachata: renderViewWithDate("bachata"),
 
+  getStoreSiguiente: (req, res) => {
+    res.render("siguiente.ejs", { branches: classSchedules });
+  },
+
   getStoreIndividualClasses: renderView("individual_classes"),
 
   getStoreParty: renderView("party"),
