@@ -136,6 +136,10 @@
   box-shadow: 0 3px 15px rgba(0,0,0,0.1);
 }
 
+.map-iframe {
+  border: 0;
+}
+
 .btn-outline-primary {
   border: 2px solid #ff6b35;
   color: #ff6b35;
