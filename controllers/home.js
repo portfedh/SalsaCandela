@@ -106,7 +106,17 @@ module.exports = {
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;
-    const baseUrl = "https://admin.salsa-candela.com/fiesta/boletos";
+    const paymentType = req.query.payment;
+
+    let baseUrl = "https://admin.salsa-candela.com/fiesta/boletos";
+
+    // Handle different payment types
+    if (paymentType === 'codi') {
+      baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-codi";
+    } else if (paymentType === 'tarjeta') {
+      baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-tarjeta";
+    }
+
     const redirectUrl = referralCode ? `${baseUrl}/${referralCode}` : baseUrl;
     res.redirect(redirectUrl);
   },

@@ -19,6 +19,11 @@
   border: 1px solid #821766;
 }
 
+.banner-btn.compact-btn {
+  line-height: 28px;
+  padding: 1px 30px;
+}
+
 /* Mobile styles */
 @media screen and (max-width: 480px) {
   input[type="text"],

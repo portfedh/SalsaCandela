@@ -3,6 +3,9 @@
   <!-- Include head -->
   <%- include('partials/store_head') -%>
 
+  <!-- Party-specific styles -->
+  <link rel="stylesheet" href="css/style_party.css" />
+
   <body>
     <!-- Include header with custom mobile nav -->
     <%- include('partials/store_header_with_custom_mobile') -%>
@@ -77,9 +80,19 @@
             </div>
             <!-- Buy button -->
             <div class="col-12 text-center pb-30">
+              <!-- For Modal payment Mode -->
+              <!-- <a
+                class="banner-btn compact-btn mt-40 pb-30"
+                href="#"
+                onclick="showPaymentOptions()"
+                data-text="Compra tus boletos"
+                ><span>Compra tus boletos</span>
+              </a> -->
+              <!-- For Simple payment Mode -->
               <a
                 class="banner-btn compact-btn mt-40 pb-30"
-                href="/boletos/salsa-candela"
+                href="#"
+                onclick="handlePaymentClick()"
                 data-text="Compra tus boletos"
                 ><span>Compra tus boletos</span>
               </a>
@@ -114,9 +127,19 @@
                 > -->
               </div>
               <div class="col-12 text-center">
+                <!-- For Modal payment Mode -->
+                <!-- <a
+                  class="banner-btn compact-btn mt-20"
+                  href="#"
+                  onclick="showPaymentOptions()"
+                  data-text="Boletos"
+                  ><span>Boletos</span>
+                </a> -->
+                <!-- For Simple payment Mode -->
                 <a
                   class="banner-btn compact-btn mt-20"
-                  href="/boletos/salsa-candela"
+                  href="#"
+                  onclick="handlePaymentClick()"
                   data-text="Boletos"
                   ><span>Boletos</span>
                 </a>
@@ -138,18 +161,14 @@
     <!-- Include Footer -->
     <%- include('partials/store_footer') -%>
 
-    <style>
-      .banner-btn.compact-btn {
-        line-height: 28px;
-        padding: 8px 30px;
-      }
-    </style>
-
     <!-- Include Java Script -->
     <%- include('partials/store_js_scripts') -%>
 
     <!-- Include custom mobile nav script -->
     <%- include('partials/custom_mobile_nav_script') -%>
+
+    <!-- Include payment modal -->
+    <%- include('partials/payment_modal') -%>
 
     <!-- Body & html close -->
   </body>
