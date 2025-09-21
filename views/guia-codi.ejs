@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
-  <%- include('partials/sucursales_head') -%>
+  <%- include('partials/codi_head') -%>
 
   <body>
     <!-- Include header with custom mobile nav -->
@@ -10,14 +10,18 @@
     <%- include('partials/custom_mobile_nav_styles') -%>
 
     <!-- Page Header Start -->
-    <div class="page-header-area">
+    <div class="codi-page-header">
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header-wrapper">
               <div class="page-header-content">
-                <h1 class="sucursales-title">Guía CoDi®</h1>
-                <p>Tu guía completa para pagos digitales instantáneos</p>
+                <h1 class="codi-title">
+                  Guía CoDi<span class="reg-symbol">®</span>
+                </h1>
+                <p class="codi-subtitle">
+                  Tu guía completa para pagos digitales instantáneos
+                </p>
               </div>
             </div>
           </div>
@@ -27,22 +31,62 @@
     <!-- Page Header End -->
 
     <!-- Main Content Area -->
-    <div class="sucursales-area">
+    <div class="codi-guide-area">
       <div class="container">
         <!-- Introduction Section -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="find-nearest-section">
+            <div class="codi-intro-section">
               <div class="text-center mb-4">
-                <h2 class="text-primary"><i class="fas fa-mobile-alt"></i> ¿Qué es CoDi®?</h2>
+                <h2 class="codi-intro-title">
+                  <i class="fas fa-mobile-alt"></i>¿Qué es CoDi?
+                </h2>
               </div>
-              <p class="lead text-center mb-4">
-                CoDi® (Cobro Digital) es una plataforma desarrollada por el Banco de México (Banxico) que te permite realizar
-                <strong>pagos y cobros electrónicos de forma inmediata, segura y sin comisiones</strong>, directamente desde la aplicación de tu banco.
+              <p class="codi-intro-description">
+                CoDi<span class="reg-symbol">®</span> (Cobro Digital) es una
+                plataforma desarrollada por el Banco de México (Banxico) que te
+                permite realizar
+                <strong
+                  >pagos y cobros electrónicos de forma inmediata, segura y sin
+                  comisiones</strong
+                >, directamente desde la aplicación de tu banco.
               </p>
-              <div class="alert alert-info text-center">
-                <i class="fas fa-info-circle"></i>
-                <strong>Olvídate del efectivo y las tarjetas</strong> - Descubre cómo unirte a esta moderna forma de transaccionar.
+            </div>
+          </div>
+        </div>
+
+        <!-- Benefits Summary -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="codi-benefits-section">
+              <h3 class="codi-benefits-title">
+                <i class="fas fa-star"></i> Beneficios de CoDi
+              </h3>
+              <div class="codi-benefits-grid">
+                <div class="codi-benefit-card">
+                  <i class="fas fa-bolt"></i>
+                  <div class="codi-benefit-title">Instantáneo</div>
+                  <div class="codi-benefit-description">Pagos en segundos</div>
+                </div>
+                <div class="codi-benefit-card">
+                  <i class="fas fa-shield-alt"></i>
+                  <div class="codi-benefit-title">Seguro</div>
+                  <div class="codi-benefit-description">
+                    Respaldado por Banxico
+                  </div>
+                </div>
+                <div class="codi-benefit-card">
+                  <i class="fas fa-dollar-sign"></i>
+                  <div class="codi-benefit-title">Sin comisiones</div>
+                  <div class="codi-benefit-description">
+                    Gratis para usuarios
+                  </div>
+                </div>
+                <div class="codi-benefit-card">
+                  <i class="fas fa-clock"></i>
+                  <div class="codi-benefit-title">24/7</div>
+                  <div class="codi-benefit-description">Disponible siempre</div>
+                </div>
               </div>
             </div>
           </div>
@@ -51,117 +95,91 @@
         <!-- Registration Section -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="branch-card">
-              <div class="branch-header" onclick="toggleBranch(this)">
-                <h4><i class="fas fa-user-plus text-primary"></i> 1. ¿Cómo registrarte para poder usar CoDi?</h4>
+            <div class="codi-step-card">
+              <div class="codi-step-header" onclick="toggleBranch(this)">
+                <h4 class="codi-step-title">
+                  <span class="codi-step-number">1</span>
+                  <i class="fas fa-user-plus codi-step-icon"></i>
+                  ¿Cómo registrarte para poder usar CoDi?
+                </h4>
                 <div class="branch-meta">
-                  <i class="fas fa-chevron-down toggle-icon"></i>
+                  <i class="fas fa-chevron-down codi-toggle-icon"></i>
                 </div>
               </div>
-              <div class="branch-content expanded">
-                <div class="branch-details">
-                  <p class="mb-4">
-                    El proceso de registro es sencillo y se realiza directamente desde la aplicación de tu institución financiera.
-                    Aunque los pasos pueden variar ligeramente entre bancos, el procedimiento general es el siguiente:
+              <div class="codi-step-content">
+                <div class="codi-step-details">
+                  <p class="codi-step-description">
+                    El proceso de registro es sencillo y se realiza directamente
+                    desde la aplicación de tu institución financiera y toma
+                    aproximadamente 5 minutos. Aunque los pasos pueden variar
+                    ligeramente entre bancos, el procedimiento general es el
+                    siguiente:
                   </p>
 
-                  <div class="schedule-grid">
-                    <div class="schedule-block">
-                      <div class="dance-type salsa-type">
+                  <div class="codi-process-grid">
+                    <div class="codi-process-block">
+                      <div class="codi-process-header">
                         <i class="fas fa-mobile-alt"></i> Pasos 1-3
                       </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">1. Accede a tu Banca Móvil</div>
-                        <div class="schedule-time">Asegúrate de tener la última versión de la aplicación de tu banco instalada en tu smartphone.</div>
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">
+                          1. Accede a tu Banca Móvil
+                        </div>
+                        <div class="codi-step-instruction">
+                          Asegúrate de tener la última versión de la aplicación
+                          de tu banco instalada en tu celular.
+                        </div>
                       </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">2. Localiza la sección CoDi</div>
-                        <div class="schedule-time">Busca "CoDi", "Pagar con CoDi" o un ícono similar en el menú principal o transferencias.</div>
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">
+                          2. Localiza la sección CoDi
+                        </div>
+                        <div class="codi-step-instruction">
+                          Busca "CoDi", "Pagar con CoDi" o un ícono similar en
+                          el menú principal o de transferencias.
+                        </div>
                       </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">3. Acepta Términos y Condiciones</div>
-                        <div class="schedule-time">Lee y acepta los términos del servicio para continuar con el registro.</div>
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">
+                          3. Acepta Términos y Condiciones
+                        </div>
+                        <div class="codi-step-instruction">
+                          Lee y acepta los términos del servicio para continuar
+                          con el registro.
+                        </div>
                       </div>
                     </div>
 
-                    <div class="schedule-block">
-                      <div class="dance-type bachata-type">
+                    <div class="codi-process-block">
+                      <div class="codi-process-header">
                         <i class="fas fa-check-circle"></i> Pasos 4-6
                       </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">4. Verificación de teléfono</div>
-                        <div class="schedule-time">Recibirás un código SMS que deberás ingresar para confirmar tu identidad.</div>
-                      </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">5. Selecciona tu cuenta</div>
-                        <div class="schedule-time">Elige la cuenta bancaria (débito o cheques) que asociarás a CoDi.</div>
-                      </div>
-                      <div class="schedule-item">
-                        <div class="schedule-days">6. ¡Listo para usar!</div>
-                        <div class="schedule-time">Tu banco validará con un depósito de $0.01 y recibirás confirmación.</div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- QR Payment Section -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="branch-card">
-              <div class="branch-header" onclick="toggleBranch(this)">
-                <h4><i class="fas fa-qrcode text-primary"></i> 2. ¿Cómo pagar con CoDi usando un código QR?</h4>
-                <div class="branch-meta">
-                  <i class="fas fa-chevron-down toggle-icon"></i>
-                </div>
-              </div>
-              <div class="branch-content expanded">
-                <div class="branch-details">
-                  <p class="mb-4">
-                    <strong>Pagar con CoDi es tan fácil como tomar una foto.</strong> La forma más común de pago es a través de códigos QR,
-                    que encontrarás en establecimientos, o que te puede generar otra persona desde su celular.
-                  </p>
-
-                  <div class="row">
-                    <div class="col-md-6">
-                      <div class="schedule-block">
-                        <div class="dance-type salsa-type">
-                          <i class="fas fa-camera"></i> Escanear y Verificar
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">
+                          4. Verificación de teléfono
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">1. Solicita el código QR</div>
-                          <div class="schedule-time">El comercio te mostrará un código QR impreso o digital.</div>
-                        </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">2. Abre tu app bancaria</div>
-                          <div class="schedule-time">Busca "Pagar" o "Escanear con CoDi" en tu aplicación.</div>
-                        </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">3. Escanea el código QR</div>
-                          <div class="schedule-time">Apunta la cámara hacia el código hasta que lo reconozca.</div>
+                        <div class="codi-step-instruction">
+                          Recibirás un código SMS que deberás ingresar para
+                          confirmar tu identidad. A veces el mensaje puede
+                          tardar unos minutos en llegar.
                         </div>
                       </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="schedule-block">
-                        <div class="dance-type bachata-type">
-                          <i class="fas fa-shield-alt"></i> Autorizar y Confirmar
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">
+                          5. Selecciona tu cuenta
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">4. Verifica los datos</div>
-                          <div class="schedule-time">Revisa nombre del receptor, monto y concepto. Ingresa monto si es necesario.</div>
+                        <div class="codi-step-instruction">
+                          Elige la cuenta bancaria (débito o cheques) que
+                          asociarás a CoDi.
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">5. Autoriza el pago</div>
-                          <div class="schedule-time">Confirma con NIP, huella digital, reconocimiento facial o token.</div>
-                        </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">6. Confirmación instantánea</div>
-                          <div class="schedule-time">El pago se procesa en segundos. Ambos reciben notificación.</div>
+                      </div>
+                      <div class="codi-process-step">
+                        <div class="codi-step-label">6. ¡Listo para usar!</div>
+                        <div class="codi-step-instruction">
+                          Tu banco validará con un depósito de $0.01 y recibirás
+                          confirmación. Todos tus pagos y cobros estarán
+                          relacionados con esta cuenta y con tu número de
+                          celular.
                         </div>
                       </div>
                     </div>
@@ -175,65 +193,203 @@
         <!-- Remote Payment Section -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="branch-card">
-              <div class="branch-header" onclick="toggleBranch(this)">
-                <h4><i class="fas fa-paper-plane text-primary"></i> 3. ¿Cómo pagar a distancia con CoDi?</h4>
+            <div class="codi-step-card">
+              <div class="codi-step-header" onclick="toggleBranch(this)">
+                <h4 class="codi-step-title">
+                  <span class="codi-step-number">2</span>
+                  <i class="fas fa-paper-plane codi-step-icon"></i>
+                  ¿Cómo pagar con CoDi usando una notificación Push?
+                </h4>
                 <div class="branch-meta">
-                  <i class="fas fa-chevron-down toggle-icon"></i>
+                  <i class="fas fa-chevron-down codi-toggle-icon"></i>
                 </div>
               </div>
-              <div class="branch-content expanded">
-                <div class="branch-details">
-                  <p class="mb-4">
-                    También es posible pagar <strong>sin necesidad de escanear un código</strong>. En este caso,
-                    la persona o comercio te enviará una solicitud de pago directamente a tu celular.
+              <div class="codi-step-content">
+                <div class="codi-step-details">
+                  <p class="codi-step-description">
+                    Con CoDi es posible pagar
+                    <strong
+                      >sin necesidad de escanear un código o usar tarjeta de
+                      débito o crédito</strong
+                    >. En este caso, la persona o comercio te enviará una
+                    solicitud de pago directamente a tu celular mediante una
+                    notificación push de tu aplicación bancaria.
                   </p>
 
                   <div class="row">
                     <div class="col-md-4">
-                      <div class="schedule-block">
-                        <div class="dance-type salsa-type">
+                      <div class="codi-process-block">
+                        <div class="codi-process-header">
                           <i class="fas fa-phone"></i> Solicitud
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">1. Proporciona tu número</div>
-                          <div class="schedule-time">Comparte tu número de celular (el asociado a CoDi) con quien te va a cobrar.</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            1. Proporciona tu número celular
+                          </div>
+                          <div class="codi-step-instruction">
+                            Comparte tu número de celular (el asociado a CoDi) a
+                            10 dígitos con quien te va a cobrar.
+                          </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">2. Recibe notificación</div>
-                          <div class="schedule-time">Te llegará una notificación de cobro a tu celular.</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            2. Recibe notificación
+                          </div>
+                          <div class="codi-step-instruction">
+                            Te llegará una notificación de cobro a tu celular de
+                            tu app bancaria.
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="col-md-4">
-                      <div class="schedule-block">
-                        <div class="dance-type bachata-type">
+                      <div class="codi-process-block">
+                        <div class="codi-process-header">
                           <i class="fas fa-eye"></i> Verificación
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">3. Abre la notificación</div>
-                          <div class="schedule-time">Te llevará directamente a la sección de autorización en tu app bancaria.</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            3. Abre la notificación
+                          </div>
+                          <div class="codi-step-instruction">
+                            Te llevará directamente a la sección de autorización
+                            en tu app bancaria.
+                          </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">4. Verifica los datos</div>
-                          <div class="schedule-time">Revisa cuidadosamente el nombre de quien cobra y el monto.</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            4. Verifica los datos
+                          </div>
+                          <div class="codi-step-instruction">
+                            Revisa cuidadosamente el nombre de quien cobra y el
+                            monto.
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     <div class="col-md-4">
-                      <div class="schedule-block">
-                        <div class="dance-type salsa-type">
+                      <div class="codi-process-block">
+                        <div class="codi-process-header">
                           <i class="fas fa-check"></i> Confirmación
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">5. Autoriza el pago</div>
-                          <div class="schedule-time">Confirma la operación con tu método de seguridad (NIP, huella, etc.).</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">5. Autoriza el pago</div>
+                          <div class="codi-step-instruction">
+                            Confirma la operación con tu método de seguridad
+                            (NIP, huella, etc.).
+                          </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">6. Confirmación instantánea</div>
-                          <div class="schedule-time">Ambos reciben notificación de transacción completada.</div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            6. Confirmación instantánea
+                          </div>
+                          <div class="codi-step-instruction">
+                            Ambas partes reciben notificación de que la
+                            transacción fue completada con éxito.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QR Payment Section -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="codi-step-card">
+              <div class="codi-step-header" onclick="toggleBranch(this)">
+                <h4 class="codi-step-title">
+                  <span class="codi-step-number">3</span>
+                  <i class="fas fa-qrcode codi-step-icon"></i>
+                  ¿Cómo pagar con CoDi usando un código QR?
+                </h4>
+                <div class="branch-meta">
+                  <i class="fas fa-chevron-down codi-toggle-icon"></i>
+                </div>
+              </div>
+              <div class="codi-step-content">
+                <div class="codi-step-details">
+                  <p class="codi-step-description">
+                    <strong
+                      >Pagar con CoDi es tan fácil como tomar una foto.</strong
+                    >
+                    Una forma común de pago con CoDi es a través de códigos QR,
+                    que encontrarás en establecimientos, o que te puede generar
+                    otra persona desde su celular.
+                  </p>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="codi-process-block">
+                        <div class="codi-process-header">
+                          <i class="fas fa-camera"></i> Escanear y Verificar
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            1. Solicita el código QR
+                          </div>
+                          <div class="codi-step-instruction">
+                            El comercio te mostrará un código QR impreso o
+                            digital.
+                          </div>
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            2. Abre tu app bancaria
+                          </div>
+                          <div class="codi-step-instruction">
+                            Busca "Pagar" o "Escanear con CoDi" en tu
+                            aplicación.
+                          </div>
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            3. Escanea el código QR
+                          </div>
+                          <div class="codi-step-instruction">
+                            Apunta la cámara hacia el código hasta que lo
+                            reconozca.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="codi-process-block">
+                        <div class="codi-process-header">
+                          <i class="fas fa-shield-alt"></i> Autorizar y
+                          Confirmar
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            4. Verifica los datos
+                          </div>
+                          <div class="codi-step-instruction">
+                            Revisa nombre del receptor, monto y concepto.
+                            Ingresa monto si es necesario.
+                          </div>
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">5. Autoriza el pago</div>
+                          <div class="codi-step-instruction">
+                            Confirma con NIP, huella digital, reconocimiento
+                            facial o token.
+                          </div>
+                        </div>
+                        <div class="codi-process-step">
+                          <div class="codi-step-label">
+                            6. Confirmación instantánea
+                          </div>
+                          <div class="codi-step-instruction">
+                            Ambas partes reciben notificación de que la
+                            transacción fue completada con éxito.
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -247,49 +403,96 @@
         <!-- Additional Resources Section -->
         <div class="row">
           <div class="col-lg-12">
-            <div class="branch-card">
-              <div class="branch-header" onclick="toggleBranch(this)">
-                <h4><i class="fas fa-external-link-alt text-primary"></i> Recursos Adicionales por Banco</h4>
+            <div class="codi-step-card">
+              <div class="codi-step-header" onclick="toggleBranch(this)">
+                <h4 class="codi-step-title">
+                  <i class="fas fa-external-link-alt codi-step-icon"></i>
+                  Recursos Adicionales por Banco
+                </h4>
                 <div class="branch-meta">
-                  <i class="fas fa-chevron-down toggle-icon"></i>
+                  <i class="fas fa-chevron-down codi-toggle-icon"></i>
                 </div>
               </div>
-              <div class="branch-content">
-                <div class="branch-details">
-                  <div class="row">
+              <div class="codi-step-content">
+                <div class="codi-step-details">
+                  <div class="codi-resources-grid">
                     <!-- Official Banxico Resources -->
-                    <div class="col-md-6 mb-4">
-                      <div class="schedule-block">
-                        <div class="dance-type salsa-type">
+                    <div>
+                      <div class="codi-bank-block">
+                        <div class="codi-bank-header">
                           <i class="fas fa-university"></i> Banxico (Oficial)
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Validador CoDi</div>
-                          <div class="schedule-time">
-                            <a href="https://www.codi.org.mx/secundarias/validar.html" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> Verificar establecimiento
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            Alta de cuenta en CoDi
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.codi.org.mx/secundarias/validar.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Verificar
+                              establecimiento
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Guías por Banco</div>
-                          <div class="schedule-time">
-                            <a href="https://www.codi.org.mx/d/BBVA.pdf" target="_blank" class="btn-outline-primary btn-sm me-2">
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Guías por Banco</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.codi.org.mx/d/BBVA.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
                               <i class="fas fa-file-pdf"></i> BBVA
                             </a>
-                            <a href="https://www.codi.org.mx/d/Banorte.pdf" target="_blank" class="btn-outline-primary btn-sm">
+                            <a
+                              href="https://www.codi.org.mx/d/Banorte.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
                               <i class="fas fa-file-pdf"></i> Banorte
+                            </a>
+                            <a
+                              href="https://www.codi.org.mx/d/Citibanamex.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-file-pdf"></i> Banamex
+                            </a>
+                            <a
+                              href="https://www.codi.org.mx/d/Mifel.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-file-pdf"></i> Mifel
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Más Guías</div>
-                          <div class="schedule-time">
-                            <a href="https://www.codi.org.mx/d/Citibanamex.pdf" target="_blank" class="btn-outline-primary btn-sm me-2">
-                              <i class="fas fa-file-pdf"></i> Banamex
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Más Guías</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.codi.org.mx/d/Ve%20por%20mas.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-file-pdf"></i> BX+
                             </a>
-                            <a href="https://www.codi.org.mx/d/Mifel.pdf" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-file-pdf"></i> Mifel
+                            <a
+                              href="https://www.codi.org.mx/d/Bankaool.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-file-pdf"></i> Bankaool
+                            </a>
+                            <a
+                              href="https://www.codi.org.mx/d/Monex.pdf"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-file-pdf"></i> Monex
                             </a>
                           </div>
                         </div>
@@ -297,65 +500,86 @@
                     </div>
 
                     <!-- BBVA Resources -->
-                    <div class="col-md-6 mb-4">
-                      <div class="schedule-block">
-                        <div class="dance-type bachata-type">
+                    <div>
+                      <div class="codi-bank-block">
+                        <div class="codi-bank-header">
                           <i class="fas fa-building"></i> BBVA
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Guía Completa</div>
-                          <div class="schedule-time">
-                            <a href="https://www.bbva.com/es/mx/como-comenzar-a-usar-codi-en-la-app-bbva-mexico/" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> Cómo empezar con CoDi
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            CoDi Cobro Digital
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bbva.mx/personas/servicios-digitales/codi-cobro-digital.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Página
+                              oficial CoDi
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Educación Financiera</div>
-                          <div class="schedule-time">
-                            <a href="https://www.bbva.mx/educacion-financiera/banca-digital/-como-pagar-con-codi.html" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-graduation-cap"></i> Cómo pagar con CoDi
-                            </a>
-                          </div>
-                        </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Video Tutorial</div>
-                          <div class="schedule-time">
-                            <a href="https://www.youtube.com/watch?v=Ywx-aXuqqUI" target="_blank" class="btn-outline-primary btn-sm">
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Video Tutorial</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.youtube.com/watch?v=Ywx-aXuqqUI"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
                               <i class="fab fa-youtube"></i> Ver en YouTube
                             </a>
                           </div>
                         </div>
-                      </div>
-                    </div>
-
-                    <!-- Other Banks -->
-                    <div class="col-md-6 mb-4">
-                      <div class="schedule-block">
-                        <div class="dance-type salsa-type">
-                          <i class="fas fa-building"></i> Otros Bancos
-                        </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Santander</div>
-                          <div class="schedule-time">
-                            <a href="https://www.santander.com.mx/personas/santander-digital/codi.html" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> Guía Santander
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Guía Completa</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bbva.com/es/mx/como-comenzar-a-usar-codi-en-la-app-bbva-mexico/"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Cómo
+                              empezar con CoDi
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Banorte</div>
-                          <div class="schedule-time">
-                            <a href="https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/activa-el-servicio-de-codi" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> Activar CoDi Banorte
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            Cobra y Paga con CoDi
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bbva.mx/personas/landings/cobra-y-paga-con-codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Landing
+                              oficial
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">BanCoppel</div>
-                          <div class="schedule-time">
-                            <a href="https://www.bancoppel.com/cobros_digitales/codi.html" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> CoDi en BanCoppel
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            Educación Financiera
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bbva.mx/educacion-financiera/banca-digital/que-es-pago-codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-graduation-cap"></i> Qué es pago
+                              CoDi
+                            </a>
+                            <a
+                              href="https://www.bbva.mx/educacion-financiera/banca-digital/-como-pagar-con-codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-graduation-cap"></i> Cómo pagar
+                              con CoDi
                             </a>
                           </div>
                         </div>
@@ -363,76 +587,116 @@
                     </div>
 
                     <!-- Banamex and Video Resources -->
-                    <div class="col-md-6 mb-4">
-                      <div class="schedule-block">
-                        <div class="dance-type bachata-type">
+                    <div>
+                      <div class="codi-bank-block">
+                        <div class="codi-bank-header">
                           <i class="fas fa-video"></i> Banamex y Videos
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Banamex Principal</div>
-                          <div class="schedule-time">
-                            <a href="https://www.banamex.com/codi/index.html" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-external-link-alt"></i> Portal CoDi Banamex
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            Banamex Principal
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.banamex.com/codi/index.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Portal
+                              CoDi Banamex
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Centro de Ayuda</div>
-                          <div class="schedule-time">
-                            <a href="https://www.banamex.com/es/centro-de-ayuda/servicios-digitales/app-banamex/cobro-digital.htm" target="_blank" class="btn-outline-primary btn-sm">
-                              <i class="fas fa-question-circle"></i> Ayuda Banamex
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Centro de Ayuda</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.banamex.com/es/centro-de-ayuda/servicios-digitales/app-banamex/cobro-digital.htm"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-question-circle"></i> Ayuda
+                              Banamex
                             </a>
                           </div>
                         </div>
-                        <div class="schedule-item">
-                          <div class="schedule-days">Tutorial General</div>
-                          <div class="schedule-time">
-                            <a href="https://www.youtube.com/watch?v=81bzXSVgmXA" target="_blank" class="btn-outline-primary btn-sm">
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">
+                            Tutorial General
+                          </div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.youtube.com/watch?v=81bzXSVgmXA"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
                               <i class="fab fa-youtube"></i> Video Tutorial
                             </a>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Benefits Summary -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="find-nearest-section text-center">
-              <h3 class="text-primary mb-4"><i class="fas fa-star"></i> Beneficios de CoDi®</h3>
-              <div class="row">
-                <div class="col-md-3">
-                  <div class="alert alert-success">
-                    <i class="fas fa-bolt"></i><br>
-                    <strong>Instantáneo</strong><br>
-                    Pagos en segundos
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="alert alert-success">
-                    <i class="fas fa-shield-alt"></i><br>
-                    <strong>Seguro</strong><br>
-                    Respaldado por Banxico
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="alert alert-success">
-                    <i class="fas fa-dollar-sign"></i><br>
-                    <strong>Sin comisiones</strong><br>
-                    Gratis para usuarios
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="alert alert-success">
-                    <i class="fas fa-clock"></i><br>
-                    <strong>24/7</strong><br>
-                    Disponible siempre
+                    <!-- Other Banks -->
+                    <div>
+                      <div class="codi-bank-block">
+                        <div class="codi-bank-header">
+                          <i class="fas fa-building"></i> Otros Bancos
+                        </div>
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Santander</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.santander.com.mx/personas/santander-digital/codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Guía
+                              Santander
+                            </a>
+                          </div>
+                        </div>
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Banorte</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.banorte.com/wps/portal/banorte/Home/servicios-en-linea/banca-digital/banorte-movil/tutoriales/activa-el-servicio-de-codi"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Activar
+                              CoDi Banorte
+                            </a>
+                          </div>
+                        </div>
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">BanCoppel</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bancoppel.com/cobros_digitales/codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> CoDi en
+                              BanCoppel
+                            </a>
+                          </div>
+                        </div>
+                        <div class="codi-resource-item">
+                          <div class="codi-resource-label">Banco Azteca</div>
+                          <div class="codi-resource-links">
+                            <a
+                              href="https://www.bancoazteca.com.mx/conocenos/uso-de-codi.html"
+                              target="_blank"
+                              class="codi-link-btn"
+                            >
+                              <i class="fas fa-external-link-alt"></i> Uso de
+                              CoDi
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -451,27 +715,21 @@
     <script>
       function toggleBranch(element) {
         const content = element.nextElementSibling;
-        const icon = element.querySelector('.toggle-icon');
+        const icon = element.querySelector(".codi-toggle-icon");
         const card = element.parentElement;
 
-        if (content.classList.contains('expanded')) {
-          content.classList.remove('expanded');
-          icon.classList.remove('rotated');
-          card.style.marginBottom = '20px';
+        if (content.classList.contains("expanded")) {
+          content.classList.remove("expanded");
+          icon.classList.remove("rotated");
+          card.style.marginBottom = "25px";
         } else {
-          content.classList.add('expanded');
-          icon.classList.add('rotated');
-          card.style.marginBottom = '40px';
+          content.classList.add("expanded");
+          icon.classList.add("rotated");
+          card.style.marginBottom = "40px";
         }
       }
 
-      // Initialize all sections as expanded by default
-      document.addEventListener('DOMContentLoaded', function() {
-        const allIcons = document.querySelectorAll('.toggle-icon');
-        allIcons.forEach(icon => {
-          icon.classList.add('rotated');
-        });
-      });
+      // Sections start collapsed by default - no initialization needed
     </script>
   </body>
 </html>

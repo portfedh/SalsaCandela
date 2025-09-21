@@ -1,0 +1,501 @@
+/*
+ * Guía CoDi® Professional Styling
+ * Professional financial services design maintaining Salsa Candela brand colors
+ * Brand Colors: #ff6b35 (primary), #f7931e (secondary), #e04a25 (dark)
+ */
+
+/* Page Layout */
+.codi-guide-area {
+  padding: 80px 0;
+  background: linear-gradient(135deg, #fafbfc 0%, #f8f9fa 100%);
+}
+
+/* Make CoDi® symbol more subtle */
+.codi-title, .codi-intro-title, .codi-benefits-title, .codi-step-title {
+  font-feature-settings: "sups" 1;
+}
+
+.codi-title .reg-symbol,
+.codi-intro-title .reg-symbol,
+.codi-benefits-title .reg-symbol,
+.codi-step-title .reg-symbol {
+  font-size: 0.6em;
+  vertical-align: super;
+  opacity: 0.8;
+}
+
+.codi-page-header {
+  padding: 120px 0 90px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 100%),
+              url('/img/ardian-lumi-6Woj_wozqmA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.codi-page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.codi-page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.codi-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.codi-subtitle {
+  font-size: 1.4rem;
+  font-weight: 300;
+  opacity: 0.95;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Introduction Section */
+.codi-intro-section {
+  background: white;
+  padding: 50px 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+  margin-bottom: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.codi-intro-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.codi-intro-title {
+  color: #2c3e50;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.codi-intro-title i {
+  color: #ff6b35;
+  font-size: 2.5rem;
+}
+
+.codi-intro-description {
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: #4a5568;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.codi-highlight-box {
+  background: linear-gradient(135deg, #fff5f3 0%, #ffe8e1 100%);
+  border: 2px solid #ff6b35;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  color: #e04a25;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.codi-highlight-box i {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  color: #ff6b35;
+}
+
+/* Guide Step Cards */
+.codi-step-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  margin-bottom: 50px;
+  border: 1px solid #e2e8f0;
+}
+
+.codi-step-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(255, 107, 53, 0.15);
+}
+
+.codi-step-header {
+  padding: 30px 35px;
+  background: linear-gradient(135deg, #f8fafc 0%, #edf2f7 100%);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.codi-step-header:hover {
+  background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+}
+
+.codi-step-title {
+  margin: 0;
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.codi-step-number {
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+}
+
+.codi-step-icon {
+  color: #ff6b35;
+  font-size: 1.8rem;
+}
+
+.codi-toggle-icon {
+  color: #718096;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.codi-toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* Step Content */
+.codi-step-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.codi-step-content.expanded {
+  max-height: none;
+}
+
+.codi-step-details {
+  padding: 40px 35px;
+}
+
+.codi-step-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #4a5568;
+  margin-bottom: 35px;
+}
+
+/* Process Flow Grid */
+.codi-process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.codi-process-block {
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.codi-process-block:hover {
+  border-color: #ff6b35;
+  transform: translateY(-2px);
+}
+
+.codi-process-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.codi-process-header i {
+  font-size: 1.3rem;
+}
+
+.codi-process-step {
+  background: white;
+  padding: 18px 20px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border-left: 4px solid #ff6b35;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.2s ease;
+}
+
+.codi-process-step:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.1);
+}
+
+.codi-process-step:last-child {
+  margin-bottom: 0;
+}
+
+.codi-step-label {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+}
+
+.codi-step-instruction {
+  color: #718096;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Bank Resources Section */
+.codi-resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.codi-bank-block {
+  background: #f8fafc;
+  border-radius: 15px;
+  padding: 25px;
+  border: 2px solid #e2e8f0;
+  min-height: 300px;
+}
+
+.codi-bank-header {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+  color: white;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.codi-resource-item {
+  background: white;
+  padding: 15px 18px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border-left: 4px solid #ff6b35;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.codi-resource-label {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.codi-resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.codi-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: white;
+  border: 2px solid #ff6b35;
+  color: #ff6b35;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.codi-link-btn:hover {
+  background: #ff6b35;
+  color: white;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+/* Benefits Section */
+.codi-benefits-section {
+  background: white;
+  padding: 35px 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.codi-benefits-title {
+  color: #2d3748;
+  font-weight: 700;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.codi-benefits-title i {
+  color: #ff6b35;
+  font-size: 2rem;
+}
+
+.codi-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.codi-benefit-card {
+  background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+  border: 2px solid #68d391;
+  padding: 20px 15px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.codi-benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(104, 211, 145, 0.2);
+}
+
+.codi-benefit-card i {
+  font-size: 2.2rem;
+  color: #38a169;
+  margin-bottom: 12px;
+}
+
+.codi-benefit-title {
+  font-weight: 700;
+  color: #2d3748;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.codi-benefit-description {
+  color: #4a5568;
+  font-size: 0.85rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .codi-title {
+    font-size: 2.5rem;
+  }
+
+  .codi-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .codi-intro-section,
+  .codi-benefits-section {
+    padding: 30px 25px;
+    margin-bottom: 30px;
+  }
+
+  .codi-step-header,
+  .codi-step-details {
+    padding: 25px 20px;
+  }
+
+  .codi-intro-title,
+  .codi-benefits-title {
+    font-size: 1.8rem;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .codi-step-title {
+    font-size: 1.2rem;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .codi-process-grid,
+  .codi-resources-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .codi-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .codi-guide-area {
+    padding: 40px 0;
+  }
+
+  .codi-page-header {
+    padding: 80px 0 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .codi-benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .codi-resource-links {
+    flex-direction: column;
+  }
+
+  .codi-link-btn {
+    justify-content: center;
+  }
+}
