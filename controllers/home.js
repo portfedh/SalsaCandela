@@ -85,6 +85,8 @@ module.exports = {
 
   getStoreIndividualClasses: renderView("individual_classes"),
 
+  getStoreGuiaCodi: renderView("guia-codi"),
+
   getStoreParty: renderView("party"),
 
   getStoreFAQ: renderView("faq"),
@@ -103,6 +105,8 @@ module.exports = {
 
   getPasswordReset: renderView("cambiar-contrasena"),
 
+  getPoliticaDevoluciones: renderView("politica-devoluciones"),
+
   // Redirects
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode;
@@ -111,9 +115,9 @@ module.exports = {
     let baseUrl = "https://admin.salsa-candela.com/fiesta/boletos";
 
     // Handle different payment types
-    if (paymentType === 'codi') {
+    if (paymentType === "codi") {
       baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-codi";
-    } else if (paymentType === 'tarjeta') {
+    } else if (paymentType === "tarjeta") {
       baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-tarjeta";
     }
 

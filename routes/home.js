@@ -27,6 +27,8 @@ router.get("/aviso-privacidad", homeCtrl.getAvisoPrivacidad);
 router.get("/sucursales", homeCtrl.getSucursales);
 router.get("/confirmacion-email", homeCtrl.getEmailConfirmation);
 router.get("/cambiar-contrasena", homeCtrl.getPasswordReset);
+router.get("/guia-codi", homeCtrl.getStoreGuiaCodi);
+router.get("/politica-devoluciones", homeCtrl.getPoliticaDevoluciones);
 
 // Redirects
 // *********
