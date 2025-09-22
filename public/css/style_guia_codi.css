@@ -366,7 +366,7 @@
   text-decoration: none;
   border-radius: 8px;
   font-size: 0.8rem;
-  font-weight: 600;
+  font-weight: 500;
   transition: all 0.2s ease;
   white-space: nowrap;
   flex-shrink: 0;
@@ -454,8 +454,8 @@
 
   .codi-intro-section,
   .codi-benefits-section {
-    padding: 30px 25px;
-    margin-bottom: 30px;
+    padding: 20px 15px;
+    margin-bottom: 20px;
   }
 
   .codi-step-header,
@@ -465,9 +465,10 @@
 
   .codi-intro-title,
   .codi-benefits-title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     flex-direction: row;
-    gap: 10px;
+    gap: 8px;
+    margin-bottom: 20px;
   }
 
   .codi-intro-description {
@@ -510,7 +511,25 @@
 
   .codi-benefits-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 12px;
+  }
+
+  .codi-benefit-card {
+    padding: 15px 10px;
+  }
+
+  .codi-benefit-card i {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+  }
+
+  .codi-benefit-title {
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+  }
+
+  .codi-benefit-description {
+    font-size: 0.85rem;
   }
 
   .codi-guide-area {
