@@ -6,6 +6,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Salsa Candela is a Node.js/Express web application for a dance academy in CDMX. It's a content-focused site providing information about salsa and bachata classes, parties, and registration redirects to external payment systems.
 
+## CRITICAL CODING RULES
+
+- **NEVER use `!important` in CSS** - Always use more specific selectors or additional classes instead
+- Follow existing code patterns and maintain clean, maintainable styles
+
 ## Development Commands
 
 ### Running the Application
