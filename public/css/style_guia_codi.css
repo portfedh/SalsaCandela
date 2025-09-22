@@ -11,7 +11,10 @@
 }
 
 /* Make CoDi® symbol more subtle */
-.codi-title, .codi-intro-title, .codi-benefits-title, .codi-step-title {
+.codi-title,
+.codi-intro-title,
+.codi-benefits-title,
+.codi-step-title {
   font-feature-settings: "sups" 1;
 }
 
@@ -26,8 +29,12 @@
 
 .codi-page-header {
   padding: 120px 0 90px;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.95) 0%, rgba(247, 147, 30, 0.95) 100%),
-              url('/img/ardian-lumi-6Woj_wozqmA-unsplash.jpg');
+  background: linear-gradient(
+      135deg,
+      rgba(255, 107, 53, 0.95) 0%,
+      rgba(247, 147, 30, 0.95) 100%
+    ),
+    url("/img/ardian-lumi-6Woj_wozqmA-unsplash.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,7 +44,7 @@
 }
 
 .codi-page-header::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -53,10 +60,14 @@
 }
 
 .codi-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.codi-title-description {
+  font-size: 0.9rem;
 }
 
 .codi-subtitle {
@@ -78,7 +89,7 @@
 }
 
 .codi-intro-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -90,7 +101,7 @@
 .codi-intro-title {
   color: #2c3e50;
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 1.7rem;
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -104,7 +115,7 @@
 }
 
 .codi-intro-description {
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #4a5568;
   text-align: center;
@@ -163,7 +174,7 @@
   margin: 0;
   color: #2d3748;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   gap: 15px;
@@ -214,7 +225,7 @@
 }
 
 .codi-step-description {
-  font-size: 1.1rem;
+  font-size: 1rem;
   line-height: 1.7;
   color: #4a5568;
   margin-bottom: 35px;
@@ -422,17 +433,17 @@
 .codi-benefit-title {
   font-weight: 700;
   color: #2d3748;
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-bottom: 6px;
 }
 
 .codi-benefit-description {
   color: #4a5568;
-  font-size: 0.85rem;
+  font-size: 1rem;
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .codi-title {
     font-size: 2.5rem;
   }
@@ -449,21 +460,46 @@
 
   .codi-step-header,
   .codi-step-details {
-    padding: 25px 20px;
+    padding: 25px 30px;
   }
 
   .codi-intro-title,
   .codi-benefits-title {
-    font-size: 1.8rem;
-    flex-direction: column;
+    font-size: 1.9rem;
+    flex-direction: row;
     gap: 10px;
   }
 
+  .codi-intro-description {
+    font-size: 1rem;
+  }
+
   .codi-step-title {
-    font-size: 1.2rem;
-    flex-direction: column;
+    font-size: 1rem;
+    flex-direction: row;
     gap: 10px;
     text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .codi-step-number {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+  }
+
+  .codi-step-description {
+    font-size: 1rem;
+  }
+
+  .codi-highlight-box {
+    font-size: 1.1rem;
+  }
+
+  .codi-process-header,
+  .codi-bank-header {
+    font-size: 1.1rem;
   }
 
   .codi-process-grid,
@@ -481,8 +517,21 @@
     padding: 40px 0;
   }
 
-  .codi-page-header {
-    padding: 80px 0 60px;
+  #codi-container {
+    width: 90%;
+    max-width: 388px;
+    padding: 0;
+  }
+
+  .codi-intro-section,
+  .codi-benefits-section,
+  .codi-step-card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .page-header-area {
+    padding-top: 180px;
   }
 }
 
