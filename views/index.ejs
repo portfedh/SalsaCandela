@@ -334,7 +334,8 @@
               <div class="col-12 text-center">
                 <a
                   class="banner-btn mt-20"
-                  href="/boletos/salsa-candela"
+                  href="#"
+                  onclick="handlePayment()"
                   data-text="Boletos"
                   ><span>Boletos</span>
                 </a>
@@ -357,6 +358,9 @@
 
     <!-- Include custom mobile nav script -->
     <%- include('partials/custom_mobile_nav_script') -%>
+
+    <!-- Include payment modal -->
+    <%- include('partials/payment_modal') -%>
 
     <!-- Body & html close -->
   </body>

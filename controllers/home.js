@@ -53,14 +53,17 @@ function getNextSaturdayDate() {
 
 function renderView(viewName) {
   return (req, res) => {
-    res.render(`${viewName}.ejs`);
+    res.render(`${viewName}.ejs`, { paymentMode: process.env.PAYMENT_MODE });
   };
 }
 
 function renderViewWithDate(viewName) {
   return (req, res) => {
     const nextDate = getNextSaturdayDate();
-    res.render(`${viewName}.ejs`, { nextSaturdayDate: nextDate });
+    res.render(`${viewName}.ejs`, {
+      nextSaturdayDate: nextDate,
+      paymentMode: process.env.PAYMENT_MODE
+    });
   };
 }
 
@@ -80,7 +83,10 @@ module.exports = {
   getStoreBachata: renderViewWithDate("bachata"),
 
   getStoreSiguiente: (req, res) => {
-    res.render("siguiente.ejs", { branches: classSchedules });
+    res.render("siguiente.ejs", {
+      branches: classSchedules,
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getStoreIndividualClasses: renderView("individual_classes"),
@@ -98,7 +104,10 @@ module.exports = {
   getAvisoPrivacidad: renderView("aviso-privacidad"),
 
   getSucursales: (req, res) => {
-    res.render("sucursales.ejs", { branches: classSchedules });
+    res.render("sucursales.ejs", {
+      branches: classSchedules,
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getEmailConfirmation: renderView("email-confirmation"),

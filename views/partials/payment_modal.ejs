@@ -1,23 +1,4 @@
-<!-- ========================================= -->
-<!-- PAYMENT MODE TOGGLE                      -->
-<!-- ========================================= -->
-<!--
-  TO SWITCH PAYMENT MODES:
-  1. MODAL PAYMENT: Shows two payment options modal
-  2. SIMPLE PAYMENT: Direct redirect to payment page
-
-  TO ENABLE SIMPLE PAYMENT:
-  - Comment out the "MODAL PAYMENT HTML" section below
-  - Uncomment the "handlePaymentClick" function in the script section
-
-  TO ENABLE MODAL PAYMENT:
-  - Keep the "MODAL PAYMENT HTML" section uncommented (current state)
-  - Keep the modal functions in the script section
--->
-
-<!-- ========================================= -->
-<!-- MODAL PAYMENT HTML (COMMENT TO DISABLE)  -->
-<!-- ========================================= -->
+<% if (paymentMode === 'modal') { %>
 <!-- Payment Options Modal -->
 <div
   id="paymentModal"
@@ -141,17 +122,23 @@
     </div>
   </div>
 </div>
+<% } %>
 
-<!-- ========================================= -->
-<!-- PAYMENT JAVASCRIPT                       -->
-<!-- ========================================= -->
-
-<!-- Payment Options Script -->
+<!-- Payment JavaScript -->
 <script>
-  // ========================================= //
-  // MODAL PAYMENT FUNCTIONS                   //
-  // ========================================= //
-  /*
+  // Unified payment handler that checks environment configuration
+  function handlePayment() {
+    <% if (paymentMode === 'modal') { %>
+      // Modal mode: show payment options
+      showPaymentOptions();
+    <% } else { %>
+      // Simple mode: direct redirect
+      window.location.href = '/boletos/salsa-candela';
+    <% } %>
+  }
+
+  <% if (paymentMode === 'modal') { %>
+  // Modal payment functions (only loaded when needed)
   function showPaymentOptions() {
     document.getElementById("paymentModal").style.display = "block";
   }
@@ -161,11 +148,10 @@
   }
 
   function redirectToPayment(paymentType) {
-    const baseUrl = "/boletos/salsa-candela";
     if (paymentType === "codi") {
-      window.location.href = baseUrl + "?payment=codi";
+      window.location.href = "https://admin.salsa-candela.com/fiesta/boletos/codi/push";
     } else if (paymentType === "tarjeta") {
-      window.location.href = baseUrl + "?payment=tarjeta";
+      window.location.href = "/boletos/salsa-candela";
     }
   }
 
@@ -177,17 +163,5 @@
         closePaymentModal();
       }
     });
-  */
-  // ========================================= //
-  // SIMPLE PAYMENT FUNCTION                   //
-  // ========================================= //
-
-  // FOR SIMPLE PAYMENT: Replace showPaymentOptions() calls in party.ejs with handlePaymentClick()
-  function handlePaymentClick() {
-    // Direct redirect to original payment page (simple mode)
-    window.location.href = "/boletos/salsa-candela";
-  }
-
-  // Alternative: You can also just change the onclick in party.ejs to:
-  // onclick="window.location.href='/boletos/salsa-candela'"
+  <% } %>
 </script>
