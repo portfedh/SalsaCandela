@@ -4,6 +4,7 @@
 const path = require("path");
 const courseData = require("../config/courseData");
 const classSchedules = require("../config/classSchedules");
+const partyConfig = require("../config/partyConfig");
 
 function getNextSaturdayDate() {
   const now = new Date();
@@ -93,7 +94,17 @@ module.exports = {
 
   getStoreGuiaCodi: renderView("guia-codi"),
 
-  getStoreParty: renderView("party"),
+  getStoreParty: (req, res) => {
+    const activeLocationData = partyConfig.locations[partyConfig.activeLocation];
+    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+
+    res.render("party.ejs", {
+      party: partyConfig,
+      activeLocation: activeLocationData,
+      fullDate: fullDate,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
   getStoreFAQ: renderView("faq"),
 

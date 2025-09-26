@@ -6,6 +6,15 @@
   <!-- Party-specific styles -->
   <link rel="stylesheet" href="css/style_party.css" />
 
+  <!-- Dynamic party images -->
+  <style>
+    @media screen and (max-width: 768px) {
+      .event-featured-image {
+        background-image: url('img/party/<%= party.images.mobile %>') !important;
+      }
+    }
+  </style>
+
   <body>
     <!-- Include header with custom mobile nav -->
     <%- include('partials/store_header_with_custom_mobile') -%>
@@ -40,7 +49,7 @@
               <div class="hero-badge">
                 <span>🎵 Próximo Evento</span>
               </div>
-              <h1 class="hero-title">Salsatelite</h1>
+              <h1 class="hero-title"><%= party.title %></h1>
               <p class="hero-subtitle">
                 Una noche llena de Salsa, Bachata y buena vibra
               </p>
@@ -54,12 +63,12 @@
             <div class="event-main-card">
               <!-- Event Image Section -->
               <div class="event-image-section">
-                <div class="event-image-container event-featured-image">
+                <div class="event-image-container event-featured-image" style="background-image: url('img/party/<%= party.images.desktop %>')">
                   <div class="image-overlay">
                     <div class="event-date-badge">
-                      <div class="date-day">26</div>
-                      <div class="date-month">SEP</div>
-                      <div class="date-year">2025</div>
+                      <div class="date-day"><%= party.date.day %></div>
+                      <div class="date-month"><%= party.date.month %></div>
+                      <div class="date-year"><%= party.date.year %></div>
                     </div>
                   </div>
                 </div>
@@ -73,7 +82,7 @@
                     <div class="event-main-content">
                       <!-- Event Title & Genre -->
                       <div class="event-header">
-                        <h2 class="event-name">Salsatelite</h2>
+                        <h2 class="event-name"><%= party.title %></h2>
                         <div class="event-genres-tags">
                           <span class="genre-tag salsa">Salsa</span>
                           <span class="genre-tag timba">Timba</span>
@@ -137,9 +146,9 @@
                         <div class="card-content">
                           <h4>Fecha y Hora</h4>
                           <p class="event-date">
-                            Viernes, 26 de Septiembre 2025
+                            <%= fullDate %>
                           </p>
-                          <p class="event-time">9:00 PM - 3:00 AM</p>
+                          <p class="event-time"><%= party.eventTime %></p>
                         </div>
                       </div>
 
@@ -149,14 +158,14 @@
                         <div class="card-content">
                           <h4>Ubicación</h4>
                           <a
-                            href="https://maps.app.goo.gl/UCUzBQNYKzcnKaVKA"
+                            href="<%= activeLocation.googleMapsUrl %>"
                             class="location-address"
                           >
-                            Lomas Verdes 896<br />
-                            Naucalpan, EdoMex
+                            <%= activeLocation.address %><br />
+                            <%= activeLocation.city %>
                           </a>
                           <a
-                            href="https://maps.app.goo.gl/UCUzBQNYKzcnKaVKA"
+                            href="<%= activeLocation.googleMapsUrl %>"
                             class="location-details"
                           >
                             Ver detalles del lugar
@@ -171,12 +180,12 @@
                           <h4>Precios</h4>
                           <div class="price-options">
                             <div class="price-option featured">
-                              <span class="price">$100</span>
-                              <span class="price-label">Preventa</span>
+                              <span class="price">$<%= party.pricing.presale.price %></span>
+                              <span class="price-label"><%= party.pricing.presale.label %></span>
                             </div>
                             <div class="price-option">
-                              <span class="price">$150</span>
-                              <span class="price-label">En taquilla</span>
+                              <span class="price">$<%= party.pricing.door.price %></span>
+                              <span class="price-label"><%= party.pricing.door.label %></span>
                             </div>
                           </div>
                         </div>
@@ -191,7 +200,7 @@
                         >
                           <span class="cta-icon">🎫</span>
                           <span class="cta-text">Comprar Boletos</span>
-                          <span class="cta-subtext">Preventa $100</span>
+                          <span class="cta-subtext"><%= party.pricing.presale.label %> $<%= party.pricing.presale.price %></span>
                         </a>
                       </div>
                     </div>
