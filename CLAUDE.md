@@ -18,6 +18,7 @@ Salsa Candela is a Node.js/Express web application for a dance academy in CDMX. 
 - **Development with auto-reload**: `npm run dev` (uses nodemon)
 - **Production**: `npm start`
 - **Test**: No tests configured - shows error message
+- **Browser Testing**: Playwright MCP available for end-to-end testing
 
 ### Environment Configuration
 
@@ -89,9 +90,10 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 
 The application heavily relies on an external admin system (`admin.salsa-candela.com`) for payment processing and registration handling.
 
-### No Testing Framework
+### Testing
 
-Currently has no test suite configured - the test script just shows an error message.
+- **Unit/Integration Tests**: No test suite configured - the test script just shows an error message
+- **Browser Testing**: Playwright MCP available for end-to-end testing and browser automation
 
 ### Coding Guidelines
 
