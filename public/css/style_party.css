@@ -38,27 +38,572 @@
   padding: 1px 30px;
 }
 
-/* Mobile styles */
+/* Event Area - Modern Design */
+.event-area {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+}
+
+.event-container {
+  width: 80%;
+  max-width: none;
+}
+
+/* Hero Section */
+.event-hero {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e04a25, #ff6b45);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(224, 74, 37, 0.3);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #2c3e50, #34495e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  color: #6c757d;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+/* Main Event Card */
+.event-main-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transform: translateY(-20px);
+}
+
+/* Event Image Section */
+.event-image-section {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.event-image-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.event-featured-image {
+  width: 100%;
+  height: 100%;
+  background-image: url('../img/party/fiesta_mensual_2025_09_26.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.5s ease;
+}
+
+.event-main-card:hover .event-featured-image {
+  transform: scale(1.05);
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(0, 0, 0, 0.3), rgba(224, 74, 37, 0.2));
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.event-date-badge {
+  background: white;
+  border-radius: 15px;
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  min-width: 80px;
+}
+
+.date-day {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e04a25;
+  line-height: 1;
+}
+
+.date-month {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 2px 0;
+}
+
+.date-year {
+  font-size: 0.8rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+/* Event Content Section */
+.event-content-section {
+  padding: 40px;
+}
+
+/* Event Header */
+.event-header {
+  margin-bottom: 30px;
+}
+
+.event-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.event-genres-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.genre-tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.genre-tag.salsa {
+  background: linear-gradient(135deg, #e04a25, #ff6b45);
+  color: white;
+}
+
+.genre-tag.timba {
+  background: linear-gradient(135deg, #f39c12, #ff8c42);
+  color: white;
+}
+
+.genre-tag.bachata {
+  background: linear-gradient(135deg, #ff8c42, #ffa726);
+  color: white;
+}
+
+/* Event Description */
+.event-description {
+  margin-bottom: 40px;
+}
+
+.event-description p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Schedule Card */
+.event-schedule-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 15px;
+  padding: 30px;
+  border: 1px solid #e9ecef;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.schedule-header {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.schedule-icon {
+  font-size: 1.5rem;
+}
+
+.schedule-timeline {
+  position: relative;
+}
+
+.timeline-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 12px;
+  height: 12px;
+  background: #e9ecef;
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 0 2px #e04a25;
+}
+
+.timeline-item.featured::before {
+  background: #e04a25;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.timeline-time {
+  background: #e04a25;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-right: 20px;
+  min-width: 80px;
+  text-align: center;
+}
+
+.timeline-content strong {
+  color: #2c3e50;
+  font-size: 1.1rem;
+}
+
+.timeline-content p {
+  color: #6c757d;
+  margin: 5px 0 0 0;
+  font-size: 0.95rem;
+}
+
+/* Sidebar Details */
+.event-details-sidebar {
+  padding-left: 30px;
+}
+
+.detail-card {
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #e04a25;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.detail-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.card-content h4 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+/* Date Time Card */
+.datetime-card .event-date {
+  font-weight: 600;
+  color: #e04a25;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.datetime-card .event-time {
+  color: #6c757d;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Location Card */
+.location-address {
+  color: #e04a25;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.location-address:hover {
+  color: #c13919;
+}
+
+.location-details {
+  color: #6c757d;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.location-details:hover {
+  color: #e04a25;
+}
+
+/* Pricing Card */
+.price-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.price-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f8f9fa;
+  min-width: 80px;
+}
+
+.price-option.featured {
+  background: linear-gradient(135deg, #e04a25, #ff6b45);
+  color: white;
+  transform: scale(1.05);
+}
+
+.price {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.price-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+
+/* CTA Button */
+.event-cta-sidebar {
+  margin-top: 30px;
+}
+
+.cta-button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #e04a25, #ff6b45);
+  color: white;
+  text-decoration: none;
+  border-radius: 15px;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(224, 74, 37, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(224, 74, 37, 0.4);
+  color: white;
+}
+
+.cta-icon {
+  font-size: 1.2rem;
+  margin-right: 10px;
+}
+
+.cta-text {
+  font-size: 1.1rem;
+  display: block;
+}
+
+.cta-subtext {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 992px) {
+  .event-details-sidebar {
+    padding-left: 0;
+    margin-top: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .event-content-section {
+    padding: 30px 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .event-image-section {
+    height: 400px;
+  }
+
+  .event-image-container {
+    height: 100%;
+  }
+
+  .event-featured-image {
+    background-image: url('../img/party/fiesta_mensual_2025_09_26b.jpeg');
+    background-size: contain;
+    background-position: center;
+    height: 100%;
+  }
+
+  .event-name {
+    font-size: 1.8rem;
+  }
+
+  .event-content-section {
+    padding: 20px;
+  }
+
+  .event-schedule-card {
+    padding: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 20px;
+  }
+
+  .timeline-time {
+    margin-bottom: 10px;
+    margin-right: 0;
+  }
+
+  .genre-tag {
+    font-size: 0.75rem;
+    padding: 6px 12px;
+  }
+
+  .detail-card {
+    padding: 20px;
+  }
+
+  .price-options {
+    justify-content: center;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .event-name {
+    font-size: 1.5rem;
+  }
+
+  .event-content-section {
+    padding: 15px;
+  }
+
+  .event-schedule-card {
+    padding: 15px;
+  }
+
+  .detail-card {
+    padding: 15px;
+  }
+
+  .image-overlay {
+    padding: 15px;
+  }
+
+  .event-date-badge {
+    padding: 10px 15px;
+    min-width: 60px;
+  }
+
+  .date-day {
+    font-size: 1.5rem;
+  }
+
   input[type="text"],
   input[type="email"],
   input[type="number"],
   button,
   textarea,
   select {
-    margin-bottom: 10px; /* Reduced margin */
-    padding: 10px; /* Reduced padding */
-    width: 95%; /* Make input fields shorter */
-    font-size: 14px; /* Adjust font size for smaller screens */
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 95%;
+    font-size: 14px;
   }
 
   label {
-    width: 100%; /* Make labels full width on smaller screens */
+    width: 100%;
   }
-
-  /* p {
-    font-size: 90%;
-  } */
 
   input[type="file"] {
     font-size: 75%;
