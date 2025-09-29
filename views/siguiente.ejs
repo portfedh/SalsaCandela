@@ -49,6 +49,7 @@
             <!-- Text Content Column -->
             <div class="col-lg-6 col-md-12 order-2 order-lg-1">
               <div class="course-content">
+                <!-- Clean Course Header -->
                 <div class="course-header">
                   <h3 class="course-title">Aprende Salsa al Siguiente Nivel</h3>
                   <p class="course-subtitle">
@@ -56,17 +57,18 @@
                   </p>
                 </div>
 
+                <!-- Simple value proposition -->
                 <div class="course-description">
-                  <h3 class="value-proposition">
-                    Aprende nuevos pasos y vueltas en pareja y lleva tu baile a
-                    nuevos horizontes
-                  </h3>
+                  <h4 class="value-proposition">
+                    Aprende nuevos pasos y vueltas en pareja y lleva tu baile a nuevos horizontes
+                  </h4>
 
+                  <!-- Clean course details -->
                   <div class="course-details">
                     <div class="detail-item">
-                      <i class="fas fa-calendar-start course-icon"></i>
+                      <i class="fas fa-calendar-alt course-icon"></i>
                       <div class="detail-content">
-                        <h4>Fecha de inicio</h4>
+                        <h5>Fecha de inicio</h5>
                         <p>16 de Octubre 2025</p>
                       </div>
                     </div>
@@ -74,13 +76,14 @@
                     <div class="detail-item">
                       <i class="fas fa-clock course-icon"></i>
                       <div class="detail-content">
-                        <h4>Duración</h4>
+                        <h5>Duración</h5>
                         <p>5 semanas con varios horarios disponibles</p>
                       </div>
                     </div>
                   </div>
                 </div>
 
+                <!-- Simple pricing section -->
                 <div class="pricing-section">
                   <div class="regular-pricing">
                     <h4>Precios regulares</h4>
@@ -97,6 +100,7 @@
                   </div>
                 </div>
 
+                <!-- Clean CTA section -->
                 <div class="cta-section">
                   <a
                     href="https://admin.salsa-candela.com/classstripeform"
@@ -115,6 +119,20 @@
     </section>
     <!-- Advanced Course Section End -->
 
+    <!-- Countdown timer Start-->
+    <div id="countdown-div" class="countdown">
+      <h1 id="index-countdown-headline">Promocion vence en:</h1>
+      <div id="countdown">
+        <ul>
+          <li><span id="days"></span>Dias</li>
+          <li><span id="hours"></span>Horas</li>
+          <li><span id="minutes"></span>Minutos</li>
+          <li><span id="seconds"></span>Segundos</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Countdown timer end -->
+
     <!-- Flash Promotion Section Start -->
     <section class="flash-promotion-section">
       <div class="container">
@@ -129,12 +147,12 @@
               <p class="promo-description">
                 Regálanos una reseña
                 <a href="#" class="review-link">aquí</a>
-                y obtén un 40% de descuento
+                y obtén un 50% de descuento
               </p>
 
               <div class="promo-deadline">
-                <p class="deadline-text">
-                  Válido hasta este Viernes 19 de septiembre
+                <p class="deadline-text" id="promotion-deadline">
+                  Válido hasta este <span id="current-date"></span>
                 </p>
               </div>
 
@@ -277,7 +295,7 @@
                           class="whatsapp-link"
                         >
                           WhatsApp </a
-                        >.
+                        >, o agenda una cita si deseas hacer pago en persona en sucursal.
                       </p>
                     </div>
                   </div>
@@ -798,7 +816,47 @@
     <%- include('partials/store_footer') -%>
 
     <style>
-      /* Course Section Styles */
+      /* Countdown timer styles - matching home page */
+      .countdown {
+        background-color: white;
+        margin: 0 auto;
+        text-align: center;
+        align-items: center;
+        border-radius: 7px;
+        padding: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      #index-countdown-headline {
+        font-weight: normal;
+        color: #666666;
+        font-size: 2rem;
+        letter-spacing: 0.125rem;
+        text-transform: uppercase;
+      }
+
+      #countdown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      #countdown ul li {
+        display: inline-block;
+        font-size: 1rem;
+        list-style-type: none;
+        padding: 1rem;
+        text-transform: uppercase;
+      }
+
+      #countdown ul li span {
+        display: block;
+        font-size: 1.5rem;
+        color: #f69139;
+      }
+
+      /* Clean Course Section Styles */
       .course-section {
         padding: 80px 0;
         background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -828,6 +886,7 @@
         padding-right: 30px;
       }
 
+      /* Clean Course Header */
       .course-header {
         margin-bottom: 30px;
       }
@@ -835,7 +894,7 @@
       .course-title {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #555;
+        color: #333;
         margin-bottom: 15px;
         line-height: 1.2;
       }
@@ -847,6 +906,11 @@
         font-weight: 500;
       }
 
+      /* Simple Value Proposition */
+      .course-description {
+        margin-bottom: 35px;
+      }
+
       .value-proposition {
         font-size: 1.4rem;
         color: #ff6b35;
@@ -855,6 +919,7 @@
         margin-bottom: 30px;
       }
 
+      /* Clean Course Details */
       .course-details {
         margin-bottom: 35px;
       }
@@ -878,7 +943,7 @@
         min-width: 20px;
       }
 
-      .detail-content h4 {
+      .detail-content h5 {
         font-size: 1rem;
         font-weight: 600;
         color: #333;
@@ -892,6 +957,7 @@
         margin-bottom: 0;
       }
 
+      /* Simple Pricing Section */
       .pricing-section {
         margin-bottom: 35px;
       }
@@ -1051,6 +1117,7 @@
         text-decoration: none;
       }
 
+      /* Clean CTA Section */
       .cta-section {
         text-align: center;
       }
@@ -1747,6 +1814,7 @@
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
+        /* Mobile responsive styles for simplified design */
         .course-section {
           padding: 40px 0;
         }
@@ -1760,7 +1828,7 @@
         .course-box {
           padding: 30px 15px;
           margin-bottom: 30px;
-          border-radius: 0;
+          border-radius: 15px;
         }
 
         .course-content {
@@ -1770,7 +1838,7 @@
 
         .course-title {
           font-size: 2rem;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
         }
 
         .course-subtitle {
@@ -1792,7 +1860,7 @@
           margin-right: 12px;
         }
 
-        .detail-content h4 {
+        .detail-content h5 {
           font-size: 0.9rem;
         }
 
@@ -1804,29 +1872,9 @@
           padding: 20px;
         }
 
-        .flash-promo {
-          padding: 20px;
-        }
-
-        .promo-title {
-          font-size: 1.1rem;
-        }
-
         .cta-button {
           padding: 15px 30px;
           font-size: 1rem;
-        }
-
-        .price-item,
-        .promo-price-item {
-          flex-direction: column;
-          text-align: center;
-          gap: 5px;
-        }
-
-        .price-item .price,
-        .promo-price-item .price {
-          font-size: 1.1rem;
         }
 
         /* Payment Section Mobile */
@@ -1904,6 +1952,50 @@
 
     <!-- Include custom mobile nav script -->
     <%- include('partials/custom_mobile_nav_script') -%>
+
+    <!-- Include countdown timer script -->
+    <script src="js/countdownTimer.js"></script>
+
+    <!-- Script to display current date in Spanish -->
+    <script>
+      // Function to get current date in Mexico City time and format it in Spanish
+      function setCurrentDateInSpanish() {
+        // Create date object for Mexico City timezone
+        const mexicoCityTime = new Date().toLocaleString("en-US", {
+          timeZone: "America/Mexico_City"
+        });
+        const currentDate = new Date(mexicoCityTime);
+
+        // Days of the week in Spanish
+        const daysOfWeek = [
+          'Domingo', 'Lunes', 'Martes', 'Miércoles',
+          'Jueves', 'Viernes', 'Sábado'
+        ];
+
+        // Months in Spanish
+        const months = [
+          'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+          'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        // Get day of week, day, and month
+        const dayOfWeek = daysOfWeek[currentDate.getDay()];
+        const day = currentDate.getDate();
+        const month = months[currentDate.getMonth()];
+
+        // Format: "Lunes 29 de Septiembre"
+        const formattedDate = `${dayOfWeek} ${day} de ${month}`;
+
+        // Set the date in the HTML
+        const dateElement = document.getElementById('current-date');
+        if (dateElement) {
+          dateElement.textContent = formattedDate;
+        }
+      }
+
+      // Set the date when the page loads
+      document.addEventListener('DOMContentLoaded', setCurrentDateInSpanish);
+    </script>
 
     <script>
       // Branch Location Functionality with Schedule Data from Server
