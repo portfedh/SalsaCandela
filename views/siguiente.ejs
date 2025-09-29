@@ -813,7 +813,44 @@
     </div>
     <!-- Branches Section End -->
 
+    <!-- Party Invitation Section Start -->
+    <section class="party-invitation-section" id="party-section">
+      <div class="party-featured-image parallax-bg" style="background-image: url('img/party/<%= party.images.desktop %>')">
+        <div class="party-content-overlay">
+          <div class="container">
+            <div class="party-info-content">
+              <h1 class="party-main-title">¡Tenemos fiesta este <%= party.date.day %> de <%= party.date.fullMonth.toLowerCase() %>!</h1>
+              <h2 class="party-location-time"><%= activeLocation.address %>, <%= activeLocation.city %> @ <%= party.eventTime %></h2>
+              <p class="party-description">Baila Salsa y Bachata con nosotros. La fiesta es abierta a todo público.</p>
+
+              <!-- Party Action Buttons -->
+              <div class="party-buttons">
+                <a href="https://admin.salsa-candela.com/fiesta/boletos" target="_blank" class="party-btn primary-btn">
+                  <i class="fas fa-ticket-alt me-2"></i>
+                  Comprar Boletos
+                </a>
+                <a href="/fiesta" class="party-btn secondary-btn">
+                  <i class="fas fa-info-circle me-2"></i>
+                  Más Información
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Party Invitation Section End -->
+
     <%- include('partials/store_footer') -%>
+
+    <!-- Dynamic party images -->
+    <style>
+      @media screen and (max-width: 768px) {
+        .party-featured-image {
+          background-image: url('img/party/<%= party.images.mobile %>') !important;
+        }
+      }
+    </style>
 
     <style>
       /* Countdown timer styles - matching home page */
@@ -1946,6 +1983,215 @@
         .whatsapp-icon-container {
           margin-bottom: 15px;
           align-self: center;
+        }
+      }
+
+      /* Simple Party Invitation Section Styles */
+      .party-invitation-section {
+        position: relative;
+        min-height: 450px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .party-featured-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .party-content-overlay {
+        position: relative;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        padding: 60px 0;
+      }
+
+      .party-info-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .party-main-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        line-height: 1.2;
+      }
+
+      .party-location-time {
+        font-size: 1.8rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        color: #ff6b35;
+      }
+
+      .party-description {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+        opacity: 0.9;
+      }
+
+      /* Parallax Effect */
+      .parallax-bg {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        will-change: transform;
+      }
+
+      /* Party Buttons */
+      .party-buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .party-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        min-width: 180px;
+        text-align: center;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .party-btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.6s;
+      }
+
+      .party-btn:hover::before {
+        left: 100%;
+      }
+
+      .primary-btn {
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        border: 2px solid transparent;
+      }
+
+      .primary-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(255, 107, 53, 0.4);
+        color: white;
+        text-decoration: none;
+      }
+
+      .secondary-btn {
+        background: rgba(255, 255, 255, 0.9);
+        color: #333;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+      }
+
+      .secondary-btn:hover {
+        transform: translateY(-3px);
+        background: rgba(255, 255, 255, 1);
+        box-shadow: 0 12px 35px rgba(255, 255, 255, 0.3);
+        color: #333;
+        text-decoration: none;
+      }
+
+      /* Mobile Responsive Styles for Simple Party Section */
+      @media (max-width: 768px) {
+        .party-invitation-section {
+          min-height: 400px;
+        }
+
+        .party-content-overlay {
+          padding: 40px 0;
+        }
+
+        .party-main-title {
+          font-size: 1.8rem;
+        }
+
+        .party-location-time {
+          font-size: 1.2rem;
+        }
+
+        .party-description {
+          font-size: 1rem;
+        }
+
+        .party-info-content {
+          padding: 0 15px;
+        }
+
+        .party-buttons {
+          gap: 15px;
+          margin-top: 25px;
+        }
+
+        .party-btn {
+          min-width: 160px;
+          padding: 12px 25px;
+          font-size: 0.95rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .party-invitation-section {
+          min-height: 380px;
+        }
+
+        .party-main-title {
+          font-size: 1.5rem;
+        }
+
+        .party-location-time {
+          font-size: 1.1rem;
+        }
+
+        .party-description {
+          font-size: 0.95rem;
+        }
+
+        .party-buttons {
+          flex-direction: column;
+          align-items: center;
+          gap: 12px;
+        }
+
+        .party-btn {
+          min-width: 180px;
+          padding: 12px 20px;
+          font-size: 0.9rem;
         }
       }
     </style>

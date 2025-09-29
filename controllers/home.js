@@ -84,8 +84,14 @@ module.exports = {
   getStoreBachata: renderViewWithDate("bachata"),
 
   getStoreSiguiente: (req, res) => {
+    const activeLocationData = partyConfig.locations[partyConfig.activeLocation];
+    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+
     res.render("siguiente.ejs", {
       branches: classSchedules,
+      party: partyConfig,
+      activeLocation: activeLocationData,
+      fullDate: fullDate,
       paymentMode: process.env.PAYMENT_MODE
     });
   },
