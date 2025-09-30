@@ -63,7 +63,7 @@ function renderViewWithDate(viewName) {
     const nextDate = getNextSaturdayDate();
     res.render(`${viewName}.ejs`, {
       nextSaturdayDate: nextDate,
-      paymentMode: process.env.PAYMENT_MODE
+      paymentMode: process.env.PAYMENT_MODE,
     });
   };
 }
@@ -84,7 +84,8 @@ module.exports = {
   getStoreBachata: renderViewWithDate("bachata"),
 
   getStoreSiguiente: (req, res) => {
-    const activeLocationData = partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData =
+      partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
     const nextDate = getNextSaturdayDate();
 
@@ -94,7 +95,7 @@ module.exports = {
       activeLocation: activeLocationData,
       fullDate: fullDate,
       nextSaturdayDate: nextDate,
-      paymentMode: process.env.PAYMENT_MODE
+      paymentMode: process.env.PAYMENT_MODE,
     });
   },
 
@@ -103,14 +104,15 @@ module.exports = {
   getStoreGuiaCodi: renderView("guia-codi"),
 
   getStoreParty: (req, res) => {
-    const activeLocationData = partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData =
+      partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("party.ejs", {
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
-      paymentMode: process.env.PAYMENT_MODE
+      paymentMode: process.env.PAYMENT_MODE,
     });
   },
 
@@ -125,7 +127,7 @@ module.exports = {
   getSucursales: (req, res) => {
     res.render("sucursales.ejs", {
       branches: classSchedules,
-      paymentMode: process.env.PAYMENT_MODE
+      paymentMode: process.env.PAYMENT_MODE,
     });
   },
 
@@ -137,20 +139,11 @@ module.exports = {
 
   // Redirects
   PartyRedirect: (req, res) => {
-    const referralCode = req.params.referralCode;
-    const paymentType = req.query.payment;
-
-    let baseUrl = "https://admin.salsa-candela.com/fiesta/boletos";
-
-    // Handle different payment types
-    if (paymentType === "codi") {
-      baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-codi";
-    } else if (paymentType === "tarjeta") {
-      baseUrl = "https://admin.salsa-candela.com/fiesta/boletos-tarjeta";
-    }
-
-    const redirectUrl = referralCode ? `${baseUrl}/${referralCode}` : baseUrl;
-    res.redirect(redirectUrl);
+    const referralCode = req.params.referralCode || "";
+    res.render("boletos", {
+      referralCode: referralCode,
+      paymentMode: "modal",
+    });
   },
 
   ClassRedirect: (req, res) => {

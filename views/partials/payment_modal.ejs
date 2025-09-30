@@ -164,10 +164,18 @@
   }
 
   function redirectToPayment(paymentType) {
+    const referralCode = "<%= typeof referralCode !== 'undefined' ? referralCode : '' %>";
+
     if (paymentType === "codi") {
-      window.location.href = "https://admin.salsa-candela.com/fiesta/boletos/codi/push";
+      const codiUrl = referralCode
+        ? `https://admin.salsa-candela.com/fiesta/boletos/codi/push/${referralCode}`
+        : "https://admin.salsa-candela.com/fiesta/boletos/codi/push";
+      window.location.href = codiUrl;
     } else if (paymentType === "tarjeta") {
-      window.location.href = "https://admin.salsa-candela.com/fiesta/boletos";
+      const stripeUrl = referralCode
+        ? `https://admin.salsa-candela.com/fiesta/boletos/${referralCode}`
+        : "https://admin.salsa-candela.com/fiesta/boletos";
+      window.location.href = stripeUrl;
     }
   }
 

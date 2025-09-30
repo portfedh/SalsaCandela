@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .boletos-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .boletos-content {
+      text-align: center;
+      max-width: 600px;
+      color: white;
+    }
+
+    .boletos-logo {
+      width: 150px;
+      height: auto;
+      margin-bottom: 30px;
+    }
+
+    .boletos-title {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      color: #e04a25;
+    }
+
+    .boletos-subtitle {
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .loading-spinner {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(224, 74, 37, 0.3);
+      border-radius: 50%;
+      border-top-color: #e04a25;
+      animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+
+  <body>
+    <!-- Include header -->
+    <%- include('partials/store_header_with_custom_mobile') -%>
+
+    <!-- Include custom mobile nav styles -->
+    <%- include('partials/custom_mobile_nav_styles') -%>
+
+    <!-- Main content -->
+    <div class="boletos-container">
+      <div class="boletos-content">
+        <img src="/img/logo/logo-salsa-candela.png" alt="Salsa Candela" class="boletos-logo">
+        <h1 class="boletos-title">Compra tus Boletos</h1>
+        <p class="boletos-subtitle">Selecciona tu método de pago preferido</p>
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <%- include('partials/custom_mobile_nav_script') -%>
+
+    <!-- Include payment modal -->
+    <%- include('partials/payment_modal') -%>
+
+    <!-- Auto-open modal -->
+    <script>
+      // Auto-open the payment modal when page loads
+      window.addEventListener('DOMContentLoaded', function() {
+        showPaymentOptions();
+      });
+    </script>
+
+    <!-- Body & html close -->
+  </body>
+</html>
