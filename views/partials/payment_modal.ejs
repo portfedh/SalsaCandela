@@ -149,7 +149,7 @@
       showPaymentOptions();
     <% } else { %>
       // Simple mode: direct redirect
-      window.location.href = '/boletos/salsa-candela';
+      window.location.href = 'https://admin.salsa-candela.com/fiesta/boletos';
     <% } %>
   }
 
@@ -167,7 +167,7 @@
     if (paymentType === "codi") {
       window.location.href = "https://admin.salsa-candela.com/fiesta/boletos/codi/push";
     } else if (paymentType === "tarjeta") {
-      window.location.href = "/boletos/salsa-candela";
+      window.location.href = "https://admin.salsa-candela.com/fiesta/boletos";
     }
   }
 
