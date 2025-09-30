@@ -86,12 +86,14 @@ module.exports = {
   getStoreSiguiente: (req, res) => {
     const activeLocationData = partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const nextDate = getNextSaturdayDate();
 
     res.render("siguiente.ejs", {
       branches: classSchedules,
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      nextSaturdayDate: nextDate,
       paymentMode: process.env.PAYMENT_MODE
     });
   },
