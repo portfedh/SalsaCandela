@@ -256,6 +256,7 @@
   letter-spacing: 0.5px;
   position: relative;
   overflow: hidden;
+  margin-bottom: 0;
 }
 
 .nav-btn::before {
