@@ -42,7 +42,16 @@ This is a traditional Express.js MVC application with the following pattern:
 The application follows two main patterns:
 
 1. **View Routes**: Render EJS templates for informational pages
+   - Main pages: index, salsa, bachata, party (fiesta), FAQ, contact, individual classes (particulares)
+   - Informational pages: siguiente, sucursales, guia-codi, aviso-privacidad, politica-devoluciones
+   - Confirmation pages: confirmacion, email-confirmation, password reset (cambiar-contrasena)
+
 2. **Redirect Routes**: Handle form submissions and redirect to external admin system
+   - General class registration: `/checkout`, `/inscripcion-clases`
+   - Salsa classes by location: `/checkout-salsa-{xola|claveria|valle|coapa|satelite}`
+   - Bachata classes by location: `/checkout-bachata-{xola|claveria|valle|coapa|satelite}`
+   - Party tickets: `/boletos/:referralCode?`
+   - Private classes: `/info-particulares`
 
 Key redirect destinations:
 
@@ -56,11 +65,21 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 
 ### View Structure
 
-- **Main views**: Located in `/views/` (index, salsa, bachata, party, etc.)
+- **Main views**: Located in `/views/`
+  - Home: index.ejs
+  - Class pages: salsa.ejs, bachata.ejs, individual_classes.ejs, siguiente.ejs
+  - Party: party.ejs, boletos.ejs
+  - Info pages: faq.ejs, sucursales.ejs, guia-codi.ejs
+  - Legal: aviso-privacidad.ejs, politica-devoluciones.ejs
+  - Confirmations: confirmation.ejs, email-confirmation.ejs, cambiar-contrasena.ejs
+
 - **Partials**: Located in `/views/partials/` for reusable components
-  - Headers, footers, navigation
-  - Responsive table components for mobile/desktop
-  - Script includes and maps
+  - **Headers**: store_head.ejs, codi_head.ejs, sucursales_head.ejs, page_header.ejs
+  - **Navigation**: store_header.ejs, store_header_with_custom_mobile.ejs
+  - **Footer**: store_footer.ejs
+  - **Tables**: store_salsa_table_full.ejs, store_salsa_table_mobile.ejs, store_bachata_table_full.ejs, store_bachata_table_mobile.ejs
+  - **Scripts**: store_js_scripts.ejs, custom_mobile_nav_script.ejs, custom_mobile_nav_styles.ejs
+  - **Other**: store_map.ejs, payment_modal.ejs
 
 ### Static Assets Organization
 
@@ -82,9 +101,11 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 
 ### Important Features
 
-- **Apple Pay Support**: Serves domain association file for Apple Pay merchant verification
-- **SEO**: Includes sitemap.xml serving
-- **Error Handling**: Basic middleware for 500 errors
+- **Apple Pay Support**: Serves domain association file at `/.well-known/apple-developer-merchantid-domain-association` for Apple Pay merchant verification
+- **Payment Modal**: Reusable payment modal partial for redirecting to admin system with referral code support
+- **Location-based Class Registration**: Separate routes for each dance studio location (Xola, Claveria, Valle, Coapa, Satélite)
+- **SEO**: Includes sitemap.xml serving at `/sitemap.xml`
+- **Error Handling**: Basic middleware for 500 errors in routes
 
 ### External Dependencies
 
@@ -103,3 +124,16 @@ The application heavily relies on an external admin system (`admin.salsa-candela
   - Example: Use `.banner-btn.compact-btn` instead of `.banner-btn` with `!important`
   - This maintains clean, maintainable CSS and follows specificity rules
 - Follow existing CSS patterns and class naming conventions
+
+#### EJS Templates
+
+- Use partials for reusable components to maintain DRY principles
+- Page-specific head elements are managed through dedicated partials (store_head.ejs, codi_head.ejs, sucursales_head.ejs)
+- Responsive tables use separate partials for mobile and desktop views
+- All pages include consistent header/footer structure through partials
+
+#### Redirect Patterns
+
+- All registration redirects include necessary query parameters and registration keys
+- Party ticket redirects support optional referral codes via URL parameters
+- Payment modal partial handles redirect logic with referral code support
