@@ -13,30 +13,8 @@
     <!-- Include custom mobile nav styles -->
     <%- include('partials/custom_mobile_nav_styles') -%>
 
-    <!-- Banner Area Start -->
-    <section class="banner-area text-start">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="banner-content-wrapper">
-              <div class="banner-content">
-                <h2>Clases de Bachata</h2>
-                <div class="banner-breadcrumb">
-                  <ul>
-                    <li>
-                      <a href="/">Inicio </a>
-                      <i class="zmdi zmdi-chevron-right"></i>
-                    </li>
-                    <li>Clases de Bachata</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Banner Area End -->
+    <!-- Include page header -->
+    <%- include('partials/page_header') -%>
 
     <!-- Event Area Start -->
     <section class="event-area pt-50 pb-10 bg-gray">
@@ -47,7 +25,6 @@
               <!-- Bachata Section Start -->
               <!-- ------------------- -->
               <section style="display: flex; flex-direction: column">
-                <h2>Clases de Bachata</h2>
                 <!-- Video Bachata -->
                 <div class="video-container">
                   <div class="video-wrapper">
@@ -101,7 +78,9 @@
                     </span>
                     <br /><b>
                       Nuestro proximo taller inicia el
-                      <span style="color: #f69139"><%= nextSaturdayDate %>.</span></b
+                      <span style="color: #f69139"
+                        ><%= nextSaturdayDate %>.</span
+                      ></b
                     >
                   </div>
                 </div>

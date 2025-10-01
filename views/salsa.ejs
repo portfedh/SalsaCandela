@@ -13,30 +13,8 @@
     <!-- Include custom mobile nav styles -->
     <%- include('partials/custom_mobile_nav_styles') -%>
 
-    <!-- Banner Area Start -->
-    <section class="banner-area text-start">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="banner-content-wrapper">
-              <div class="banner-content">
-                <h2>Clases de Salsa</h2>
-                <div class="banner-breadcrumb">
-                  <ul>
-                    <li>
-                      <a href="/">Inicio </a>
-                      <i class="zmdi zmdi-chevron-right"></i>
-                    </li>
-                    <li>Clases de Salsa</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Banner Area End -->
+    <!-- Include page header -->
+    <%- include('partials/page_header') -%>
 
     <!-- Event Area Start -->
     <section class="event-area pt-50 pb-10 bg-gray">
@@ -47,18 +25,17 @@
               <!-- Salsa Section Start -->
               <!-- ------------------- -->
               <section style="display: flex; flex-direction: column">
-                <h2>Clases de Salsa</h2>
-
                 <!-- Video de Salsa -->
                 <div class="video-container">
                   <div class="video-wrapper">
-                    <video 
-                      controls 
-                      autoplay 
-                      muted 
-                      playsinline 
-                      style="width: 100%; height: 100%; border-radius: 12px;"
-                      src="https://video.wixstatic.com/video/87831e_6ffe8eb8b1ec4333a6834ebbeab10f9d/1080p/mp4/file.mp4">
+                    <video
+                      controls
+                      autoplay
+                      muted
+                      playsinline
+                      style="width: 100%; height: 100%; border-radius: 12px"
+                      src="https://video.wixstatic.com/video/87831e_6ffe8eb8b1ec4333a6834ebbeab10f9d/1080p/mp4/file.mp4"
+                    >
                       Tu navegador no soporta el elemento de video.
                     </video>
                   </div>

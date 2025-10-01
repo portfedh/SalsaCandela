@@ -79,9 +79,29 @@ module.exports = {
 
   getStoreIndex: renderView("index"),
 
-  getStoreSalsa: renderViewWithDate("salsa"),
+  getStoreSalsa: (req, res) => {
+    const nextDate = getNextSaturdayDate();
+    res.render("salsa.ejs", {
+      pageHeader: {
+        title: "Clases de Salsa",
+        subtitle: "Aprende a bailar salsa cubana y estilo LA",
+      },
+      nextSaturdayDate: nextDate,
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
-  getStoreBachata: renderViewWithDate("bachata"),
+  getStoreBachata: (req, res) => {
+    const nextDate = getNextSaturdayDate();
+    res.render("bachata.ejs", {
+      pageHeader: {
+        title: "Clases de Bachata",
+        subtitle: "Descubre el ritmo de la bachata",
+      },
+      nextSaturdayDate: nextDate,
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
   getStoreSiguiente: (req, res) => {
     const activeLocationData =
@@ -99,7 +119,15 @@ module.exports = {
     });
   },
 
-  getStoreIndividualClasses: renderView("individual_classes"),
+  getStoreIndividualClasses: (req, res) => {
+    res.render("individual_classes.ejs", {
+      pageHeader: {
+        title: "Clases Particulares",
+        subtitle: "Atención personalizada para tu aprendizaje",
+      },
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
   getStoreGuiaCodi: (req, res) => {
     res.render("guia-codi.ejs", {
@@ -128,7 +156,15 @@ module.exports = {
     });
   },
 
-  getStoreFAQ: renderView("faq"),
+  getStoreFAQ: (req, res) => {
+    res.render("faq.ejs", {
+      pageHeader: {
+        title: "Preguntas Frecuentes",
+        subtitle: "Respuestas a tus dudas sobre nuestras clases",
+      },
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
   getStoreContact: renderView("contact"),
 
