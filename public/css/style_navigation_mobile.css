@@ -5,9 +5,13 @@
   left: 0;
   right: 0;
   z-index: 9999;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.98) 0%,
+    rgba(248, 249, 250, 0.95) 100%
+  );
   backdrop-filter: blur(20px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   border-bottom: 1px solid rgba(255, 107, 53, 0.1);
   display: none; /* Hidden by default, shown only on mobile */
 }
@@ -25,7 +29,7 @@
 .custom-nav-logo {
   height: 45px;
   width: auto;
-  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
   transition: transform 0.3s ease;
 }
 
@@ -89,12 +93,16 @@
   top: 100%;
   left: 0;
   right: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255) 0%,
+    rgb(248, 249, 250) 100%
+  );
   backdrop-filter: blur(20px);
   max-height: 0;
   overflow: hidden;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   opacity: 0;
@@ -127,15 +135,33 @@
   animation: slideInLeft 0.6s ease forwards;
 }
 
-.custom-nav-menu.active li:nth-child(1) { animation-delay: 0.1s; }
-.custom-nav-menu.active li:nth-child(2) { animation-delay: 0.15s; }
-.custom-nav-menu.active li:nth-child(3) { animation-delay: 0.2s; }
-.custom-nav-menu.active li:nth-child(4) { animation-delay: 0.25s; }
-.custom-nav-menu.active li:nth-child(5) { animation-delay: 0.3s; }
-.custom-nav-menu.active li:nth-child(6) { animation-delay: 0.35s; }
-.custom-nav-menu.active li:nth-child(7) { animation-delay: 0.4s; }
-.custom-nav-menu.active li:nth-child(8) { animation-delay: 0.45s; }
-.custom-nav-menu.active li:nth-child(9) { animation-delay: 0.5s; }
+.custom-nav-menu.active li:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.custom-nav-menu.active li:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.custom-nav-menu.active li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.custom-nav-menu.active li:nth-child(4) {
+  animation-delay: 0.25s;
+}
+.custom-nav-menu.active li:nth-child(5) {
+  animation-delay: 0.3s;
+}
+.custom-nav-menu.active li:nth-child(6) {
+  animation-delay: 0.35s;
+}
+.custom-nav-menu.active li:nth-child(7) {
+  animation-delay: 0.4s;
+}
+.custom-nav-menu.active li:nth-child(8) {
+  animation-delay: 0.45s;
+}
+.custom-nav-menu.active li:nth-child(9) {
+  animation-delay: 0.5s;
+}
 
 @keyframes slideInLeft {
   to {
@@ -149,7 +175,7 @@
   padding: 18px 0;
   color: #2d3748;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 1rem;
   border-bottom: 1px solid rgba(255, 107, 53, 0.1);
   transition: all 0.4s ease;
@@ -158,13 +184,18 @@
 }
 
 .custom-nav-menu a::before {
-  content: '';
+  content: "";
   position: absolute;
   left: -100%;
   top: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.1), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 107, 53, 0.1),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
@@ -187,8 +218,14 @@
 
 .nav-cta {
   padding: 25px 30px;
-  text-align: center;
-  background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(247, 147, 30, 0.05) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 107, 53, 0.05) 0%,
+    rgba(247, 147, 30, 0.05) 100%
+  );
   margin: 20px 30px;
   border-radius: 16px;
   border: 2px solid rgba(255, 107, 53, 0.1);
@@ -196,20 +233,24 @@
 
 .nav-cta form {
   margin: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-btn {
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
   color: white;
   border: none;
-  padding: 12px 24px;
+  padding: 14px 32px;
   border-radius: 50px;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  width: 100%;
-  max-width: 180px;
+  width: auto;
+  min-width: 200px;
   box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -218,13 +259,18 @@
 }
 
 .nav-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
   transition: left 0.5s ease;
 }
 
