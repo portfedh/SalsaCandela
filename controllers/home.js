@@ -101,7 +101,15 @@ module.exports = {
 
   getStoreIndividualClasses: renderView("individual_classes"),
 
-  getStoreGuiaCodi: renderView("guia-codi"),
+  getStoreGuiaCodi: (req, res) => {
+    res.render("guia-codi.ejs", {
+      pageHeader: {
+        title: 'Guía CoDi<span class="reg-symbol">®</span>',
+        subtitle: "Tu guía completa para pagos digitales instantáneos",
+      },
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
   getStoreParty: (req, res) => {
     const activeLocationData =
@@ -109,6 +117,10 @@ module.exports = {
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("party.ejs", {
+      pageHeader: {
+        title: "Fiesta",
+        subtitle: "Baila Salsa y Bachata con nosotros",
+      },
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
@@ -126,6 +138,10 @@ module.exports = {
 
   getSucursales: (req, res) => {
     res.render("sucursales.ejs", {
+      pageHeader: {
+        title: "Nuestras Sucursales",
+        subtitle: "Encuentra la sucursal más cercana a ti",
+      },
       branches: classSchedules,
       paymentMode: process.env.PAYMENT_MODE,
     });

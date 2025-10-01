@@ -117,3 +117,24 @@ label.light {
     max-width: 480px;
   }
 }
+
+/* Page Header Styles - Shared across multiple pages */
+.page-header-area {
+  padding: 100px 0 80px;
+  background-image: url('/img/ardian-lumi-6Woj_wozqmA-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+}
+
+.page-header-title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .page-header-area {
+    padding-top: 180px;
+  }
+}

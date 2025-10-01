@@ -11,70 +11,10 @@
 }
 
 /* Make CoDi® symbol more subtle */
-.codi-title,
-.codi-intro-title,
-.codi-benefits-title,
-.codi-step-title {
-  font-feature-settings: "sups" 1;
-}
-
-.codi-title .reg-symbol,
-.codi-intro-title .reg-symbol,
-.codi-benefits-title .reg-symbol,
-.codi-step-title .reg-symbol {
+.reg-symbol {
   font-size: 0.6em;
   vertical-align: super;
   opacity: 0.8;
-}
-
-.codi-page-header {
-  padding: 120px 0 90px;
-  background: linear-gradient(
-      135deg,
-      rgba(255, 107, 53, 0.95) 0%,
-      rgba(247, 147, 30, 0.95) 100%
-    ),
-    url("/img/ardian-lumi-6Woj_wozqmA-unsplash.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: white;
-  text-align: center;
-  position: relative;
-}
-
-.codi-page-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 1;
-}
-
-.codi-page-header .container {
-  position: relative;
-  z-index: 2;
-}
-
-.codi-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-}
-
-.codi-title-description {
-  font-size: 0.9rem;
-}
-
-.codi-subtitle {
-  font-size: 1.4rem;
-  font-weight: 300;
-  opacity: 0.95;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
 }
 
 /* Introduction Section */
@@ -444,14 +384,6 @@
 
 /* Responsive Design */
 @media (max-width: 767px) {
-  .codi-title {
-    font-size: 2.5rem;
-  }
-
-  .codi-subtitle {
-    font-size: 1.2rem;
-  }
-
   .codi-intro-section,
   .codi-benefits-section {
     padding: 20px 15px;
@@ -547,10 +479,6 @@
   .codi-step-card {
     margin-left: 5px;
     margin-right: 5px;
-  }
-
-  .page-header-area {
-    padding-top: 180px;
   }
 }
 
