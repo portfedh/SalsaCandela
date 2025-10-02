@@ -1,21 +1,21 @@
 const partyConfig = {
   // Party Information
-  title: "Salsatelite",
+  title: "Noche Sensual",
   description: "Una noche llena de Salsa, Bachata y buena vibra",
 
   // Date Information
   date: {
-    day: 26,
-    month: "SEP", // Short format for badge
+    day: 10,
+    month: "OCT", // Short format for badge
     year: 2025,
-    fullMonth: "Septiembre", // Full month name for full date
+    fullMonth: "Octubre", // Full month name for full date
     dayOfWeek: "Viernes",
   },
 
   // Images (relative to /public/img/party/)
   images: {
-    desktop: "fiesta_mensual_2025_09_26.jpeg",
-    mobile: "fiesta_mensual_2025_09_26b.jpeg",
+    desktop: "fiesta_mensual_2025_10_10.jpeg",
+    mobile: "fiesta_mensual_2025_10_10b.jpeg",
   },
 
   // Location Options
@@ -41,7 +41,7 @@ const partyConfig = {
   },
 
   // Active location (change this to switch venues)
-  activeLocation: "satelite",
+  activeLocation: "xola",
 
   // Event Schedule
   schedule: [
