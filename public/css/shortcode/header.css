@@ -178,7 +178,15 @@ NOTE: This is Header style file. All Header related style included in this file.
   margin-top: 25px;
 }
 .sticky .logo {
-  padding: .3rem;
+  max-height: 55px;
+  display: flex;
+  align-items: center;
+}
+.sticky .logo img {
+  max-height: 55px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 .header-area .sticky {
   background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;

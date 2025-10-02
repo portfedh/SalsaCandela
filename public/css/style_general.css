@@ -13,16 +13,21 @@
   display: flex;
   flex-direction: row;
   justify-content: stretch;
+  align-items: center;
   max-width: 300px;
+  max-height: 55px;
   margin: 0 auto;
+  transition: all 0.3s ease;
 }
 
 .logo img {
   max-width: 100%; /* Ensure the image width never exceeds the container width */
-  max-height: 100%; /* Ensure the image height never exceeds the container height */
+  max-height: 55px; /* Match sticky header size */
   display: block; /* Remove any default spacing or margins on the image */
-  width: 100%; /* Make sure the image takes the full width of the container */
+  width: auto; /* Allow width to adjust proportionally */
   height: auto; /* Allow the image to adjust its height proportionally */
+  object-fit: contain; /* Maintain aspect ratio */
+  transition: all 0.3s ease;
 }
 /* Company Logo Styling */
 
