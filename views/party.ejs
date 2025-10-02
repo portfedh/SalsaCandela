@@ -10,7 +10,7 @@
   <style>
     @media screen and (max-width: 768px) {
       .event-featured-image {
-        background-image: url('img/party/<%= party.images.mobile %>') !important;
+        background-image: url("img/party/<%= party.images.mobile %>") !important;
       }
     }
   </style>
@@ -46,7 +46,12 @@
             <div class="event-main-card">
               <!-- Event Image Section -->
               <div class="event-image-section">
-                <div class="event-image-container event-featured-image" style="background-image: url('img/party/<%= party.images.desktop %>')">
+                <div
+                  class="event-image-container event-featured-image"
+                  style="
+                    background-image: url('img/party/<%= party.images.desktop %>');
+                  "
+                >
                   <div class="image-overlay">
                     <div class="event-date-badge">
                       <div class="date-day"><%= party.date.day %></div>
@@ -101,7 +106,7 @@
                               <p>Todos los niveles bienvenidos</p>
                             </div>
                           </div>
-                          <div class="timeline-item featured">
+                          <div class="timeline-item">
                             <div class="timeline-time">9:00 PM</div>
                             <div class="timeline-content">
                               <strong>¡Inicia la Fiesta!</strong>
@@ -128,9 +133,7 @@
                         <div class="card-icon">📅</div>
                         <div class="card-content">
                           <h4>Fecha y Hora</h4>
-                          <p class="event-date">
-                            <%= fullDate %>
-                          </p>
+                          <p class="event-date"><%= fullDate %></p>
                           <p class="event-time"><%= party.eventTime %></p>
                         </div>
                       </div>
@@ -163,12 +166,20 @@
                           <h4>Precios</h4>
                           <div class="price-options">
                             <div class="price-option featured">
-                              <span class="price">$<%= party.pricing.presale.price %></span>
-                              <span class="price-label"><%= party.pricing.presale.label %></span>
+                              <span class="price"
+                                >$<%= party.pricing.presale.price %></span
+                              >
+                              <span class="price-label"
+                                ><%= party.pricing.presale.label %></span
+                              >
                             </div>
                             <div class="price-option">
-                              <span class="price">$<%= party.pricing.door.price %></span>
-                              <span class="price-label"><%= party.pricing.door.label %></span>
+                              <span class="price"
+                                >$<%= party.pricing.door.price %></span
+                              >
+                              <span class="price-label"
+                                ><%= party.pricing.door.label %></span
+                              >
                             </div>
                           </div>
                         </div>
@@ -183,7 +194,10 @@
                         >
                           <span class="cta-icon">🎫</span>
                           <span class="cta-text">Comprar Boletos</span>
-                          <span class="cta-subtext"><%= party.pricing.presale.label %> $<%= party.pricing.presale.price %></span>
+                          <span class="cta-subtext"
+                            ><%= party.pricing.presale.label %> $<%=
+                            party.pricing.presale.price %></span
+                          >
                         </a>
                       </div>
                     </div>
