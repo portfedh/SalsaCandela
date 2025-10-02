@@ -79,35 +79,6 @@
                     </div>
                   </div>
                 </div>
-
-                <!-- Simple pricing section -->
-                <div class="pricing-section">
-                  <div class="regular-pricing">
-                    <h4>Precios regulares</h4>
-                    <div class="price-list">
-                      <div class="price-item">
-                        <span class="price">$1,300</span>
-                        <span class="description">Pase individual</span>
-                      </div>
-                      <div class="price-item">
-                        <span class="price">$2,000</span>
-                        <span class="description">Pase en pareja</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Clean CTA section -->
-                <div class="cta-section">
-                  <a
-                    href="https://admin.salsa-candela.com/classstripeform"
-                    target="_blank"
-                    class="btn btn-primary btn-lg cta-button"
-                  >
-                    <i class="fas fa-user-plus me-2"></i>
-                    Inscríbete Ahora
-                  </a>
-                </div>
               </div>
             </div>
           </div>
@@ -115,20 +86,6 @@
       </div>
     </section>
     <!-- Advanced Course Section End -->
-
-    <!-- Countdown timer Start-->
-    <div id="countdown-div" class="countdown">
-      <h1 id="index-countdown-headline">Promocion vence en:</h1>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>Dias</li>
-          <li><span id="hours"></span>Horas</li>
-          <li><span id="minutes"></span>Minutos</li>
-          <li><span id="seconds"></span>Segundos</li>
-        </ul>
-      </div>
-    </div>
-    <!-- Countdown timer end -->
 
     <!-- Flash Promotion Section Start -->
     <section class="flash-promotion-section">
@@ -141,15 +98,9 @@
                 <h3 class="promo-title">Promoción Flash</h3>
               </div>
 
-              <p class="promo-description">
-                Regálanos una reseña
-                <a href="#" class="review-link">aquí</a>
-                y obtén un 50% de descuento
-              </p>
-
               <div class="promo-deadline">
                 <p class="deadline-text" id="promotion-deadline">
-                  Válido hasta este <span id="current-date"></span>
+                  Válida hasta este <span id="current-date"></span>
                 </p>
               </div>
 
@@ -180,6 +131,20 @@
       </div>
     </section>
     <!-- Flash Promotion Section End -->
+
+    <!-- Countdown timer Start-->
+    <div id="countdown-div" class="countdown">
+      <h1 id="index-countdown-headline">Promocion vence en:</h1>
+      <div id="countdown">
+        <ul>
+          <li><span id="days"></span>Dias</li>
+          <li><span id="hours"></span>Horas</li>
+          <li><span id="minutes"></span>Minutos</li>
+          <li><span id="seconds"></span>Segundos</li>
+        </ul>
+      </div>
+    </div>
+    <!-- Countdown timer end -->
 
     <!-- Payment Methods Section Start -->
     <section class="payment-section">
@@ -312,7 +277,7 @@
           <div class="col-lg-12">
             <!-- Find Nearest Branch Button -->
             <div class="find-nearest-section text-center mb-5">
-              <h3>Ubicacion y Horarios</h3>
+              <h3>Sucursales y Horarios</h3>
               <button
                 id="findNearestBtn"
                 class="btn btn-primary btn-lg mt-3"
@@ -857,9 +822,7 @@
         text-align: center;
         align-items: center;
         border-radius: 7px;
-        padding: 1rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        padding: 2rem 1rem;
       }
 
       #index-countdown-headline {
@@ -892,13 +855,14 @@
 
       /* Clean Course Section Styles */
       .course-section {
-        padding: 80px 0;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
         background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
       }
 
       .course-box {
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        padding: 60px 40px;
+        padding: 2rem 40px 0 40px;
         border-radius: 20px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         margin-bottom: 40px;
@@ -1203,6 +1167,7 @@
         background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
         position: relative;
         overflow: hidden;
+        margin-top: -2rem;
       }
 
       .flash-promotion-section::before {
@@ -1282,7 +1247,7 @@
 
       /* Payment Section Styles */
       .payment-section {
-        padding: 80px 0;
+        padding: 2rem 0;
         background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
       }
 
