@@ -102,9 +102,9 @@
 
     <!-- Flash Promotion Section Start -->
     <section class="flash-promotion-section">
-      <div class="flash-container">
+      <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8 col-md-10">
+          <div class="col-lg-6 col-12">
             <div class="flash-promo">
               <div class="promo-header">
                 <i class="fas fa-bolt promo-icon"></i>
@@ -149,18 +149,24 @@
     <!-- Flash Promotion Section End -->
 
     <!-- Countdown timer Start-->
-     <section class="flash-promotion-section">
-    <div id="countdown-div" class="countdown">
-      <h1 id="index-countdown-headline">Promocion vence en:</h1>
-      <div id="countdown">
-        <ul>
-          <li><span id="days"></span>Dias</li>
-          <li><span id="hours"></span>Horas</li>
-          <li><span id="minutes"></span>Minutos</li>
-          <li><span id="seconds"></span>Segundos</li>
-        </ul>
+    <section class="flash-promotion-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-6 col-12">
+            <div id="countdown-div" class="countdown">
+              <h1 id="index-countdown-headline">Promocion vence en:</h1>
+              <div id="countdown">
+                <ul>
+                  <li><span id="days"></span>Dias</li>
+                  <li><span id="hours"></span>Horas</li>
+                  <li><span id="minutes"></span>Minutos</li>
+                  <li><span id="seconds"></span>Segundos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </section>
     <!-- Countdown timer end -->
 
@@ -168,7 +174,7 @@
     <section class="payment-section">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-10 col-md-12">
+          <div class="col-lg-10 col-12">
             <div class="payment-box">
               <div class="payment-header">
                 <h3 class="payment-title">Formas de pago</h3>
@@ -797,7 +803,7 @@
               <!-- Party Action Buttons -->
               <div class="party-buttons">
                 <a href="https://admin.salsa-candela.com/fiesta/boletos" target="_blank" class="party-btn primary-btn">
-                  <i class="fas fa-ticket-alt me-2"></i>
+                  <i class="fas fa-ticket me-2"></i>
                   Comprar Boletos
                 </a>
                 <a href="/fiesta" class="party-btn secondary-btn">
@@ -900,15 +906,21 @@
       }
 
       .course-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         font-weight: 700;
         color: #333;
         margin-bottom: 15px;
         line-height: 1.2;
       }
 
+      @media (min-width: 992px) {
+        .course-title {
+          font-size: 2rem;
+        }
+      }
+
       .course-subtitle {
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #666;
         margin-bottom: 0;
         font-weight: 500;
@@ -920,11 +932,17 @@
       }
 
       .value-proposition {
-        font-size: 1.4rem;
+        font-size: 1.1rem;
         color: #ff6b35;
         font-weight: 600;
         line-height: 1.4;
         margin-bottom: 30px;
+      }
+
+      @media (min-width: 992px) {
+        .value-proposition {
+          font-size: 1.2rem;
+        }
       }
 
       /* Clean Course Details */
@@ -1034,10 +1052,6 @@
         color: #666;
       }
 
-      .flash-container{
-        margin-left: 2rem;
-        margin-right: 2rem;
-      }
 
       .flash-promo {
         background: linear-gradient(135deg, #fff5f3 0%, #ffe8e1 100%);
@@ -1115,8 +1129,16 @@
 
       .promo-prices {
         display: flex;
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        gap: 15px;
+        justify-content: center;
+      }
+
+      @media (max-width: 768px) {
+        .promo-prices {
+          flex-direction: column;
+          gap: 10px;
+        }
       }
 
       .promo-price-item {
@@ -1128,6 +1150,8 @@
         border-radius: 8px;
         border: 1px solid rgba(255, 107, 53, 0.2);
         position: relative;
+        flex: 1;
+        min-width: 200px;
       }
 
       .promo-price-item .discount-badge {
@@ -1228,7 +1252,7 @@
 
       /* Flash Promotion Section */
       .flash-promotion-section {
-        padding: 60px 0;
+        padding: 40px 0;
         background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
         position: relative;
         overflow: hidden;
@@ -1323,8 +1347,6 @@
         border-radius: 20px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         border-top: 4px solid #ff6b35;
-        margin-left: 1rem;
-        margin-right: 1rem;
       }
 
       .payment-header {
@@ -1438,19 +1460,35 @@
 
       .payment-options {
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 20px;
         margin-bottom: 30px;
       }
 
+      @media (min-width: 992px) {
+        .payment-options {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
       .payment-option {
         display: flex;
-        align-items: flex-start;
+        flex-direction: column;
+        align-items: center;
         padding: 30px;
         background: #f8f9fa;
         border-radius: 12px;
         border: 1px solid #e9ecef;
         transition: all 0.3s ease;
+        text-align: center;
+      }
+
+      @media (max-width: 991px) {
+        .payment-option {
+          flex-direction: row;
+          align-items: flex-start;
+          text-align: left;
+        }
       }
 
       .payment-option:hover {
@@ -1460,11 +1498,19 @@
       }
 
       .payment-method-logo {
-        margin-right: 20px;
+        margin-right: 0;
+        margin-bottom: 15px;
         min-width: 80px;
         display: flex;
         align-items: center;
         justify-content: center;
+      }
+
+      @media (max-width: 991px) {
+        .payment-method-logo {
+          margin-right: 20px;
+          margin-bottom: 0;
+        }
       }
 
       .payment-logo-img {
@@ -1879,13 +1925,11 @@
         .course-section .container {
           padding-left: 0;
           padding-right: 0;
-          width: 90%;
+          width: 350px;
         }
 
         .course-box {
           padding: 20px;
-          margin-left: 1rem;
-          margin-right: 1rem;
           margin-bottom: 30px;
           border-radius: 15px;
           box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -1957,7 +2001,7 @@
         .payment-section .container {
           padding-left: 0;
           padding-right: 0;
-          width: 90%;
+          width: 350px;
         }
 
         .payment-box {
@@ -2054,6 +2098,12 @@
           padding: 2rem 0;
         }
 
+        .flash-promotion-section .container {
+          width: 350px;
+          padding-left: 0;
+          padding-right: 0;
+        }
+
         .flash-promo {
           box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
         }
@@ -2061,25 +2111,24 @@
         /* Countdown Timer Mobile */
         .countdown {
           padding: 1rem 0.5rem;
-          margin: 0 2rem;
-          max-width: 95%;
           box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          width: 100%;
         }
 
         #index-countdown-headline {
-          font-size: 1.2rem;
+          font-size: 1rem;
           letter-spacing: 0.05rem;
           margin-bottom: 1rem;
         }
 
         #countdown ul li {
-          padding: 0.5rem 0.25rem;
-          font-size: 0.7rem;
-          min-width: 60px;
+          padding: 0.5rem 0.1rem;
+          font-size: 0.65rem;
+          min-width: 50px;
         }
 
         #countdown ul li span {
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           margin-bottom: 0.25rem;
         }
 
@@ -2135,27 +2184,45 @@
       }
 
       .party-main-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
         font-weight: 700;
         margin-bottom: 20px;
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         line-height: 1.2;
       }
 
+      @media (min-width: 992px) {
+        .party-main-title {
+          font-size: 2rem;
+        }
+      }
+
       .party-location-time {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
         font-weight: 600;
         margin-bottom: 20px;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
         color: #ff6b35;
       }
 
+      @media (min-width: 992px) {
+        .party-location-time {
+          font-size: 1.5rem;
+        }
+      }
+
       .party-description {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 400;
         margin-bottom: 30px;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
         opacity: 0.9;
+      }
+
+      @media (min-width: 992px) {
+        .party-description {
+          font-size: 1.1rem;
+        }
       }
 
       /* Parallax Effect */
