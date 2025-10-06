@@ -74,7 +74,7 @@
                       <i class="fas fa-clock course-icon"></i>
                       <div class="detail-content">
                         <h5>Duración</h5>
-                        <p>5 semanas con varios horarios disponibles</p>
+                        <p>5 semanas</p>
                       </div>
                     </div>
 
@@ -82,7 +82,12 @@
                       <i class="fas fa-map-marker-alt course-icon"></i>
                       <div class="detail-content">
                         <h5>Horarios</h5>
-                        <p>Varios horarios por <a href="#sucursales-section">sucursal</a></p>
+                        <p>Varios horarios por <a href="#sucursales-section">sucursal:</a></p>
+                        <ul class="schedule-days-list">
+                          <li>Lunes y Miércoles</li>
+                          <li>Martes y Jueves</li>
+                          <li>Sábados o Domingos</li>
+                        </ul>
                       </div>
 
                   </div>
@@ -173,8 +178,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <a
-                      href="https://admin.salsa-candela.com/classstripeform?curso=salsa&paquete=individual&regKey=tR4eHsD2
-                      target="_blank"
+                      href="https://admin.salsa-candela.com/classstripeform?curso=salsa&paquete=individual&regKey=tR4eHsD2"
                       class="payment-button individual-btn"
                     >
                       <span class="button-text">pase individual</span>
@@ -183,13 +187,16 @@
                   <div class="col-md-6 mb-3">
                     <a
                       href="https://admin.salsa-candela.com/classstripeform?curso=salsa&paquete=pareja&regKey=tR4eHsD2"
-                      target="_blank"
                       class="payment-button couple-btn"
                     >
                       <span class="button-text">pase pareja</span>
                     </a>
                   </div>
                 </div>
+              </div>
+
+              <div class="stripe-logo-container">
+                <img src="/payment-logos/stripe.png" alt="Powered by Stripe" class="stripe-logo">
               </div>
 
               <div class="payment-methods">
@@ -955,6 +962,29 @@
         margin-bottom: 0;
       }
 
+      .schedule-days-list {
+        list-style: none;
+        padding-left: 0;
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      .schedule-days-list li {
+        font-size: 0.9rem;
+        color: #666;
+        padding: 4px 0;
+        position: relative;
+        padding-left: 18px;
+      }
+
+      .schedule-days-list li:before {
+        content: "•";
+        color: #ff6b35;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
       /* Simple Pricing Section */
       .pricing-section {
         margin-bottom: 35px;
@@ -1337,7 +1367,25 @@
         font-size: 1.1rem;
       }
 
-    
+      .stripe-logo-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px 0;
+      }
+
+      .stripe-logo {
+        width: 200px;
+        height: auto;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+      }
+
+      .stripe-logo:hover {
+        opacity: 1;
+      }
+
+
 
 
 
@@ -1900,7 +1948,15 @@
           font-size: 1rem;
         }
 
+        .stripe-logo-container {
+          margin-top: 15px;
+          margin-bottom: 15px;
+          padding: 10px 0;
+        }
 
+        .stripe-logo {
+          width: 200px;
+        }
 
         .payment-option {
           flex-direction: row;
