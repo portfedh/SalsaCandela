@@ -13,7 +13,7 @@
           <div class="col-lg-12">
             <div class="page-header-wrapper">
               <div class="page-header-content">
-                <h1 class="sucursales-title">Salsa al Siguiente Nivel</h1>
+                <h1 class="sucursales-title">Baile al Siguiente Nivel</h1>
               </div>
             </div>
           </div>
@@ -48,9 +48,9 @@
               <div class="course-content">
                 <!-- Clean Course Header -->
                 <div class="course-header">
-                  <h3 class="course-title">Aprende Salsa al Siguiente Nivel</h3>
+                  <h3 class="course-title">Aprende Baile al Siguiente Nivel</h3>
                   <p class="course-subtitle">
-                    Para ti que ya estás tomando clase con nosotros
+                    Para ti que ya estás tomando clase con nosotros tenemos cursos intermedios y avanzados de Salsa y Bachata.
                   </p>
                 </div>
 
@@ -77,6 +77,14 @@
                         <p>5 semanas con varios horarios disponibles</p>
                       </div>
                     </div>
+
+                    <div class="detail-item">
+                      <i class="fas fa-map-marker-alt course-icon"></i>
+                      <div class="detail-content">
+                        <h5>Horarios</h5>
+                        <p>Varios horarios por <a href="#sucursales-section">sucursal</a></p>
+                      </div>
+
                   </div>
                 </div>
               </div>
@@ -89,7 +97,7 @@
 
     <!-- Flash Promotion Section Start -->
     <section class="flash-promotion-section">
-      <div class="container">
+      <div class="flash-container">
         <div class="row justify-content-center">
           <div class="col-lg-8 col-md-10">
             <div class="flash-promo">
@@ -133,6 +141,7 @@
     <!-- Flash Promotion Section End -->
 
     <!-- Countdown timer Start-->
+     <section class="flash-promotion-section">
     <div id="countdown-div" class="countdown">
       <h1 id="index-countdown-headline">Promocion vence en:</h1>
       <div id="countdown">
@@ -144,6 +153,7 @@
         </ul>
       </div>
     </div>
+    </section>
     <!-- Countdown timer end -->
 
     <!-- Payment Methods Section Start -->
@@ -182,31 +192,20 @@
                 </div>
               </div>
 
-              <div class="stripe-section">
-                <div class="stripe-logo">
-                  <img
-                    src="https://stripe.com/img/v3/home/social.png"
-                    alt="Stripe"
-                    class="stripe-img"
-                  />
-                </div>
-                <p class="stripe-text">Pagos seguros procesados por Stripe</p>
-              </div>
-
               <div class="payment-methods">
                 <h4 class="methods-title">
-                  O utiliza cualquiera de los siguientes métodos de pago:
+                  Otros métodos de pago:
                 </h4>
 
                 <div class="payment-options">
                   <div class="payment-option">
                     <div class="payment-method-logo">
-                      <div class="oxxo-logo">OXXO</div>
+                      <img src="/payment-logos/oxxo.svg" alt="OXXO" class="payment-logo-img oxxo-logo-img">
                     </div>
                     <div class="payment-method-info">
                       <h5>Depósito en OXXO</h5>
                       <p>
-                        A la tarjeta de débito Bancomer<br /><strong
+                        A la tarjeta de débito <br><strong>BBVA</strong><br /><strong
                           >4152 3146 0520 6372</strong
                         >
                       </p>
@@ -215,27 +214,27 @@
 
                   <div class="payment-option">
                     <div class="payment-method-logo">
-                      <div class="bbva-logo">BBVA Bancomer</div>
+                      <img src="/payment-logos/bbva.svg" alt="BBVA" class="payment-logo-img bbva-logo-img">
                     </div>
                     <div class="payment-method-info">
                       <h5>Depósito 24 hrs</h5>
                       <p>
-                        En cuenta automáticos (practicaja) a la cuenta:
-                        <strong>2786 2918 08</strong> a nombre de Rodrigo Chávez
-                        Calvillo.
+                        En practicaja a la cuenta: <br>
+                         <strong>Rodrigo Chávez
+                        Calvillo</strong><br><strong>2786 2918 08</strong>
                       </p>
                     </div>
                   </div>
 
                   <div class="payment-option">
                     <div class="payment-method-logo">
-                      <div class="transfer-icon">$</div>
+                      <img src="/payment-logos/spei.svg" alt="SPEI" class="payment-logo-img spei-logo-img">
                     </div>
                     <div class="payment-method-info">
                       <h5>Transferencia</h5>
                       <p>
-                        De cualquier banco a cuenta
-                        <strong>CLABE 0121 8002 7862 9180 82</strong>
+                        De cualquier banco a cuenta <br>
+                        <strong>CLABE <br>0121 8002 7862 9180 82</strong>
                       </p>
                     </div>
                   </div>
@@ -250,14 +249,14 @@
                     </div>
                     <div class="payment-method-info">
                       <p>
-                        <strong>*</strong> Después de hacer el pago, envíanos foto de tu comprobante vía
+                        Después de hacer el pago, envíanos tu comprobante vía
                         <a
                           href="https://wa.me/5215541443745"
                           target="_blank"
                           class="whatsapp-link"
                         >
                           WhatsApp </a
-                        >, o agenda una cita si deseas hacer pago en persona en sucursal.
+                        >
                       </p>
                     </div>
                   </div>
@@ -276,7 +275,7 @@
         <div class="row">
           <div class="col-lg-12">
             <!-- Find Nearest Branch Button -->
-            <div class="find-nearest-section text-center mb-5">
+            <div id="sucursales-section" class="find-nearest-section text-center mb-5">
               <h3>Sucursales y Horarios</h3>
               <button
                 id="findNearestBtn"
@@ -823,6 +822,7 @@
         align-items: center;
         border-radius: 7px;
         padding: 2rem 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       }
 
       #index-countdown-headline {
@@ -1001,6 +1001,11 @@
         color: #666;
       }
 
+      .flash-container{
+        margin-left: 2rem;
+        margin-right: 2rem;
+      }
+
       .flash-promo {
         background: linear-gradient(135deg, #fff5f3 0%, #ffe8e1 100%);
         padding: 25px;
@@ -1168,6 +1173,7 @@
         position: relative;
         overflow: hidden;
         margin-top: -2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
       }
 
       .flash-promotion-section::before {
@@ -1257,6 +1263,8 @@
         border-radius: 20px;
         box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         border-top: 4px solid #ff6b35;
+        margin-left: 1rem;
+        margin-right: 1rem;
       }
 
       .payment-header {
@@ -1329,30 +1337,13 @@
         font-size: 1.1rem;
       }
 
-      .stripe-section {
-        text-align: center;
-        margin-bottom: 40px;
-        padding: 25px;
-        background: #f8f9fa;
-        border-radius: 12px;
-        border: 1px solid #e9ecef;
-      }
+    
 
-      .stripe-logo {
-        margin-bottom: 10px;
-      }
 
-      .stripe-img {
-        height: 30px;
-        width: auto;
-      }
 
-      .stripe-text {
-        color: #666;
-        font-size: 0.9rem;
-        margin-bottom: 0;
-        font-weight: 500;
-      }
+
+
+  
 
       .payment-methods {
         border-top: 2px solid #e9ecef;
@@ -1398,39 +1389,24 @@
         justify-content: center;
       }
 
-      .oxxo-logo {
-        background: #ffcc02;
-        color: #333;
-        padding: 8px 12px;
-        border-radius: 6px;
-        font-weight: 700;
-        font-size: 0.9rem;
-        letter-spacing: 1px;
+      .payment-logo-img {
+        height: auto;
+        object-fit: contain;
       }
 
-      .bbva-logo {
-        background: #004481;
-        color: white;
-        padding: 8px 10px;
-        border-radius: 6px;
-        font-weight: 600;
-        font-size: 0.7rem;
-        text-align: center;
-        line-height: 1.2;
+      .oxxo-logo-img {
+        width: 80px;
+        max-height: 50px;
       }
 
-      .transfer-icon {
-        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-        color: white;
-        padding: 12px;
-        border-radius: 50%;
-        font-weight: 700;
-        font-size: 1.2rem;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+      .bbva-logo-img {
+        width: 60px;
+        max-height: 35px;
+      }
+
+      .spei-logo-img {
+        width: 65px;
+        max-height: 35px;
       }
 
       .payment-method-info h5 {
@@ -1494,7 +1470,7 @@
       }
 
       .sucursales-area {
-        padding: 80px 0;
+        padding: 0;
         background-color: #f8f9fa;
       }
 
@@ -1825,19 +1801,23 @@
         }
 
         .course-box {
-          padding: 30px 15px;
+          padding: 20px;
+          margin-left: 1rem;
+          margin-right: 1rem;
           margin-bottom: 30px;
           border-radius: 15px;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
         }
 
         .course-content {
           padding-right: 0;
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
 
         .course-title {
-          font-size: 2rem;
-          margin-bottom: 15px;
+          font-size: 1.8rem;
+          margin-bottom: 12px;
+          line-height: 1.3;
         }
 
         .course-subtitle {
@@ -1845,13 +1825,24 @@
         }
 
         .value-proposition {
-          font-size: 1.2rem;
+          font-size: 1.15rem;
           margin-bottom: 25px;
+          line-height: 1.5;
         }
 
         .detail-item {
-          padding: 12px;
+          padding: 15px;
           margin-bottom: 15px;
+          border-radius: 10px;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+          background: #ffffff;
+          border-left: 4px solid #ff6b35;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .detail-item:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
         }
 
         .course-icon {
@@ -1888,8 +1879,9 @@
         }
 
         .payment-box {
-          padding: 30px 20px;
-          border-radius: 0;
+          padding: 25px 20px;
+          border-radius: 15px;
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
         }
 
         .payment-title {
@@ -1908,25 +1900,44 @@
           font-size: 1rem;
         }
 
-        .stripe-section {
-          padding: 20px;
-        }
+
 
         .payment-option {
-          flex-direction: column;
-          text-align: center;
+          flex-direction: row;
+          align-items: flex-start;
+          text-align: left;
           padding: 20px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .payment-option:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
         }
 
         .payment-method-logo {
-          margin-right: 0;
-          margin-bottom: 15px;
-          min-width: auto;
-          align-self: center;
+          margin-right: 15px;
+          margin-bottom: 0;
+          min-width: 60px;
+        }
+
+        .oxxo-logo-img {
+          width: 60px;
+          max-height: 40px;
+        }
+
+        .bbva-logo-img {
+          width: 45px;
+          max-height: 28px;
+        }
+
+        .spei-logo-img {
+          width: 50px;
+          max-height: 28px;
         }
 
         .payment-method-info {
-          text-align: center;
+          text-align: left;
         }
 
         .methods-title {
@@ -1938,13 +1949,58 @@
         }
 
         .whatsapp-option {
-          flex-direction: column;
-          text-align: center;
+          flex-direction: row;
+          align-items: flex-start;
+          text-align: left;
         }
 
         .whatsapp-icon-container {
-          margin-bottom: 15px;
-          align-self: center;
+          margin-right: 15px;
+          margin-bottom: 0;
+        }
+
+        /* Flash Promotion Mobile */
+        .flash-promotion-section {
+          padding: 2rem 0;
+        }
+
+        .flash-promo {
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Countdown Timer Mobile */
+        .countdown {
+          padding: 1rem 0.5rem;
+          margin: 0 2rem;
+          max-width: 95%;
+          box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        #index-countdown-headline {
+          font-size: 1.2rem;
+          letter-spacing: 0.05rem;
+          margin-bottom: 1rem;
+        }
+
+        #countdown ul li {
+          padding: 0.5rem 0.25rem;
+          font-size: 0.7rem;
+          min-width: 60px;
+        }
+
+        #countdown ul li span {
+          font-size: 1.8rem;
+          margin-bottom: 0.25rem;
+        }
+
+        /* Branch Cards Mobile */
+        .branch-card {
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+          border-radius: 12px;
+        }
+
+        .branch-card:hover {
+          box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
         }
       }
 
