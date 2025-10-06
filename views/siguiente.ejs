@@ -119,19 +119,22 @@
 
               <div class="promo-prices">
                 <div class="promo-price-item">
-                  <span class="price">$780</span>
+                  <div class="discount-badge">50% OFF</div>
+                  <span class="price-original">$1,300</span>
+                  <span class="price">$650</span>
                   <span class="description">Pase individual</span>
                 </div>
                 <div class="promo-price-item">
-                  <span class="price">$1,200</span>
+                  <span class="discount-badge">50% OFF</span>
+                  <span class="price-original">$2,000</span>
+                  <span class="price">$1,000</span>
                   <span class="description">Pase en pareja</span>
                 </div>
               </div>
 
               <div class="promo-cta">
                 <a
-                  href="https://admin.salsa-candela.com/classstripeform"
-                  target="_blank"
+                  href="https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3"
                   class="btn btn-primary btn-lg promo-button"
                 >
                   <i class="fas fa-fire me-2"></i>
@@ -178,7 +181,7 @@
                 <div class="row">
                   <div class="col-md-6 mb-3">
                     <a
-                      href="https://admin.salsa-candela.com/classstripeform?curso=salsa&paquete=individual&regKey=tR4eHsD2"
+                      href="https://admin.salsa-candela.com/classstripeform?paquete=individual&regKey=zG9xKmF3"
                       class="payment-button individual-btn"
                     >
                       <span class="button-text">pase individual</span>
@@ -186,7 +189,7 @@
                   </div>
                   <div class="col-md-6 mb-3">
                     <a
-                      href="https://admin.salsa-candela.com/classstripeform?curso=salsa&paquete=pareja&regKey=tR4eHsD2"
+                      href="https://admin.salsa-candela.com/classstripeform?paquete=pareja&regKey=zG9xKmF3"
                       class="payment-button couple-btn"
                     >
                       <span class="button-text">pase pareja</span>
@@ -278,7 +281,7 @@
 
     <!-- Branches Section Start -->
     <div class="sucursales-area section-padding">
-      <div class="container">
+      <div class="container container-sucursales">
         <div class="row">
           <div class="col-lg-12">
             <!-- Find Nearest Branch Button -->
@@ -1118,24 +1121,51 @@
 
       .promo-price-item {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 15px;
+        flex-direction: column;
+        gap: 8px;
+        padding: 15px;
         background: rgba(255, 255, 255, 0.7);
         border-radius: 8px;
         border: 1px solid rgba(255, 107, 53, 0.2);
+        position: relative;
+      }
+
+      .promo-price-item .discount-badge {
+        position: absolute;
+        top: -10px;
+        right: 15px;
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+        color: white;
+        padding: 5px 12px;
+        border-radius: 15px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+        letter-spacing: 0.5px;
+      }
+
+      .promo-price-item .price-original {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #999;
+        text-decoration: line-through;
+        align-self: flex-start;
       }
 
       .promo-price-item .price {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         font-weight: 700;
         color: #ff6b35;
+        align-self: flex-start;
+        margin-top: -5px;
       }
 
       .promo-price-item .description {
         font-size: 0.95rem;
         color: #333;
         font-weight: 500;
+        align-self: flex-start;
+        text-transform: capitalize;
       }
 
       .review-link {
@@ -1838,6 +1868,10 @@
         }
 
         /* Mobile responsive styles for simplified design */
+        .container-sucursales {
+          width: 350px;
+        }
+
         .course-section {
           padding: 40px 0;
         }
