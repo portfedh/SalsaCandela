@@ -1392,6 +1392,8 @@
         letter-spacing: 0.5px;
         position: relative;
         overflow: hidden;
+        max-width: 300px;
+        margin: 0 auto;
       }
 
       .individual-btn {
@@ -1826,10 +1828,18 @@
         border-radius: 6px;
         border-left: 3px solid #ff6b35;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
       }
 
       .schedule-item:last-child {
         margin-bottom: 0;
+      }
+
+      .schedule-info {
+        flex: 1;
       }
 
       .schedule-days {
@@ -1842,6 +1852,31 @@
         color: #666;
         font-size: 0.85rem;
         margin-top: 2px;
+      }
+
+      .schedule-enroll-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px 12px;
+        background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(255, 107, 53, 0.2);
+        text-align: center;
+        min-width: 40px;
+        flex-shrink: 0;
+      }
+
+      .schedule-enroll-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+        text-decoration: none;
+        color: white;
       }
 
       .alert {
@@ -2476,12 +2511,17 @@
               const scheduleItem = document.createElement("div");
               scheduleItem.className = "schedule-item";
               scheduleItem.innerHTML =
-                '<div class="schedule-days">' +
-                schedule.days.join(", ") +
-                "</div>" +
-                '<div class="schedule-time">' +
-                schedule.time +
-                "</div>";
+                '<div class="schedule-info">' +
+                  '<div class="schedule-days">' +
+                  schedule.days.join(", ") +
+                  "</div>" +
+                  '<div class="schedule-time">' +
+                  schedule.time +
+                  "</div>" +
+                '</div>' +
+                '<a href="' + schedule.enrollUrl + '" class="schedule-enroll-btn" target="_blank">' +
+                '<i class="fas fa-user-plus"></i>' +
+                "</a>";
               salsaContainer.appendChild(scheduleItem);
             });
           }
@@ -2491,12 +2531,17 @@
               const scheduleItem = document.createElement("div");
               scheduleItem.className = "schedule-item";
               scheduleItem.innerHTML =
-                '<div class="schedule-days">' +
-                schedule.days.join(", ") +
-                "</div>" +
-                '<div class="schedule-time">' +
-                schedule.time +
-                "</div>";
+                '<div class="schedule-info">' +
+                  '<div class="schedule-days">' +
+                  schedule.days.join(", ") +
+                  "</div>" +
+                  '<div class="schedule-time">' +
+                  schedule.time +
+                  "</div>" +
+                '</div>' +
+                '<a href="' + schedule.enrollUrl + '" class="schedule-enroll-btn" target="_blank">' +
+                '<i class="fas fa-user-plus"></i>' +
+                "</a>";
               bachataContainer.appendChild(scheduleItem);
             });
           }
