@@ -166,8 +166,6 @@ module.exports = {
     });
   },
 
-  getStoreContact: renderView("contact"),
-
   getConfirmation: renderView("confirmation"),
 
   getAvisoPrivacidad: renderView("aviso-privacidad"),
