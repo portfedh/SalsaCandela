@@ -796,6 +796,48 @@ td.pink {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
+
+/* Party Image Responsive Styles */
+.party-image-container {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.party-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile: Show mobile image by default (up to 767px) */
+@media (max-width: 767px) {
+  .party-image-container {
+    max-width: 100%;
+    padding: 0;
+  }
+  .party-image {
+    border-radius: 4px;
+  }
+}
+
+/* Desktop: Allow image to expand more (768px and up) */
+@media (min-width: 768px) {
+  .party-image-container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  .party-image {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+}
+
 /*----------------------------------------*/
 /*  7. Blog Area
 /*----------------------------------------*/

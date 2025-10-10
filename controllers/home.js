@@ -77,7 +77,18 @@ module.exports = {
     res.sendFile(certPath);
   },
 
-  getStoreIndex: renderView("index"),
+  getStoreIndex: (req, res) => {
+    const activeLocationData =
+      partyConfig.locations[partyConfig.activeLocation];
+    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+
+    res.render("index.ejs", {
+      party: partyConfig,
+      activeLocation: activeLocationData,
+      fullDate: fullDate,
+      paymentMode: process.env.PAYMENT_MODE,
+    });
+  },
 
   getStoreSalsa: (req, res) => {
     const nextDate = getNextSaturdayDate();
