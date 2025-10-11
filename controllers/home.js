@@ -131,7 +131,7 @@ module.exports = {
   },
 
   getStoreIndividualClasses: (req, res) => {
-    res.render("individual_classes.ejs", {
+    res.render("clases-individuales.ejs", {
       pageHeader: {
         title: "Clases Particulares",
         subtitle: "Atención personalizada para tu aprendizaje",
@@ -155,7 +155,7 @@ module.exports = {
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
-    res.render("party.ejs", {
+    res.render("fiesta.ejs", {
       pageHeader: {
         title: "Fiesta",
         subtitle: "Baila Salsa y Bachata con nosotros",
@@ -177,7 +177,7 @@ module.exports = {
     });
   },
 
-  getConfirmation: renderView("confirmation"),
+  getConfirmation: renderView("confirmacion"),
 
   getAvisoPrivacidad: renderView("aviso-privacidad"),
 
@@ -192,7 +192,7 @@ module.exports = {
     });
   },
 
-  getEmailConfirmation: renderView("email-confirmation"),
+  getEmailConfirmation: renderView("confirmacion-email"),
 
   getPasswordReset: renderView("cambiar-contrasena"),
 

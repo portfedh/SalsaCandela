@@ -67,11 +67,11 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 
 - **Main views**: Located in `/views/`
   - Home: index.ejs
-  - Class pages: salsa.ejs, bachata.ejs, individual_classes.ejs, siguiente.ejs
-  - Party: party.ejs, boletos.ejs
+  - Class pages: salsa.ejs, bachata.ejs, clases-individuales.ejs, siguiente.ejs
+  - Party: fiesta.ejs, boletos.ejs
   - Info pages: faq.ejs, sucursales.ejs, guia-codi.ejs
   - Legal: aviso-privacidad.ejs, politica-devoluciones.ejs
-  - Confirmations: confirmation.ejs, email-confirmation.ejs, cambiar-contrasena.ejs
+  - Confirmations: confirmacion.ejs, confirmacion-email.ejs, cambiar-contrasena.ejs
 
 - **Partials**: Located in `/views/partials/` for reusable components
   - **Headers**: store_head.ejs, codi_head.ejs, sucursales_head.ejs, page_header.ejs
