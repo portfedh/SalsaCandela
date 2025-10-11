@@ -43,8 +43,8 @@ div {
   /* border: 1px solid orangered; */
 }
 
-.centered-element{
-  margin: 0 auto
+.centered-element {
+  margin: 0 auto;
 }
 
 /* CSS Button animation start*/
@@ -127,53 +127,114 @@ div {
 
 /* Countdown timer start */
 .countdown {
-  background-color: white; /* rgb(224, 74, 37, 0.8); */
+  background-color: white;
   margin: 0 auto;
   text-align: center;
   align-items: center;
-  border-radius: 7px;
-  padding: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  border-radius: 12px;
+  padding: 24px 20px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  max-width: 900px;
 }
 
 #index-countdown-headline {
-  font-weight: normal;
+  font-weight: 500;
   color: #666666;
-  font-size: 2rem;
-  letter-spacing: 0.125rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05rem;
   text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+#countdown ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
 }
 
 #countdown ul li {
-  display: inline-block;
-  font-size: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.875rem;
   list-style-type: none;
-  padding: 1rem;
+  padding: 12px 20px;
   text-transform: uppercase;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  min-width: 80px;
+  letter-spacing: 0.5px;
+  color: #757575;
 }
 
 #days,
 #hours,
 #minutes,
 #seconds {
-  color: #f69139;
+  color: #e04a25;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
 }
 
 #countdown ul li span {
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 4px;
+  line-height: 1;
 }
 
-/* TODO UPDATE THIS PART */
-.emoji {
-  display: none;
-  padding: 1rem;
+/* Mobile responsive styles for countdown */
+@media (max-width: 767px) {
+  .countdown {
+    padding: 16px 12px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  #index-countdown-headline {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+    letter-spacing: 0.02rem;
+  }
+
+  #countdown ul {
+    gap: 4px;
+    flex-wrap: nowrap;
+  }
+
+  #countdown ul li {
+    padding: 6px 8px;
+    min-width: 60px;
+    font-size: 0.625rem;
+    letter-spacing: 0;
+  }
+
+  #countdown ul li span {
+    font-size: 1.25rem;
+    margin-bottom: 2px;
+  }
 }
 
-.emoji span {
-  font-size: 1rem;
-  padding: 0 0.5rem;
+/* Tablet responsive styles for countdown */
+@media (min-width: 768px) and (max-width: 1023px) {
+  #index-countdown-headline {
+    font-size: 1.375rem;
+  }
+
+  #countdown ul li {
+    padding: 10px 16px;
+    min-width: 75px;
+  }
+
+  #countdown ul li span {
+    font-size: 1.75rem;
+  }
 }
 
 /* Countdown timer end */
@@ -297,6 +358,20 @@ div {
   border-radius: 8px;
   padding: 20px;
   max-width: fit-content;
+}
+
+/* Mobile responsive styles for blurry div */
+@media (max-width: 767px) {
+  .blurry {
+    padding: 16px;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Adjust text-content-wrapper to account for navbar height */
+  .text-content-wrapper {
+    top: calc(50% + 40px);
+  }
 }
 
 .contact-div {
@@ -957,13 +1032,24 @@ td.pink {
 /*  8. Pricing Area
 /*----------------------------------------*/
 .single-table {
-  box-shadow: 0 0 4px 4px #e2e2e2;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #fff;
+  margin-bottom: 24px;
 }
+
+.single-table:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
 .single-table:hover .table-head h2,
 .single-table:hover .table-body,
 .single-table:hover .table-body a,
 .single-table:hover .table-body form button {
-  background: rgba(224, 74, 37, 0.8);
+  background: rgba(224, 74, 37, 0.9);
 }
 .single-table:hover .table-head h2,
 .single-table:hover .table-body ul li,
@@ -972,26 +1058,32 @@ td.pink {
   color: #fff;
 }
 .single-table:hover .table-body ul li {
-  border-bottom: 1px rgba(246, 145, 57, 0.7);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
 }
 .single-table:hover .table-body ul li:last-child {
   border-bottom: none;
 }
 .single-table:hover .table-body a,
 .single-table:hover .table-body form button {
-  box-shadow: 0 0 4px 4px #e04a25;
+  box-shadow: 0 4px 12px rgba(224, 74, 37, 0.3);
 }
+
+.table-head {
+  background: #e0e0e0;
+}
+
 .table-head h2 {
-  font-size: 20px;
-  color: #757575;
+  font-size: 18px;
+  color: #4a4a4a;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-  padding: 25px 0;
+  font-weight: 600;
+  padding: 24px 20px;
   text-transform: uppercase;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  margin-bottom: 0;
 }
+
 .table-head h1 {
   background: #fff;
   font-size: 48px;
@@ -999,6 +1091,7 @@ td.pink {
   font-weight: 400;
   padding: 25px 0;
 }
+
 .table-head h1 span {
   font-size: 12px;
   color: #7f7f7f;
@@ -1006,48 +1099,113 @@ td.pink {
   font-weight: 700;
   text-transform: uppercase;
 }
+
 .table-body {
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  padding: 0 20px 20px;
+  transition: all 0.3s ease;
 }
+
 .table-body ul {
   margin: 0;
-  padding-top: 33px;
-  padding-bottom: 30px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   list-style: none;
 }
+
 .table-body ul li {
   display: block;
-  padding: 15px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #eae8e8;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  transition: all 0.3s ease;
+  color: #666;
+  font-size: 14px;
 }
+
 .table-body ul li:last-child {
   display: block;
   padding-bottom: 0;
   border-bottom: none;
 }
+
 .table-body a,
 .table-body form button {
-  background: #f1f1f1 none repeat scroll 0 0;
+  background: #e04a25;
   border-radius: 25px;
-  box-shadow: 0 0 4px 4px #e2e2e2;
-  color: #f69139; /* #5fc7ae; */
+  box-shadow: 0 2px 8px rgba(224, 74, 37, 0.3);
+  color: #fff;
   display: inline-block;
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  padding: 10px 33px;
-  position: relative;
+  padding: 12px 40px;
   text-transform: uppercase;
-  top: 19px;
-  -webkit-transition: all 0.5s ease 0s;
-  -o-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
 }
+
+.table-body a:hover,
+.table-body form button:hover {
+  background: #e04a25;
+  box-shadow: 0 4px 16px rgba(224, 74, 37, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Mobile responsive styles for pricing cards */
+@media (max-width: 767px) {
+  .single-table {
+    margin-bottom: 30px;
+  }
+
+  .single-table:hover {
+    transform: translateY(-4px);
+  }
+
+  .table-head h2 {
+    font-size: 16px;
+    padding: 20px 16px;
+  }
+
+  .table-body {
+    padding: 0 16px 16px;
+  }
+
+  .table-body ul {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .table-body ul li {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+
+  .table-body a,
+  .table-body form button {
+    padding: 10px 32px;
+    font-size: 13px;
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
+/* Tablet responsive styles for pricing cards */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .single-table {
+    margin-bottom: 30px;
+  }
+
+  .table-head h2 {
+    font-size: 17px;
+  }
+
+  .table-body a,
+  .table-body form button {
+    padding: 11px 36px;
+  }
+}
+
 /*----------------------------------------*/
 /*  9. Newsletter Area
 /*----------------------------------------*/
@@ -1097,12 +1255,62 @@ td.pink {
 /*----------------------------------------*/
 /*  11. Map Area
 /*----------------------------------------*/
+.map-section {
+  position: relative;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+  background: #fff;
+}
+
 .contact-map-size {
   width: 100%;
-  height: 380px;
+  height: 450px;
+  display: block;
 }
+
 .map-area {
   z-index: 1;
+}
+
+/* Map button text responsive */
+.map-btn-mobile {
+  display: none;
+}
+
+.map-btn-desktop {
+  display: inline;
+}
+
+/* Mobile responsive styles for map */
+@media (max-width: 767px) {
+  .map-container {
+    border-radius: 8px;
+    margin-top: 24px;
+  }
+
+  .contact-map-size {
+    height: 300px;
+  }
+
+  .map-btn-mobile {
+    display: inline;
+  }
+
+  .map-btn-desktop {
+    display: none;
+  }
+}
+
+/* Tablet responsive styles for map */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .contact-map-size {
+    height: 400px;
+  }
 }
 /*----------------------------------------*/
 /*  12. Newsletter Area
