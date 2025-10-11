@@ -1,0 +1,178 @@
+/* ========================================
+   FAQ Page Modern Styles - Mobile First
+   ======================================== */
+
+/* Intro Section Styling */
+.section-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title p {
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #4a4a4a;
+  padding: 0 1rem;
+}
+
+/* Accordion Container */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Individual Accordion Items */
+.accordion-item {
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  background-color: white;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Accordion Button (Question) */
+.accordion-button {
+  background-color: #dc5544;
+  color: white;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 1rem 1.25rem;
+  border: none;
+  transition: background-color 0.3s ease, padding 0.3s ease;
+  min-height: 48px;
+  text-align: left;
+}
+
+.accordion-button:hover {
+  background-color: #e35a48;
+}
+
+.accordion-button:focus {
+  box-shadow: 0 0 0 3px rgba(220, 85, 68, 0.3);
+  outline: none;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #e04a25;
+  color: white;
+}
+
+/* Accordion Body (Answer) */
+.accordion-body {
+  background-color: white;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 1.25rem;
+}
+
+/* Arrow Icon Styling */
+.accordion-button::after {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: auto;
+  content: "";
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-size: 1.25rem;
+  transition: transform 0.3s ease;
+}
+
+.accordion-button:not(.collapsed)::after {
+  transform: rotate(-180deg);
+}
+
+/* Collapse Animation */
+.accordion-collapse {
+  transition: height 0.3s ease;
+}
+
+/* Links in Accordion Body */
+.accordion-body a {
+  color: #dc5544;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.accordion-body a:hover {
+  color: #e04a25;
+}
+
+/* ======================================
+   Tablet and Desktop Improvements
+   ====================================== */
+
+@media (min-width: 768px) {
+  .section-title p {
+    font-size: 1.1rem;
+    padding: 0;
+  }
+
+  .accordion {
+    gap: 1.25rem;
+  }
+
+  .accordion-item {
+    border-radius: 12px;
+  }
+
+  .accordion-button {
+    font-size: 1.05rem;
+    padding: 1.25rem 1.5rem;
+  }
+
+  .accordion-body {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .accordion {
+    gap: 1.5rem;
+  }
+
+  .accordion-button {
+    font-size: 1.1rem;
+  }
+}
+
+/* ======================================
+   Accessibility Improvements
+   ====================================== */
+
+.accordion-button:focus-visible {
+  outline: 3px solid #dc5544;
+  outline-offset: 2px;
+}
+
+/* Smooth Scrolling for Jump Links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Print Styles */
+@media print {
+  .accordion-button::after {
+    display: none;
+  }
+
+  .accordion-collapse {
+    display: block !important;
+    height: auto !important;
+  }
+}
