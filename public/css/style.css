@@ -864,9 +864,6 @@ td.pink {
 .grid .grid-item:nth-child(6) {
   padding-bottom: 30px;
 }
-.mfp-wrap.mfp-gallery.mfp-close-btn-in.mfp-auto-cursor.mfp-ready {
-  z-index: 99999;
-}
 .load a {
   background: #008c99;
   color: #fff;
