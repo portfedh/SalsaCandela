@@ -16,8 +16,6 @@ Disallow: /public/css/style_index.css
 Disallow: /public/css/responsive.css
 Disallow: /public/css/bootstrap.min.css
 Disallow: /public/css/font-awesome.min.css
-Disallow: /public/css/material-design-iconic-font.css
-Disallow: /public/css/material-design-iconic-font.min.css
 Disallow: /public/css/owl.carousel.css
 Disallow: /public/css/slick.css
 

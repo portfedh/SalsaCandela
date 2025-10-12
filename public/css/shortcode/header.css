@@ -18,9 +18,6 @@ NOTE: This is Header style file. All Header related style included in this file.
   display: inline-block;
   position: relative;
 }
-.mean-container .mean-nav ul li:first-child a {
-  border-top: none;
-}
 .header-contact > a {
   font-size: 14px;
   font-weight: 600;
@@ -106,32 +103,6 @@ NOTE: This is Header style file. All Header related style included in this file.
 .main-menu.text-start span {
   float: right;
 }
-.mobile-menu-area,
-.mean-container .mean-bar:after {
-  display: none;
-}
-.mean-container .mean-bar {
-  background: transparent none repeat scroll 0 0;
-  min-height: 0;
-  padding: 0;
-}
-.mean-container a.meanmenu-reveal {
-  /* border: 1px solid #f69139; */
-  color: #f69139;
-  margin-top: -50px;
-  padding: 4px 5px;
-  position: absolute;
-}
-.sticky .mean-container a.meanmenu-reveal {
-  margin-top: -48px;
-
-}
-.mean-container a.meanmenu-reveal span {
-  background-color: #f69139;
-}
-.mean-container .mean-nav {
-  margin-top: 0;
-}
 .headroom {
   -webkit-transition: -webkit-transform 200ms linear 0s;
   transition: -webkit-transform 200ms linear 0s;
@@ -209,7 +180,7 @@ NOTE: This is Header style file. All Header related style included in this file.
   -webkit-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
 }
-.main-menu.mean-menu.menu-style-toggle.text-end {
+.main-menu.menu-style-toggle.text-end {
   float: right;
 }
 .mobile-header {
