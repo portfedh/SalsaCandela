@@ -246,30 +246,7 @@
   align-items: flex-start;
   margin-bottom: 25px;
   position: relative;
-  padding-left: 30px;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  width: 12px;
-  height: 12px;
-  background: #e9ecef;
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 0 2px #e04a25;
-}
-
-.timeline-item.featured::before {
-  background: #e04a25;
-  animation: pulse-dot 2s infinite;
-}
-
-@keyframes pulse-dot {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.2); }
+  padding-left: 0;
 }
 
 .timeline-time {
@@ -517,7 +494,7 @@
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
-    padding-left: 20px;
+    padding-left: 0;
   }
 
   .timeline-time {

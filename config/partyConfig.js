@@ -1,6 +1,6 @@
 const partyConfig = {
   // Party Information
-  title: "Noche Sensual", // Noche Sensual ||  Salsatelite
+  title: "Salsatelite", // Noche Sensual ||  Salsatelite
   description: "Una noche llena de Salsa, Bachata y buena vibra",
 
   // Date Information
