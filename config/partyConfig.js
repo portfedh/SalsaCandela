@@ -5,7 +5,7 @@ const partyConfig = {
 
   // Date Information
   date: {
-    day: 10,
+    day: 24,
     month: "OCT", // Short format for badge
     year: 2025,
     fullMonth: "Octubre", // Full month name for full date
@@ -14,8 +14,8 @@ const partyConfig = {
 
   // Images (relative to /public/img/party/)
   images: {
-    desktop: "fiesta_mensual_2025_10_10.jpeg",
-    mobile: "fiesta_mensual_2025_10_10b.jpeg",
+    desktop: "fiesta_mensual_2025_10_24.jpeg",
+    mobile: "fiesta_mensual_2025_10_24b.jpeg",
   },
 
   // Location Options
@@ -41,7 +41,7 @@ const partyConfig = {
   },
 
   // Active location (change this to switch venues)
-  activeLocation: "xola",
+  activeLocation: "satelite",
 
   // Event Schedule
   schedule: [
