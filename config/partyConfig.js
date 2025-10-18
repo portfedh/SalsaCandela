@@ -14,8 +14,8 @@ const partyConfig = {
 
   // Images (relative to /public/img/party/)
   images: {
-    desktop: "fiesta_mensual_2025_10_24.jpeg",
-    mobile: "fiesta_mensual_2025_10_24b.jpeg",
+    desktop: "fiesta_2025_10_24.jpeg",
+    mobile: "fiesta_2025_10_24b.jpeg",
   },
 
   // Location Options
