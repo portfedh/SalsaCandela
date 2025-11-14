@@ -33,7 +33,7 @@
             <div class="col-lg-2 d-none d-lg-block">
               <div class="header-contact text-end">
                 <form action="/checkout" method="post">
-                  <button class="banner-btn" type="submit">Inscribirme</button>
+                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Desktop', 'value': 1});">Inscribirme</button>
                 </form>
               </div>
             </div>
@@ -65,7 +65,7 @@
           <li><a href="/faq">FAQ</a></li>
           <li class="nav-cta">
             <form action="/checkout" method="post">
-              <button class="nav-btn" type="submit">Inscribirme</button>
+              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Mobile', 'value': 1});">Inscribirme</button>
             </form>
           </li>
         </ul>
