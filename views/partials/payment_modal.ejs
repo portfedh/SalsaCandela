@@ -166,6 +166,17 @@
   function redirectToPayment(paymentType) {
     const referralCode = "<%= typeof referralCode !== 'undefined' ? referralCode : '' %>";
 
+    // Track payment intent in Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'payment_method_selected', {
+        'event_category': 'Party Ticket Purchase',
+        'event_label': paymentType === 'codi' ? 'Party - CoDi' : 'Party - Tarjeta',
+        'payment_method': paymentType,
+        'purchase_type': 'party_ticket',
+        'has_referral_code': referralCode ? 'yes' : 'no'
+      });
+    }
+
     if (paymentType === "codi") {
       const codiUrl = referralCode
         ? `https://admin.salsa-candela.com/fiesta/boletos/codi/push/${referralCode}`
