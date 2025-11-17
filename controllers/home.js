@@ -8,26 +8,43 @@ const partyConfig = require("../config/partyConfig");
 
 function getNextSaturdayDate() {
   const now = new Date();
-  const saturdayDates = [];
+  const coursePeriods = [];
 
-  // Extract all Saturday dates from courseData
+  // Extract all course periods with their start dates
   Object.values(courseData).forEach((course) => {
-    if (course.startDates && course.startDates.saturday) {
-      saturdayDates.push(new Date(course.startDates.saturday));
+    if (course.startDates) {
+      const allStartDates = [];
+
+      // Collect all start dates for this course period
+      if (course.startDates.saturday) allStartDates.push(new Date(course.startDates.saturday));
+      if (course.startDates.sunday) allStartDates.push(new Date(course.startDates.sunday));
+      if (course.startDates.monday) allStartDates.push(new Date(course.startDates.monday));
+      if (course.startDates.tuesday) allStartDates.push(new Date(course.startDates.tuesday));
+
+      // Find the latest (last) start date for this course period
+      const latestStartDate = allStartDates.sort((a, b) => b - a)[0];
+
+      // Store the course period with its Saturday date and latest start date
+      if (course.startDates.saturday) {
+        coursePeriods.push({
+          saturdayDate: new Date(course.startDates.saturday),
+          latestStartDate: latestStartDate
+        });
+      }
     }
   });
 
-  // Filter dates that are after current date and sort them
-  const futureSaturdays = saturdayDates
-    .filter((date) => date > now)
-    .sort((a, b) => a - b);
+  // Filter for course periods where the latest start date is still in the future
+  const availableCoursePeriods = coursePeriods
+    .filter((period) => period.latestStartDate > now)
+    .sort((a, b) => a.saturdayDate - b.saturdayDate);
 
-  if (futureSaturdays.length === 0) {
+  if (availableCoursePeriods.length === 0) {
     return "TBA"; // To Be Announced if no future dates
   }
 
-  // Get the first (earliest) future Saturday
-  const nextSaturday = futureSaturdays[0];
+  // Get the Saturday date of the first available course period
+  const nextSaturday = availableCoursePeriods[0].saturdayDate;
 
   // Format date to Spanish format: "27 de Junio 2025"
   const months = [
