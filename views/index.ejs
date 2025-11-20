@@ -89,7 +89,7 @@
           <div class="col-lg-4 col-md-6">
             <!-- Salsa Class -->
             <div class="single-class animation-float">
-              <a href="/salsa">
+              <a href="/salsa" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Clases de Salsa Card', 'value': 1});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -106,7 +106,7 @@
           <!-- Bachata Class -->
           <div class="col-lg-4 col-md-6">
             <div class="single-class animation-float">
-              <a href="/bachata">
+              <a href="/bachata" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Clases de Bachata Card', 'value': 1});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -123,7 +123,7 @@
           <!-- Personal Classes -->
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="single-class animation-float">
-              <a href="/particulares">
+              <a href="/particulares" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Clases Particulares y Eventos Card', 'value': 1});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -207,7 +207,7 @@
                   <li>Precio por persona</li>
                 </ul>
                 <form action="/checkout" method="post">
-                  <button type="submit">Comprar</button>
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Pase Individual', 'value': 1});">Comprar</button>
                 </form>
               </div>
             </div>
@@ -255,7 +255,7 @@
                   <li>Precio por pareja</li>
                 </ul>
                 <form action="/checkout" method="post">
-                  <button type="submit">Comprar</button>
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Pase Pareja', 'value': 1});">Comprar</button>
                 </form>
               </div>
             </div>
@@ -288,7 +288,7 @@
                   <li>En tu domicilio o en estudio</li>
                 </ul>
                 <form action="/particulares" method="post">
-                  <button type="submit">Mas Información</button>
+                  <button type="submit" onclick="gtag('event', 'info_request', {'event_category': 'Pricing', 'event_label': 'Clases Particulares Info', 'value': 1});">Mas Información</button>
                 </form>
               </div>
             </div>
@@ -341,7 +341,7 @@
               <a
                 class="banner-btn mt-20"
                 href="#"
-                onclick="handlePayment()"
+                onclick="gtag('event', 'purchase_intent', {'event_category': 'Party', 'event_label': 'Boletos Button Homepage', 'value': 1}); handlePayment();"
                 data-text="Boletos"
                 ><span>Boletos</span>
               </a>
