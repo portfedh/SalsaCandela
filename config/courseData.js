@@ -123,7 +123,7 @@ const courseData = {
   "2025-11": {
     courseStartDate: "2025-11-14T00:00:00",
     stripeStartDate: "2025-10-15T00:00:00",
-    courseEndDate: "2025-12-19T00:00:00",
+    courseEndDate: "2025-11-22T00:00:00",
     startDates: {
       saturday: "2025-11-15T00:00:00",
       sunday: "2025-11-16T00:00:00",
@@ -131,9 +131,20 @@ const courseData = {
       tuesday: "2025-11-18T00:00:00",
     },
   },
+  "2025-12": {
+    courseStartDate: "2025-11-22T00:00:00",
+    stripeStartDate: "2025-11-19T00:00:00",
+    courseEndDate: "2026-01-02T00:00:00",
+    startDates: {
+      saturday: "2025-11-23T00:00:00",
+      sunday: "2025-11-24T00:00:00",
+      monday: "2025-11-25T00:00:00",
+      tuesday: "2025-11-26T00:00:00",
+    },
+  },
   "2026-01": {
     courseStartDate: "2026-01-02T00:00:00", // One day before first startDates.saturday
-    stripeStartDate: "2025-11-19T00:00:00", // One day after startDates.tuesday (5 weeks) // Adjusted for year change
+    stripeStartDate: "2025-11-27T00:00:00", // One day after startDates.tuesday (5 weeks) // Adjusted for year change
     courseEndDate: "2026-02-06T00:00:00", //  Next courseStartDate
     startDates: {
       saturday: "2026-01-03T00:00:00",
