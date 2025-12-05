@@ -107,6 +107,13 @@ Controllers use a `renderView()` helper function to reduce boilerplate for simpl
 - **SEO**: Includes sitemap.xml serving at `/sitemap.xml`
 - **Error Handling**: Basic middleware for 500 errors in routes
 
+### Analytics & Tracking
+
+- **Google Analytics 4**: Property ID `G-CVYCZ5NTSK` - tracks user interactions, purchase intent, navigation, and conversions
+- **TikTok Pixel**: Pixel ID `D459FP3C77U6O1UKP1RG` - tracks page views and user behavior
+- **Event Tracking**: Comprehensive tracking of purchase intents, payment method selection, branch interactions, social media clicks, and more
+- **Documentation**: See [ANALYTICS.md](./ANALYTICS.md) for complete documentation of all tracked events, event names, categories, and how to access analytics data
+
 ### External Dependencies
 
 The application heavily relies on an external admin system (`admin.salsa-candela.com`) for payment processing and registration handling.
