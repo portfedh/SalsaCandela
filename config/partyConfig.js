@@ -5,17 +5,17 @@ const partyConfig = {
 
   // Date Information
   date: {
-    day: 12,
-    month: "DIC", // Short format for badge
-    year: 2025,
-    fullMonth: "Diciembre", // Full month name for full date
+    day: 30,
+    month: "ENE", // Short format for badge
+    year: 2026,
+    fullMonth: "Enero", // Full month name for full date
     dayOfWeek: "Viernes",
   },
 
   // Images (relative to /public/img/party/)
   images: {
-    desktop: "fiesta_2025_12_12.jpeg",
-    mobile: "fiesta_2025_12_12b.jpeg",
+    desktop: "fiesta_2026_01_30.jpeg",
+    mobile: "fiesta_2026_01_30b.jpeg",
   },
 
   // Location Options
