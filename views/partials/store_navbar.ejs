@@ -6,16 +6,27 @@
             <div class="col-lg-2">
               <div class="logo">
                 <img
-                  src="img/logo/logo.png"
+                  src="/img/logo/logo.png"
                   alt="Salsa Candela Logo"
                   class="logo"
                 />
               </div>
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-7">
               <div class="content-wrapper">
                 <!-- Main Menu Start -->
                 <nav class="main-menu text-center" role="navigation">
+                  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+                  <ul>
+                    <li><a href="/en">Home</a></li>
+                    <li><a href="/en/salsa">Salsa</a></li>
+                    <li><a href="/en/bachata">Bachata</a></li>
+                    <li><a href="/en/private-classes">Private</a></li>
+                    <li><a href="/en/party">Party</a></li>
+                    <li><a href="/en/branches">Branches</a></li>
+                    <li><a href="/en/faq">FAQ</a></li>
+                  </ul>
+                  <% } else { %>
                   <ul>
                     <li><a href="/">Inicio</a></li>
                     <li><a href="/salsa">Salsa</a></li>
@@ -25,16 +36,54 @@
                     <li><a href="/sucursales">Sucursales</a></li>
                     <li><a href="/faq">FAQ</a></li>
                   </ul>
+                  <% } %>
                 </nav>
                 <div class="mobile-menu"></div>
                 <!-- Main Menu End -->
               </div>
             </div>
-            <div class="col-lg-2 d-none d-lg-block">
-              <div class="header-contact text-end">
-                <form action="/checkout" method="post">
-                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Desktop', 'value': 1});">Inscribirme</button>
+            <div class="col-lg-3 d-none d-lg-block">
+              <div class="header-contact text-end d-flex align-items-center justify-content-end gap-3">
+                <!-- Language Switcher -->
+                <div class="language-switcher">
+                  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+                  <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+                     class="lang-flag"
+                     title="Español"
+                     onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
+                    🇲🇽
+                  </a>
+                  <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+                     class="lang-flag active"
+                     title="English"
+                     onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
+                    🇺🇸
+                  </a>
+                  <% } else { %>
+                  <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+                     class="lang-flag active"
+                     title="Español"
+                     onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
+                    🇲🇽
+                  </a>
+                  <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+                     class="lang-flag"
+                     title="English"
+                     onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
+                    🇺🇸
+                  </a>
+                  <% } %>
+                </div>
+                <!-- Registration Button -->
+                <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+                <form action="/en/checkout" method="post">
+                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Register Desktop', 'value': 1, 'language': 'en'});">Register</button>
                 </form>
+                <% } else { %>
+                <form action="/checkout" method="post">
+                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Desktop', 'value': 1, 'language': 'es'});">Inscribirme</button>
+                </form>
+                <% } %>
               </div>
             </div>
           </div>
@@ -46,15 +95,61 @@
     <!-- Custom Hamburger Navigation Overlay (Mobile Only) -->
     <div class="custom-nav-overlay">
       <div class="custom-nav-header">
-        <img src="img/logo/logo.png" alt="Salsa Candela Logo" class="custom-nav-logo" />
+        <img src="/img/logo/logo.png" alt="Salsa Candela Logo" class="custom-nav-logo" />
+        <!-- Language Switcher Mobile -->
+        <div class="language-switcher-mobile">
+          <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+          <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+             class="lang-flag"
+             title="Español"
+             onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
+            🇲🇽
+          </a>
+          <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+             class="lang-flag active"
+             title="English"
+             onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
+            🇺🇸
+          </a>
+          <% } else { %>
+          <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+             class="lang-flag active"
+             title="Español"
+             onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
+            🇲🇽
+          </a>
+          <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+             class="lang-flag"
+             title="English"
+             onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
+            🇺🇸
+          </a>
+          <% } %>
+        </div>
         <button class="hamburger-menu" id="hamburgerBtn">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
-      
+
       <nav class="custom-nav-menu" id="customNavMenu">
+        <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+        <ul>
+          <li><a href="/en">Home</a></li>
+          <li><a href="/en/salsa">Salsa</a></li>
+          <li><a href="/en/bachata">Bachata</a></li>
+          <li><a href="/en/private-classes">Private</a></li>
+          <li><a href="/en/party">Party</a></li>
+          <li><a href="/en/branches">Branches</a></li>
+          <li><a href="/en/faq">FAQ</a></li>
+          <li class="nav-cta">
+            <form action="/en/checkout" method="post">
+              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Register Mobile', 'value': 1, 'language': 'en'});">Register</button>
+            </form>
+          </li>
+        </ul>
+        <% } else { %>
         <ul>
           <li><a href="/">Inicio</a></li>
           <li><a href="/salsa">Salsa</a></li>
@@ -65,9 +160,10 @@
           <li><a href="/faq">FAQ</a></li>
           <li class="nav-cta">
             <form action="/checkout" method="post">
-              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Mobile', 'value': 1});">Inscribirme</button>
+              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Mobile', 'value': 1, 'language': 'es'});">Inscribirme</button>
             </form>
           </li>
         </ul>
+        <% } %>
       </nav>
     </div>

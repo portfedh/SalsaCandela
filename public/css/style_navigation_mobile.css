@@ -309,3 +309,55 @@
     display: block;
   }
 }
+
+/* Language Switcher Styles */
+.language-switcher,
+.language-switcher-mobile {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.lang-flag {
+  font-size: 24px;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.lang-flag:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+.lang-flag.active {
+  opacity: 1;
+  background: rgba(255, 107, 53, 0.1);
+}
+
+/* Desktop language switcher */
+.language-switcher {
+  margin-right: 8px;
+}
+
+/* Mobile language switcher */
+.language-switcher-mobile {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Adjust header layout for mobile */
+.custom-nav-header {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lang-flag {
+    font-size: 20px;
+  }
+}

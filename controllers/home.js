@@ -163,6 +163,8 @@ module.exports = {
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("index.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
@@ -173,6 +175,8 @@ module.exports = {
   getStoreSalsa: (req, res) => {
     const nextDate = getNextSaturdayDate();
     res.render("salsa.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Clases de Salsa",
         subtitle: "Aprende a bailar salsa cubana y estilo LA",
@@ -185,6 +189,8 @@ module.exports = {
   getStoreBachata: (req, res) => {
     const nextDate = getNextSaturdayDate();
     res.render("bachata.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Clases de Bachata",
         subtitle: "Descubre el ritmo de la bachata",
@@ -201,6 +207,8 @@ module.exports = {
     const nextDate = getNextSaturdayDate();
 
     res.render("siguiente.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       branches: classSchedules,
       party: partyConfig,
       activeLocation: activeLocationData,
@@ -212,6 +220,8 @@ module.exports = {
 
   getStoreIndividualClasses: (req, res) => {
     res.render("clases-individuales.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Clases Particulares",
         subtitle: "Atención personalizada para tu aprendizaje",
@@ -222,6 +232,8 @@ module.exports = {
 
   getStoreGuiaCodi: (req, res) => {
     res.render("guia-codi.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: 'Guía CoDi<span class="reg-symbol">®</span>',
         subtitle: "Tu guía completa para pagos digitales instantáneos",
@@ -236,6 +248,8 @@ module.exports = {
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("fiesta.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Fiesta",
         subtitle: "Baila Salsa y Bachata con nosotros",
@@ -249,6 +263,8 @@ module.exports = {
 
   getStoreFAQ: (req, res) => {
     res.render("faq.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Preguntas Frecuentes",
         subtitle: "Respuestas a tus dudas sobre nuestras clases",
@@ -257,12 +273,26 @@ module.exports = {
     });
   },
 
-  getConfirmation: renderView("confirmacion"),
+  getConfirmation: (req, res) => {
+    res.render("confirmacion.ejs", {
+      lang: 'es',
+      currentPath: req.path,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
-  getAvisoPrivacidad: renderView("aviso-privacidad"),
+  getAvisoPrivacidad: (req, res) => {
+    res.render("aviso-privacidad.ejs", {
+      lang: 'es',
+      currentPath: req.path,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
   getSucursales: (req, res) => {
     res.render("sucursales.ejs", {
+      lang: 'es',
+      currentPath: req.path,
       pageHeader: {
         title: "Nuestras Sucursales",
         subtitle: "Encuentra la sucursal más cercana a ti",
@@ -272,11 +302,29 @@ module.exports = {
     });
   },
 
-  getEmailConfirmation: renderView("confirmacion-email"),
+  getEmailConfirmation: (req, res) => {
+    res.render("confirmacion-email.ejs", {
+      lang: 'es',
+      currentPath: req.path,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
-  getPasswordReset: renderView("cambiar-contrasena"),
+  getPasswordReset: (req, res) => {
+    res.render("cambiar-contrasena.ejs", {
+      lang: 'es',
+      currentPath: req.path,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
-  getPoliticaDevoluciones: renderView("politica-devoluciones"),
+  getPoliticaDevoluciones: (req, res) => {
+    res.render("politica-devoluciones.ejs", {
+      lang: 'es',
+      currentPath: req.path,
+      paymentMode: process.env.PAYMENT_MODE
+    });
+  },
 
   // Redirects
   PartyRedirect: (req, res) => {
@@ -380,6 +428,8 @@ module.exports = {
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("index-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
@@ -390,6 +440,8 @@ module.exports = {
   getStoreSalsaEnglish: (req, res) => {
     const nextDate = getNextSaturdayDateEnglish();
     res.render("salsa-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Salsa Classes",
         subtitle: "Learn to dance Cuban salsa and LA style",
@@ -402,6 +454,8 @@ module.exports = {
   getStoreBachataEnglish: (req, res) => {
     const nextDate = getNextSaturdayDateEnglish();
     res.render("bachata-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Bachata Classes",
         subtitle: "Discover the rhythm of bachata",
@@ -418,6 +472,8 @@ module.exports = {
     const nextDate = getNextSaturdayDateEnglish();
 
     res.render("siguiente-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       branches: classSchedules,
       party: partyConfig,
       activeLocation: activeLocationData,
@@ -429,6 +485,8 @@ module.exports = {
 
   getStoreIndividualClassesEnglish: (req, res) => {
     res.render("clases-individuales-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Private Classes",
         subtitle: "Personalized attention for your learning",
@@ -439,6 +497,8 @@ module.exports = {
 
   getStoreGuiaCodiEnglish: (req, res) => {
     res.render("guia-codi-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: 'CoDi Guide<span class="reg-symbol">®</span>',
         subtitle: "Your complete guide for instant digital payments",
@@ -453,6 +513,8 @@ module.exports = {
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
 
     res.render("fiesta-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Party",
         subtitle: "Dance Salsa and Bachata with us",
@@ -466,6 +528,8 @@ module.exports = {
 
   getStoreFAQEnglish: (req, res) => {
     res.render("faq-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Frequently Asked Questions",
         subtitle: "Answers to your questions about our classes",
@@ -475,15 +539,25 @@ module.exports = {
   },
 
   getConfirmationEnglish: (req, res) => {
-    res.render("confirmacion-en.ejs", { paymentMode: process.env.PAYMENT_MODE });
+    res.render("confirmacion-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getAvisoPrivacidadEnglish: (req, res) => {
-    res.render("aviso-privacidad-en.ejs", { paymentMode: process.env.PAYMENT_MODE });
+    res.render("aviso-privacidad-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getSucursalesEnglish: (req, res) => {
     res.render("sucursales-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Our Branches",
         subtitle: "Find the branch closest to you",
@@ -494,14 +568,26 @@ module.exports = {
   },
 
   getEmailConfirmationEnglish: (req, res) => {
-    res.render("confirmacion-email-en.ejs", { paymentMode: process.env.PAYMENT_MODE });
+    res.render("confirmacion-email-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getPasswordResetEnglish: (req, res) => {
-    res.render("cambiar-contrasena-en.ejs", { paymentMode: process.env.PAYMENT_MODE });
+    res.render("cambiar-contrasena-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 
   getPoliticaDevolucionesEnglish: (req, res) => {
-    res.render("politica-devoluciones-en.ejs", { paymentMode: process.env.PAYMENT_MODE });
+    res.render("politica-devoluciones-en.ejs", {
+      lang: 'en',
+      currentPath: req.path.replace('/en', ''),
+      paymentMode: process.env.PAYMENT_MODE
+    });
   },
 };
