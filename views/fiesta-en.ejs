@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <!-- Party-specific styles -->
+  <link rel="stylesheet" href="/css/style_party.css" />
+
+  <!-- Dynamic party images -->
+  <style>
+    @media screen and (max-width: 768px) {
+      .event-featured-image {
+        background-image: url("/img/party/<%= party.images.mobile %>") !important;
+      }
+    }
+  </style>
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Include page header -->
+    <%- include('partials/page_header') -%>
+
+    <!-- Event Area Start -->
+    <section class="event-area pt-50 pb-50">
+      <div class="container event-container">
+        <!-- Hero Section -->
+        <div class="row">
+          <div class="col-12">
+            <div class="event-hero text-center mb-60">
+              <div class="hero-badge">
+                <span>🎵 Next Event</span>
+              </div>
+              <h1 class="hero-title"><%= party.title %></h1>
+              <p class="hero-subtitle">
+                A night full of Salsa, Bachata and good vibes
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main Event Card -->
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="event-main-card">
+              <!-- Event Image Section -->
+              <div class="event-image-section">
+                <div
+                  class="event-image-container event-featured-image"
+                  style="
+                    background-image: url('/img/party/<%= party.images.desktop %>');
+                  "
+                >
+                  <div class="image-overlay">
+                    <div class="event-date-badge">
+                      <div class="date-day"><%= party.date.day %></div>
+                      <div class="date-month"><%= party.date.month %></div>
+                      <div class="date-year"><%= party.date.year %></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Event Content Section -->
+              <div class="event-content-section">
+                <div class="row">
+                  <!-- Left Column: Main Info -->
+                  <div class="col-lg-8">
+                    <div class="event-main-content">
+                      <!-- Event Title & Genre -->
+                      <div class="event-header">
+                        <h2 class="event-name"><%= party.title %></h2>
+                        <div class="event-genres-tags">
+                          <span class="genre-tag salsa">Salsa</span>
+                          <span class="genre-tag timba">Timba</span>
+                          <span class="genre-tag bachata">Bachata</span>
+                        </div>
+                      </div>
+
+                      <!-- Event Description -->
+                      <div class="event-description">
+                        <p>
+                          Come dance Salsa and Bachata at our monthly party. A
+                          night full of dancing and socializing with the entire
+                          Salsa Candela community.
+                        </p>
+                        <p>
+                          The party is open to everyone and for all levels. We
+                          have 3 dance floors and drinks at affordable prices.
+                        </p>
+                      </div>
+
+                      <!-- Event Schedule -->
+                      <div class="event-schedule-card">
+                        <h3 class="schedule-header">
+                          <span class="schedule-icon">🕘</span>
+                          Event Schedule
+                        </h3>
+                        <div class="schedule-timeline">
+                          <div class="timeline-item">
+                            <div class="timeline-time">8:30 PM</div>
+                            <div class="timeline-content">
+                              <strong>Bachata Class</strong>
+                              <p>All levels welcome</p>
+                            </div>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="timeline-time">9:00 PM</div>
+                            <div class="timeline-content">
+                              <strong>Party Starts!</strong>
+                              <p>Salsa, Timba and Bachata</p>
+                            </div>
+                          </div>
+                          <div class="timeline-item">
+                            <div class="timeline-time">3:00 AM</div>
+                            <div class="timeline-content">
+                              <strong>Event Closing</strong>
+                              <p>See you next time</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Right Column: Details -->
+                  <div class="col-lg-4">
+                    <div class="event-details-sidebar">
+                      <!-- Date & Time Card -->
+                      <div class="detail-card datetime-card">
+                        <div class="card-icon">📅</div>
+                        <div class="card-content">
+                          <h4>Date and Time</h4>
+                          <p class="event-date"><%= fullDate %></p>
+                          <p class="event-time"><%= party.eventTime %></p>
+                        </div>
+                      </div>
+
+                      <!-- Location Card -->
+                      <div class="detail-card location-card">
+                        <div class="card-icon">📍</div>
+                        <div class="card-content">
+                          <h4>Location</h4>
+                          <a
+                            href="<%= activeLocation.googleMapsUrl %>"
+                            class="location-address"
+                          >
+                            <%= activeLocation.address %><br />
+                            <%= activeLocation.city %>
+                          </a>
+                          <a
+                            href="<%= activeLocation.googleMapsUrl %>"
+                            class="location-details"
+                          >
+                            View venue details
+                          </a>
+                        </div>
+                      </div>
+
+                      <!-- Pricing Card -->
+                      <div class="detail-card pricing-card">
+                        <div class="card-icon">💰</div>
+                        <div class="card-content">
+                          <h4>Prices</h4>
+                          <div class="price-options">
+                            <div class="price-option featured">
+                              <span class="price"
+                                >$<%= party.pricing.presale.price %></span
+                              >
+                              <span class="price-label"
+                                ><%= party.pricing.presale.label %></span
+                              >
+                            </div>
+                            <div class="price-option">
+                              <span class="price"
+                                >$<%= party.pricing.door.price %></span
+                              >
+                              <span class="price-label"
+                                ><%= party.pricing.door.label %></span
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- CTA Button -->
+                      <div class="event-cta-sidebar">
+                        <a
+                          class="cta-button primary"
+                          href="#"
+                          onclick="handlePayment()"
+                        >
+                          <span class="cta-icon">🎫</span>
+                          <span class="cta-text">Buy Tickets</span>
+                          <span class="cta-subtext"
+                            ><%= party.pricing.presale.label %> $<%=
+                            party.pricing.presale.price %></span
+                          >
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Include Map -->
+    <%- include('partials/store_map') -%>
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <!-- Include payment modal -->
+    <%- include('partials/payment_modal') -%>
+
+    <!-- Body & html close -->
+  </body>
+</html>
