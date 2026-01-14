@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <!-- Bachata page specific styles -->
+  <link rel="stylesheet" href="/css/style_bachata.css" />
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Include page header -->
+    <%- include('partials/page_header') -%>
+
+    <!-- Event Area Start -->
+    <section class="event-area pt-50 pb-10 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <!-- Bachata Section Start -->
+              <!-- ------------------- -->
+              <section style="display: flex; flex-direction: column">
+                <!-- Video Bachata -->
+                <div class="video-container">
+                  <div class="video-wrapper">
+                    <iframe
+                      loading="lazy"
+                      src="https://www.youtube.com/embed/_bzxrMsW28w?si=dibkdGZJeVYoTXxI&amp;controls=0"
+                      title="Bachata Classes at Salsa Candela"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowfullscreen
+                    ></iframe>
+                  </div>
+                </div>
+
+                <style>
+                  .video-container {
+                    width: 100%;
+                    max-width: 800px;
+                    margin: 1rem auto;
+                    height: auto;
+                  }
+                  .video-wrapper {
+                    position: relative;
+                    width: 100%;
+                    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                    overflow: hidden;
+                    border-radius: 12px;
+                    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                    margin-bottom: 0;
+                  }
+                  .video-wrapper iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border: none;
+                    display: block;
+                  }
+                </style>
+
+                <!-- Description Start -->
+                <div>
+                  <div style="text-align: left; margin-top: 50px">
+                    <span>
+                      Learn to dance in our Bachata workshops.
+                      <br /><br />
+                      They last five weeks and you can choose from several
+                      schedules:
+                      <br /><br />
+                    </span>
+                    <br /><b>
+                      Our next workshop starts on
+                      <span style="color: #f69139"
+                        ><%= nextSaturdayDate %>.</span
+                      ></b
+                    >
+                  </div>
+                </div>
+                <!-- Description End -->
+
+                <!-- Table Start -->
+                <div class="bachata-table-main">
+                  <%- include('partials/store_salsa_table_full') -%>
+                </div>
+                <div class="bachata-table-mobile">
+                  <%- include('partials/store_salsa_table_mobile') -%>
+                </div>
+                <!-- Table End -->
+
+                <!-- Pricing Area Start -->
+                <div>
+                  <div class="row">
+                    <div class="col-lg-8 offset-xl-2 offset-lg-2">
+                      <div class="section-title text-center">
+                        <h2>Prices</h2>
+                        <p>
+                          Pay online by clicking the following buttons
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Countdown timer Start-->
+                  <div id="countdown-div" class="countdown">
+                    <h1 id="index-countdown-headline">Presale ends in:</h1>
+                    <div id="countdown">
+                      <ul>
+                        <li><span id="days"></span>Days</li>
+                        <li><span id="hours"></span>Hours</li>
+                        <li><span id="minutes"></span>Minutes</li>
+                        <li><span id="seconds"></span>Seconds</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- Countdown timer end -->
+
+                  <div class="row">
+                    <!-- Price 1 Start -->
+                    <div class="col-lg-6 col-md-6">
+                      <div class="single-table text-center">
+                        <div class="table-head">
+                          <h2>Level 2 + <br />Individual</h2>
+                          <!-- Price area -->
+                          <div class="price-area">
+                            <!-- Discount percent area start-->
+                            <div class="discount-percent-area">
+                              <span
+                                id="por-n2-ind-b"
+                                class="discount-percent"
+                              ></span>
+                              <span class="discount-percent-text"
+                                ><b>Presale</b></span
+                              >
+                            </div>
+                            <!-- Discount percent area end-->
+
+                            <!-- Current price area start-->
+                            <div class="current-price-area">
+                              <span
+                                id="pd-n2-ind-b"
+                                class="current-price"
+                              ></span>
+                              <span class="current-price-text">pesos</span>
+                            </div>
+                            <!-- Current price area end-->
+
+                            <!-- List price area start-->
+                            <div class="list-price-area">
+                              <span class="list-price-text"
+                                >List price:
+                              </span>
+                              <span id="pl-n2-ind-b" class="list-price"></span
+                              ><span> pesos</span>
+                            </div>
+                            <!-- List price area end-->
+                          </div>
+                        </div>
+                        <div class="table-body">
+                          <ul>
+                            <li>Five-week workshop</li>
+                            <li>Salsa, Bachata</li>
+                            <li>Any branch and level</li>
+                            <li>Price per person</li>
+                          </ul>
+                          <form action="/en/checkout" method="post">
+                            <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Group Course', 'event_label': 'Bachata Individual', 'value': 1, 'language': 'en'});">Buy</button>
+                          </form>
+                        </div>
+                      </div>
+                      <!-- Price 1 End -->
+                    </div>
+                    <!-- Price 2 Start -->
+                    <div class="col-lg-6 col-md-6">
+                      <div class="single-table text-center">
+                        <div class="table-head">
+                          <h2>
+                            Level 2 + <br />
+                            Couple
+                          </h2>
+                          <!-- Price area -->
+                          <div class="price-area">
+                            <!-- Discount percent area start-->
+                            <div class="discount-percent-area">
+                              <span
+                                id="por-n2-par-b"
+                                class="discount-percent"
+                              ></span>
+                              <span class="discount-percent-text"
+                                ><b>Presale</b></span
+                              >
+                            </div>
+                            <!-- Discount percent area end-->
+
+                            <!-- Current price area start-->
+                            <div class="current-price-area">
+                              <span
+                                id="pd-n2-par-b"
+                                class="current-price"
+                              ></span>
+                              <span class="current-price-text"> pesos</span>
+                            </div>
+                            <!-- Current price area end-->
+
+                            <!-- List price area start-->
+                            <div class="list-price-area">
+                              <span class="list-price-text"
+                                >List price:
+                              </span>
+                              <span id="pl-n2-par-b" class="list-price"></span
+                              ><span> pesos</span>
+                            </div>
+                            <!-- List price area end-->
+                          </div>
+                        </div>
+                        <div class="table-body">
+                          <ul>
+                            <li>Five-week workshop</li>
+                            <li>Salsa or Bachata</li>
+                            <li>Any branch and level</li>
+                            <li>Price per couple</li>
+                          </ul>
+                          <form action="/en/checkout" method="post">
+                            <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Group Course', 'event_label': 'Bachata Pareja', 'value': 1, 'language': 'en'});">Buy</button>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Price 2 End -->
+                  </div>
+                </div>
+                <!-- Pricing Area End -->
+
+                <!-- Horarios Start -->
+                <div style="text-align: left; margin-bottom: 20px">
+                  <br /><br /><br />
+                  <h6>Schedules by branch:</h6>
+                  <br /><br />
+                  <!-- Sucursal Xola -->
+                  <div id="sucursal-xola" class="sucursales-div">
+                    <b><H6 style="color: #e04a25">Xola Branch:</H6></b>
+                    <br /><br />
+
+                    <a
+                      href="https://maps.app.goo.gl/ECFAU2rAJXDWHjSs8"
+                      target="_blank"
+                      ><span
+                        >Estafetas 99, Col Postal, Benito Juárez, 03410,
+                        CDMX</span
+                      >
+                    </a>
+                    <br /><br />
+                    <b>Bachata Classes:</b>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <li>Monday and Wednesday: 9:30pm - 10:30pm</li>
+                      <li>Tuesday and Thursday: 9:30pm - 10:30pm</li>
+                      <li>Saturdays: 12:00am - 1:30pm</li>
+                      <li>Sundays: 6:00pm - 7:30pm</li>
+                    </ul>
+                    <br />
+
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/en/checkout-bachata-xola"
+                          data-text="Register"
+                          onclick="gtag('event', 'branch_registration_click', {'event_category': 'Bachata Page', 'event_label': 'Register Xola', 'value': 1, 'language': 'en'});"
+                          ><span>Register</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5078611231734!2d-99.14293909999999!3d19.390450899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724175073!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onclick="gtag('event', 'map_interaction', {'event_category': 'Bachata Page', 'event_label': 'Map Click Xola', 'value': 1, 'language': 'en'});"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Sucursal Valle -->
+                  <div id="sucursal-valle" class="sucursales-div">
+                    <b><span style="color: #e04a25">Valle Branch:</span></b>
+                    <br /><br />
+                    <a
+                      href="https://maps.app.goo.gl/rceaexAcpfkiMEhu9"
+                      target="_blank"
+                      ><span
+                        >Félix Cuevas 407, Col del Valle, Benito Juárez,
+                        CDMX.</span
+                      >
+                    </a>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <b>Bachata Classes:</b>
+                      <br /><br />
+                      <li>Monday and Wednesday: 9:30pm - 10:30pm</li>
+                      <li>Saturdays: 1:30pm - 3:00pm</li>
+                      <li>Sundays: 1:30pm - 3:00pm</li>
+                    </ul>
+                    <br />
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/en/checkout-bachata-valle"
+                          data-text="Register"
+                          onclick="gtag('event', 'branch_registration_click', {'event_category': 'Bachata Page', 'event_label': 'Register Valle', 'value': 1, 'language': 'en'});"
+                          ><span>Register</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.9273605566686!2d-99.1738906!3d19.3722977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9a07ea6d93%3A0x984de2ae6b224902!2sF%C3%A9lix%20Cuevas%20407%2C%20Col%20del%20Valle%20Sur%2C%20Benito%20Ju%C3%A1rez%2C%2003104%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724558230!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onclick="gtag('event', 'map_interaction', {'event_category': 'Bachata Page', 'event_label': 'Map Click Valle', 'value': 1, 'language': 'en'});"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Sucursal Satélite -->
+                  <div id="sucursal-satelite" class="sucursales-div">
+                    <b
+                      ><span style="color: #e04a25">Satélite Branch:</span></b
+                    >
+                    <br /><br />
+                    <a
+                      href="https://maps.app.goo.gl/qxQ1sBSzoWijhRam7"
+                      target="_blank"
+                      ><span>
+                        Blvd de la Sta Cruz 142, Altavista, 03910, Acatlán, Edo
+                        Mex.
+                      </span>
+                    </a>
+                    <br /><br />
+                    <b>Bachata Classes:</b>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <li>Monday and Wednesday: 9:30pm - 10:30pm</li>
+                      <li>Sundays: 1:30pm - 3:00pm</li>
+                    </ul>
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/en/checkout-bachata-satelite"
+                          data-text="Register"
+                          onclick="gtag('event', 'branch_registration_click', {'event_category': 'Bachata Page', 'event_label': 'Register Satelite', 'value': 1, 'language': 'en'});"
+                          ><span>Register</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.1765622070075!2d-99.2441764!3d19.4910381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031a6b736345%3A0xbce4ed058e944674!2sBlvd.%20de%20la%20Sta.%20Cruz%20142%2C%20Altavista%2C%2003910%20Acatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1703724745453!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onclick="gtag('event', 'map_interaction', {'event_category': 'Bachata Page', 'event_label': 'Map Click Satelite', 'value': 1, 'language': 'en'});"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Sucursal Claveria -->
+                  <div id="sucursal-claveria" class="sucursales-div">
+                    <b
+                      ><span style="color: #e04a25">Claveria Branch:</span></b
+                    >
+                    <br /><br />
+                    <a
+                      href="https://maps.app.goo.gl/d8MddrjfQVpQEa1KA"
+                      target="_blank"
+                      ><span
+                        >Palestina 10, Claveria, Azcapotzalco, 02080, CDMX.
+                      </span>
+                    </a>
+                    <br /><br />
+                    <b>Bachata Classes:</b>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <li>Tuesday and Thursday: 9:30pm - 10:30pm</li>
+                    </ul>
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/en/checkout-bachata-claveria"
+                          data-text="Register"
+                          onclick="gtag('event', 'branch_registration_click', {'event_category': 'Bachata Page', 'event_label': 'Register Claveria', 'value': 1, 'language': 'en'});"
+                          ><span>Register</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.813823212397!2d-99.1824858!3d19.4635922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b091bdcd5%3A0xfcafed2927bdd9a7!2sPalestina%2010%2C%20Claveria%2C%20Azcapotzalco%2C%2002080%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724856034!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onclick="gtag('event', 'map_interaction', {'event_category': 'Bachata Page', 'event_label': 'Map Click Claveria', 'value': 1, 'language': 'en'});"
+                      ></iframe>
+                    </div>
+                  </div>
+                  <br /><br />
+                  <!-- Sucursal Coapa -->
+                  <div id="sucursal-coapa" class="sucursales-div">
+                    <b><span style="color: #e04a25">Coapa Branch:</span></b>
+                    <br /><br />
+                    <a
+                      href="https://maps.app.goo.gl/9Jr8G1LsYNnq3iEL9"
+                      target="_blank"
+                      ><span
+                        >Calz Acoxpa 885, Coapa, Tlalpan, 14390, CDMX.</span
+                      >
+                    </a>
+                    <br /><br />
+                    <b>Bachata Classes:</b>
+                    <br /><br />
+                    <ul class="horarios-fiesta">
+                      <li>Tuesday and Thursday: 9:30pm - 10:30pm</li>
+                    </ul>
+                    <div class="row">
+                      <div class="col-12 text-center">
+                        <a
+                          class="banner-btn"
+                          href="/en/checkout-bachata-coapa"
+                          data-text="Register"
+                          onclick="gtag('event', 'branch_registration_click', {'event_category': 'Bachata Page', 'event_label': 'Register Coapa', 'value': 1, 'language': 'en'});"
+                          ><span>Register</span></a
+                        >
+                      </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                      <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.822058144884!2d-99.119535!3d19.2901029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0175b6627251%3A0x72c03df48ec6f443!2sCalz%20Acoxpa%20885%2C%20Coapa%2C%20Coapa%20Super%204%2C%20Tlalpan%2C%2014390%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724927960!5m2!1ses-419!2smx"
+                        max-width="600"
+                        max-height="450"
+                        style="border: 0; border-radius: 20px"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        onclick="gtag('event', 'map_interaction', {'event_category': 'Bachata Page', 'event_label': 'Map Click Coapa', 'value': 1, 'language': 'en'});"
+                      ></iframe>
+                    </div>
+                  </div>
+                </div>
+                <!-- Horarios Sucursales End -->
+              </section>
+              <!-- Bachata Section End -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <!-- Body & html close -->
+  </body>
+</html>
