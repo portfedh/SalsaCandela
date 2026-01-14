@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <%- include('partials/sucursales_head') -%>
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Include page header -->
+    <%- include('partials/page_header') -%>
+
+    <!-- Branches Section Start -->
+    <div class="sucursales-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <!-- Find Nearest Branch Button -->
+            <div class="find-nearest-section text-center mb-5">
+              <h3>Which branch is closest to you?</h3>
+              <button
+                id="findNearestBtn"
+                class="btn btn-primary btn-lg mt-3"
+                onclick="findNearestBranch()"
+              >
+                <i class="fas fa-location-arrow me-2"></i>
+                Find nearest branch
+              </button>
+              <div id="locationStatus" class="mt-3"></div>
+            </div>
+
+            <!-- Branches Container -->
+            <div class="branches-container">
+              <div class="row" id="branchesRow">
+                <!-- Xola Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="xola" data-lat="19.391" data-lng="-99.155">
+                    <div class="branch-header" onclick="toggleBranch('xola')">
+                      <h4>Xola Branch</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-xola" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-xola"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-xola">
+                      <div class="branch-details">
+                        <p><strong>Address:</strong> Estafetas 99, Col Postal Benito Juarez, 0100, CDMX</p>
+                        <div class="branch-map">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.5078611231734!2d-99.14293909999999!3d19.390450899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724175073!5m2!1ses-419!2smx"
+                            width="100%"
+                            height="200"
+                            class="map-iframe"
+                            allowfullscreen=""
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/fAZm3CfnKvEzDinFA"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Open in Google Maps
+                          </a>
+                          <a href="https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3&"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3 ms-2">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Register
+                          </a>
+                        </div>
+
+                        <!-- Schedule Information -->
+                        <div class="schedule-section mt-4">
+                          <h5 class="schedule-title"><i class="fas fa-calendar-alt me-2"></i>Available Schedules</h5>
+
+                          <div class="schedule-grid">
+                            <!-- Salsa Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type salsa-type">Salsa</h6>
+                              <div class="schedule-items" id="xola-salsa-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+
+                            <!-- Bachata Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type bachata-type">Bachata</h6>
+                              <div class="schedule-items" id="xola-bachata-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Valle Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="valle" data-lat="19.3675" data-lng="-99.1581">
+                    <div class="branch-header" onclick="toggleBranch('valle')">
+                      <h4>Valle Branch</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-valle" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-valle"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-valle">
+                      <div class="branch-details">
+                        <p><strong>Address:</strong> Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX</p>
+                        <div class="branch-map">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.9273605566686!2d-99.1738906!3d19.3722977!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff9a07ea6d93%3A0x984de2ae6b224902!2sF%C3%A9lix%20Cuevas%20407%2C%20Col%20del%20Valle%20Sur%2C%20Benito%20Ju%C3%A1rez%2C%2003104%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724558230!5m2!1ses-419!2smx"
+                            width="100%"
+                            height="200"
+                            class="map-iframe"
+                            allowfullscreen=""
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/2J2DWTJArTgAUVZH9"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Open in Google Maps
+                          </a>
+                          <a href="https://admin.salsa-candela.com/classstripeform"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3 ms-2">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Register
+                          </a>
+                        </div>
+
+                        <!-- Schedule Information -->
+                        <div class="schedule-section mt-4">
+                          <h5 class="schedule-title"><i class="fas fa-calendar-alt me-2"></i>Available Schedules</h5>
+
+                          <div class="schedule-grid">
+                            <!-- Salsa Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type salsa-type">Salsa</h6>
+                              <div class="schedule-items" id="valle-salsa-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+
+                            <!-- Bachata Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type bachata-type">Bachata</h6>
+                              <div class="schedule-items" id="valle-bachata-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Satelite Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="satelite" data-lat="19.5087" data-lng="-99.2395">
+                    <div class="branch-header" onclick="toggleBranch('satelite')">
+                      <h4>Satelite Branch</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-satelite" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-satelite"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-satelite">
+                      <div class="branch-details">
+                        <p><strong>Address:</strong> Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex</p>
+                        <div class="branch-map">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.1765622070075!2d-99.2441764!3d19.4910381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2031a6b736345%3A0xbce4ed058e944674!2sBlvd.%20de%20la%20Sta.%20Cruz%20142%2C%20Altavista%2C%2003910%20Acatl%C3%A1n%2C%20M%C3%A9x.!5e0!3m2!1ses-419!2smx!4v1703724745453!5m2!1ses-419!2smx"
+                            width="100%"
+                            height="200"
+                            class="map-iframe"
+                            allowfullscreen=""
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/dMdciVVjrQxDUvrT9"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Open in Google Maps
+                          </a>
+                          <a href="https://admin.salsa-candela.com/classstripeform"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3 ms-2">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Register
+                          </a>
+                        </div>
+
+                        <!-- Schedule Information -->
+                        <div class="schedule-section mt-4">
+                          <h5 class="schedule-title"><i class="fas fa-calendar-alt me-2"></i>Available Schedules</h5>
+
+                          <div class="schedule-grid">
+                            <!-- Salsa Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type salsa-type">Salsa</h6>
+                              <div class="schedule-items" id="satelite-salsa-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+
+                            <!-- Bachata Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type bachata-type">Bachata</h6>
+                              <div class="schedule-items" id="satelite-bachata-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Claveria Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="claveria" data-lat="19.4515" data-lng="-99.1896">
+                    <div class="branch-header" onclick="toggleBranch('claveria')">
+                      <h4>Claveria Branch</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-claveria" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-claveria"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-claveria">
+                      <div class="branch-details">
+                        <p><strong>Address:</strong> Palestina 10, Claveria, Azcapotzalco, CDMX</p>
+                        <div class="branch-map">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3761.813823212397!2d-99.1824858!3d19.4635922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b091bdcd5%3A0xfcafed2927bdd9a7!2sPalestina%2010%2C%20Claveria%2C%20Azcapotzalco%2C%2002080%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724856034!5m2!1ses-419!2smx"
+                            width="100%"
+                            height="200"
+                            class="map-iframe"
+                            allowfullscreen=""
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/V2TdhxTJCvMEk1s56"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Open in Google Maps
+                          </a>
+                          <a href="https://admin.salsa-candela.com/classstripeform"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3 ms-2">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Register
+                          </a>
+                        </div>
+
+                        <!-- Schedule Information -->
+                        <div class="schedule-section mt-4">
+                          <h5 class="schedule-title"><i class="fas fa-calendar-alt me-2"></i>Available Schedules</h5>
+
+                          <div class="schedule-grid">
+                            <!-- Salsa Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type salsa-type">Salsa</h6>
+                              <div class="schedule-items" id="claveria-salsa-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+
+                            <!-- Bachata Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type bachata-type">Bachata</h6>
+                              <div class="schedule-items" id="claveria-bachata-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Coapa Branch -->
+                <div class="col-lg-6 col-md-12 mb-4">
+                  <div class="branch-card" data-branch="coapa" data-lat="19.2998" data-lng="-99.1386">
+                    <div class="branch-header" onclick="toggleBranch('coapa')">
+                      <h4>Coapa Branch</h4>
+                      <div class="branch-meta">
+                        <span class="distance-badge" id="distance-coapa" style="display: none;"></span>
+                        <i class="fas fa-chevron-down toggle-icon" id="icon-coapa"></i>
+                      </div>
+                    </div>
+                    <div class="branch-content" id="content-coapa">
+                      <div class="branch-details">
+                        <p><strong>Address:</strong> Calz. Acoxpa 885, Coapa, Tlalpan, CDMX</p>
+                        <div class="branch-map">
+                          <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.822058144884!2d-99.119535!3d19.2901029!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0175b6627251%3A0x72c03df48ec6f443!2sCalz%20Acoxpa%20885%2C%20Coapa%2C%20Coapa%20Super%204%2C%20Tlalpan%2C%2014390%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1703724927960!5m2!1ses-419!2smx"
+                            width="100%"
+                            height="200"
+                            class="map-iframe"
+                            allowfullscreen=""
+                            loading="lazy">
+                          </iframe>
+                        </div>
+                        <div class="text-center">
+                          <a href="https://maps.app.goo.gl/KMpUjs6kUTNAE8ca6"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Open in Google Maps
+                          </a>
+                          <a href="https://admin.salsa-candela.com/classstripeform"
+                             target="_blank"
+                             class="btn btn-outline-primary mt-3 ms-2">
+                            <i class="fas fa-user-plus me-2"></i>
+                            Register
+                          </a>
+                        </div>
+
+                        <!-- Schedule Information -->
+                        <div class="schedule-section mt-4">
+                          <h5 class="schedule-title"><i class="fas fa-calendar-alt me-2"></i>Available Schedules</h5>
+
+                          <div class="schedule-grid">
+                            <!-- Salsa Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type salsa-type">Salsa</h6>
+                              <div class="schedule-items" id="coapa-salsa-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+
+                            <!-- Bachata Schedule -->
+                            <div class="schedule-block">
+                              <h6 class="dance-type bachata-type">Bachata</h6>
+                              <div class="schedule-items" id="coapa-bachata-schedule">
+                                <!-- Schedule items will be populated by JavaScript -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Branches Section End -->
+
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include main.js for sticky header functionality -->
+    <script src="/js/main.js"></script>
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <script>
+      // Pass branches data to the external script
+      window.branchesData = `<%-JSON.stringify(branches || [])%>`;
+    </script>
+    <script src="/js/sucursales.js"></script>
+  </body>
+</html>
