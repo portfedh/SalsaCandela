@@ -1,12 +1,46 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
-  <title>Salsa Candela México | Academia de Baile CDMX | Salsa y Bachata</title>
+
+  <!-- Language-specific Meta Tags -->
+  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+  <title>Salsa Candela Mexico | Dance Academy CDMX | Salsa & Bachata Classes</title>
   <meta
     name="description"
-    content="Academia de baile de enseñanza de salsa cubana y bachata. "
+    content="Learn to dance salsa and bachata in CDMX. Professional instructors, 5-week courses, no partner needed. Join Salsa Candela today!"
   />
+  <% } else { %>
+  <title>Salsa Candela México | Academia de Baile CDMX | Salsa y Bachata</title>
+  <meta
+    name="description"
+    content="Academia de baile de enseñanza de salsa cubana y bachata en CDMX. Instructores profesionales, cursos de 5 semanas, no necesitas pareja."
+  />
+  <% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Hreflang Tags for SEO -->
+  <% if (typeof currentPath !== 'undefined') { %>
+  <link rel="alternate" hreflang="es" href="https://salsa-candela.com<%= currentPath %>" />
+  <link rel="alternate" hreflang="en" href="https://salsa-candela.com/en<%= currentPath %>" />
+  <link rel="alternate" hreflang="x-default" href="https://salsa-candela.com<%= currentPath %>" />
+  <% } %>
+
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Salsa Candela" />
+  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+  <meta property="og:title" content="Salsa Candela Mexico | Dance Academy CDMX" />
+  <meta property="og:description" content="Learn to dance salsa and bachata in CDMX. Professional instructors, 5-week courses, no partner needed." />
+  <meta property="og:locale" content="en_US" />
+  <% } else { %>
+  <meta property="og:title" content="Salsa Candela México | Academia de Baile CDMX" />
+  <meta property="og:description" content="Academia de baile de enseñanza de salsa cubana y bachata en CDMX. Instructores profesionales, cursos de 5 semanas." />
+  <meta property="og:locale" content="es_MX" />
+  <% } %>
+  <meta property="og:image" content="https://salsa-candela.com/img/logo/logo.png" />
+  <% if (typeof currentPath !== 'undefined') { %>
+  <meta property="og:url" content="https://salsa-candela.com<%= lang === 'en' ? '/en' : '' %><%= currentPath %>" />
+  <% } %>
 
   <!-- Favicon Configuration -->
   <link
