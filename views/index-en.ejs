@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Background Area Start -->
+    <div class="slider-area">
+      <div class="slider-wrapper">
+        <div class="single-slide">
+          <video
+            class="hero-video"
+            autoplay
+            loop
+            muted
+            playsinline
+            style="
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+              object-position: center center;
+            "
+          >
+            <source
+              src="https://video.wixstatic.com/video/87831e_fd834b3c77534467b8fcb8e547d13c4e/1080p/mp4/file.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <!-- <img
+            class="hero-video"
+            src="img/ardian-lumi-6Woj_wozqmA-unsplash.jpg"
+            alt="Background Image"
+          /> -->
+          <div class="slider-content">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-7">
+                  <div class="text-content-wrapper">
+                    <div class="text-content text-start">
+                      <div class="blurry">
+                        <h5>Welcome to Salsa Candela</h5>
+                        <h1>Learn to dance <span>from scratch</span></h1>
+                        <p>
+                          Learn to dance in just 5 weeks! No partner needed.
+                        </p>
+                        <a
+                          class="banner-btn"
+                          href="/en/inscripcion-clases"
+                          data-text="Register"
+                          ><span>Register</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Background Area End -->
+
+    <!-- Classes Start -->
+    <section class="class-area fix bg-gray pb-10 pt-60">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="section-title text-center fadeInDow">
+              <h2>Our Classes</h2>
+              <p>
+                <br />Have two left feet? Learn to dance in just 5 weeks, guaranteed!
+                <br />
+                <br />Already know how to dance and want to learn more turns and partner figures? We have options for you too.
+                <br />
+                <br />We're open all year and have all levels: From beginners to advanced.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <!-- Salsa Class -->
+            <div class="single-class animation-float">
+              <a href="/en/salsa" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Salsa Classes Card', 'value': 1, 'language': 'en'});">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="/img/class/salsa1.png"
+                    alt="Salsa Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3><a href="/en/salsa">Salsa Classes</a></h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Bachata Class -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-class animation-float">
+              <a href="/en/bachata" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Bachata Classes Card', 'value': 1, 'language': 'en'});">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="/img/class/bachata2.png"
+                    alt="Bachata Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3><a href="/en/bachata">Bachata Classes</a></h3>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- Personal Classes -->
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="single-class animation-float">
+              <a href="/en/particulares" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Private Classes and Events Card', 'value': 1, 'language': 'en'});">
+                <div class="single-img">
+                  <img
+                    class="servicios"
+                    src="/img/class/salsa3.png"
+                    alt="Individual Classes"
+                  />
+                </div>
+                <div class="single-content">
+                  <h3>
+                    <a href="/en/particulares">Private classes and events</a>
+                  </h3>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Class Area End -->
+
+    <!-- Pricing Area Start -->
+    <div class="pricing-area pt-60 pb-60 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-xl-2 offset-lg-2">
+            <div class="section-title text-center">
+              <h2>Prices</h2>
+            </div>
+          </div>
+        </div>
+        <!-- Countdown timer Start-->
+        <div id="countdown-div" class="countdown">
+          <h1 id="index-countdown-headline">Presale ends in:</h1>
+          <div id="countdown">
+            <ul>
+              <li><span id="days"></span>Days</li>
+              <li><span id="hours"></span>Hours</li>
+              <li><span id="minutes"></span>Minutes</li>
+              <li><span id="seconds"></span>Seconds</li>
+            </ul>
+          </div>
+        </div>
+        <!-- Countdown timer end -->
+
+        <div class="row">
+          <!-- Price 1 Start -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Individual <br />Pass</h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Discount percent area start-->
+                  <div class="discount-percent-area">
+                    <span id="por-n1-ind" class="discount-percent"></span>
+                    <span class="discount-percent-text"><b>Presale</b></span>
+                  </div>
+                  <!-- Discount percent area end-->
+
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <span id="pd-n1-ind" class="current-price"></span>
+                    <span class="current-price-text">pesos</span>
+                  </div>
+                  <!-- Current price area end-->
+
+                  <!-- List price area start-->
+                  <div class="list-price-area">
+                    <span class="list-price-text">List price: </span>
+                    <span id="pl-n1-ind" class="list-price"></span>
+                    <span> pesos</span>
+                  </div>
+                  <!-- List price area end-->
+                </div>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Five-week workshop</li>
+                  <li>Salsa, Bachata</li>
+                  <li>Any branch and level</li>
+                  <li>Price per person</li>
+                </ul>
+                <form action="/en/checkout" method="post">
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Individual Pass', 'value': 1, 'language': 'en'});">Buy</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Price 1 End -->
+
+          <!-- Price 2 Start -->
+          <div class="col-lg-4 col-md-6">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>
+                  Couple<br />
+                  Pass
+                </h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Discount percent area start-->
+                  <div class="discount-percent-area">
+                    <span id="por-n1-par" class="discount-percent"></span>
+                    <span class="discount-percent-text"><b>Presale</b></span>
+                  </div>
+                  <!-- Discount percent area end-->
+
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <span id="pd-n1-par" class="current-price"></span>
+                    <span class="current-price-text">pesos</span>
+                  </div>
+                  <!-- Current price area end-->
+
+                  <!-- List price area start-->
+                  <div class="list-price-area">
+                    <span class="list-price-text">List price: </span>
+                    <span id="pl-n1-par" class="list-price"></span>
+                    <span> pesos</span>
+                  </div>
+                  <!-- List price area end-->
+                </div>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Five-week workshop</li>
+                  <li>Salsa or Bachata</li>
+                  <li>Any branch and level</li>
+                  <li>Price per couple</li>
+                </ul>
+                <form action="/en/checkout" method="post">
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Couple Pass', 'value': 1, 'language': 'en'});">Buy</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Price 2 End -->
+
+          <!-- Price 3 Start -->
+          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0">
+            <div class="single-table text-center">
+              <div class="table-head">
+                <h2>Private <br />Classes</h2>
+                <!-- Price area -->
+                <div class="price-area">
+                  <!-- Current price area start-->
+                  <div class="current-price-area">
+                    <br /><br />
+                    <span class="current-price"> $2,500</span>
+                    <span class="current-price-text">pesos</span>
+                    <br /><br />
+                    <br /><br />
+                  </div>
+                  <!-- Current price area end-->
+                </div>
+              </div>
+              <div class="table-body">
+                <ul>
+                  <li>Flexible schedules</li>
+                  <li>Personalized attention</li>
+                  <li>5 classes of 60 minutes</li>
+                  <li>At your home or in studio</li>
+                </ul>
+                <form action="/en/particulares" method="post">
+                  <button type="submit" onclick="gtag('event', 'info_request', {'event_category': 'Pricing', 'event_label': 'Private Classes Info', 'value': 1, 'language': 'en'});">More Information</button>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- Price 3 End -->
+        </div>
+      </div>
+    </div>
+    <!-- Pricing Area End -->
+
+    <!-- Event Area Start -->
+    <section class="event-area pt-30 pb-30 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10 offset-lg-1">
+            <div class="section-title text-center">
+              <h2>Social</h2>
+            </div>
+            <div class="event-content text-center">
+              <h3><%= party.title %></h3>
+              <p><%= party.genres.join(' - ') %></p>
+              <p>
+                $<%= party.pricing.presale.price %> pesos <%=
+                party.pricing.presale.label.toLowerCase() %>, $<%=
+                party.pricing.door.price %> pesos <%=
+                party.pricing.door.label.toLowerCase() %>.
+              </p>
+              <h4><%= fullDate %></h4>
+              <h5><%= party.eventTime %></h5>
+              <br />
+              <picture class="party-image-container">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="/img/party/<%= party.images.desktop %>"
+                />
+                <source
+                  media="(max-width: 767px)"
+                  srcset="/img/party/<%= party.images.mobile %>"
+                />
+                <img
+                  class="party-image"
+                  src="/img/party/<%= party.images.desktop %>"
+                  alt="<%= party.title %> - Monthly Party Salsa Candela"
+                  loading="lazy"
+                />
+              </picture>
+              <a href="/en/fiesta"><h4 class="pt-30">More Information Here</h4></a>
+            </div>
+            <div class="col-12 text-center">
+              <a
+                class="banner-btn mt-20"
+                href="#"
+                onclick="gtag('event', 'purchase_intent', {'event_category': 'Party', 'event_label': 'Tickets Button Homepage', 'value': 1, 'language': 'en'}); handlePayment();"
+                data-text="Tickets"
+                ><span>Tickets</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Event Area End -->
+
+    <!-- Include Map -->
+    <%- include('partials/store_map') -%>
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <!-- Include payment modal -->
+    <%- include('partials/payment_modal') -%>
+
+    <!-- Body & html close -->
+  </body>
+</html>
