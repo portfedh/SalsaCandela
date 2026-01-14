@@ -344,7 +344,8 @@
 
 /* Desktop language switcher */
 .language-switcher {
-  margin-right: 8px;
+  margin-right: 0;
+  flex-shrink: 0;
 }
 
 /* Mobile language switcher */
@@ -364,5 +365,20 @@
   .lang-flag {
     font-size: 13px;
     padding: 5px 10px;
+  }
+}
+
+/* Desktop navbar alignment adjustments */
+@media (min-width: 992px) {
+  .header-contact {
+    min-width: fit-content;
+  }
+  
+  .language-switcher {
+    white-space: nowrap;
+  }
+  
+  .banner-btn {
+    white-space: nowrap;
   }
 }
