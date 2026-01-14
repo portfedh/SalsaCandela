@@ -146,13 +146,13 @@
                   </div>
                   <!-- Countdown timer Start-->
                   <div id="countdown-div" class="countdown">
-                    <h1 id="index-countdown-headline">Preventa vence en:</h1>
+                    <h1 id="index-countdown-headline"><%= lang === 'en' ? 'Presale ends in:' : 'Preventa vence en:' %></h1>
                     <div id="countdown">
                       <ul>
-                        <li><span id="days"></span>Dias</li>
-                        <li><span id="hours"></span>Horas</li>
-                        <li><span id="minutes"></span>Minutos</li>
-                        <li><span id="seconds"></span>Segundos</li>
+                        <li><span id="days"></span><%= lang === 'en' ? 'Days' : 'Dias' %></li>
+                        <li><span id="hours"></span><%= lang === 'en' ? 'Hours' : 'Horas' %></li>
+                        <li><span id="minutes"></span><%= lang === 'en' ? 'Minutes' : 'Minutos' %></li>
+                        <li><span id="seconds"></span><%= lang === 'en' ? 'Seconds' : 'Segundos' %></li>
                       </ul>
                     </div>
                   </div>
@@ -515,7 +515,7 @@
     <%- include('partials/store_js_scripts') -%>
 
     <!-- Include custom mobile nav script -->
-    <script src="js/mobileNavigation.js"></script>
+    <script src="/js/mobileNavigation.js"></script>
 
     <!-- Body & html close -->
   </body>
