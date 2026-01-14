@@ -314,28 +314,32 @@
 .language-switcher,
 .language-switcher-mobile {
   display: flex;
-  gap: 8px;
+  gap: 4px;
   align-items: center;
 }
 
 .lang-flag {
-  font-size: 24px;
+  font-size: 14px;
+  font-weight: 600;
   text-decoration: none;
-  opacity: 0.5;
+  color: #666;
   transition: all 0.3s ease;
   cursor: pointer;
-  padding: 4px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  letter-spacing: 0.5px;
 }
 
 .lang-flag:hover {
-  opacity: 0.8;
-  transform: scale(1.1);
+  color: #ff6b35;
+  background: rgba(255, 107, 53, 0.1);
+  transform: translateY(-1px);
 }
 
 .lang-flag.active {
-  opacity: 1;
-  background: rgba(255, 107, 53, 0.1);
+  color: #fff;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
 }
 
 /* Desktop language switcher */
@@ -358,6 +362,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .lang-flag {
-    font-size: 20px;
+    font-size: 13px;
+    padding: 5px 10px;
   }
 }
