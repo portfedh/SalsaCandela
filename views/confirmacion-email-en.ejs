@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Email Confirmation Area Start -->
+    <section class="confirmation-area d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="text-center p-5 shadow rounded bg-white">
+              <i class="fa fa-envelope-circle-check fa-3x mb-4" style="color: #f69139;"></i>
+              <h2 class="mb-3">Email confirmed!</h2>
+              <p class="lead mb-4">Your email address has been successfully verified.</p>
+              <p>You can now log in to the app with your confirmed account.</p>
+              <a href="/en" class="banner-btn mt-3" data-text="Go to home"><span>Go to home</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Email Confirmation Area End -->
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <!-- Body & html close -->
+  </body>
+</html>
