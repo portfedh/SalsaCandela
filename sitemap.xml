@@ -1,68 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Spanish Pages -->
   <url>
     <loc>https://salsa-candela.com/</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/salsa</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/bachata</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/particulares</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/siguiente</loc>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/fiesta</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/faq</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://salsa-candela.com/contacto</loc>
-    <lastmod>2025-11-19</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
     <loc>https://salsa-candela.com/sucursales</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/guia-codi</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/aviso-privacidad</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/politica-devoluciones</loc>
-    <lastmod>2025-11-19</lastmod>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- English Pages -->
+  <url>
+    <loc>https://salsa-candela.com/en</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/salsa</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/bachata</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/private-classes</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/next</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/party</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/faq</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/branches</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/codi-guide</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/privacy-policy</loc>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://salsa-candela.com/en/refund-policy</loc>
+    <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
