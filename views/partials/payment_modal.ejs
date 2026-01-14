@@ -171,6 +171,7 @@
       gtag('event', 'payment_method_selected', {
         'event_category': 'Party Ticket Purchase',
         'event_label': paymentType === 'codi' ? 'Party - CoDi' : 'Party - Tarjeta',
+        'language': '<%= lang %>',
         'payment_method': paymentType,
         'purchase_type': 'party_ticket',
         'has_referral_code': referralCode ? 'yes' : 'no'

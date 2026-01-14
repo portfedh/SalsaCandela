@@ -85,7 +85,7 @@
           <div class="col-lg-4 col-md-6">
             <!-- Salsa Class -->
             <div class="single-class animation-float">
-              <a href="/en/salsa" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Salsa Classes Card', 'value': 1, 'language': 'en'});">
+              <a href="/en/salsa" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Salsa Classes Card', 'value': 1, 'language': '<%= lang %>'});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -102,7 +102,7 @@
           <!-- Bachata Class -->
           <div class="col-lg-4 col-md-6">
             <div class="single-class animation-float">
-              <a href="/en/bachata" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Bachata Classes Card', 'value': 1, 'language': 'en'});">
+              <a href="/en/bachata" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Bachata Classes Card', 'value': 1, 'language': '<%= lang %>'});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -119,7 +119,7 @@
           <!-- Personal Classes -->
           <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="single-class animation-float">
-              <a href="/en/particulares" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Private Classes and Events Card', 'value': 1, 'language': 'en'});">
+              <a href="/en/particulares" onclick="gtag('event', 'class_card_click', {'event_category': 'Homepage', 'event_label': 'Private Classes and Events Card', 'value': 1, 'language': '<%= lang %>'});">
                 <div class="single-img">
                   <img
                     class="servicios"
@@ -203,7 +203,7 @@
                   <li>Price per person</li>
                 </ul>
                 <form action="/en/checkout" method="post">
-                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Individual Pass', 'value': 1, 'language': 'en'});">Buy</button>
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Individual Pass', 'value': 1, 'language': '<%= lang %>'});">Buy</button>
                 </form>
               </div>
             </div>
@@ -251,7 +251,7 @@
                   <li>Price per couple</li>
                 </ul>
                 <form action="/en/checkout" method="post">
-                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Couple Pass', 'value': 1, 'language': 'en'});">Buy</button>
+                  <button type="submit" onclick="gtag('event', 'purchase_intent', {'event_category': 'Pricing', 'event_label': 'Couple Pass', 'value': 1, 'language': '<%= lang %>'});">Buy</button>
                 </form>
               </div>
             </div>
@@ -284,7 +284,7 @@
                   <li>At your home or in studio</li>
                 </ul>
                 <form action="/en/particulares" method="post">
-                  <button type="submit" onclick="gtag('event', 'info_request', {'event_category': 'Pricing', 'event_label': 'Private Classes Info', 'value': 1, 'language': 'en'});">More Information</button>
+                  <button type="submit" onclick="gtag('event', 'info_request', {'event_category': 'Pricing', 'event_label': 'Private Classes Info', 'value': 1, 'language': '<%= lang %>'});">More Information</button>
                 </form>
               </div>
             </div>
@@ -337,7 +337,7 @@
               <a
                 class="banner-btn mt-20"
                 href="#"
-                onclick="gtag('event', 'purchase_intent', {'event_category': 'Party', 'event_label': 'Tickets Button Homepage', 'value': 1, 'language': 'en'}); handlePayment();"
+                onclick="gtag('event', 'purchase_intent', {'event_category': 'Party', 'event_label': 'Tickets Button Homepage', 'value': 1, 'language': '<%= lang %>'}); handlePayment();"
                 data-text="Tickets"
                 ><span>Tickets</span>
               </a>
