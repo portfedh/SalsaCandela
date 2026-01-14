@@ -425,7 +425,7 @@ module.exports = {
   getStoreIndexEnglish: (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
 
     res.render("index-en.ejs", {
       lang: 'en',
@@ -468,7 +468,7 @@ module.exports = {
   getStoreSiguienteEnglish: (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
     const nextDate = getNextSaturdayDateEnglish();
 
     res.render("siguiente-en.ejs", {
@@ -510,7 +510,7 @@ module.exports = {
   getStorePartyEnglish: (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
 
     res.render("fiesta-en.ejs", {
       lang: 'en',

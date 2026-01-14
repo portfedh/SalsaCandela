@@ -6,10 +6,15 @@ const partyConfig = {
   // Date Information
   date: {
     day: 30,
-    month: "ENE", // Short format for badge
+    month: "ENE", // Short format for badge (Spanish)
     year: 2026,
-    fullMonth: "Enero", // Full month name for full date
-    dayOfWeek: "Viernes",
+    fullMonth: "Enero", // Full month name for full date (Spanish)
+    dayOfWeek: "Viernes", // Day of week (Spanish)
+    en: {
+      month: "JAN", // Short format for badge (English)
+      fullMonth: "January", // Full month name for full date (English)
+      dayOfWeek: "Friday", // Day of week (English)
+    },
   },
 
   // Images (relative to /public/img/party/)

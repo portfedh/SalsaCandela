@@ -4,8 +4,8 @@
         <div class="row">
           <div class="col-lg-8 offset-lg-2">
             <div class="section-title text-center">
-              <h2>Nuestras Ubicaciones</h2>
-              <p class="mt-3">Visítanos en cualquiera de nuestras sucursales en la Ciudad de México</p>
+              <h2><%= lang === 'en' ? 'Our Locations' : 'Nuestras Ubicaciones' %></h2>
+              <p class="mt-3"><%= lang === 'en' ? 'Visit us at any of our branches in Mexico City' : 'Visítanos en cualquiera de nuestras sucursales en la Ciudad de México' %></p>
             </div>
           </div>
         </div>
@@ -25,10 +25,17 @@
         </div>
         <div class="row">
           <div class="col-12 text-center mt-40">
+            <% if (lang === 'en') { %>
+            <a href="/en/sucursales" class="banner-btn map-btn" data-text="View branches" onclick="gtag('event', 'navigation_click', {'event_category': 'Map Section', 'language': '<%= lang %>', 'event_label': 'View All Branches', 'value': 1});">
+              <span class="map-btn-mobile">View branches</span>
+              <span class="map-btn-desktop">View All Branches</span>
+            </a>
+            <% } else { %>
             <a href="/sucursales" class="banner-btn map-btn" data-text="Ver sucursales" onclick="gtag('event', 'navigation_click', {'event_category': 'Map Section', 'language': '<%= lang %>', 'event_label': 'Ver Todas las Sucursales', 'value': 1});">
               <span class="map-btn-mobile">Ver sucursales</span>
               <span class="map-btn-desktop">Ver Todas las Sucursales</span>
             </a>
+            <% } %>
           </div>
         </div>
       </div>
