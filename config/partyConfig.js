@@ -75,10 +75,12 @@ const partyConfig = {
     presale: {
       price: 100,
       label: "Preventa",
+      labelEn: "Presale",
     },
     door: {
       price: 150,
       label: "En taquilla",
+      labelEn: "At the door",
     },
   },
 

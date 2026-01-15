@@ -363,6 +363,15 @@ module.exports = {
     });
   },
 
+  // English party redirect - goes directly to Stripe (no CoDi modal)
+  PartyRedirectEnglish: (req, res) => {
+    const referralCode = req.params.referralCode || "";
+    const stripeUrl = referralCode
+      ? `https://admin.salsa-candela.com/fiesta/boletos/${referralCode}`
+      : "https://admin.salsa-candela.com/fiesta/boletos";
+    res.redirect(stripeUrl);
+  },
+
   ClassRedirect: (req, res) => {
     res.redirect(
       "https://admin.salsa-candela.com/classstripeform?regKey=zG9xKmF3"
@@ -455,13 +464,28 @@ module.exports = {
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
 
+    // Create English version of party config with translated pricing labels
+    const partyConfigEnglish = {
+      ...partyConfig,
+      pricing: {
+        presale: {
+          price: partyConfig.pricing.presale.price,
+          label: partyConfig.pricing.presale.labelEn,
+        },
+        door: {
+          price: partyConfig.pricing.door.price,
+          label: partyConfig.pricing.door.labelEn,
+        },
+      },
+    };
+
     res.render("index-en.ejs", {
       lang: 'en',
       currentPath: req.path.replace('/en', ''),
-      party: partyConfig,
+      party: partyConfigEnglish,
       activeLocation: activeLocationData,
       fullDate: fullDate,
-      paymentMode: process.env.PAYMENT_MODE,
+      paymentMode: 'simple', // English version skips CoDi modal, goes directly to Stripe
     });
   },
 
@@ -540,6 +564,21 @@ module.exports = {
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
 
+    // Create English version of party config with translated pricing labels
+    const partyConfigEnglish = {
+      ...partyConfig,
+      pricing: {
+        presale: {
+          price: partyConfig.pricing.presale.price,
+          label: partyConfig.pricing.presale.labelEn,
+        },
+        door: {
+          price: partyConfig.pricing.door.price,
+          label: partyConfig.pricing.door.labelEn,
+        },
+      },
+    };
+
     res.render("fiesta-en.ejs", {
       lang: 'en',
       currentPath: req.path.replace('/en', ''),
@@ -547,10 +586,10 @@ module.exports = {
         title: "Party",
         subtitle: "Dance Salsa and Bachata with us",
       },
-      party: partyConfig,
+      party: partyConfigEnglish,
       activeLocation: activeLocationData,
       fullDate: fullDate,
-      paymentMode: process.env.PAYMENT_MODE,
+      paymentMode: 'simple', // English version skips CoDi modal, goes directly to Stripe
     });
   },
 
