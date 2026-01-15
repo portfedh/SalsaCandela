@@ -6,6 +6,34 @@ const courseData = require("../config/courseData");
 const classSchedules = require("../config/classSchedules");
 const partyConfig = require("../config/partyConfig");
 
+// Day name translations
+const dayTranslations = {
+  'Lunes': 'Monday',
+  'Martes': 'Tuesday',
+  'Miércoles': 'Wednesday',
+  'Jueves': 'Thursday',
+  'Viernes': 'Friday',
+  'Sábados': 'Saturdays',
+  'Sábado': 'Saturday',
+  'Domingos': 'Sundays',
+  'Domingo': 'Sunday'
+};
+
+// Helper function to translate schedules to English
+function translateSchedulesToEnglish(branches) {
+  return branches.map(branch => ({
+    ...branch,
+    salsaSchedule: branch.salsaSchedule ? branch.salsaSchedule.map(schedule => ({
+      ...schedule,
+      days: schedule.days.map(day => dayTranslations[day] || day)
+    })) : [],
+    bachataSchedule: branch.bachataSchedule ? branch.bachataSchedule.map(schedule => ({
+      ...schedule,
+      days: schedule.days.map(day => dayTranslations[day] || day)
+    })) : []
+  }));
+}
+
 function getNextSaturdayDate() {
   const now = new Date();
   const coursePeriods = [];
@@ -562,7 +590,7 @@ module.exports = {
         title: "Our Branches",
         subtitle: "Find the branch closest to you",
       },
-      branches: classSchedules,
+      branches: translateSchedulesToEnglish(classSchedules),
       paymentMode: process.env.PAYMENT_MODE,
     });
   },

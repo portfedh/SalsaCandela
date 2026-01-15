@@ -371,8 +371,9 @@
     <script src="/js/mobileNavigation.js"></script>
 
     <script>
-      // Pass branches data to the external script
+      // Pass branches data and language to the external script
       window.branchesData = `<%-JSON.stringify(branches || [])%>`;
+      window.pageLang = '<%= lang %>';
     </script>
     <script src="/js/sucursales.js"></script>
   </body>

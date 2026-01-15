@@ -1,6 +1,41 @@
 // Branch Location Functionality with Schedule Data from Server
 const branchesData = window.branchesData || '[]';
 const branches = JSON.parse(branchesData);
+const pageLang = window.pageLang || 'es';
+
+// Translations for UI strings
+const translations = {
+  es: {
+    browserNotSupported: 'Tu navegador no soporta geolocalización.',
+    gettingLocation: 'Obteniendo ubicación...',
+    gettingLocationInfo: 'Obteniendo tu ubicación...',
+    foundNearest: '¡Encontrado!',
+    nearestBranchIs: 'Tu sucursal más cercana es',
+    atDistance: 'a',
+    distanceUnit: 'km de distancia.',
+    findNearestBtn: 'Buscar sucursal más cercana',
+    errorGeneral: 'No se pudo obtener tu ubicación.',
+    errorPermissionDenied: 'Permiso de ubicación denegado. Por favor, permite el acceso a tu ubicación.',
+    errorPositionUnavailable: 'Información de ubicación no disponible.',
+    errorTimeout: 'Tiempo de espera agotado al obtener ubicación.'
+  },
+  en: {
+    browserNotSupported: 'Your browser does not support geolocation.',
+    gettingLocation: 'Getting location...',
+    gettingLocationInfo: 'Getting your location...',
+    foundNearest: 'Found!',
+    nearestBranchIs: 'Your nearest branch is',
+    atDistance: 'at',
+    distanceUnit: 'km away.',
+    findNearestBtn: 'Find nearest branch',
+    errorGeneral: 'Could not get your location.',
+    errorPermissionDenied: 'Location permission denied. Please allow access to your location.',
+    errorPositionUnavailable: 'Location information unavailable.',
+    errorTimeout: 'Timed out while getting location.'
+  }
+};
+
+const t = translations[pageLang] || translations.es;
 
 function toggleBranch(branchId) {
   const content = document.getElementById('content-' + branchId);
@@ -66,13 +101,13 @@ function findNearestBranch() {
   const button = document.getElementById('findNearestBtn');
 
   if (!navigator.geolocation) {
-    statusDiv.innerHTML = '<div class="alert alert-danger">Tu navegador no soporta geolocalización.</div>';
+    statusDiv.innerHTML = '<div class="alert alert-danger">' + t.browserNotSupported + '</div>';
     return;
   }
 
   button.disabled = true;
-  button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Obteniendo ubicación...';
-  statusDiv.innerHTML = '<div class="alert alert-info">Obteniendo tu ubicación...</div>';
+  button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>' + t.gettingLocation;
+  statusDiv.innerHTML = '<div class="alert alert-info">' + t.gettingLocationInfo + '</div>';
 
   navigator.geolocation.getCurrentPosition(
     function(position) {
@@ -105,32 +140,32 @@ function findNearestBranch() {
 
         statusDiv.innerHTML =
           '<div class="alert alert-success">' +
-          '<strong>¡Encontrado!</strong> Tu sucursal más cercana es <strong>' + nearestBranch.name + '</strong> ' +
-          'a ' + nearestDistance.toFixed(1) + ' km de distancia.' +
+          '<strong>' + t.foundNearest + '</strong> ' + t.nearestBranchIs + ' <strong>' + nearestBranch.name + '</strong> ' +
+          t.atDistance + ' ' + nearestDistance.toFixed(1) + ' ' + t.distanceUnit +
           '</div>';
       }
 
       button.disabled = false;
-      button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>Buscar sucursal más cercana';
+      button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>' + t.findNearestBtn;
     },
     function(error) {
-      let errorMessage = 'No se pudo obtener tu ubicación.';
+      let errorMessage = t.errorGeneral;
 
       switch(error.code) {
         case error.PERMISSION_DENIED:
-          errorMessage = 'Permiso de ubicación denegado. Por favor, permite el acceso a tu ubicación.';
+          errorMessage = t.errorPermissionDenied;
           break;
         case error.POSITION_UNAVAILABLE:
-          errorMessage = 'Información de ubicación no disponible.';
+          errorMessage = t.errorPositionUnavailable;
           break;
         case error.TIMEOUT:
-          errorMessage = 'Tiempo de espera agotado al obtener ubicación.';
+          errorMessage = t.errorTimeout;
           break;
       }
 
       statusDiv.innerHTML = '<div class="alert alert-danger">' + errorMessage + '</div>';
       button.disabled = false;
-      button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>Buscar sucursal más cercana';
+      button.innerHTML = '<i class="fas fa-location-arrow me-2"></i>' + t.findNearestBtn;
     },
     {
       enableHighAccuracy: true,
