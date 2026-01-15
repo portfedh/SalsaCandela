@@ -1,12 +1,27 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+  <!-- Language-specific Meta Tags -->
+  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+  <title>Take Your Dance to the Next Level | Salsa Candela CDMX</title>
+  <meta
+    name="description"
+    content="Take your dance to the next level. Intermediate and advanced Salsa and Bachata courses at Salsa Candela. Learn new steps and partner turns."
+  />
+  <% } else { %>
   <title>Baile al Siguiente Nivel | Salsa Candela CDMX</title>
   <meta
     name="description"
     content="Lleva tu baile al siguiente nivel. Cursos intermedios y avanzados de Salsa y Bachata en Salsa Candela. Aprende nuevos pasos y vueltas en pareja."
   />
+  <% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Hreflang Tags for SEO -->
+  <link rel="alternate" hreflang="es" href="https://salsa-candela.com/siguiente" />
+  <link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/next" />
+  <link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/siguiente" />
 
   <!-- Favicon Configuration -->
   <link rel="icon" type="image/png" href="/my-favicon/favicon-96x96.png" sizes="96x96" />
@@ -20,10 +35,18 @@
 
   <!-- Open Graph Meta Tags (Facebook, WhatsApp, LinkedIn) -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Salsa Candela" />
+  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+  <meta property="og:title" content="Take Your Dance to the Next Level | Salsa Candela" />
+  <meta property="og:description" content="Take your dance to the next level. Intermediate and advanced Salsa and Bachata courses. Learn new steps and partner turns." />
+  <meta property="og:url" content="https://salsa-candela.com/en/next" />
+  <meta property="og:locale" content="en_US" />
+  <% } else { %>
   <meta property="og:title" content="Baile al Siguiente Nivel | Salsa Candela" />
   <meta property="og:description" content="Lleva tu baile al siguiente nivel. Cursos intermedios y avanzados de Salsa y Bachata. Aprende nuevos pasos y vueltas en pareja." />
   <meta property="og:url" content="https://salsa-candela.com/siguiente" />
-  <meta property="og:site_name" content="Salsa Candela" />
+  <meta property="og:locale" content="es_MX" />
+  <% } %>
   <meta property="og:image" content="https://salsa-candela.com/my-favicon/web-app-manifest-512x512.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="512" />
@@ -32,8 +55,13 @@
 
   <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
+  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
+  <meta name="twitter:title" content="Take Your Dance to the Next Level | Salsa Candela" />
+  <meta name="twitter:description" content="Take your dance to the next level. Intermediate and advanced Salsa and Bachata courses. Learn new steps and partner turns." />
+  <% } else { %>
   <meta name="twitter:title" content="Baile al Siguiente Nivel | Salsa Candela" />
   <meta name="twitter:description" content="Lleva tu baile al siguiente nivel. Cursos intermedios y avanzados de Salsa y Bachata. Aprende nuevos pasos y vueltas en pareja." />
+  <% } %>
   <meta name="twitter:image" content="https://salsa-candela.com/my-favicon/web-app-manifest-512x512.png" />
   <meta name="twitter:image:alt" content="Logo de Salsa Candela Academia de Baile" />
 

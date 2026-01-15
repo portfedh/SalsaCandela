@@ -1,136 +1,221 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Spanish Pages -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <!-- Homepage -->
   <url>
     <loc>https://salsa-candela.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://salsa-candela.com/salsa</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/bachata</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/particulares</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/siguiente</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/fiesta</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/faq</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/sucursales</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/guia-codi</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/aviso-privacidad</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://salsa-candela.com/politica-devoluciones</loc>
-    <lastmod>2026-01-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
-
-  <!-- English Pages -->
   <url>
     <loc>https://salsa-candela.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- Salsa Classes -->
+  <url>
+    <loc>https://salsa-candela.com/salsa</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/salsa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/salsa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/salsa"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/en/salsa</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/salsa"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/salsa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/salsa"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bachata Classes -->
+  <url>
+    <loc>https://salsa-candela.com/bachata</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/bachata"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/bachata"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/bachata"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/en/bachata</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/bachata"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/bachata"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/bachata"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Private Classes -->
+  <url>
+    <loc>https://salsa-candela.com/particulares</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/particulares"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/private-classes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/particulares"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://salsa-candela.com/en/private-classes</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/particulares"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/private-classes"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/particulares"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Next Level / Siguiente -->
+  <url>
+    <loc>https://salsa-candela.com/siguiente</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/siguiente"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/next"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/siguiente"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/en/next</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/siguiente"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/next"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/siguiente"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Party / Fiesta -->
   <url>
-    <loc>https://salsa-candela.com/en/party</loc>
+    <loc>https://salsa-candela.com/fiesta</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/fiesta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/party"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/fiesta"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://salsa-candela.com/en/faq</loc>
+    <loc>https://salsa-candela.com/en/party</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/fiesta"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/party"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/fiesta"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- FAQ -->
+  <url>
+    <loc>https://salsa-candela.com/faq</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/faq"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://salsa-candela.com/en/branches</loc>
+    <loc>https://salsa-candela.com/en/faq</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/faq"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Branches / Sucursales -->
+  <url>
+    <loc>https://salsa-candela.com/sucursales</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/sucursales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/branches"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/sucursales"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://salsa-candela.com/en/codi-guide</loc>
+    <loc>https://salsa-candela.com/en/branches</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/sucursales"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/branches"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/sucursales"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- CoDi Guide -->
+  <url>
+    <loc>https://salsa-candela.com/guia-codi</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/guia-codi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/codi-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/guia-codi"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://salsa-candela.com/en/codi-guide</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/guia-codi"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/codi-guide"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/guia-codi"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://salsa-candela.com/aviso-privacidad</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/aviso-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/aviso-privacidad"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://salsa-candela.com/en/privacy-policy</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/aviso-privacidad"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/privacy-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/aviso-privacidad"/>
+    <lastmod>2026-01-14</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <!-- Refund Policy -->
+  <url>
+    <loc>https://salsa-candela.com/politica-devoluciones</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/politica-devoluciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/refund-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/politica-devoluciones"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://salsa-candela.com/en/refund-policy</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://salsa-candela.com/politica-devoluciones"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://salsa-candela.com/en/refund-policy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://salsa-candela.com/politica-devoluciones"/>
     <lastmod>2026-01-14</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
