@@ -370,14 +370,37 @@
 
 /* Desktop navbar alignment adjustments */
 @media (min-width: 992px) {
+  /* Vertically center all header row columns */
+  .header-area .row {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Center logo vertically */
+  .header-area .logo {
+    display: flex;
+    align-items: center;
+    height: 64px;
+  }
+
+  /* Center the main menu wrapper */
+  .header-area .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 64px;
+  }
+
+  /* Center header contact section */
   .header-contact {
     min-width: fit-content;
+    height: 64px;
   }
-  
+
   .language-switcher {
     white-space: nowrap;
   }
-  
+
   .banner-btn {
     white-space: nowrap;
   }
