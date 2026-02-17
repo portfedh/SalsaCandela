@@ -358,6 +358,8 @@ module.exports = {
   PartyRedirect: (req, res) => {
     const referralCode = req.params.referralCode || "";
     res.render("boletos", {
+      lang: 'es',
+      currentPath: req.path,
       referralCode: referralCode,
       paymentMode: "modal",
     });

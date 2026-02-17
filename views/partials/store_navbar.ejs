@@ -81,7 +81,7 @@
                 </form>
                 <% } else { %>
                 <form action="/checkout" method="post">
-                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Desktop', 'language': '<%= lang %>', 'value': 1});">Inscribirme</button>
+                  <button class="banner-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Desktop', 'language': '<%= typeof lang !== "undefined" ? lang : "es" %>', 'value': 1});">Inscribirme</button>
                 </form>
                 <% } %>
               </div>
@@ -160,7 +160,7 @@
           <li><a href="/faq">FAQ</a></li>
           <li class="nav-cta">
             <form action="/checkout" method="post">
-              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Mobile', 'language': '<%= lang %>', 'value': 1});">Inscribirme</button>
+              <button class="nav-btn" type="submit" onclick="gtag('event', 'nav_registration_click', {'event_category': 'Navigation', 'event_label': 'Inscribirme Mobile', 'language': '<%= typeof lang !== "undefined" ? lang : "es" %>', 'value': 1});">Inscribirme</button>
             </form>
           </li>
         </ul>
