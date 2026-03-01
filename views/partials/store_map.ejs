@@ -1,3 +1,5 @@
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <!-- Start of Map Area -->
     <section class="map-section pt-60 pb-60 bg-gray">
       <div class="container">
@@ -12,14 +14,7 @@
         <div class="row">
           <div class="col-12">
             <div class="map-container">
-              <iframe
-                class="contact-map-size"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15054.031530561573!2d-99.16139312409982!3d19.39044996929411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fefe8b9903ad%3A0x4fe4113243e29a80!2sEstafetas%2099%2C%20Postal%2C%20Benito%20Ju%C3%A1rez%2C%2003410%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX%2C%20Mexico!5e0!3m2!1sen!2sbd!4v1701319854445!5m2!1sen!2sbd"
-                style="border: 0; display: block;"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              >
-              </iframe>
+              <div id="locations-map" class="contact-map-size" style="border-radius: 8px; z-index: 0;"></div>
             </div>
           </div>
         </div>
@@ -39,5 +34,64 @@
           </div>
         </div>
       </div>
+      <!-- Leaflet JS -->
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+      <script>
+        (function() {
+          var lang = '<%= lang %>';
+          var locations = [
+            {
+              name: 'Xola',
+              lat: 19.3905, lng: -99.1429,
+              address: lang === 'en'
+                ? 'Estafetas 99, Col Postal, Benito Juárez, CDMX'
+                : 'Estafetas 99, Col Postal, Benito Juárez, CDMX'
+            },
+            {
+              name: 'Valle',
+              lat: 19.3723, lng: -99.1739,
+              address: lang === 'en'
+                ? 'Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX'
+                : 'Félix Cuevas 407, Col del Valle, Benito Juárez, CDMX'
+            },
+            {
+              name: 'Satélite',
+              lat: 19.4910, lng: -99.2442,
+              address: lang === 'en'
+                ? 'Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex'
+                : 'Blvd de la Sta Cruz 142, Altavista, Acatlán, Edo Mex'
+            },
+            {
+              name: 'Clavería',
+              lat: 19.4636, lng: -99.1825,
+              address: lang === 'en'
+                ? 'Palestina 10, Clavería, Azcapotzalco, CDMX'
+                : 'Palestina 10, Clavería, Azcapotzalco, CDMX'
+            },
+            {
+              name: 'Coapa',
+              lat: 19.2901, lng: -99.1195,
+              address: lang === 'en'
+                ? 'Calz. Acoxpa 885, Coapa, Tlalpan, CDMX'
+                : 'Calz. Acoxpa 885, Coapa, Tlalpan, CDMX'
+            }
+          ];
+
+          var map = L.map('locations-map');
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+            maxZoom: 18
+          }).addTo(map);
+
+          var bounds = [];
+          locations.forEach(function(loc) {
+            var marker = L.marker([loc.lat, loc.lng]).addTo(map);
+            marker.bindPopup('<strong>Salsa Candela ' + loc.name + '</strong><br>' + loc.address);
+            bounds.push([loc.lat, loc.lng]);
+          });
+
+          map.fitBounds(bounds, { padding: [30, 30] });
+        })();
+      </script>
     </section>
     <!-- End of Map Area -->

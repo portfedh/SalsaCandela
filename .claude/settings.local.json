@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(rm:*)",
+      "Bash(npm start)",
+      "Bash(pkill:*)",
+      "Bash(ls:*)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_click",
+      "Bash(curl:*)",
+      "Bash(tree:*)",
+      "mcp__playwright__browser_close",
+      "Bash(npm run dev:*)",
+      "Bash(git add:*)",
+      "Bash(lsof:*)",
+      "Bash(xargs kill -9)",
+      "Bash(git commit:*)",
+      "Bash(wc:*)",
+      "Bash(git checkout:*)",
+      "Bash(git restore:*)",
+      "Bash(git branch:*)",
+      "Bash(git merge:*)"
+    ],
+    "deny": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": ["shadcn"]
+}
