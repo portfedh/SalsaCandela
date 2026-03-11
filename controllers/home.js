@@ -5,6 +5,7 @@ const path = require("path");
 const courseData = require("../config/courseData");
 const classSchedules = require("../config/classSchedules");
 const partyConfig = require("../config/partyConfig");
+const PartyConfig = require("../models/PartyConfig");
 
 // Day name translations
 const dayTranslations = {
@@ -160,6 +161,21 @@ function getNextSaturdayDateEnglish() {
   return `${month} ${day}, ${year}`;
 }
 
+async function getPartyImageLinks() {
+  try {
+    const config = await PartyConfig.findOne({});
+    if (config) {
+      return {
+        desktop: config.partyImageLink || null,
+        mobile: config.partyImageLinkMobile || null,
+      };
+    }
+  } catch (err) {
+    console.error("Error fetching party image links from DB:", err);
+  }
+  return { desktop: null, mobile: null };
+}
+
 function renderView(viewName) {
   return (req, res) => {
     res.render(`${viewName}.ejs`, { paymentMode: process.env.PAYMENT_MODE });
@@ -270,10 +286,11 @@ module.exports = {
     });
   },
 
-  getStoreParty: (req, res) => {
+  getStoreParty: async (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
 
     res.render("fiesta.ejs", {
       lang: 'es',
@@ -285,6 +302,7 @@ module.exports = {
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       paymentMode: process.env.PAYMENT_MODE,
     });
   },
@@ -561,10 +579,11 @@ module.exports = {
     });
   },
 
-  getStorePartyEnglish: (req, res) => {
+  getStorePartyEnglish: async (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
 
     // Create English version of party config with translated pricing labels
     const partyConfigEnglish = {
@@ -591,6 +610,7 @@ module.exports = {
       party: partyConfigEnglish,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       paymentMode: 'simple', // English version skips CoDi modal, goes directly to Stripe
     });
   },

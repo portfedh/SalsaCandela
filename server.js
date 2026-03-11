@@ -2,6 +2,11 @@
 // =====================
 require("dotenv").config({ path: "./config/.env" });
 
+// Database
+// ========
+const connectDB = require("./config/database");
+connectDB();
+
 // Express
 // =======
 // Import express
