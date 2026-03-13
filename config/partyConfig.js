@@ -70,15 +70,13 @@ const partyConfig = {
     },
   ],
 
-  // Pricing
+  // Pricing (prices are fetched from MongoDB party_configs collection)
   pricing: {
     presale: {
-      price: 100,
       label: "Preventa",
       labelEn: "Presale",
     },
     door: {
-      price: 150,
       label: "En taquilla",
       labelEn: "At the door",
     },

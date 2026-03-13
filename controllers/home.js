@@ -176,6 +176,21 @@ async function getPartyImageLinks() {
   return { desktop: null, mobile: null };
 }
 
+async function getPartyPrices() {
+  try {
+    const config = await PartyConfig.findOne({});
+    if (config) {
+      return {
+        presale: config.partyEventPrice ?? 0,
+        door: config.partyListPrice ?? 0,
+      };
+    }
+  } catch (err) {
+    console.error("Error fetching party prices from DB:", err);
+  }
+  return { presale: 0, door: 0 };
+}
+
 function renderView(viewName) {
   return (req, res) => {
     res.render(`${viewName}.ejs`, { paymentMode: process.env.PAYMENT_MODE });
@@ -201,15 +216,30 @@ module.exports = {
     res.sendFile(certPath);
   },
 
-  getStoreIndex: (req, res) => {
+  getStoreIndex: async (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const partyPrices = await getPartyPrices();
+
+    const partyWithPrices = {
+      ...partyConfig,
+      pricing: {
+        presale: {
+          ...partyConfig.pricing.presale,
+          price: partyPrices.presale,
+        },
+        door: {
+          ...partyConfig.pricing.door,
+          price: partyPrices.door,
+        },
+      },
+    };
 
     res.render("index.ejs", {
       lang: 'es',
       currentPath: req.path,
-      party: partyConfig,
+      party: partyWithPrices,
       activeLocation: activeLocationData,
       fullDate: fullDate,
       paymentMode: process.env.PAYMENT_MODE,
@@ -291,6 +321,21 @@ module.exports = {
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
     const partyImageLinks = await getPartyImageLinks();
+    const partyPrices = await getPartyPrices();
+
+    const partyWithPrices = {
+      ...partyConfig,
+      pricing: {
+        presale: {
+          ...partyConfig.pricing.presale,
+          price: partyPrices.presale,
+        },
+        door: {
+          ...partyConfig.pricing.door,
+          price: partyPrices.door,
+        },
+      },
+    };
 
     res.render("fiesta.ejs", {
       lang: 'es',
@@ -299,7 +344,7 @@ module.exports = {
         title: "Fiesta",
         subtitle: "Baila Salsa y Bachata con nosotros",
       },
-      party: partyConfig,
+      party: partyWithPrices,
       activeLocation: activeLocationData,
       fullDate: fullDate,
       partyImageLinks: partyImageLinks,
@@ -479,21 +524,22 @@ module.exports = {
   // English Controllers
   // *******************
 
-  getStoreIndexEnglish: (req, res) => {
+  getStoreIndexEnglish: async (req, res) => {
     const activeLocationData =
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
+    const partyPrices = await getPartyPrices();
 
     // Create English version of party config with translated pricing labels
     const partyConfigEnglish = {
       ...partyConfig,
       pricing: {
         presale: {
-          price: partyConfig.pricing.presale.price,
+          price: partyPrices.presale,
           label: partyConfig.pricing.presale.labelEn,
         },
         door: {
-          price: partyConfig.pricing.door.price,
+          price: partyPrices.door,
           label: partyConfig.pricing.door.labelEn,
         },
       },
@@ -584,17 +630,18 @@ module.exports = {
       partyConfig.locations[partyConfig.activeLocation];
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
     const partyImageLinks = await getPartyImageLinks();
+    const partyPrices = await getPartyPrices();
 
     // Create English version of party config with translated pricing labels
     const partyConfigEnglish = {
       ...partyConfig,
       pricing: {
         presale: {
-          price: partyConfig.pricing.presale.price,
+          price: partyPrices.presale,
           label: partyConfig.pricing.presale.labelEn,
         },
         door: {
-          price: partyConfig.pricing.door.price,
+          price: partyPrices.door,
           label: partyConfig.pricing.door.labelEn,
         },
       },
