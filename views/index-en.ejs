@@ -318,15 +318,15 @@
               <picture class="party-image-container">
                 <source
                   media="(min-width: 768px)"
-                  srcset="/img/party/<%= party.images.desktop %>"
+                  srcset="<%= partyImageLinks.desktop %>"
                 />
                 <source
                   media="(max-width: 767px)"
-                  srcset="/img/party/<%= party.images.mobile %>"
+                  srcset="<%= partyImageLinks.mobile %>"
                 />
                 <img
                   class="party-image"
-                  src="/img/party/<%= party.images.desktop %>"
+                  src="<%= partyImageLinks.desktop %>"
                   alt="<%= party.title %> - Monthly Party Salsa Candela"
                   loading="lazy"
                 />

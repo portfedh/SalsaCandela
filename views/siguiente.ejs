@@ -799,7 +799,7 @@
 
     <!-- Party Invitation Section Start -->
     <section class="party-invitation-section" id="party-section">
-      <div class="party-featured-image parallax-bg" style="background-image: url('img/party/<%= party.images.desktop %>')">
+      <div class="party-featured-image parallax-bg" style="background-image: url('<%= partyImageLinks.desktop %>')">
         <div class="party-content-overlay">
           <div class="container">
             <div class="party-info-content">
@@ -831,7 +831,7 @@
     <style>
       @media screen and (max-width: 768px) {
         .party-featured-image {
-          background-image: url('img/party/<%= party.images.mobile %>') !important;
+          background-image: url('<%= partyImageLinks.mobile %>') !important;
         }
       }
     </style>

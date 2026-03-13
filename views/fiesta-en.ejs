@@ -10,7 +10,7 @@
   <style>
     @media screen and (max-width: 768px) {
       .event-featured-image {
-        background-image: url("<%= partyImageLinks.mobile || '/img/party/' + party.images.mobile %>") !important;
+        background-image: url("<%= partyImageLinks.mobile %>") !important;
       }
     }
   </style>
@@ -49,7 +49,7 @@
                 <div
                   class="event-image-container event-featured-image"
                   style="
-                    background-image: url('<%= partyImageLinks.desktop || "/img/party/" + party.images.desktop %>');
+                    background-image: url('<%= partyImageLinks.desktop %>');
                   "
                 >
                   <div class="image-overlay">

@@ -241,6 +241,7 @@ module.exports = {
   getStoreIndex: async (req, res) => {
     const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
     const partyPrices = await getPartyPrices();
 
     const partyWithPrices = {
@@ -263,6 +264,7 @@ module.exports = {
       party: partyWithPrices,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       paymentMode: process.env.PAYMENT_MODE,
     });
   },
@@ -298,6 +300,7 @@ module.exports = {
   getStoreSiguiente: async (req, res) => {
     const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
     const nextDate = getNextSaturdayDate();
 
     res.render("siguiente.ejs", {
@@ -307,6 +310,7 @@ module.exports = {
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       nextSaturdayDate: nextDate,
       paymentMode: process.env.PAYMENT_MODE,
     });
@@ -546,6 +550,7 @@ module.exports = {
   getStoreIndexEnglish: async (req, res) => {
     const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
     const partyPrices = await getPartyPrices();
 
     // Create English version of party config with translated pricing labels
@@ -569,6 +574,7 @@ module.exports = {
       party: partyConfigEnglish,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       paymentMode: 'simple', // English version skips CoDi modal, goes directly to Stripe
     });
   },
@@ -604,6 +610,7 @@ module.exports = {
   getStoreSiguienteEnglish: async (req, res) => {
     const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
+    const partyImageLinks = await getPartyImageLinks();
     const nextDate = getNextSaturdayDateEnglish();
 
     res.render("siguiente-en.ejs", {
@@ -613,6 +620,7 @@ module.exports = {
       party: partyConfig,
       activeLocation: activeLocationData,
       fullDate: fullDate,
+      partyImageLinks: partyImageLinks,
       nextSaturdayDate: nextDate,
       paymentMode: process.env.PAYMENT_MODE,
     });
