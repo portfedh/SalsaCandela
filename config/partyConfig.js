@@ -17,37 +17,6 @@ const partyConfig = {
     },
   },
 
-  // Images (relative to /public/img/party/)
-  images: {
-    desktop: "fiesta_2026_01_30.jpeg",
-    mobile: "fiesta_2026_01_30b.jpeg",
-  },
-
-  // Location Options
-  locations: {
-    satelite: {
-      name: "Satelite",
-      address: "Lomas Verdes 896",
-      city: "Naucalpan, EdoMex",
-      googleMapsUrl: "https://maps.app.goo.gl/UCUzBQNYKzcnKaVKA",
-    },
-    xola: {
-      name: "Xola",
-      address: "Estafetas 99, Col Postal",
-      city: "Benito Juarez, CDMX",
-      googleMapsUrl: "https://maps.app.goo.gl/4oqG4D98TiVE1sLY9",
-    },
-    valle: {
-      name: "Valle",
-      address: "Félix Cuevas 407, Col del Valle",
-      city: "Benito Juárez, CDMX",
-      googleMapsUrl: "https://maps.app.goo.gl/h9w7R43tkuCNtULM8",
-    },
-  },
-
-  // Active location (change this to switch venues)
-  activeLocation: "xola",
-
   // Event Schedule
   schedule: [
     {

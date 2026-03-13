@@ -191,6 +191,28 @@ async function getPartyPrices() {
   return { presale: 0, door: 0 };
 }
 
+async function getPartyActiveLocation() {
+  try {
+    const config = await PartyConfig.findOne({});
+    if (config && config.partyLocations && config.partyActiveLocation) {
+      const active = config.partyLocations.find(
+        (loc) => loc.key === config.partyActiveLocation
+      );
+      if (active) {
+        return {
+          name: active.name,
+          address: active.address,
+          city: active.city,
+          googleMapsUrl: active.googleMapsUrl,
+        };
+      }
+    }
+  } catch (err) {
+    console.error("Error fetching party location from DB:", err);
+  }
+  return { name: "", address: "", city: "", googleMapsUrl: "" };
+}
+
 function renderView(viewName) {
   return (req, res) => {
     res.render(`${viewName}.ejs`, { paymentMode: process.env.PAYMENT_MODE });
@@ -217,8 +239,7 @@ module.exports = {
   },
 
   getStoreIndex: async (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
     const partyPrices = await getPartyPrices();
 
@@ -274,9 +295,8 @@ module.exports = {
     });
   },
 
-  getStoreSiguiente: (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+  getStoreSiguiente: async (req, res) => {
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
     const nextDate = getNextSaturdayDate();
 
@@ -317,8 +337,7 @@ module.exports = {
   },
 
   getStoreParty: async (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
     const partyImageLinks = await getPartyImageLinks();
     const partyPrices = await getPartyPrices();
@@ -525,8 +544,7 @@ module.exports = {
   // *******************
 
   getStoreIndexEnglish: async (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
     const partyPrices = await getPartyPrices();
 
@@ -583,9 +601,8 @@ module.exports = {
     });
   },
 
-  getStoreSiguienteEnglish: (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+  getStoreSiguienteEnglish: async (req, res) => {
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
     const nextDate = getNextSaturdayDateEnglish();
 
@@ -626,8 +643,7 @@ module.exports = {
   },
 
   getStorePartyEnglish: async (req, res) => {
-    const activeLocationData =
-      partyConfig.locations[partyConfig.activeLocation];
+    const activeLocationData = await getPartyActiveLocation();
     const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
     const partyImageLinks = await getPartyImageLinks();
     const partyPrices = await getPartyPrices();

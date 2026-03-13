@@ -26,10 +26,13 @@
       "Bash(git checkout:*)",
       "Bash(git restore:*)",
       "Bash(git branch:*)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "Bash(cd \"/Users/portfedh/FamilyOffice Dropbox/Pablo Cruz/1. Family Office/Fam CL/Proyectos/Coding/2_Projects/salsa_candela/1 salsa-candela\" && node -e \"\nconst mongoose = require\\('mongoose'\\);\nasync function run\\(\\) {\n  await mongoose.connect\\('mongodb+srv://portfedh:pB3qIRr5loT6dI7R@cluster0.5jumw86.mongodb.net/salsa_candela_admin?retryWrites=true&w=majority'\\);\n  const db = mongoose.connection.db;\n  const doc = await db.collection\\('party_configs'\\).findOne\\({}\\);\n  console.log\\(JSON.stringify\\(doc, null, 2\\)\\);\n  await mongoose.disconnect\\(\\);\n}\nrun\\(\\).catch\\(e => { console.error\\(e\\); process.exit\\(1\\); }\\);\n\")"
     ],
     "deny": []
   },
   "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": ["shadcn"]
+  "enabledMcpjsonServers": [
+    "shadcn"
+  ]
 }
