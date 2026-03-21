@@ -3,19 +3,8 @@ const partyConfig = {
   title: "Noche Sensual", // Noche Sensual ||  Salsatelite
   description: "Una noche llena de Salsa, Bachata y buena vibra",
 
-  // Date Information
-  date: {
-    day: 30,
-    month: "ENE", // Short format for badge (Spanish)
-    year: 2026,
-    fullMonth: "Enero", // Full month name for full date (Spanish)
-    dayOfWeek: "Viernes", // Day of week (Spanish)
-    en: {
-      month: "JAN", // Short format for badge (English)
-      fullMonth: "January", // Full month name for full date (English)
-      dayOfWeek: "Friday", // Day of week (English)
-    },
-  },
+  // Date is derived dynamically from MongoDB party_configs.nextPartyDate
+  // See utils/parsePartyDate.js for parsing logic
 
   // Event Schedule
   schedule: [

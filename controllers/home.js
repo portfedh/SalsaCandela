@@ -6,6 +6,7 @@ const courseData = require("../config/courseData");
 const classSchedules = require("../config/classSchedules");
 const partyConfig = require("../config/partyConfig");
 const PartyConfig = require("../models/PartyConfig");
+const { parseNextPartyDate, FALLBACK_DATE } = require("../utils/parsePartyDate");
 
 // Day name translations
 const dayTranslations = {
@@ -161,56 +162,57 @@ function getNextSaturdayDateEnglish() {
   return `${month} ${day}, ${year}`;
 }
 
-async function getPartyImageLinks() {
+// Fetch party config from MongoDB (single query for all party data)
+async function getPartyConfigData() {
   try {
     const config = await PartyConfig.findOne({});
-    if (config) {
-      return {
-        desktop: config.partyImageLink || null,
-        mobile: config.partyImageLinkMobile || null,
-      };
-    }
+    if (!config) return null;
+    return config;
   } catch (err) {
-    console.error("Error fetching party image links from DB:", err);
+    console.error("Error fetching party config from DB:", err);
+    return null;
   }
-  return { desktop: null, mobile: null };
 }
 
-async function getPartyPrices() {
-  try {
-    const config = await PartyConfig.findOne({});
-    if (config) {
-      return {
-        presale: config.partyEventPrice ?? 0,
-        door: config.partyListPrice ?? 0,
-      };
-    }
-  } catch (err) {
-    console.error("Error fetching party prices from DB:", err);
-  }
-  return { presale: 0, door: 0 };
+// Extract party image links from config document
+function extractImageLinks(config) {
+  if (!config) return { desktop: null, mobile: null };
+  return {
+    desktop: config.partyImageLink || null,
+    mobile: config.partyImageLinkMobile || null,
+  };
 }
 
-async function getPartyActiveLocation() {
-  try {
-    const config = await PartyConfig.findOne({});
-    if (config && config.partyLocations && config.partyActiveLocation) {
-      const active = config.partyLocations.find(
-        (loc) => loc.key === config.partyActiveLocation
-      );
-      if (active) {
-        return {
-          name: active.name,
-          address: active.address,
-          city: active.city,
-          googleMapsUrl: active.googleMapsUrl,
-        };
-      }
-    }
-  } catch (err) {
-    console.error("Error fetching party location from DB:", err);
+// Extract party prices from config document
+function extractPrices(config) {
+  if (!config) return { presale: 0, door: 0 };
+  return {
+    presale: config.partyEventPrice ?? 0,
+    door: config.partyListPrice ?? 0,
+  };
+}
+
+// Extract active location from config document
+function extractActiveLocation(config) {
+  if (!config || !config.partyLocations || !config.partyActiveLocation) {
+    return { name: "", address: "", city: "", googleMapsUrl: "" };
   }
-  return { name: "", address: "", city: "", googleMapsUrl: "" };
+  const active = config.partyLocations.find(
+    function(loc) { return loc.key === config.partyActiveLocation; }
+  );
+  if (!active) return { name: "", address: "", city: "", googleMapsUrl: "" };
+  return {
+    name: active.name,
+    address: active.address,
+    city: active.city,
+    googleMapsUrl: active.googleMapsUrl,
+  };
+}
+
+// Parse party date from config document, with fallback
+function extractPartyDate(config) {
+  if (!config || !config.nextPartyDate) return FALLBACK_DATE;
+  return parseNextPartyDate(config.nextPartyDate) || FALLBACK_DATE;
 }
 
 function renderView(viewName) {
@@ -239,13 +241,16 @@ module.exports = {
   },
 
   getStoreIndex: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
-    const partyPrices = await getPartyPrices();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const partyPrices = extractPrices(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.dayOfWeek}, ${date.day} de ${date.fullMonth} ${date.year}`;
 
     const partyWithPrices = {
       ...partyConfig,
+      date: date,
       pricing: {
         presale: {
           ...partyConfig.pricing.presale,
@@ -298,16 +303,18 @@ module.exports = {
   },
 
   getStoreSiguiente: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.dayOfWeek}, ${date.day} de ${date.fullMonth} ${date.year}`;
     const nextDate = getNextSaturdayDate();
 
     res.render("siguiente.ejs", {
       lang: 'es',
       currentPath: req.path,
       branches: classSchedules,
-      party: partyConfig,
+      party: { ...partyConfig, date: date },
       activeLocation: activeLocationData,
       fullDate: fullDate,
       partyImageLinks: partyImageLinks,
@@ -341,13 +348,16 @@ module.exports = {
   },
 
   getStoreParty: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.dayOfWeek}, ${partyConfig.date.day} de ${partyConfig.date.fullMonth} ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
-    const partyPrices = await getPartyPrices();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const partyPrices = extractPrices(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.dayOfWeek}, ${date.day} de ${date.fullMonth} ${date.year}`;
 
     const partyWithPrices = {
       ...partyConfig,
+      date: date,
       pricing: {
         presale: {
           ...partyConfig.pricing.presale,
@@ -548,14 +558,17 @@ module.exports = {
   // *******************
 
   getStoreIndexEnglish: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
-    const partyPrices = await getPartyPrices();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const partyPrices = extractPrices(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.en.dayOfWeek}, ${date.en.fullMonth} ${date.day}, ${date.year}`;
 
     // Create English version of party config with translated pricing labels
     const partyConfigEnglish = {
       ...partyConfig,
+      date: date,
       pricing: {
         presale: {
           price: partyPrices.presale,
@@ -608,16 +621,18 @@ module.exports = {
   },
 
   getStoreSiguienteEnglish: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.en.dayOfWeek}, ${date.en.fullMonth} ${date.day}, ${date.year}`;
     const nextDate = getNextSaturdayDateEnglish();
 
     res.render("siguiente-en.ejs", {
       lang: 'en',
       currentPath: req.path.replace('/en', ''),
       branches: classSchedules,
-      party: partyConfig,
+      party: { ...partyConfig, date: date },
       activeLocation: activeLocationData,
       fullDate: fullDate,
       partyImageLinks: partyImageLinks,
@@ -651,14 +666,17 @@ module.exports = {
   },
 
   getStorePartyEnglish: async (req, res) => {
-    const activeLocationData = await getPartyActiveLocation();
-    const fullDate = `${partyConfig.date.en.dayOfWeek}, ${partyConfig.date.en.fullMonth} ${partyConfig.date.day}, ${partyConfig.date.year}`;
-    const partyImageLinks = await getPartyImageLinks();
-    const partyPrices = await getPartyPrices();
+    const config = await getPartyConfigData();
+    const activeLocationData = extractActiveLocation(config);
+    const partyImageLinks = extractImageLinks(config);
+    const partyPrices = extractPrices(config);
+    const date = extractPartyDate(config);
+    const fullDate = `${date.en.dayOfWeek}, ${date.en.fullMonth} ${date.day}, ${date.year}`;
 
     // Create English version of party config with translated pricing labels
     const partyConfigEnglish = {
       ...partyConfig,
+      date: date,
       pricing: {
         presale: {
           price: partyPrices.presale,
