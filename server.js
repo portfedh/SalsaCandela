@@ -23,6 +23,51 @@ app.use(express.urlencoded({ extended: true }));
 // Enable access to public folder
 app.use(express.static("public"));
 
+// Language path mapping for the language switcher and hreflang tags.
+// Routes whose Spanish and English slugs differ must be listed here so
+// switching languages lands on the matching localized page instead of 404ing.
+const esToEnPath = {
+  "/": "/",
+  "/salsa": "/salsa",
+  "/bachata": "/bachata",
+  "/particulares": "/private-classes",
+  "/siguiente": "/next",
+  "/fiesta": "/party",
+  "/faq": "/faq",
+  "/confirmacion": "/confirmation",
+  "/aviso-privacidad": "/privacy-policy",
+  "/sucursales": "/branches",
+  "/confirmacion-email": "/email-confirmation",
+  "/cambiar-contrasena": "/reset-password",
+  "/guia-codi": "/codi-guide",
+  "/politica-devoluciones": "/refund-policy",
+};
+const enToEsPath = Object.fromEntries(
+  Object.entries(esToEnPath).map(([es, en]) => [en, es])
+);
+
+app.use((req, res, next) => {
+  const isEnglish = req.path === "/en" || req.path.startsWith("/en/");
+  const basePath = isEnglish
+    ? req.path.replace(/^\/en/, "") || "/"
+    : req.path;
+
+  let esPath;
+  let enPath;
+  if (isEnglish) {
+    enPath = basePath;
+    esPath = enToEsPath[basePath] || basePath;
+  } else {
+    esPath = basePath;
+    enPath = esToEnPath[basePath] || basePath;
+  }
+
+  res.locals.esPath = esPath;
+  res.locals.enPath = enPath;
+  res.locals.enHref = enPath === "/" ? "/en" : `/en${enPath}`;
+  next();
+});
+
 // Routes:
 // =======
 const homeRoutes = require("./routes/home");

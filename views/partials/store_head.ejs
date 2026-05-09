@@ -19,10 +19,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Hreflang Tags for SEO -->
-  <% if (typeof currentPath !== 'undefined') { %>
-  <link rel="alternate" hreflang="es" href="https://salsa-candela.com<%= currentPath %>" />
-  <link rel="alternate" hreflang="en" href="https://salsa-candela.com/en<%= currentPath %>" />
-  <link rel="alternate" hreflang="x-default" href="https://salsa-candela.com<%= currentPath %>" />
+  <% if (typeof esPath !== 'undefined') { %>
+  <link rel="alternate" hreflang="es" href="https://salsa-candela.com<%= esPath %>" />
+  <link rel="alternate" hreflang="en" href="https://salsa-candela.com<%= enHref %>" />
+  <link rel="alternate" hreflang="x-default" href="https://salsa-candela.com<%= esPath %>" />
   <% } %>
 
   <!-- Open Graph Tags -->
@@ -38,8 +38,8 @@
   <meta property="og:locale" content="es_MX" />
   <% } %>
   <meta property="og:image" content="https://salsa-candela.com/img/logo/logo.png" />
-  <% if (typeof currentPath !== 'undefined') { %>
-  <meta property="og:url" content="https://salsa-candela.com<%= lang === 'en' ? '/en' : '' %><%= currentPath %>" />
+  <% if (typeof esPath !== 'undefined') { %>
+  <meta property="og:url" content="https://salsa-candela.com<%= lang === 'en' ? enHref : esPath %>" />
   <% } %>
 
   <!-- Favicon Configuration -->

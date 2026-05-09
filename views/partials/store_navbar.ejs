@@ -47,26 +47,26 @@
                 <!-- Language Switcher -->
                 <div class="language-switcher">
                   <% if (typeof lang !== 'undefined' && lang === 'en') { %>
-                  <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+                  <a href="<%= typeof esPath !== 'undefined' ? esPath : '/' %>"
                      class="lang-flag"
                      title="Español"
                      onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
                     ES
                   </a>
-                  <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+                  <a href="<%= typeof enHref !== 'undefined' ? enHref : '/en' %>"
                      class="lang-flag active"
                      title="English"
                      onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
                     EN
                   </a>
                   <% } else { %>
-                  <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+                  <a href="<%= typeof esPath !== 'undefined' ? esPath : '/' %>"
                      class="lang-flag active"
                      title="Español"
                      onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
                     ES
                   </a>
-                  <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+                  <a href="<%= typeof enHref !== 'undefined' ? enHref : '/en' %>"
                      class="lang-flag"
                      title="English"
                      onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
@@ -99,26 +99,26 @@
         <!-- Language Switcher Mobile -->
         <div class="language-switcher-mobile">
           <% if (typeof lang !== 'undefined' && lang === 'en') { %>
-          <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+          <a href="<%= typeof esPath !== 'undefined' ? esPath : '/' %>"
              class="lang-flag"
              title="Español"
              onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
             ES
           </a>
-          <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+          <a href="<%= typeof enHref !== 'undefined' ? enHref : '/en' %>"
              class="lang-flag active"
              title="English"
              onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">
             EN
           </a>
           <% } else { %>
-          <a href="<%= typeof currentPath !== 'undefined' ? currentPath : '/' %>"
+          <a href="<%= typeof esPath !== 'undefined' ? esPath : '/' %>"
              class="lang-flag active"
              title="Español"
              onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'Spanish', 'language': 'es', 'value': 1});">
             ES
           </a>
-          <a href="/en<%= typeof currentPath !== 'undefined' ? currentPath : '' %>"
+          <a href="<%= typeof enHref !== 'undefined' ? enHref : '/en' %>"
              class="lang-flag"
              title="English"
              onclick="gtag('event', 'language_switch', {'event_category': 'Navigation', 'event_label': 'English', 'language': 'en', 'value': 1});">

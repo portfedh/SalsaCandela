@@ -95,6 +95,25 @@ router.get("/en/checkout-bachata-satelite", homeCtrl.ClassBachataSateliteRedirec
 router.get("/en/register-classes", homeCtrl.ClassRedirect);
 router.post("/en/info-private-classes", homeCtrl.infoParticulares);
 
+// Legacy redirects: previous broken language-switcher and hreflang tags
+// pointed `/en/<spanish-slug>` at non-existent routes. Redirect any
+// externally-cached URLs to the correct English slug.
+const enLegacyRedirects = {
+  "/en/fiesta": "/en/party",
+  "/en/particulares": "/en/private-classes",
+  "/en/siguiente": "/en/next",
+  "/en/confirmacion": "/en/confirmation",
+  "/en/aviso-privacidad": "/en/privacy-policy",
+  "/en/sucursales": "/en/branches",
+  "/en/confirmacion-email": "/en/email-confirmation",
+  "/en/cambiar-contrasena": "/en/reset-password",
+  "/en/guia-codi": "/en/codi-guide",
+  "/en/politica-devoluciones": "/en/refund-policy",
+};
+Object.entries(enLegacyRedirects).forEach(([from, to]) => {
+  router.get(from, (req, res) => res.redirect(301, to));
+});
+
 // Error handling middleware
 router.use((err, req, res, next) => {
   console.error(err.stack);
