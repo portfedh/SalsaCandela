@@ -187,8 +187,8 @@ function extractImageLinks(config) {
 function extractPrices(config) {
   if (!config) return { presale: 0, door: 0 };
   return {
-    presale: config.partyEventPrice ?? 0,
-    door: config.partyListPrice ?? 0,
+    presale: config.partyListPrice ?? 0,   // Preventa
+    door: config.partyEventPrice ?? 0,     // Taquilla
   };
 }
 
