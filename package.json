@@ -10,6 +10,9 @@
   },
   "author": "Pablo Cruz Lemini",
   "license": "Proprietary",
+  "engines": {
+    "node": ">=20.19.0"
+  },
   "dependencies": {
     "body-parser": "^1.20.6",
     "dotenv": "^16.3.1",
