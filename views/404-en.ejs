@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <!-- Include head -->
+  <%- include('partials/store_head') -%>
+
+  <body>
+    <!-- Include header with custom mobile nav -->
+    <%- include('partials/store_navbar') -%>
+
+    <!-- Not Found Area Start -->
+    <section class="confirmation-area d-flex align-items-center justify-content-center" style="min-height: 60vh;">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="text-center p-5 shadow rounded bg-white">
+              <i class="fa fa-compass fa-3x mb-4 text-primary"></i>
+              <h2 class="mb-3">Page not found</h2>
+              <p class="lead mb-4">
+                The page you are looking for does not exist or has moved.
+              </p>
+              <p class="mb-4">
+                In the meantime, take a look at our
+                <a href="/en/salsa">salsa classes</a>, our
+                <a href="/en/bachata">bachata classes</a> or the
+                <a href="/en/party">next party</a>.
+              </p>
+              <a href="/en" class="btn btn-primary mt-3">Go to homepage</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Not Found Area End -->
+
+    <!-- Include Footer -->
+    <%- include('partials/store_footer') -%>
+
+    <!-- Include Java Script -->
+    <%- include('partials/store_js_scripts') -%>
+
+    <!-- Include custom mobile nav script -->
+    <script src="/js/mobileNavigation.js"></script>
+
+    <!-- Body & html close -->
+  </body>
+</html>

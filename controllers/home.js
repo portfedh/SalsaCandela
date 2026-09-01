@@ -7,6 +7,7 @@ const classSchedules = require("../config/classSchedules");
 const partyConfig = require("../config/partyConfig");
 const PartyConfig = require("../models/PartyConfig");
 const { parseNextPartyDate, FALLBACK_DATE } = require("../utils/parsePartyDate");
+const { getSeo } = require("../config/seoMeta");
 
 // Day name translations
 const dayTranslations = {
@@ -249,7 +250,7 @@ module.exports = {
 
     res.render("index.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("home", "es"),
       party: partyWithPrices,
       activeLocation: activeLocationData,
       fullDate: fullDate,
@@ -262,7 +263,7 @@ module.exports = {
     const nextDate = getNextSaturdayDate();
     res.render("salsa.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("salsa", "es"),
       pageHeader: {
         title: "Clases de Salsa",
         subtitle: "Aprende a bailar salsa cubana y estilo LA",
@@ -276,7 +277,7 @@ module.exports = {
     const nextDate = getNextSaturdayDate();
     res.render("bachata.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("bachata", "es"),
       pageHeader: {
         title: "Clases de Bachata",
         subtitle: "Descubre el ritmo de la bachata",
@@ -296,7 +297,6 @@ module.exports = {
 
     res.render("siguiente.ejs", {
       lang: 'es',
-      currentPath: req.path,
       branches: classSchedules,
       party: { ...partyConfig, date: date },
       activeLocation: activeLocationData,
@@ -310,7 +310,7 @@ module.exports = {
   getStoreIndividualClasses: (req, res) => {
     res.render("clases-individuales.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("particulares", "es"),
       pageHeader: {
         title: "Clases Particulares",
         subtitle: "Atención personalizada para tu aprendizaje",
@@ -322,7 +322,6 @@ module.exports = {
   getStoreGuiaCodi: (req, res) => {
     res.render("guia-codi.ejs", {
       lang: 'es',
-      currentPath: req.path,
       pageHeader: {
         title: 'Guía CoDi<span class="reg-symbol">®</span>',
         subtitle: "Tu guía completa para pagos digitales instantáneos",
@@ -356,7 +355,7 @@ module.exports = {
 
     res.render("fiesta.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("fiesta", "es"),
       pageHeader: {
         title: "Fiesta",
         subtitle: "Baila Salsa y Bachata con nosotros",
@@ -372,7 +371,7 @@ module.exports = {
   getStoreFAQ: (req, res) => {
     res.render("faq.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("faq", "es"),
       pageHeader: {
         title: "Preguntas Frecuentes",
         subtitle: "Respuestas a tus dudas sobre nuestras clases",
@@ -384,7 +383,7 @@ module.exports = {
   getConfirmation: (req, res) => {
     res.render("confirmacion.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("confirmacion", "es"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -392,7 +391,7 @@ module.exports = {
   getAvisoPrivacidad: (req, res) => {
     res.render("aviso-privacidad.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("avisoPrivacidad", "es"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -400,7 +399,6 @@ module.exports = {
   getSucursales: (req, res) => {
     res.render("sucursales.ejs", {
       lang: 'es',
-      currentPath: req.path,
       pageHeader: {
         title: "Nuestras Sucursales",
         subtitle: "Encuentra la sucursal más cercana a ti",
@@ -413,7 +411,7 @@ module.exports = {
   getEmailConfirmation: (req, res) => {
     res.render("confirmacion-email.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("confirmacionEmail", "es"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -421,7 +419,7 @@ module.exports = {
   getPasswordReset: (req, res) => {
     res.render("cambiar-contrasena.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("cambiarContrasena", "es"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -429,7 +427,7 @@ module.exports = {
   getPoliticaDevoluciones: (req, res) => {
     res.render("politica-devoluciones.ejs", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("politicaDevoluciones", "es"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -439,7 +437,7 @@ module.exports = {
     const referralCode = req.params.referralCode || "";
     res.render("boletos", {
       lang: 'es',
-      currentPath: req.path,
+      seo: getSeo("boletos", "es"),
       referralCode: referralCode,
       paymentMode: "modal",
     });
@@ -567,7 +565,7 @@ module.exports = {
 
     res.render("index-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("home", "en"),
       party: partyConfigEnglish,
       activeLocation: activeLocationData,
       fullDate: fullDate,
@@ -580,7 +578,7 @@ module.exports = {
     const nextDate = getNextSaturdayDateEnglish();
     res.render("salsa-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("salsa", "en"),
       pageHeader: {
         title: "Salsa Classes",
         subtitle: "Learn to dance Cuban salsa and LA style",
@@ -594,7 +592,7 @@ module.exports = {
     const nextDate = getNextSaturdayDateEnglish();
     res.render("bachata-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("bachata", "en"),
       pageHeader: {
         title: "Bachata Classes",
         subtitle: "Discover the rhythm of bachata",
@@ -614,7 +612,6 @@ module.exports = {
 
     res.render("siguiente-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
       branches: classSchedules,
       party: { ...partyConfig, date: date },
       activeLocation: activeLocationData,
@@ -628,7 +625,7 @@ module.exports = {
   getStoreIndividualClassesEnglish: (req, res) => {
     res.render("clases-individuales-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("particulares", "en"),
       pageHeader: {
         title: "Private Classes",
         subtitle: "Personalized attention for your learning",
@@ -640,7 +637,6 @@ module.exports = {
   getStoreGuiaCodiEnglish: (req, res) => {
     res.render("guia-codi-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: 'CoDi Guide<span class="reg-symbol">®</span>',
         subtitle: "Your complete guide for instant digital payments",
@@ -675,7 +671,7 @@ module.exports = {
 
     res.render("fiesta-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("fiesta", "en"),
       pageHeader: {
         title: "Party",
         subtitle: "Dance Salsa and Bachata with us",
@@ -691,7 +687,7 @@ module.exports = {
   getStoreFAQEnglish: (req, res) => {
     res.render("faq-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("faq", "en"),
       pageHeader: {
         title: "Frequently Asked Questions",
         subtitle: "Answers to your questions about our classes",
@@ -703,7 +699,7 @@ module.exports = {
   getConfirmationEnglish: (req, res) => {
     res.render("confirmacion-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("confirmacion", "en"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -711,7 +707,7 @@ module.exports = {
   getAvisoPrivacidadEnglish: (req, res) => {
     res.render("aviso-privacidad-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("avisoPrivacidad", "en"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -719,7 +715,6 @@ module.exports = {
   getSucursalesEnglish: (req, res) => {
     res.render("sucursales-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
       pageHeader: {
         title: "Our Branches",
         subtitle: "Find the branch closest to you",
@@ -732,7 +727,7 @@ module.exports = {
   getEmailConfirmationEnglish: (req, res) => {
     res.render("confirmacion-email-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("confirmacionEmail", "en"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -740,7 +735,7 @@ module.exports = {
   getPasswordResetEnglish: (req, res) => {
     res.render("cambiar-contrasena-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("cambiarContrasena", "en"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },
@@ -748,7 +743,7 @@ module.exports = {
   getPoliticaDevolucionesEnglish: (req, res) => {
     res.render("politica-devoluciones-en.ejs", {
       lang: 'en',
-      currentPath: req.path.replace('/en', ''),
+      seo: getSeo("politicaDevoluciones", "en"),
       paymentMode: process.env.PAYMENT_MODE
     });
   },

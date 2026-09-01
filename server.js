@@ -1,6 +1,7 @@
 // Environment variables
 // =====================
-require("dotenv").config({ path: "./config/.env" });
+const path = require("path");
+require("dotenv").config({ path: path.join(__dirname, "config/.env") });
 
 // Database
 // ========
@@ -11,11 +12,23 @@ connectDB();
 // =======
 // Import express
 const express = require("express");
+const compression = require("compression");
+const { getSeo } = require("./config/seoMeta");
 const app = express();
-// Set template engine EJS
+// Set template engine EJS. The views path is absolute so the app starts
+// correctly regardless of the working directory it is launched from.
 app.set("view engine", "ejs");
-// Serve static files from the 'public' directory
-app.use(express.static("public"));
+app.set("views", path.join(__dirname, "views"));
+// Gzip HTML, CSS and JS responses before sending them to the browser.
+// Registered before the static handler so it covers static assets too.
+app.use(compression());
+// Serve static files from the 'public' directory. Assets are cached for a
+// week by the browser; ETags still force a revalidation when a file changes.
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: "7d",
+  })
+);
 // Enable reading JSON data
 app.use(express.json());
 // Enable reading from html elements
@@ -63,6 +76,9 @@ app.use((req, res, next) => {
   res.locals.esPath = esPath;
   res.locals.enPath = enPath;
   res.locals.enHref = enPath === "/" ? "/en" : `/en${enPath}`;
+  // Default SEO tags. Controllers override this by passing their own `seo`
+  // local to res.render, which takes precedence over res.locals.
+  res.locals.seo = getSeo("home", isEnglish ? "en" : "es");
   next();
 });
 
@@ -72,6 +88,18 @@ const homeRoutes = require("./routes/home");
 
 // Listening routes
 app.use("/", homeRoutes);
+
+// 404 handler. Registered after every route so it only runs when nothing
+// above matched. Serves the localized page based on the requested prefix.
+app.use((req, res) => {
+  const isEnglish = req.path === "/en" || req.path.startsWith("/en/");
+  const lang = isEnglish ? "en" : "es";
+  res.status(404).render(isEnglish ? "404-en.ejs" : "404.ejs", {
+    lang: lang,
+    seo: getSeo("notFound", lang),
+    paymentMode: process.env.PAYMENT_MODE,
+  });
+});
 
 // Server Port
 // ===========

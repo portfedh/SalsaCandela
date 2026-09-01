@@ -61,7 +61,7 @@ Key redirect destinations:
 
 ### Controller Pattern
 
-Each view handler calls `res.render()` directly, passing a consistent set of locals: `lang`, `currentPath`, an optional `pageHeader` (`title`/`subtitle`), and `paymentMode`. Party pages additionally pass `party`, `activeLocation`, `fullDate`, and `partyImageLinks`. All redirect handlers include specific query parameters and registration keys.
+Each view handler calls `res.render()` directly, passing a consistent set of locals: `lang`, `seo` (from `config/seoMeta.js`), an optional `pageHeader` (`title`/`subtitle`), and `paymentMode`. Party pages additionally pass `party`, `activeLocation`, `fullDate`, and `partyImageLinks`. All redirect handlers include specific query parameters and registration keys.
 
 ### View Structure
 
@@ -93,6 +93,7 @@ Each view handler calls `res.render()` directly, passing a consistent set of loc
 
 - `server.js`: Main server configuration and Express setup
 - `config/.env`: Environment variables (not tracked in git)
+- `config/seoMeta.js`: Per-page `<title>`/description for pages sharing `store_head.ejs`. Pages with their own head partial (guia-codi, sucursales, siguiente) define their tags inline and are not listed there. Utility pages are marked `noindex`.
 
 ### Routes & Controllers
 
@@ -105,7 +106,7 @@ Each view handler calls `res.render()` directly, passing a consistent set of loc
 - **Payment Modal**: Reusable payment modal partial for redirecting to admin system with referral code support
 - **Location-based Class Registration**: Separate routes for each dance studio location (Xola, Claveria, Valle, Coapa, Satélite)
 - **SEO**: Includes sitemap.xml serving at `/sitemap.xml`
-- **Error Handling**: Basic middleware for 500 errors in routes
+- **Error Handling**: Basic middleware for 500 errors in routes; a localized 404 handler in `server.js` renders `404.ejs` / `404-en.ejs` based on the `/en` prefix
 
 ### Analytics & Tracking
 

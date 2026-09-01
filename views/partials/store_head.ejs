@@ -2,19 +2,15 @@
   <meta charset="utf-8" />
   <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-  <!-- Language-specific Meta Tags -->
-  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
-  <title>Salsa Candela Mexico | Dance Academy CDMX | Salsa & Bachata Classes</title>
-  <meta
-    name="description"
-    content="Learn to dance salsa and bachata in CDMX. Professional instructors, 5-week courses, no partner needed. Join Salsa Candela today!"
-  />
-  <% } else { %>
-  <title>Salsa Candela México | Academia de Baile CDMX | Salsa y Bachata</title>
-  <meta
-    name="description"
-    content="Academia de baile de enseñanza de salsa cubana y bachata en CDMX. Instructores profesionales, cursos de 5 semanas, no necesitas pareja."
-  />
+  <%# Page-specific title and description. Supplied by the controller via the
+      `seo` local (see config/seoMeta.js). server.js seeds a res.locals
+      default, so a handler that forgets to pass one still renders the
+      site-wide home copy rather than empty tags. -%>
+  <% var pageSeo = typeof seo !== 'undefined' && seo ? seo : { title: '', description: '', noindex: false }; %>
+  <title><%= pageSeo.title %></title>
+  <meta name="description" content="<%= pageSeo.description %>" />
+  <% if (pageSeo.noindex) { %>
+  <meta name="robots" content="noindex, follow" />
   <% } %>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -28,15 +24,9 @@
   <!-- Open Graph Tags -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Salsa Candela" />
-  <% if (typeof lang !== 'undefined' && lang === 'en') { %>
-  <meta property="og:title" content="Salsa Candela Mexico | Dance Academy CDMX" />
-  <meta property="og:description" content="Learn to dance salsa and bachata in CDMX. Professional instructors, 5-week courses, no partner needed." />
-  <meta property="og:locale" content="en_US" />
-  <% } else { %>
-  <meta property="og:title" content="Salsa Candela México | Academia de Baile CDMX" />
-  <meta property="og:description" content="Academia de baile de enseñanza de salsa cubana y bachata en CDMX. Instructores profesionales, cursos de 5 semanas." />
-  <meta property="og:locale" content="es_MX" />
-  <% } %>
+  <meta property="og:title" content="<%= pageSeo.title %>" />
+  <meta property="og:description" content="<%= pageSeo.description %>" />
+  <meta property="og:locale" content="<%= typeof lang !== 'undefined' && lang === 'en' ? 'en_US' : 'es_MX' %>" />
   <meta property="og:image" content="https://salsa-candela.com/img/logo/logo.png" />
   <% if (typeof esPath !== 'undefined') { %>
   <meta property="og:url" content="https://salsa-candela.com<%= lang === 'en' ? enHref : esPath %>" />
