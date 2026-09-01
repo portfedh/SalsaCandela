@@ -14,12 +14,12 @@ Salsa Candela is a Node.js/Express web application for the Salsa Candela dance a
 - Express
 - EJS
 - dotenv
-- body-parser
+- Mongoose (MongoDB)
 
 ## Getting Started
 
 ### Prerequisites
-- [Node.js](https://nodejs.org/) (v14 or higher recommended)
+- [Node.js](https://nodejs.org/) (v20.19.0 or higher, per `engines` in package.json)
 - [npm](https://www.npmjs.com/)
 
 ### Installation

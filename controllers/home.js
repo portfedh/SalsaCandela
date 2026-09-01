@@ -215,22 +215,6 @@ function extractPartyDate(config) {
   return parseNextPartyDate(config.nextPartyDate) || FALLBACK_DATE;
 }
 
-function renderView(viewName) {
-  return (req, res) => {
-    res.render(`${viewName}.ejs`, { paymentMode: process.env.PAYMENT_MODE });
-  };
-}
-
-function renderViewWithDate(viewName) {
-  return (req, res) => {
-    const nextDate = getNextSaturdayDate();
-    res.render(`${viewName}.ejs`, {
-      nextSaturdayDate: nextDate,
-      paymentMode: process.env.PAYMENT_MODE,
-    });
-  };
-}
-
 module.exports = {
   renderApplePay: (req, res) => {
     const certPath = path.join(
@@ -520,7 +504,7 @@ module.exports = {
 
   ClassBachataXolaRedirect: (req, res) => {
     res.redirect(
-      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=xola"
+      "https://admin.salsa-candela.com/classstripeform?curso=bachata&sucursal=xola&regKey=zG9xKmF3"
     );
   },
 

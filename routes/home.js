@@ -114,12 +114,6 @@ Object.entries(enLegacyRedirects).forEach(([from, to]) => {
   router.get(from, (req, res) => res.redirect(301, to));
 });
 
-// Error handling middleware
-router.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).send("Something broke!");
-});
-
 // Apple Pay
 router.get(
   "/.well-known/apple-developer-merchantid-domain-association",
@@ -129,6 +123,17 @@ router.get(
 // Sitemap route
 router.get("/sitemap.xml", (req, res) => {
   res.sendFile(path.join(__dirname, "../sitemap.xml"));
+});
+
+// Robots route
+router.get("/robots.txt", (req, res) => {
+  res.sendFile(path.join(__dirname, "../robots.txt"));
+});
+
+// Error handling middleware. Registered last so it covers every route above.
+router.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something broke!");
 });
 
 // Exports

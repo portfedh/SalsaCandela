@@ -20,8 +20,6 @@ app.use(express.static("public"));
 app.use(express.json());
 // Enable reading from html elements
 app.use(express.urlencoded({ extended: true }));
-// Enable access to public folder
-app.use(express.static("public"));
 
 // Language path mapping for the language switcher and hreflang tags.
 // Routes whose Spanish and English slugs differ must be listed here so
@@ -77,6 +75,7 @@ app.use("/", homeRoutes);
 
 // Server Port
 // ===========
-app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server running on port ${process.env.PORT}`);
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });

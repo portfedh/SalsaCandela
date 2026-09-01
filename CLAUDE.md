@@ -61,7 +61,7 @@ Key redirect destinations:
 
 ### Controller Pattern
 
-Controllers use a `renderView()` helper function to reduce boilerplate for simple template rendering. All redirect handlers include specific query parameters and registration keys.
+Each view handler calls `res.render()` directly, passing a consistent set of locals: `lang`, `currentPath`, an optional `pageHeader` (`title`/`subtitle`), and `paymentMode`. Party pages additionally pass `party`, `activeLocation`, `fullDate`, and `partyImageLinks`. All redirect handlers include specific query parameters and registration keys.
 
 ### View Structure
 
