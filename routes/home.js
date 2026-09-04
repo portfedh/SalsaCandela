@@ -32,7 +32,7 @@ router.get("/politica-devoluciones", homeCtrl.getPoliticaDevoluciones);
 // Redirects
 // *********
 // Fiesta
-router.get("/boletos/:referralCode?", homeCtrl.PartyRedirect);
+router.get("/boletos{/:referralCode}", homeCtrl.PartyRedirect);
 // Clases Grl
 router.post("/checkout", homeCtrl.ClassRedirect);
 // Clases Salsa
@@ -74,7 +74,7 @@ router.get("/en/refund-policy", homeCtrl.getPoliticaDevolucionesEnglish);
 // English Redirects
 // *****************
 // Fiesta - goes directly to Stripe (no CoDi modal for English)
-router.get("/en/tickets/:referralCode?", homeCtrl.PartyRedirectEnglish);
+router.get("/en/tickets{/:referralCode}", homeCtrl.PartyRedirectEnglish);
 // Clases Grl
 router.post("/en/checkout", homeCtrl.ClassRedirect);
 // Clases Salsa

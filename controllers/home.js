@@ -222,7 +222,9 @@ module.exports = {
       __dirname,
       "../public/.well-known/apple-developer-merchantid-domain-association"
     );
-    res.sendFile(certPath);
+    // Express 5's res.sendFile ignores dotfiles by default, which would 404
+    // the `.well-known` path Apple Pay fetches for domain verification.
+    res.sendFile(certPath, { dotfiles: "allow" });
   },
 
   getStoreIndex: async (req, res) => {
