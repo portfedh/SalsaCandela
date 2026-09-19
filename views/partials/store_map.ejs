@@ -86,7 +86,7 @@
           var bounds = [];
           locations.forEach(function(loc) {
             var marker = L.marker([loc.lat, loc.lng]).addTo(map);
-            marker.bindPopup('<strong>Salsa Candela ' + loc.name + '</strong><br>' + loc.address);
+            marker.bindPopup('<strong>Salsa Candela ' + loc.name + '</strong><br>' + loc.address + '<br>' + loc.city);
             bounds.push([loc.lat, loc.lng]);
           });
 

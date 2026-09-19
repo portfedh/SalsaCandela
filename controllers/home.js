@@ -164,11 +164,18 @@ function getNextSaturdayDateEnglish() {
 }
 
 // Fetch party config from MongoDB (single query for all party data)
+// party_configs keeps one document per party as history, so the current party
+// has to be selected by its isActive flag. An unfiltered findOne() returns the
+// oldest document instead, which is how the site went stale in Aug 2026.
 async function getPartyConfigData() {
   try {
-    const config = await PartyConfig.findOne({});
-    if (!config) return null;
-    return config;
+    const active = await PartyConfig.findOne({ isActive: true })
+      .sort({ partyEventDate: -1 })
+      .lean();
+    if (active) return active;
+
+    // Nothing flagged active: fall back to the most recent party.
+    return await PartyConfig.findOne({}).sort({ partyEventDate: -1 }).lean();
   } catch (err) {
     console.error("Error fetching party config from DB:", err);
     return null;
@@ -194,19 +201,29 @@ function extractPrices(config) {
 }
 
 // Extract active location from config document
+// Legacy documents embed their own partyLocations array; documents written by
+// the admin config form only store the venue key, so fall back to the branch
+// data in classSchedules.
 function extractActiveLocation(config) {
-  if (!config || !config.partyLocations || !config.partyActiveLocation) {
-    return { name: "", address: "", city: "", googleMapsUrl: "" };
-  }
-  const active = config.partyLocations.find(
-    function(loc) { return loc.key === config.partyActiveLocation; }
+  const empty = { name: "", address: "", city: "", googleMapsUrl: "" };
+  if (!config) return empty;
+
+  const key = config.partyActiveLocation || config.partyVenue;
+  if (!key) return empty;
+
+  const embedded = (config.partyLocations || []).find(
+    function(loc) { return loc.key === key; }
   );
-  if (!active) return { name: "", address: "", city: "", googleMapsUrl: "" };
+  const venue = embedded || classSchedules.find(
+    function(branch) { return branch.id === key; }
+  );
+  if (!venue) return empty;
+
   return {
-    name: active.name,
-    address: active.address,
-    city: active.city,
-    googleMapsUrl: active.googleMapsUrl,
+    name: venue.name,
+    address: venue.address,
+    city: venue.city,
+    googleMapsUrl: venue.googleMapsUrl,
   };
 }
 
